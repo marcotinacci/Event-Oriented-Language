@@ -1,0 +1,72 @@
+grammar org.mt.lic.eol.EventOrientedLanguage with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate eventOrientedLanguage "http://www.mt.org/lic/eol/EventOrientedLanguage"
+
+/*
+ * Main structure of a program. Global variables, events and handlers can be declared
+ * in any order but sections must stay separated. The init section must be the last one
+ * and it is mandatory.
+ */
+Program:
+	(globals=GlobalSection? & events=EventSection? & handlers=HandlerSection?)
+	'init:'
+	init=Compound
+	'end';
+
+GlobalSection:
+	'globals:' (globals+=VariableDeclaration ';')+;
+
+EventSection:
+	'events:' (events+=EventDecl ';')+;
+
+HandlerSection:
+	'handlers:' (handlers+=HandlerDecl)+;
+
+ParamDeclaration:
+	type=Type name=ID;
+
+EventDecl:
+	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')';
+
+HandlerDecl:
+	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')' body=Compound;
+
+// Compound java-style
+Compound: { Compound }
+	( '{' (body+=Compound)* '}'
+	| (body+=Command)? ';');
+
+// TODO kind of commands
+Command:
+	VariableDeclaration
+	| VariableAssign
+	| BindHandler
+	| UnbindHandler;
+
+VariableDeclaration:
+	type=Type name=ID;
+
+// subscribe the handler to the event
+BindHandler:
+	eventName=ID '+=' handlerName=ID;
+
+// unsubscribe the handler to the event
+// TODO check the subscription of the handler at runtime 
+UnbindHandler:
+	eventName=ID '-=' handlerName=ID;
+
+VariableAssign:
+	name=ID '=' value=INT;
+
+enum Type:
+	INT | REAL | BOOL;
+
+terminal INT returns ecore::EInt:
+	('0'..'9')+;
+
+terminal REAL returns ecore::EDouble:
+	('0'..'9')* ('.' ('0'..'9')+)?;
+
+terminal BOOL returns ecore::EBoolean:
+	'true' | 'false';

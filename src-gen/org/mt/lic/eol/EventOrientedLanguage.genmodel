@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.mt.lic.eol/src-gen"
+    editDirectory="/org.mt.lic.eol.edit/src" editorDirectory="/org.mt.lic.eol.editor/src"
+    modelPluginID="org.mt.lic.eol" forceOverwrite="true" modelName="EventOrientedLanguage"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.mt.lic.eol.edit"
+    editorPluginID="org.mt.lic.eol.editor">
+  <genPackages prefix="EventOrientedLanguage" basePackage="org.mt.lic.eol" disposableProviderFactory="true"
+      ecorePackage="EventOrientedLanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="EventOrientedLanguage.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/REAL"/>
+      <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/BOOL"/>
+    </genEnums>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Program">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Program/globals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Program/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Program/handlers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Program/init"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//GlobalSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//GlobalSection/globals"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//EventSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//EventSection/events"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//HandlerSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//HandlerSection/handlers"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//ParamDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//ParamDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//ParamDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//EventDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//EventDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//EventDecl/params"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//HandlerDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//HandlerDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//HandlerDecl/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//HandlerDecl/body"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Compound">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Compound/body"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Command"/>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//VariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//BindHandler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//BindHandler/eventName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//BindHandler/handlerName"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//UnbindHandler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//UnbindHandler/eventName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//UnbindHandler/handlerName"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//VariableAssign">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableAssign/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableAssign/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
