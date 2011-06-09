@@ -7,8 +7,6 @@ package org.mt.lic.eol.eventOrientedLanguage.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.mt.lic.eol.eventOrientedLanguage.Command;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
 
@@ -21,7 +19,7 @@ import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
  *
  * @generated
  */
-public class CommandImpl extends MinimalEObjectImpl.Container implements Command
+public class CommandImpl extends AbstractBlockImpl implements Command
 {
   /**
    * <!-- begin-user-doc -->

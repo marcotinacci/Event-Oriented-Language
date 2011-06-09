@@ -8,11 +8,13 @@ package org.mt.lic.eol.eventOrientedLanguage.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
+import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,24 +33,14 @@ import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 public class VariableAssignImpl extends CommandImpl implements VariableAssign
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected VariableDeclaration name;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -58,7 +50,7 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
    * @generated
    * @ordered
    */
-  protected static final int VALUE_EDEFAULT = 0;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -68,7 +60,7 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
    * @generated
    * @ordered
    */
-  protected int value = VALUE_EDEFAULT;
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,7 +88,27 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public VariableDeclaration getName()
+  {
+    if (name != null && name.eIsProxy())
+    {
+      InternalEObject oldName = (InternalEObject)name;
+      name = (VariableDeclaration)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventOrientedLanguagePackage.VARIABLE_ASSIGN__NAME, oldName, name));
+      }
+    }
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDeclaration basicGetName()
   {
     return name;
   }
@@ -106,9 +118,9 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setName(VariableDeclaration newName)
   {
-    String oldName = name;
+    VariableDeclaration oldName = name;
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.VARIABLE_ASSIGN__NAME, oldName, name));
@@ -119,7 +131,7 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getValue()
+  public String getValue()
   {
     return value;
   }
@@ -129,9 +141,9 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(int newValue)
+  public void setValue(String newValue)
   {
-    int oldValue = value;
+    String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.VARIABLE_ASSIGN__VALUE, oldValue, value));
@@ -148,7 +160,8 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
     switch (featureID)
     {
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__NAME:
-        return getName();
+        if (resolve) return getName();
+        return basicGetName();
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__VALUE:
         return getValue();
     }
@@ -166,10 +179,10 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
     switch (featureID)
     {
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__NAME:
-        setName((String)newValue);
+        setName((VariableDeclaration)newValue);
         return;
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__VALUE:
-        setValue((Integer)newValue);
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,7 +199,7 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
     switch (featureID)
     {
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__NAME:
-        setName(NAME_EDEFAULT);
+        setName((VariableDeclaration)null);
         return;
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__VALUE:
         setValue(VALUE_EDEFAULT);
@@ -206,9 +219,9 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
     switch (featureID)
     {
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null;
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN__VALUE:
-        return value != VALUE_EDEFAULT;
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -224,9 +237,7 @@ public class VariableAssignImpl extends CommandImpl implements VariableAssign
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", value: ");
+    result.append(" (value: ");
     result.append(value);
     result.append(')');
     return result.toString();

@@ -11,7 +11,7 @@ generate eventOrientedLanguage "http://www.mt.org/lic/eol/EventOrientedLanguage"
 Program:
 	(globals=GlobalSection? & events=EventSection? & handlers=HandlerSection?)
 	'init:'
-	init=Compound
+	init=AbstractBlock
 	'end';
 
 GlobalSection:
@@ -30,36 +30,49 @@ EventDecl:
 	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')';
 
 HandlerDecl:
-	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')' body=Compound;
+	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')' body=AbstractBlock;
 
-// Compound java-style
-Compound: { Compound }
-	( '{' (body+=Compound)* '}'
-	| (body+=Command)? ';');
+// Block java-style
+AbstractBlock:
+	Command ';'
+	| {Compound} '{' (body+=AbstractBlock)* '}';
 
-// TODO kind of commands
 Command:
 	VariableDeclaration
 	| VariableAssign
 	| BindHandler
-	| UnbindHandler;
+	| UnbindHandler
+	| RaiseEvent
+	| PrintOutput
+	| ReadInput;
+	
+PrintOutput:
+	'out' output=Value;
+	
+ReadInput:
+	'in' input=[VariableDeclaration];
 
 VariableDeclaration:
 	type=Type name=ID;
 
 // subscribe the handler to the event
 BindHandler:
-	eventName=ID '+=' handlerName=ID;
+	eventName=[EventDecl] '+=' handlerName=[HandlerDecl];
 
-// unsubscribe the handler to the event
-// TODO check the subscription of the handler at runtime 
+// unsubscribe the handler to the event 
 UnbindHandler:
-	eventName=ID '-=' handlerName=ID;
+	eventName=[EventDecl] '-=' handlerName=[HandlerDecl];
 
 VariableAssign:
-	name=ID '=' value=INT;
+	name=[VariableDeclaration] '=' value=Value;
+	
+RaiseEvent:
+	'raise' eventName=[EventDecl] '(' (params+=Value (',' params+=Value)*)? ')';
 
 enum Type:
+	T_INT="int" | T_REAL="real" | T_BOOL="bool";
+
+Value:
 	INT | REAL | BOOL;
 
 terminal INT returns ecore::EInt:

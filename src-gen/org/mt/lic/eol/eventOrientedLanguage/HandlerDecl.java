@@ -80,12 +80,12 @@ public interface HandlerDecl extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(Compound)
+   * @see #setBody(AbstractBlock)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getHandlerDecl_Body()
    * @model containment="true"
    * @generated
    */
-  Compound getBody();
+  AbstractBlock getBody();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.HandlerDecl#getBody <em>Body</em>}' containment reference.
@@ -95,6 +95,6 @@ public interface HandlerDecl extends EObject
    * @see #getBody()
    * @generated
    */
-  void setBody(Compound value);
+  void setBody(AbstractBlock value);
 
 } // HandlerDecl

@@ -75,12 +75,16 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
       case EventOrientedLanguagePackage.PARAM_DECLARATION: return createParamDeclaration();
       case EventOrientedLanguagePackage.EVENT_DECL: return createEventDecl();
       case EventOrientedLanguagePackage.HANDLER_DECL: return createHandlerDecl();
-      case EventOrientedLanguagePackage.COMPOUND: return createCompound();
+      case EventOrientedLanguagePackage.ABSTRACT_BLOCK: return createAbstractBlock();
       case EventOrientedLanguagePackage.COMMAND: return createCommand();
+      case EventOrientedLanguagePackage.PRINT_OUTPUT: return createPrintOutput();
+      case EventOrientedLanguagePackage.READ_INPUT: return createReadInput();
       case EventOrientedLanguagePackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case EventOrientedLanguagePackage.BIND_HANDLER: return createBindHandler();
       case EventOrientedLanguagePackage.UNBIND_HANDLER: return createUnbindHandler();
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN: return createVariableAssign();
+      case EventOrientedLanguagePackage.RAISE_EVENT: return createRaiseEvent();
+      case EventOrientedLanguagePackage.COMPOUND: return createCompound();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -202,10 +206,10 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public Compound createCompound()
+  public AbstractBlock createAbstractBlock()
   {
-    CompoundImpl compound = new CompoundImpl();
-    return compound;
+    AbstractBlockImpl abstractBlock = new AbstractBlockImpl();
+    return abstractBlock;
   }
 
   /**
@@ -217,6 +221,28 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     CommandImpl command = new CommandImpl();
     return command;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrintOutput createPrintOutput()
+  {
+    PrintOutputImpl printOutput = new PrintOutputImpl();
+    return printOutput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReadInput createReadInput()
+  {
+    ReadInputImpl readInput = new ReadInputImpl();
+    return readInput;
   }
 
   /**
@@ -261,6 +287,28 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     VariableAssignImpl variableAssign = new VariableAssignImpl();
     return variableAssign;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RaiseEvent createRaiseEvent()
+  {
+    RaiseEventImpl raiseEvent = new RaiseEventImpl();
+    return raiseEvent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Compound createCompound()
+  {
+    CompoundImpl compound = new CompoundImpl();
+    return compound;
   }
 
   /**

@@ -12,14 +12,12 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.Compound;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
 
@@ -36,7 +34,7 @@ import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
  *
  * @generated
  */
-public class CompoundImpl extends MinimalEObjectImpl.Container implements Compound
+public class CompoundImpl extends AbstractBlockImpl implements Compound
 {
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference list.
@@ -46,7 +44,7 @@ public class CompoundImpl extends MinimalEObjectImpl.Container implements Compou
    * @generated
    * @ordered
    */
-  protected EList<EObject> body;
+  protected EList<AbstractBlock> body;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,11 +72,11 @@ public class CompoundImpl extends MinimalEObjectImpl.Container implements Compou
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getBody()
+  public EList<AbstractBlock> getBody()
   {
     if (body == null)
     {
-      body = new EObjectContainmentEList<EObject>(EObject.class, this, EventOrientedLanguagePackage.COMPOUND__BODY);
+      body = new EObjectContainmentEList<AbstractBlock>(AbstractBlock.class, this, EventOrientedLanguagePackage.COMPOUND__BODY);
     }
     return body;
   }
@@ -128,7 +126,7 @@ public class CompoundImpl extends MinimalEObjectImpl.Container implements Compou
     {
       case EventOrientedLanguagePackage.COMPOUND__BODY:
         getBody().clear();
-        getBody().addAll((Collection<? extends EObject>)newValue);
+        getBody().addAll((Collection<? extends AbstractBlock>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

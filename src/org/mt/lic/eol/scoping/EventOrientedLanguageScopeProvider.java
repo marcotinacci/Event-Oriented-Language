@@ -3,7 +3,11 @@
  */
 package org.mt.lic.eol.scoping;
 
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.mt.lic.eol.eventOrientedLanguage.Program;
+
 
 /**
  * This class contains custom scoping description.
@@ -14,4 +18,8 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  */
 public class EventOrientedLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 	
+	IScope scope_VariableAssign_name(Program p, EReference ref) {
+		// TODO scope variabili locali, probabilmente sarˆ necessario modificare la grammatica
+		return null;
+	}
 }

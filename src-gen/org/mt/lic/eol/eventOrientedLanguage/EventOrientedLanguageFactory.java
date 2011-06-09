@@ -89,13 +89,13 @@ public interface EventOrientedLanguageFactory extends EFactory
   HandlerDecl createHandlerDecl();
 
   /**
-   * Returns a new object of class '<em>Compound</em>'.
+   * Returns a new object of class '<em>Abstract Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Compound</em>'.
+   * @return a new object of class '<em>Abstract Block</em>'.
    * @generated
    */
-  Compound createCompound();
+  AbstractBlock createAbstractBlock();
 
   /**
    * Returns a new object of class '<em>Command</em>'.
@@ -105,6 +105,24 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   Command createCommand();
+
+  /**
+   * Returns a new object of class '<em>Print Output</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Print Output</em>'.
+   * @generated
+   */
+  PrintOutput createPrintOutput();
+
+  /**
+   * Returns a new object of class '<em>Read Input</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Read Input</em>'.
+   * @generated
+   */
+  ReadInput createReadInput();
 
   /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
@@ -141,6 +159,24 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   VariableAssign createVariableAssign();
+
+  /**
+   * Returns a new object of class '<em>Raise Event</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Raise Event</em>'.
+   * @generated
+   */
+  RaiseEvent createRaiseEvent();
+
+  /**
+   * Returns a new object of class '<em>Compound</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Compound</em>'.
+   * @generated
+   */
+  Compound createCompound();
 
   /**
    * Returns the package supported by this factory.

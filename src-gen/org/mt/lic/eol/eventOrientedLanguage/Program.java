@@ -115,12 +115,12 @@ public interface Program extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Init</em>' containment reference.
-   * @see #setInit(Compound)
+   * @see #setInit(AbstractBlock)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getProgram_Init()
    * @model containment="true"
    * @generated
    */
-  Compound getInit();
+  AbstractBlock getInit();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.Program#getInit <em>Init</em>}' containment reference.
@@ -130,6 +130,6 @@ public interface Program extends EObject
    * @see #getInit()
    * @generated
    */
-  void setInit(Compound value);
+  void setInit(AbstractBlock value);
 
 } // Program

@@ -1,8 +1,7 @@
 package org.mt.lic.eol.validation;
 
 import org.eclipse.xtext.validation.Check;
-import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
-import org.mt.lic.eol.eventOrientedLanguage.Program;
+import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
  
 public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLanguageJavaValidator {
 
@@ -12,18 +11,12 @@ public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLan
 //			warning("Name should start with a capital", MyDslPackage.GREETING__NAME);
 //		}
 //	}
-	
-	// example check
+
 	@Check
-	public void checkEventBinding(BindHandler bindHandler){
-		if(!bindHandler.getEventName().startsWith("on")){
+	public void checkEventBinding(EventDecl decl){
+		if(!decl.getName().startsWith("on")){
 			warning("Event names should start with \"on\"", 0);
 		}
 	}
-	
-	
-	@Check
-	public void checkVariableDeclaration(Program program){
-		
-	}
+
 }

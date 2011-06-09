@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.mt.lic.eol.eventOrientedLanguage.Compound;
+import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
 import org.mt.lic.eol.eventOrientedLanguage.EventSection;
 import org.mt.lic.eol.eventOrientedLanguage.GlobalSection;
@@ -77,7 +77,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * @generated
    * @ordered
    */
-  protected Compound init;
+  protected AbstractBlock init;
 
   /**
    * <!-- begin-user-doc -->
@@ -249,7 +249,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  public Compound getInit()
+  public AbstractBlock getInit()
   {
     return init;
   }
@@ -259,9 +259,9 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInit(Compound newInit, NotificationChain msgs)
+  public NotificationChain basicSetInit(AbstractBlock newInit, NotificationChain msgs)
   {
-    Compound oldInit = init;
+    AbstractBlock oldInit = init;
     init = newInit;
     if (eNotificationRequired())
     {
@@ -276,7 +276,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInit(Compound newInit)
+  public void setInit(AbstractBlock newInit)
   {
     if (newInit != init)
     {
@@ -356,7 +356,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         setHandlers((HandlerSection)newValue);
         return;
       case EventOrientedLanguagePackage.PROGRAM__INIT:
-        setInit((Compound)newValue);
+        setInit((AbstractBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -382,7 +382,7 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         setHandlers((HandlerSection)null);
         return;
       case EventOrientedLanguagePackage.PROGRAM__INIT:
-        setInit((Compound)null);
+        setInit((AbstractBlock)null);
         return;
     }
     super.eUnset(featureID);

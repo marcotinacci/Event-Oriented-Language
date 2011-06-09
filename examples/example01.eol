@@ -1,34 +1,16 @@
+
 events:
 	onProduce(int buf);
-	onConsume(int buf);
-
-globals:
-	bool pippo;
 
 handlers:
-
-	produce(int buf){
-		
-	}
 	
 	consume(int buf){
-		
-	}
-
-	print(int buf) {
-		buf=3;
-		buffer=3;
-		ciao=3;
+		out 1;
 	}
 
 init:
-{
-	// inizializza somma a zero
-	sum = 0;
-	
-	onProduce += print;
+{	
 	onProduce += consume;
-	onConsume += print;
-	
+	raise onProduce(5);
 }
 end

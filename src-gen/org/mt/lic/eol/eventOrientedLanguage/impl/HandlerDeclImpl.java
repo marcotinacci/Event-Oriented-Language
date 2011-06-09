@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.mt.lic.eol.eventOrientedLanguage.Compound;
+import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration;
@@ -81,7 +81,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * @generated
    * @ordered
    */
-  protected Compound body;
+  protected AbstractBlock body;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,7 +146,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * <!-- end-user-doc -->
    * @generated
    */
-  public Compound getBody()
+  public AbstractBlock getBody()
   {
     return body;
   }
@@ -156,9 +156,9 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(Compound newBody, NotificationChain msgs)
+  public NotificationChain basicSetBody(AbstractBlock newBody, NotificationChain msgs)
   {
-    Compound oldBody = body;
+    AbstractBlock oldBody = body;
     body = newBody;
     if (eNotificationRequired())
     {
@@ -173,7 +173,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(Compound newBody)
+  public void setBody(AbstractBlock newBody)
   {
     if (newBody != body)
     {
@@ -246,7 +246,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
         getParams().addAll((Collection<? extends ParamDeclaration>)newValue);
         return;
       case EventOrientedLanguagePackage.HANDLER_DECL__BODY:
-        setBody((Compound)newValue);
+        setBody((AbstractBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -269,7 +269,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
         getParams().clear();
         return;
       case EventOrientedLanguagePackage.HANDLER_DECL__BODY:
-        setBody((Compound)null);
+        setBody((AbstractBlock)null);
         return;
     }
     super.eUnset(featureID);

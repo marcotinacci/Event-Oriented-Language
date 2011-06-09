@@ -26,30 +26,30 @@ package org.mt.lic.eol.eventOrientedLanguage;
 public interface VariableAssign extends Command
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(VariableDeclaration)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getVariableAssign_Name()
    * @model
    * @generated
    */
-  String getName();
+  VariableDeclaration getName();
 
   /**
-   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
+   * @param value the new value of the '<em>Name</em>' reference.
    * @see #getName()
    * @generated
    */
-  void setName(String value);
+  void setName(VariableDeclaration value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -60,12 +60,12 @@ public interface VariableAssign extends Command
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(int)
+   * @see #setValue(String)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getVariableAssign_Value()
    * @model
    * @generated
    */
-  int getValue();
+  String getValue();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getValue <em>Value</em>}' attribute.
@@ -75,6 +75,6 @@ public interface VariableAssign extends Command
    * @see #getValue()
    * @generated
    */
-  void setValue(int value);
+  void setValue(String value);
 
 } // VariableAssign

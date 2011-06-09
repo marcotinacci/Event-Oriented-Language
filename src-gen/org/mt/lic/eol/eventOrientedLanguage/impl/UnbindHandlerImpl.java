@@ -8,10 +8,13 @@ package org.mt.lic.eol.eventOrientedLanguage.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
+import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 
 /**
@@ -31,44 +34,24 @@ import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
 {
   /**
-   * The default value of the '{@link #getEventName() <em>Event Name</em>}' attribute.
+   * The cached value of the '{@link #getEventName() <em>Event Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEventName()
    * @generated
    * @ordered
    */
-  protected static final String EVENT_NAME_EDEFAULT = null;
+  protected EventDecl eventName;
 
   /**
-   * The cached value of the '{@link #getEventName() <em>Event Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEventName()
-   * @generated
-   * @ordered
-   */
-  protected String eventName = EVENT_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getHandlerName() <em>Handler Name</em>}' attribute.
+   * The cached value of the '{@link #getHandlerName() <em>Handler Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getHandlerName()
    * @generated
    * @ordered
    */
-  protected static final String HANDLER_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getHandlerName() <em>Handler Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHandlerName()
-   * @generated
-   * @ordered
-   */
-  protected String handlerName = HANDLER_NAME_EDEFAULT;
+  protected HandlerDecl handlerName;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,7 +79,27 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEventName()
+  public EventDecl getEventName()
+  {
+    if (eventName != null && eventName.eIsProxy())
+    {
+      InternalEObject oldEventName = (InternalEObject)eventName;
+      eventName = (EventDecl)eResolveProxy(oldEventName);
+      if (eventName != oldEventName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventOrientedLanguagePackage.UNBIND_HANDLER__EVENT_NAME, oldEventName, eventName));
+      }
+    }
+    return eventName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EventDecl basicGetEventName()
   {
     return eventName;
   }
@@ -106,9 +109,9 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEventName(String newEventName)
+  public void setEventName(EventDecl newEventName)
   {
-    String oldEventName = eventName;
+    EventDecl oldEventName = eventName;
     eventName = newEventName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.UNBIND_HANDLER__EVENT_NAME, oldEventName, eventName));
@@ -119,7 +122,27 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getHandlerName()
+  public HandlerDecl getHandlerName()
+  {
+    if (handlerName != null && handlerName.eIsProxy())
+    {
+      InternalEObject oldHandlerName = (InternalEObject)handlerName;
+      handlerName = (HandlerDecl)eResolveProxy(oldHandlerName);
+      if (handlerName != oldHandlerName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventOrientedLanguagePackage.UNBIND_HANDLER__HANDLER_NAME, oldHandlerName, handlerName));
+      }
+    }
+    return handlerName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HandlerDecl basicGetHandlerName()
   {
     return handlerName;
   }
@@ -129,9 +152,9 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHandlerName(String newHandlerName)
+  public void setHandlerName(HandlerDecl newHandlerName)
   {
-    String oldHandlerName = handlerName;
+    HandlerDecl oldHandlerName = handlerName;
     handlerName = newHandlerName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.UNBIND_HANDLER__HANDLER_NAME, oldHandlerName, handlerName));
@@ -148,9 +171,11 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
     switch (featureID)
     {
       case EventOrientedLanguagePackage.UNBIND_HANDLER__EVENT_NAME:
-        return getEventName();
+        if (resolve) return getEventName();
+        return basicGetEventName();
       case EventOrientedLanguagePackage.UNBIND_HANDLER__HANDLER_NAME:
-        return getHandlerName();
+        if (resolve) return getHandlerName();
+        return basicGetHandlerName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -166,10 +191,10 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
     switch (featureID)
     {
       case EventOrientedLanguagePackage.UNBIND_HANDLER__EVENT_NAME:
-        setEventName((String)newValue);
+        setEventName((EventDecl)newValue);
         return;
       case EventOrientedLanguagePackage.UNBIND_HANDLER__HANDLER_NAME:
-        setHandlerName((String)newValue);
+        setHandlerName((HandlerDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,10 +211,10 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
     switch (featureID)
     {
       case EventOrientedLanguagePackage.UNBIND_HANDLER__EVENT_NAME:
-        setEventName(EVENT_NAME_EDEFAULT);
+        setEventName((EventDecl)null);
         return;
       case EventOrientedLanguagePackage.UNBIND_HANDLER__HANDLER_NAME:
-        setHandlerName(HANDLER_NAME_EDEFAULT);
+        setHandlerName((HandlerDecl)null);
         return;
     }
     super.eUnset(featureID);
@@ -206,30 +231,11 @@ public class UnbindHandlerImpl extends CommandImpl implements UnbindHandler
     switch (featureID)
     {
       case EventOrientedLanguagePackage.UNBIND_HANDLER__EVENT_NAME:
-        return EVENT_NAME_EDEFAULT == null ? eventName != null : !EVENT_NAME_EDEFAULT.equals(eventName);
+        return eventName != null;
       case EventOrientedLanguagePackage.UNBIND_HANDLER__HANDLER_NAME:
-        return HANDLER_NAME_EDEFAULT == null ? handlerName != null : !HANDLER_NAME_EDEFAULT.equals(handlerName);
+        return handlerName != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (eventName: ");
-    result.append(eventName);
-    result.append(", handlerName: ");
-    result.append(handlerName);
-    result.append(')');
-    return result.toString();
   }
 
 } //UnbindHandlerImpl

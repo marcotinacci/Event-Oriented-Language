@@ -40,7 +40,7 @@ public class ParamDeclarationImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected static final Type TYPE_EDEFAULT = Type.INT;
+  protected static final Type TYPE_EDEFAULT = Type.TINT;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

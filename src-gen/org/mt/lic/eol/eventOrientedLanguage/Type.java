@@ -23,79 +23,79 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Type implements Enumerator
 {
   /**
-   * The '<em><b>INT</b></em>' literal object.
+   * The '<em><b>TINT</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #INT_VALUE
+   * @see #TINT_VALUE
    * @generated
    * @ordered
    */
-  INT(0, "INT", "int"),
+  TINT(0, "T_INT", "int"),
 
   /**
-   * The '<em><b>REAL</b></em>' literal object.
+   * The '<em><b>TREAL</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #REAL_VALUE
+   * @see #TREAL_VALUE
    * @generated
    * @ordered
    */
-  REAL(1, "REAL", "real"),
+  TREAL(1, "T_REAL", "real"),
 
   /**
-   * The '<em><b>BOOL</b></em>' literal object.
+   * The '<em><b>TBOOL</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #BOOL_VALUE
+   * @see #TBOOL_VALUE
    * @generated
    * @ordered
    */
-  BOOL(2, "BOOL", "bool");
+  TBOOL(2, "T_BOOL", "bool");
 
   /**
-   * The '<em><b>INT</b></em>' literal value.
+   * The '<em><b>TINT</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>INT</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>TINT</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #INT
-   * @model literal="int"
+   * @see #TINT
+   * @model name="T_INT" literal="int"
    * @generated
    * @ordered
    */
-  public static final int INT_VALUE = 0;
+  public static final int TINT_VALUE = 0;
 
   /**
-   * The '<em><b>REAL</b></em>' literal value.
+   * The '<em><b>TREAL</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>REAL</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>TREAL</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #REAL
-   * @model literal="real"
+   * @see #TREAL
+   * @model name="T_REAL" literal="real"
    * @generated
    * @ordered
    */
-  public static final int REAL_VALUE = 1;
+  public static final int TREAL_VALUE = 1;
 
   /**
-   * The '<em><b>BOOL</b></em>' literal value.
+   * The '<em><b>TBOOL</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>BOOL</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>TBOOL</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #BOOL
-   * @model literal="bool"
+   * @see #TBOOL
+   * @model name="T_BOOL" literal="bool"
    * @generated
    * @ordered
    */
-  public static final int BOOL_VALUE = 2;
+  public static final int TBOOL_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Type</b></em>' enumerators.
@@ -106,9 +106,9 @@ public enum Type implements Enumerator
   private static final Type[] VALUES_ARRAY =
     new Type[]
     {
-      INT,
-      REAL,
-      BOOL,
+      TINT,
+      TREAL,
+      TBOOL,
     };
 
   /**
@@ -167,9 +167,9 @@ public enum Type implements Enumerator
   {
     switch (value)
     {
-      case INT_VALUE: return INT;
-      case REAL_VALUE: return REAL;
-      case BOOL_VALUE: return BOOL;
+      case TINT_VALUE: return TINT;
+      case TREAL_VALUE: return TREAL;
+      case TBOOL_VALUE: return TBOOL;
     }
     return null;
   }

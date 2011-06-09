@@ -10,7 +10,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="handlers" eType="#//HandlerSection"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//Compound"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//AbstractBlock"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GlobalSection">
@@ -38,33 +38,45 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//ParamDeclaration" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Compound"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//AbstractBlock"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Compound">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="#//AbstractBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrintOutput" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadInput" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//VariableDeclaration"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindHandler" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handlerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventName" eType="#//EventDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="handlerName" eType="#//HandlerDecl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnbindHandler" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handlerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventName" eType="#//EventDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="handlerName" eType="#//HandlerDecl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableAssign" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RaiseEvent" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventName" eType="#//EventDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="params" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Type">
-    <eLiterals name="INT" literal="int"/>
-    <eLiterals name="REAL" value="1" literal="real"/>
-    <eLiterals name="BOOL" value="2" literal="bool"/>
+    <eLiterals name="T_INT" literal="int"/>
+    <eLiterals name="T_REAL" value="1" literal="real"/>
+    <eLiterals name="T_BOOL" value="2" literal="bool"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Compound" eSuperTypes="#//AbstractBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="#//AbstractBlock"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.Command;
 import org.mt.lic.eol.eventOrientedLanguage.Compound;
@@ -24,7 +25,10 @@ import org.mt.lic.eol.eventOrientedLanguage.GlobalSection;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
 import org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
 import org.mt.lic.eol.eventOrientedLanguage.Program;
+import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
+import org.mt.lic.eol.eventOrientedLanguage.ReadInput;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
@@ -92,7 +96,7 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass compoundEClass = null;
+  private EClass abstractBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,6 +104,20 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * @generated
    */
   private EClass commandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass printOutputEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass readInputEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,6 +146,20 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * @generated
    */
   private EClass variableAssignEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass raiseEventEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass compoundEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -414,19 +446,9 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCompound()
+  public EClass getAbstractBlock()
   {
-    return compoundEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCompound_Body()
-  {
-    return (EReference)compoundEClass.getEStructuralFeatures().get(0);
+    return abstractBlockEClass;
   }
 
   /**
@@ -437,6 +459,46 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
   public EClass getCommand()
   {
     return commandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPrintOutput()
+  {
+    return printOutputEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPrintOutput_Output()
+  {
+    return (EAttribute)printOutputEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReadInput()
+  {
+    return readInputEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReadInput_Input()
+  {
+    return (EReference)readInputEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -484,9 +546,9 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBindHandler_EventName()
+  public EReference getBindHandler_EventName()
   {
-    return (EAttribute)bindHandlerEClass.getEStructuralFeatures().get(0);
+    return (EReference)bindHandlerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -494,9 +556,9 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBindHandler_HandlerName()
+  public EReference getBindHandler_HandlerName()
   {
-    return (EAttribute)bindHandlerEClass.getEStructuralFeatures().get(1);
+    return (EReference)bindHandlerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -514,9 +576,9 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUnbindHandler_EventName()
+  public EReference getUnbindHandler_EventName()
   {
-    return (EAttribute)unbindHandlerEClass.getEStructuralFeatures().get(0);
+    return (EReference)unbindHandlerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -524,9 +586,9 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUnbindHandler_HandlerName()
+  public EReference getUnbindHandler_HandlerName()
   {
-    return (EAttribute)unbindHandlerEClass.getEStructuralFeatures().get(1);
+    return (EReference)unbindHandlerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -544,9 +606,9 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableAssign_Name()
+  public EReference getVariableAssign_Name()
   {
-    return (EAttribute)variableAssignEClass.getEStructuralFeatures().get(0);
+    return (EReference)variableAssignEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -557,6 +619,56 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
   public EAttribute getVariableAssign_Value()
   {
     return (EAttribute)variableAssignEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRaiseEvent()
+  {
+    return raiseEventEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRaiseEvent_EventName()
+  {
+    return (EReference)raiseEventEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRaiseEvent_Params()
+  {
+    return (EAttribute)raiseEventEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCompound()
+  {
+    return compoundEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCompound_Body()
+  {
+    return (EReference)compoundEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -627,26 +739,38 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
     createEReference(handlerDeclEClass, HANDLER_DECL__PARAMS);
     createEReference(handlerDeclEClass, HANDLER_DECL__BODY);
 
-    compoundEClass = createEClass(COMPOUND);
-    createEReference(compoundEClass, COMPOUND__BODY);
+    abstractBlockEClass = createEClass(ABSTRACT_BLOCK);
 
     commandEClass = createEClass(COMMAND);
+
+    printOutputEClass = createEClass(PRINT_OUTPUT);
+    createEAttribute(printOutputEClass, PRINT_OUTPUT__OUTPUT);
+
+    readInputEClass = createEClass(READ_INPUT);
+    createEReference(readInputEClass, READ_INPUT__INPUT);
 
     variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
     createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__TYPE);
     createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__NAME);
 
     bindHandlerEClass = createEClass(BIND_HANDLER);
-    createEAttribute(bindHandlerEClass, BIND_HANDLER__EVENT_NAME);
-    createEAttribute(bindHandlerEClass, BIND_HANDLER__HANDLER_NAME);
+    createEReference(bindHandlerEClass, BIND_HANDLER__EVENT_NAME);
+    createEReference(bindHandlerEClass, BIND_HANDLER__HANDLER_NAME);
 
     unbindHandlerEClass = createEClass(UNBIND_HANDLER);
-    createEAttribute(unbindHandlerEClass, UNBIND_HANDLER__EVENT_NAME);
-    createEAttribute(unbindHandlerEClass, UNBIND_HANDLER__HANDLER_NAME);
+    createEReference(unbindHandlerEClass, UNBIND_HANDLER__EVENT_NAME);
+    createEReference(unbindHandlerEClass, UNBIND_HANDLER__HANDLER_NAME);
 
     variableAssignEClass = createEClass(VARIABLE_ASSIGN);
-    createEAttribute(variableAssignEClass, VARIABLE_ASSIGN__NAME);
+    createEReference(variableAssignEClass, VARIABLE_ASSIGN__NAME);
     createEAttribute(variableAssignEClass, VARIABLE_ASSIGN__VALUE);
+
+    raiseEventEClass = createEClass(RAISE_EVENT);
+    createEReference(raiseEventEClass, RAISE_EVENT__EVENT_NAME);
+    createEAttribute(raiseEventEClass, RAISE_EVENT__PARAMS);
+
+    compoundEClass = createEClass(COMPOUND);
+    createEReference(compoundEClass, COMPOUND__BODY);
 
     // Create enums
     typeEEnum = createEEnum(TYPE);
@@ -681,17 +805,22 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    commandEClass.getESuperTypes().add(this.getAbstractBlock());
+    printOutputEClass.getESuperTypes().add(this.getCommand());
+    readInputEClass.getESuperTypes().add(this.getCommand());
     variableDeclarationEClass.getESuperTypes().add(this.getCommand());
     bindHandlerEClass.getESuperTypes().add(this.getCommand());
     unbindHandlerEClass.getESuperTypes().add(this.getCommand());
     variableAssignEClass.getESuperTypes().add(this.getCommand());
+    raiseEventEClass.getESuperTypes().add(this.getCommand());
+    compoundEClass.getESuperTypes().add(this.getAbstractBlock());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProgram_Globals(), this.getGlobalSection(), null, "globals", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProgram_Events(), this.getEventSection(), null, "events", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProgram_Handlers(), this.getHandlerSection(), null, "handlers", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProgram_Init(), this.getCompound(), null, "init", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProgram_Init(), this.getAbstractBlock(), null, "init", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalSectionEClass, GlobalSection.class, "GlobalSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGlobalSection_Globals(), this.getVariableDeclaration(), null, "globals", null, 0, -1, GlobalSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -713,34 +842,46 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
     initEClass(handlerDeclEClass, HandlerDecl.class, "HandlerDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHandlerDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, HandlerDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getHandlerDecl_Params(), this.getParamDeclaration(), null, "params", null, 0, -1, HandlerDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHandlerDecl_Body(), this.getCompound(), null, "body", null, 0, 1, HandlerDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHandlerDecl_Body(), this.getAbstractBlock(), null, "body", null, 0, 1, HandlerDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(compoundEClass, Compound.class, "Compound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCompound_Body(), ecorePackage.getEObject(), null, "body", null, 0, -1, Compound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(abstractBlockEClass, AbstractBlock.class, "AbstractBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(printOutputEClass, PrintOutput.class, "PrintOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPrintOutput_Output(), ecorePackage.getEString(), "output", null, 0, 1, PrintOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(readInputEClass, ReadInput.class, "ReadInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReadInput_Input(), this.getVariableDeclaration(), null, "input", null, 0, 1, ReadInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDeclaration_Type(), this.getType(), "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindHandlerEClass, BindHandler.class, "BindHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBindHandler_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, BindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBindHandler_HandlerName(), ecorePackage.getEString(), "handlerName", null, 0, 1, BindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindHandler_EventName(), this.getEventDecl(), null, "eventName", null, 0, 1, BindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindHandler_HandlerName(), this.getHandlerDecl(), null, "handlerName", null, 0, 1, BindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unbindHandlerEClass, UnbindHandler.class, "UnbindHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUnbindHandler_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, UnbindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getUnbindHandler_HandlerName(), ecorePackage.getEString(), "handlerName", null, 0, 1, UnbindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnbindHandler_EventName(), this.getEventDecl(), null, "eventName", null, 0, 1, UnbindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnbindHandler_HandlerName(), this.getHandlerDecl(), null, "handlerName", null, 0, 1, UnbindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableAssignEClass, VariableAssign.class, "VariableAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariableAssign_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariableAssign_Value(), ecorePackage.getEInt(), "value", null, 0, 1, VariableAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableAssign_Name(), this.getVariableDeclaration(), null, "name", null, 0, 1, VariableAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariableAssign_Value(), ecorePackage.getEString(), "value", null, 0, 1, VariableAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(raiseEventEClass, RaiseEvent.class, "RaiseEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRaiseEvent_EventName(), this.getEventDecl(), null, "eventName", null, 0, 1, RaiseEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRaiseEvent_Params(), ecorePackage.getEString(), "params", null, 0, -1, RaiseEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(compoundEClass, Compound.class, "Compound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCompound_Body(), this.getAbstractBlock(), null, "body", null, 0, -1, Compound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(typeEEnum, Type.class, "Type");
-    addEEnumLiteral(typeEEnum, Type.INT);
-    addEEnumLiteral(typeEEnum, Type.REAL);
-    addEEnumLiteral(typeEEnum, Type.BOOL);
+    addEEnumLiteral(typeEEnum, Type.TINT);
+    addEEnumLiteral(typeEEnum, Type.TREAL);
+    addEEnumLiteral(typeEEnum, Type.TBOOL);
 
     // Create resource
     createResource(eNS_URI);

@@ -7,8 +7,6 @@ package org.mt.lic.eol.eventOrientedLanguage;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Compound</b></em>'.
@@ -25,11 +23,11 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Compound extends EObject
+public interface Compound extends AbstractBlock
 {
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link org.mt.lic.eol.eventOrientedLanguage.AbstractBlock}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Body</em>' containment reference list isn't clear,
@@ -41,6 +39,6 @@ public interface Compound extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getBody();
+  EList<AbstractBlock> getBody();
 
 } // Compound

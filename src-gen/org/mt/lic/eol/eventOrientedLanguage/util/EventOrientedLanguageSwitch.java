@@ -144,10 +144,10 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.COMPOUND:
+      case EventOrientedLanguagePackage.ABSTRACT_BLOCK:
       {
-        Compound compound = (Compound)theEObject;
-        T result = caseCompound(compound);
+        AbstractBlock abstractBlock = (AbstractBlock)theEObject;
+        T result = caseAbstractBlock(abstractBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -155,6 +155,25 @@ public class EventOrientedLanguageSwitch<T>
       {
         Command command = (Command)theEObject;
         T result = caseCommand(command);
+        if (result == null) result = caseAbstractBlock(command);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.PRINT_OUTPUT:
+      {
+        PrintOutput printOutput = (PrintOutput)theEObject;
+        T result = casePrintOutput(printOutput);
+        if (result == null) result = caseCommand(printOutput);
+        if (result == null) result = caseAbstractBlock(printOutput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.READ_INPUT:
+      {
+        ReadInput readInput = (ReadInput)theEObject;
+        T result = caseReadInput(readInput);
+        if (result == null) result = caseCommand(readInput);
+        if (result == null) result = caseAbstractBlock(readInput);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,6 +182,7 @@ public class EventOrientedLanguageSwitch<T>
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
         T result = caseVariableDeclaration(variableDeclaration);
         if (result == null) result = caseCommand(variableDeclaration);
+        if (result == null) result = caseAbstractBlock(variableDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -171,6 +191,7 @@ public class EventOrientedLanguageSwitch<T>
         BindHandler bindHandler = (BindHandler)theEObject;
         T result = caseBindHandler(bindHandler);
         if (result == null) result = caseCommand(bindHandler);
+        if (result == null) result = caseAbstractBlock(bindHandler);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -179,6 +200,7 @@ public class EventOrientedLanguageSwitch<T>
         UnbindHandler unbindHandler = (UnbindHandler)theEObject;
         T result = caseUnbindHandler(unbindHandler);
         if (result == null) result = caseCommand(unbindHandler);
+        if (result == null) result = caseAbstractBlock(unbindHandler);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,6 +209,24 @@ public class EventOrientedLanguageSwitch<T>
         VariableAssign variableAssign = (VariableAssign)theEObject;
         T result = caseVariableAssign(variableAssign);
         if (result == null) result = caseCommand(variableAssign);
+        if (result == null) result = caseAbstractBlock(variableAssign);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.RAISE_EVENT:
+      {
+        RaiseEvent raiseEvent = (RaiseEvent)theEObject;
+        T result = caseRaiseEvent(raiseEvent);
+        if (result == null) result = caseCommand(raiseEvent);
+        if (result == null) result = caseAbstractBlock(raiseEvent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.COMPOUND:
+      {
+        Compound compound = (Compound)theEObject;
+        T result = caseCompound(compound);
+        if (result == null) result = caseAbstractBlock(compound);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -307,17 +347,17 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Block</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Block</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCompound(Compound object)
+  public T caseAbstractBlock(AbstractBlock object)
   {
     return null;
   }
@@ -334,6 +374,38 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T caseCommand(Command object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Print Output</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Print Output</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrintOutput(PrintOutput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Read Input</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Read Input</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReadInput(ReadInput object)
   {
     return null;
   }
@@ -398,6 +470,38 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T caseVariableAssign(VariableAssign object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Raise Event</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Raise Event</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRaiseEvent(RaiseEvent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCompound(Compound object)
   {
     return null;
   }
