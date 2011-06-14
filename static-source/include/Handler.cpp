@@ -9,7 +9,7 @@
 
 Handler::Handler() {};
 
-Handler::~Handler() {}
+Handler::~Handler() {};
 
 void Handler::setEvent(Event* _event) {
     this->_event = _event;
@@ -17,8 +17,4 @@ void Handler::setEvent(Event* _event) {
 
 Event* Handler::getEvent() const {
     return _event;
-}
-
-void Handler::update(int arg){
-    cout << "Update arg = " << arg << endl;
 }

@@ -15,12 +15,13 @@ Event::~Event() {
     delete _handlers;
 }
 
-int Event::getState(){
-    return this->state;
+void* Event::getState() const{
+    return this->_state;
 }
 
-void Event::setState(int s){
-    this->state = s;
+void Event::setState(void* args){
+	this->_state = args;
+	this->notify();
 }
 
 void Event::attach(Handler* handler){
@@ -32,8 +33,9 @@ void Event::detach(Handler* handler){
 }
 
 void Event::notify(){
+	// TODO inserire politica di scheduling omp!
 	list<Handler*>::iterator it;
 	for(it = _handlers->begin(); it != _handlers->end(); it++){
-		(*it)->update(1);
+		(*it)->update(this->getState());
 	}
 }

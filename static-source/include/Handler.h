@@ -18,8 +18,8 @@ class Handler {
 public:
     Handler();
     ~Handler();
-    void update(int arg);
-    void setEvent(Event* e);
+    virtual void update(void* args) = 0;
+	void setEvent(Event* e);
     Event* getEvent() const;
 private:
     Event* _event;

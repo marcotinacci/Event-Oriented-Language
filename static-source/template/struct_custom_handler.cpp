@@ -9,6 +9,15 @@ __HANDLERCLASSNAME__::__HANDLERCLASSNAME__() {}
 
 __HANDLERCLASSNAME__::~__HANDLERCLASSNAME__() {}
 
-void __HANDLERCLASSNAME__::update(__HANDLERPARAMS__) {
+void __HANDLERCLASSNAME__::update(void* args) {
+	/*
+	 * downcast of parameters from void* args
+	 */
+	__HANDLERPARAMS__
+
+	/*
+	 * handler's body
+	 */
 	__HANDLERBODY__
+
 }

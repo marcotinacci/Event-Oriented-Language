@@ -9,7 +9,6 @@
 #define	_EVENT_H
 
 #include <list>
-#include <iostream>
 #include "Handler.h"
 
 using namespace std;
@@ -20,15 +19,14 @@ class Event {
 public:
     Event();
     ~Event();
-    int getState();
-    void setState(int s);
+    void* getState() const;
+    void setState(void* args);
     void attach(Handler* handler);
     void detach(Handler* handler);
     void notify();
 private:
     list<Handler*>* _handlers;
-    int state;
+    void* _state;
 };
 
 #endif	/* _EVENT_H */
-
