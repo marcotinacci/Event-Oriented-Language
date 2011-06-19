@@ -98,11 +98,6 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
         return createHandlerSectionAdapter();
       }
       @Override
-      public Adapter caseParamDeclaration(ParamDeclaration object)
-      {
-        return createParamDeclarationAdapter();
-      }
-      @Override
       public Adapter caseEventDecl(EventDecl object)
       {
         return createEventDeclAdapter();
@@ -123,19 +118,24 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
         return createCommandAdapter();
       }
       @Override
-      public Adapter casePrintOutput(PrintOutput object)
-      {
-        return createPrintOutputAdapter();
-      }
-      @Override
-      public Adapter caseReadInput(ReadInput object)
-      {
-        return createReadInputAdapter();
-      }
-      @Override
       public Adapter caseVariableDeclaration(VariableDeclaration object)
       {
         return createVariableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCompound(Compound object)
+      {
+        return createCompoundAdapter();
+      }
+      @Override
+      public Adapter caseVariableAssign(VariableAssign object)
+      {
+        return createVariableAssignAdapter();
       }
       @Override
       public Adapter caseBindHandler(BindHandler object)
@@ -148,19 +148,49 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
         return createUnbindHandlerAdapter();
       }
       @Override
-      public Adapter caseVariableAssign(VariableAssign object)
-      {
-        return createVariableAssignAdapter();
-      }
-      @Override
       public Adapter caseRaiseEvent(RaiseEvent object)
       {
         return createRaiseEventAdapter();
       }
       @Override
-      public Adapter caseCompound(Compound object)
+      public Adapter casePrintOutput(PrintOutput object)
       {
-        return createCompoundAdapter();
+        return createPrintOutputAdapter();
+      }
+      @Override
+      public Adapter caseReadInput(ReadInput object)
+      {
+        return createReadInputAdapter();
+      }
+      @Override
+      public Adapter casePlus(Plus object)
+      {
+        return createPlusAdapter();
+      }
+      @Override
+      public Adapter caseMinus(Minus object)
+      {
+        return createMinusAdapter();
+      }
+      @Override
+      public Adapter caseMulti(Multi object)
+      {
+        return createMultiAdapter();
+      }
+      @Override
+      public Adapter caseDiv(Div object)
+      {
+        return createDivAdapter();
+      }
+      @Override
+      public Adapter caseNumberLiteral(NumberLiteral object)
+      {
+        return createNumberLiteralAdapter();
+      }
+      @Override
+      public Adapter caseVariableReference(VariableReference object)
+      {
+        return createVariableReferenceAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -245,21 +275,6 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration <em>Param Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration
-   * @generated
-   */
-  public Adapter createParamDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.EventDecl <em>Event Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -320,36 +335,6 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.PrintOutput <em>Print Output</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.mt.lic.eol.eventOrientedLanguage.PrintOutput
-   * @generated
-   */
-  public Adapter createPrintOutputAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.ReadInput <em>Read Input</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ReadInput
-   * @generated
-   */
-  public Adapter createReadInputAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration <em>Variable Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -360,6 +345,51 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Compound <em>Compound</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Compound
+   * @generated
+   */
+  public Adapter createCompoundAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign <em>Variable Assign</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign
+   * @generated
+   */
+  public Adapter createVariableAssignAdapter()
   {
     return null;
   }
@@ -395,21 +425,6 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign <em>Variable Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign
-   * @generated
-   */
-  public Adapter createVariableAssignAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent <em>Raise Event</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -425,16 +440,121 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Compound <em>Compound</em>}'.
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.PrintOutput <em>Print Output</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.mt.lic.eol.eventOrientedLanguage.Compound
+   * @see org.mt.lic.eol.eventOrientedLanguage.PrintOutput
    * @generated
    */
-  public Adapter createCompoundAdapter()
+  public Adapter createPrintOutputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.ReadInput <em>Read Input</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.ReadInput
+   * @generated
+   */
+  public Adapter createReadInputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Plus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Plus
+   * @generated
+   */
+  public Adapter createPlusAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Minus <em>Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Minus
+   * @generated
+   */
+  public Adapter createMinusAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Multi <em>Multi</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Multi
+   * @generated
+   */
+  public Adapter createMultiAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Div <em>Div</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Div
+   * @generated
+   */
+  public Adapter createDivAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.NumberLiteral <em>Number Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.NumberLiteral
+   * @generated
+   */
+  public Adapter createNumberLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableReference <em>Variable Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableReference
+   * @generated
+   */
+  public Adapter createVariableReferenceAdapter()
   {
     return null;
   }

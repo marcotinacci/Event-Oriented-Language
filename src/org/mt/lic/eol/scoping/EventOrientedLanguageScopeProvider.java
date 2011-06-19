@@ -20,6 +20,7 @@ public class EventOrientedLanguageScopeProvider extends AbstractDeclarativeScope
 	
 	IScope scope_VariableAssign_name(Program p, EReference ref) {
 		// TODO scope variabili locali, probabilmente sarˆ necessario modificare la grammatica
+		
 		return null;
 	}
 }

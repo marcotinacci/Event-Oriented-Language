@@ -13,7 +13,7 @@ void __HANDLERCLASSNAME__::update(void* args) {
 	/*
 	 * downcast of parameters from void* args
 	 */
-	__HANDLERPARAMS__
+	__HANDLERPARAMSCAST__
 
 	/*
 	 * handler's body

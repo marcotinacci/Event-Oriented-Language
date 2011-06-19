@@ -22,52 +22,45 @@ EventSection:
 
 HandlerSection:
 	'handlers:' (handlers+=HandlerDecl)+;
-
-ParamDeclaration:
-	type=Type name=ID;
-
+	
 EventDecl:
-	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')';
+	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')';
 
 HandlerDecl:
-	name=ID '(' (params+= ParamDeclaration (',' params+=ParamDeclaration)* )? ')' body=AbstractBlock;
+	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')' body=AbstractBlock;
 
-// Block java-style
+/*
+ * Block java-style with Composite
+ */
 AbstractBlock:
 	Command ';'
-	| {Compound} '{' (body+=AbstractBlock)* '}';
+	| { Compound } '{' (body+=AbstractBlock)* '}';
 
 Command:
 	VariableDeclaration
-	| VariableAssign
-	| BindHandler
-	| UnbindHandler
-	| RaiseEvent
-	| PrintOutput
-	| ReadInput;
-	
-PrintOutput:
-	'out' output=Value;
-	
-ReadInput:
-	'in' input=[VariableDeclaration];
+	| { VariableAssign } name=[VariableDeclaration] '=' value=Expression
+	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl]
+	| { UnbindHandler } eventName=[EventDecl] '-=' handlerName=[HandlerDecl]
+	| { RaiseEvent } 'raise' eventName=[EventDecl] '(' (params+=Expression (',' params+=Expression)*)? ')'
+	| { PrintOutput } 'out' output=Expression 
+	| { ReadInput } 'in' input=[VariableDeclaration];
 
-VariableDeclaration:
+VariableDeclaration: 
 	type=Type name=ID;
 
-// subscribe the handler to the event
-BindHandler:
-	eventName=[EventDecl] '+=' handlerName=[HandlerDecl];
+Expression:
+	Addition;
 
-// unsubscribe the handler to the event 
-UnbindHandler:
-	eventName=[EventDecl] '-=' handlerName=[HandlerDecl];
+Addition returns Expression:
+	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 
-VariableAssign:
-	name=[VariableDeclaration] '=' value=Value;
-	
-RaiseEvent:
-	'raise' eventName=[EventDecl] '(' (params+=Value (',' params+=Value)*)? ')';
+Multiplication returns Expression:
+	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
+
+PrimaryExpression returns Expression:
+	'(' Expression ')'
+	| { NumberLiteral } value=Value
+	| { VariableReference } var=[VariableDeclaration];
 
 enum Type:
 	T_INT="int" | T_REAL="real" | T_BOOL="bool";

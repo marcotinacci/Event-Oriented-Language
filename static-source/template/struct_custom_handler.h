@@ -9,6 +9,8 @@
 #include <iostream>
 #include "Handler.h"
 
+__HANDLERSTRUCTDEF__
+
 class __HANDLERCLASSNAME__ : public Handler {
 public:
 	__HANDLERCLASSNAME__();

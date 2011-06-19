@@ -14,6 +14,11 @@ __LIBRARIES__
  */
 __MODULES__
 
+/*
+ * Struct def
+ */
+__MAINSTRUCTDEF__
+
 int main()
 {
 /*

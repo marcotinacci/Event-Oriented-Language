@@ -123,13 +123,6 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.PARAM_DECLARATION:
-      {
-        ParamDeclaration paramDeclaration = (ParamDeclaration)theEObject;
-        T result = caseParamDeclaration(paramDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EventOrientedLanguagePackage.EVENT_DECL:
       {
         EventDecl eventDecl = (EventDecl)theEObject;
@@ -159,30 +152,36 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.PRINT_OUTPUT:
-      {
-        PrintOutput printOutput = (PrintOutput)theEObject;
-        T result = casePrintOutput(printOutput);
-        if (result == null) result = caseCommand(printOutput);
-        if (result == null) result = caseAbstractBlock(printOutput);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventOrientedLanguagePackage.READ_INPUT:
-      {
-        ReadInput readInput = (ReadInput)theEObject;
-        T result = caseReadInput(readInput);
-        if (result == null) result = caseCommand(readInput);
-        if (result == null) result = caseAbstractBlock(readInput);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EventOrientedLanguagePackage.VARIABLE_DECLARATION:
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
         T result = caseVariableDeclaration(variableDeclaration);
         if (result == null) result = caseCommand(variableDeclaration);
         if (result == null) result = caseAbstractBlock(variableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.EXPRESSION:
+      {
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.COMPOUND:
+      {
+        Compound compound = (Compound)theEObject;
+        T result = caseCompound(compound);
+        if (result == null) result = caseAbstractBlock(compound);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.VARIABLE_ASSIGN:
+      {
+        VariableAssign variableAssign = (VariableAssign)theEObject;
+        T result = caseVariableAssign(variableAssign);
+        if (result == null) result = caseCommand(variableAssign);
+        if (result == null) result = caseAbstractBlock(variableAssign);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,15 +203,6 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.VARIABLE_ASSIGN:
-      {
-        VariableAssign variableAssign = (VariableAssign)theEObject;
-        T result = caseVariableAssign(variableAssign);
-        if (result == null) result = caseCommand(variableAssign);
-        if (result == null) result = caseAbstractBlock(variableAssign);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EventOrientedLanguagePackage.RAISE_EVENT:
       {
         RaiseEvent raiseEvent = (RaiseEvent)theEObject;
@@ -222,11 +212,69 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.COMPOUND:
+      case EventOrientedLanguagePackage.PRINT_OUTPUT:
       {
-        Compound compound = (Compound)theEObject;
-        T result = caseCompound(compound);
-        if (result == null) result = caseAbstractBlock(compound);
+        PrintOutput printOutput = (PrintOutput)theEObject;
+        T result = casePrintOutput(printOutput);
+        if (result == null) result = caseCommand(printOutput);
+        if (result == null) result = caseAbstractBlock(printOutput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.READ_INPUT:
+      {
+        ReadInput readInput = (ReadInput)theEObject;
+        T result = caseReadInput(readInput);
+        if (result == null) result = caseCommand(readInput);
+        if (result == null) result = caseAbstractBlock(readInput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.PLUS:
+      {
+        Plus plus = (Plus)theEObject;
+        T result = casePlus(plus);
+        if (result == null) result = caseExpression(plus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.MINUS:
+      {
+        Minus minus = (Minus)theEObject;
+        T result = caseMinus(minus);
+        if (result == null) result = caseExpression(minus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.MULTI:
+      {
+        Multi multi = (Multi)theEObject;
+        T result = caseMulti(multi);
+        if (result == null) result = caseExpression(multi);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.DIV:
+      {
+        Div div = (Div)theEObject;
+        T result = caseDiv(div);
+        if (result == null) result = caseExpression(div);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.NUMBER_LITERAL:
+      {
+        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
+        T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseExpression(numberLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.VARIABLE_REFERENCE:
+      {
+        VariableReference variableReference = (VariableReference)theEObject;
+        T result = caseVariableReference(variableReference);
+        if (result == null) result = caseExpression(variableReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -299,22 +347,6 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Param Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Param Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseParamDeclaration(ParamDeclaration object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Event Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -379,38 +411,6 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Print Output</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Print Output</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePrintOutput(PrintOutput object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Read Input</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Read Input</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReadInput(ReadInput object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -422,6 +422,54 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T caseVariableDeclaration(VariableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCompound(Compound object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Assign</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Assign</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableAssign(VariableAssign object)
   {
     return null;
   }
@@ -459,22 +507,6 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Assign</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Assign</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableAssign(VariableAssign object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Raise Event</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -491,17 +523,129 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Print Output</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Compound</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Print Output</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCompound(Compound object)
+  public T casePrintOutput(PrintOutput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Read Input</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Read Input</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReadInput(ReadInput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Plus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePlus(Plus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Minus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMinus(Minus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMulti(Multi object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Div</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDiv(Div object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberLiteral(NumberLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableReference(VariableReference object)
   {
     return null;
   }

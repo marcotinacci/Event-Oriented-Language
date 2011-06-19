@@ -62,15 +62,6 @@ public interface EventOrientedLanguageFactory extends EFactory
   HandlerSection createHandlerSection();
 
   /**
-   * Returns a new object of class '<em>Param Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Param Declaration</em>'.
-   * @generated
-   */
-  ParamDeclaration createParamDeclaration();
-
-  /**
    * Returns a new object of class '<em>Event Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -107,24 +98,6 @@ public interface EventOrientedLanguageFactory extends EFactory
   Command createCommand();
 
   /**
-   * Returns a new object of class '<em>Print Output</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Print Output</em>'.
-   * @generated
-   */
-  PrintOutput createPrintOutput();
-
-  /**
-   * Returns a new object of class '<em>Read Input</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Read Input</em>'.
-   * @generated
-   */
-  ReadInput createReadInput();
-
-  /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -132,6 +105,33 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   VariableDeclaration createVariableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Compound</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Compound</em>'.
+   * @generated
+   */
+  Compound createCompound();
+
+  /**
+   * Returns a new object of class '<em>Variable Assign</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Assign</em>'.
+   * @generated
+   */
+  VariableAssign createVariableAssign();
 
   /**
    * Returns a new object of class '<em>Bind Handler</em>'.
@@ -152,15 +152,6 @@ public interface EventOrientedLanguageFactory extends EFactory
   UnbindHandler createUnbindHandler();
 
   /**
-   * Returns a new object of class '<em>Variable Assign</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Assign</em>'.
-   * @generated
-   */
-  VariableAssign createVariableAssign();
-
-  /**
    * Returns a new object of class '<em>Raise Event</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -170,13 +161,76 @@ public interface EventOrientedLanguageFactory extends EFactory
   RaiseEvent createRaiseEvent();
 
   /**
-   * Returns a new object of class '<em>Compound</em>'.
+   * Returns a new object of class '<em>Print Output</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Compound</em>'.
+   * @return a new object of class '<em>Print Output</em>'.
    * @generated
    */
-  Compound createCompound();
+  PrintOutput createPrintOutput();
+
+  /**
+   * Returns a new object of class '<em>Read Input</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Read Input</em>'.
+   * @generated
+   */
+  ReadInput createReadInput();
+
+  /**
+   * Returns a new object of class '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Plus</em>'.
+   * @generated
+   */
+  Plus createPlus();
+
+  /**
+   * Returns a new object of class '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Minus</em>'.
+   * @generated
+   */
+  Minus createMinus();
+
+  /**
+   * Returns a new object of class '<em>Multi</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi</em>'.
+   * @generated
+   */
+  Multi createMulti();
+
+  /**
+   * Returns a new object of class '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Div</em>'.
+   * @generated
+   */
+  Div createDiv();
+
+  /**
+   * Returns a new object of class '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Literal</em>'.
+   * @generated
+   */
+  NumberLiteral createNumberLiteral();
+
+  /**
+   * Returns a new object of class '<em>Variable Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Reference</em>'.
+   * @generated
+   */
+  VariableReference createVariableReference();
 
   /**
    * Returns the package supported by this factory.

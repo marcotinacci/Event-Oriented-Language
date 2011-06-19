@@ -5,12 +5,12 @@ events:
 handlers:
 	
 	consume(int buf){
-		out 1;
+		out (3+3*2)-4*buf;
 	}
 
 init:
 {	
 	onProduce += consume;
-	raise onProduce(5);
+	raise onProduce();
 }
 end

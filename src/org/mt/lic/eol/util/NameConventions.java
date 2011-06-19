@@ -6,7 +6,11 @@ package org.mt.lic.eol.util;
  */
 public class NameConventions {
 	
-	static String HandlerClassName(String handlerName){
+	public static String HandlerClassName(String handlerName) {
 		return "Handler_"+handlerName;
+	}
+
+	public static String DatatypeStructName(String typeSuffix) {
+		return "datatype_" + typeSuffix;
 	}
 }

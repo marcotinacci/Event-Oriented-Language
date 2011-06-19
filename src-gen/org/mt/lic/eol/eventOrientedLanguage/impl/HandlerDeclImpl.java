@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
-import org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * @generated
    * @ordered
    */
-  protected EList<ParamDeclaration> params;
+  protected EList<VariableDeclaration> params;
 
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -132,11 +132,11 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParamDeclaration> getParams()
+  public EList<VariableDeclaration> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<ParamDeclaration>(ParamDeclaration.class, this, EventOrientedLanguagePackage.HANDLER_DECL__PARAMS);
+      params = new EObjectContainmentEList<VariableDeclaration>(VariableDeclaration.class, this, EventOrientedLanguagePackage.HANDLER_DECL__PARAMS);
     }
     return params;
   }
@@ -243,7 +243,7 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
         return;
       case EventOrientedLanguagePackage.HANDLER_DECL__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends ParamDeclaration>)newValue);
+        getParams().addAll((Collection<? extends VariableDeclaration>)newValue);
         return;
       case EventOrientedLanguagePackage.HANDLER_DECL__BODY:
         setBody((AbstractBlock)newValue);

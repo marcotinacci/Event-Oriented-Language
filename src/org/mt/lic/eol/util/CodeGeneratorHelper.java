@@ -2,6 +2,11 @@ package org.mt.lic.eol.util;
 
 import java.util.HashSet;
 
+import org.eclipse.emf.common.util.EList;
+import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
+import org.mt.lic.eol.eventOrientedLanguage.Type;
+import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
+
 public class CodeGeneratorHelper {
 	
 	/**
@@ -12,7 +17,7 @@ public class CodeGeneratorHelper {
 	static public String formatModules(HashSet<String> modules){
 		StringBuffer toReturn = new StringBuffer();
 		for (String module : modules) {
-			toReturn.append("#include \""+module+"\"\n");
+			toReturn.append("#include \""+module+".h\"\n");
 		}
 		return toReturn.toString();
 	}
@@ -26,6 +31,71 @@ public class CodeGeneratorHelper {
 		StringBuffer toReturn = new StringBuffer();
 		for (String library : libraries) {
 			toReturn.append("#include <"+library+">\n");
+		}
+		return toReturn.toString();
+	}
+
+	public static String formatMakefileSources(HashSet<String> modules) {
+		StringBuffer toReturn = new StringBuffer();
+		for (String module : modules) {
+			toReturn.append(module+".cpp ");
+		}
+		return toReturn.toString();
+	}
+	
+	/**
+	 * metodo che definisce il suffisso del nome della struttura dati per il passaggio di parametri
+	 * (i.e. con un int avremo "i", con un bool, un double e un int avremo "bdi" e cos“ via)
+	 * @param object dichiarazione dell'handler
+	 * @return stringa con una lettera per ogni tipo dei campi
+	 */
+	public static String formatFieldsType(HandlerDecl object) {
+		StringBuffer buf = new StringBuffer();
+		for (VariableDeclaration decl: object.getParams()) {
+			switch (decl.getType().getValue()) {
+			case Type.TINT_VALUE:
+				buf.append("i");
+				break;
+			case Type.TREAL_VALUE:
+				buf.append("d");
+				break;
+			case Type.TBOOL_VALUE:
+				buf.append("b");
+				break;
+			default:
+				// TODO throw exception
+				break;
+			}
+		}
+		return buf.toString();
+	}
+	
+	public static String formatStruct(HandlerDecl object) {
+		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object));
+		String upStructName = structName.toUpperCase();
+		StringBuffer buf = new StringBuffer();
+		
+		buf.append("#ifndef _"+ upStructName +"_\n");
+		buf.append("#define	_"+ upStructName +"_\n\n");
+		buf.append("typedef struct "+ structName + "{\n");
+		int counter = 0;
+		for (VariableDeclaration decl: object.getParams()) {
+			buf.append(decl.getType() + " var"+ counter +";\n");
+			counter++;
+		}
+		buf.append("};\n");
+		buf.append("#endif /* _"+ upStructName +"_ */\n");
+		return buf.toString();
+	}
+
+	public static String formatParamsCast(String typeName) {
+		return typeName + " *params = (" + typeName + "*)args;\n";
+	}
+
+	public static String formatAllStruct(EList<HandlerDecl> handlers) {
+		StringBuffer toReturn = new StringBuffer();
+		for (HandlerDecl decl : handlers) {
+			toReturn.append(formatStruct(decl)+"\n");
 		}
 		return toReturn.toString();
 	}

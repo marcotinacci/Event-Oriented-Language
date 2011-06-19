@@ -200,43 +200,6 @@ public interface EventOrientedLanguagePackage extends EPackage
   int HANDLER_SECTION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ParamDeclarationImpl <em>Param Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.ParamDeclarationImpl
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getParamDeclaration()
-   * @generated
-   */
-  int PARAM_DECLARATION = 4;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM_DECLARATION__TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM_DECLARATION__NAME = 1;
-
-  /**
-   * The number of structural features of the '<em>Param Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAM_DECLARATION_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.EventDeclImpl <em>Event Decl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -244,7 +207,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getEventDecl()
    * @generated
    */
-  int EVENT_DECL = 5;
+  int EVENT_DECL = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -281,7 +244,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getHandlerDecl()
    * @generated
    */
-  int HANDLER_DECL = 6;
+  int HANDLER_DECL = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -327,7 +290,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getAbstractBlock()
    * @generated
    */
-  int ABSTRACT_BLOCK = 7;
+  int ABSTRACT_BLOCK = 6;
 
   /**
    * The number of structural features of the '<em>Abstract Block</em>' class.
@@ -346,7 +309,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getCommand()
    * @generated
    */
-  int COMMAND = 8;
+  int COMMAND = 7;
 
   /**
    * The number of structural features of the '<em>Command</em>' class.
@@ -358,62 +321,6 @@ public interface EventOrientedLanguagePackage extends EPackage
   int COMMAND_FEATURE_COUNT = ABSTRACT_BLOCK_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl <em>Print Output</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getPrintOutput()
-   * @generated
-   */
-  int PRINT_OUTPUT = 9;
-
-  /**
-   * The feature id for the '<em><b>Output</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRINT_OUTPUT__OUTPUT = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Print Output</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRINT_OUTPUT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl <em>Read Input</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getReadInput()
-   * @generated
-   */
-  int READ_INPUT = 10;
-
-  /**
-   * The feature id for the '<em><b>Input</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int READ_INPUT__INPUT = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Read Input</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int READ_INPUT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -421,7 +328,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 11;
+  int VARIABLE_DECLARATION = 8;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -449,6 +356,90 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @ordered
    */
   int VARIABLE_DECLARATION_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.ExpressionImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 9;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl <em>Compound</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getCompound()
+   * @generated
+   */
+  int COMPOUND = 10;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOUND__BODY = ABSTRACT_BLOCK_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Compound</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOUND_FEATURE_COUNT = ABSTRACT_BLOCK_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl <em>Variable Assign</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableAssign()
+   * @generated
+   */
+  int VARIABLE_ASSIGN = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_ASSIGN__NAME = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_ASSIGN__VALUE = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Variable Assign</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_ASSIGN_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl <em>Bind Handler</em>}' class.
@@ -525,43 +516,6 @@ public interface EventOrientedLanguagePackage extends EPackage
   int UNBIND_HANDLER_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl <em>Variable Assign</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableAssign()
-   * @generated
-   */
-  int VARIABLE_ASSIGN = 14;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_ASSIGN__NAME = COMMAND_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_ASSIGN__VALUE = COMMAND_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Variable Assign</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_ASSIGN_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
-
-  /**
    * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.RaiseEventImpl <em>Raise Event</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -569,7 +523,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getRaiseEvent()
    * @generated
    */
-  int RAISE_EVENT = 15;
+  int RAISE_EVENT = 14;
 
   /**
    * The feature id for the '<em><b>Event Name</b></em>' reference.
@@ -581,7 +535,7 @@ public interface EventOrientedLanguagePackage extends EPackage
   int RAISE_EVENT__EVENT_NAME = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Params</b></em>' attribute list.
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -599,32 +553,264 @@ public interface EventOrientedLanguagePackage extends EPackage
   int RAISE_EVENT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl <em>Compound</em>}' class.
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl <em>Print Output</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl
-   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getCompound()
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getPrintOutput()
    * @generated
    */
-  int COMPOUND = 16;
+  int PRINT_OUTPUT = 15;
 
   /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * The feature id for the '<em><b>Output</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOUND__BODY = ABSTRACT_BLOCK_FEATURE_COUNT + 0;
+  int PRINT_OUTPUT__OUTPUT = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Compound</em>' class.
+   * The number of structural features of the '<em>Print Output</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOUND_FEATURE_COUNT = ABSTRACT_BLOCK_FEATURE_COUNT + 1;
+  int PRINT_OUTPUT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl <em>Read Input</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getReadInput()
+   * @generated
+   */
+  int READ_INPUT = 16;
+
+  /**
+   * The feature id for the '<em><b>Input</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int READ_INPUT__INPUT = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Read Input</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int READ_INPUT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.PlusImpl <em>Plus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.PlusImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getPlus()
+   * @generated
+   */
+  int PLUS = 17;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Plus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.MinusImpl <em>Minus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.MinusImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getMinus()
+   * @generated
+   */
+  int MINUS = 18;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Minus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MINUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.MultiImpl <em>Multi</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.MultiImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getMulti()
+   * @generated
+   */
+  int MULTI = 19;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Multi</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.DivImpl <em>Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.DivImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getDiv()
+   * @generated
+   */
+  int DIV = 20;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.NumberLiteralImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getNumberLiteral()
+   * @generated
+   */
+  int NUMBER_LITERAL = 21;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_LITERAL__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Number Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.VariableReferenceImpl
+   * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableReference()
+   * @generated
+   */
+  int VARIABLE_REFERENCE = 22;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE__VAR = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.mt.lic.eol.eventOrientedLanguage.Type <em>Type</em>}' enum.
@@ -634,7 +820,7 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getType()
    * @generated
    */
-  int TYPE = 17;
+  int TYPE = 23;
 
 
   /**
@@ -755,38 +941,6 @@ public interface EventOrientedLanguagePackage extends EPackage
   EReference getHandlerSection_Handlers();
 
   /**
-   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration <em>Param Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Param Declaration</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration
-   * @generated
-   */
-  EClass getParamDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration#getType()
-   * @see #getParamDeclaration()
-   * @generated
-   */
-  EAttribute getParamDeclaration_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ParamDeclaration#getName()
-   * @see #getParamDeclaration()
-   * @generated
-   */
-  EAttribute getParamDeclaration_Name();
-
-  /**
    * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.EventDecl <em>Event Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -882,48 +1036,6 @@ public interface EventOrientedLanguagePackage extends EPackage
   EClass getCommand();
 
   /**
-   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.PrintOutput <em>Print Output</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Print Output</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.PrintOutput
-   * @generated
-   */
-  EClass getPrintOutput();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.mt.lic.eol.eventOrientedLanguage.PrintOutput#getOutput <em>Output</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Output</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.PrintOutput#getOutput()
-   * @see #getPrintOutput()
-   * @generated
-   */
-  EAttribute getPrintOutput_Output();
-
-  /**
-   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.ReadInput <em>Read Input</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Read Input</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ReadInput
-   * @generated
-   */
-  EClass getReadInput();
-
-  /**
-   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.ReadInput#getInput <em>Input</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Input</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.ReadInput#getInput()
-   * @see #getReadInput()
-   * @generated
-   */
-  EReference getReadInput_Input();
-
-  /**
    * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration <em>Variable Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -954,6 +1066,69 @@ public interface EventOrientedLanguagePackage extends EPackage
    * @generated
    */
   EAttribute getVariableDeclaration_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Expression
+   * @generated
+   */
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Compound <em>Compound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Compound</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Compound
+   * @generated
+   */
+  EClass getCompound();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.mt.lic.eol.eventOrientedLanguage.Compound#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Compound#getBody()
+   * @see #getCompound()
+   * @generated
+   */
+  EReference getCompound_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign <em>Variable Assign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Assign</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign
+   * @generated
+   */
+  EClass getVariableAssign();
+
+  /**
+   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getName()
+   * @see #getVariableAssign()
+   * @generated
+   */
+  EReference getVariableAssign_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getValue()
+   * @see #getVariableAssign()
+   * @generated
+   */
+  EReference getVariableAssign_Value();
 
   /**
    * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler <em>Bind Handler</em>}'.
@@ -1020,38 +1195,6 @@ public interface EventOrientedLanguagePackage extends EPackage
   EReference getUnbindHandler_HandlerName();
 
   /**
-   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign <em>Variable Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Assign</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign
-   * @generated
-   */
-  EClass getVariableAssign();
-
-  /**
-   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getName()
-   * @see #getVariableAssign()
-   * @generated
-   */
-  EReference getVariableAssign_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.VariableAssign#getValue()
-   * @see #getVariableAssign()
-   * @generated
-   */
-  EAttribute getVariableAssign_Value();
-
-  /**
    * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent <em>Raise Event</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1073,36 +1216,227 @@ public interface EventOrientedLanguagePackage extends EPackage
   EReference getRaiseEvent_EventName();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getParams <em>Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Params</em>'.
+   * @return the meta object for the containment reference list '<em>Params</em>'.
    * @see org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getParams()
    * @see #getRaiseEvent()
    * @generated
    */
-  EAttribute getRaiseEvent_Params();
+  EReference getRaiseEvent_Params();
 
   /**
-   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Compound <em>Compound</em>}'.
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.PrintOutput <em>Print Output</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Compound</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.Compound
+   * @return the meta object for class '<em>Print Output</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.PrintOutput
    * @generated
    */
-  EClass getCompound();
+  EClass getPrintOutput();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.mt.lic.eol.eventOrientedLanguage.Compound#getBody <em>Body</em>}'.
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.PrintOutput#getOutput <em>Output</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Body</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.Compound#getBody()
-   * @see #getCompound()
+   * @return the meta object for the containment reference '<em>Output</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.PrintOutput#getOutput()
+   * @see #getPrintOutput()
    * @generated
    */
-  EReference getCompound_Body();
+  EReference getPrintOutput_Output();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.ReadInput <em>Read Input</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Read Input</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.ReadInput
+   * @generated
+   */
+  EClass getReadInput();
+
+  /**
+   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.ReadInput#getInput <em>Input</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Input</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.ReadInput#getInput()
+   * @see #getReadInput()
+   * @generated
+   */
+  EReference getReadInput_Input();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Plus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Plus</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Plus
+   * @generated
+   */
+  EClass getPlus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Plus#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Plus#getLeft()
+   * @see #getPlus()
+   * @generated
+   */
+  EReference getPlus_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Plus#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Plus#getRight()
+   * @see #getPlus()
+   * @generated
+   */
+  EReference getPlus_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Minus <em>Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Minus</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Minus
+   * @generated
+   */
+  EClass getMinus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Minus#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Minus#getLeft()
+   * @see #getMinus()
+   * @generated
+   */
+  EReference getMinus_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Minus#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Minus#getRight()
+   * @see #getMinus()
+   * @generated
+   */
+  EReference getMinus_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Multi <em>Multi</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multi</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Multi
+   * @generated
+   */
+  EClass getMulti();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Multi#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Multi#getLeft()
+   * @see #getMulti()
+   * @generated
+   */
+  EReference getMulti_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Multi#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Multi#getRight()
+   * @see #getMulti()
+   * @generated
+   */
+  EReference getMulti_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.Div <em>Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Div</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Div
+   * @generated
+   */
+  EClass getDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Div#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Div#getLeft()
+   * @see #getDiv()
+   * @generated
+   */
+  EReference getDiv_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.mt.lic.eol.eventOrientedLanguage.Div#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Div#getRight()
+   * @see #getDiv()
+   * @generated
+   */
+  EReference getDiv_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.NumberLiteral <em>Number Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Literal</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.NumberLiteral
+   * @generated
+   */
+  EClass getNumberLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.mt.lic.eol.eventOrientedLanguage.NumberLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.NumberLiteral#getValue()
+   * @see #getNumberLiteral()
+   * @generated
+   */
+  EAttribute getNumberLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableReference <em>Variable Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Reference</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableReference
+   * @generated
+   */
+  EClass getVariableReference();
+
+  /**
+   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.VariableReference#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.VariableReference#getVar()
+   * @see #getVariableReference()
+   * @generated
+   */
+  EReference getVariableReference_Var();
 
   /**
    * Returns the meta object for enum '{@link org.mt.lic.eol.eventOrientedLanguage.Type <em>Type</em>}'.
@@ -1234,32 +1568,6 @@ public interface EventOrientedLanguagePackage extends EPackage
     EReference HANDLER_SECTION__HANDLERS = eINSTANCE.getHandlerSection_Handlers();
 
     /**
-     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ParamDeclarationImpl <em>Param Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.ParamDeclarationImpl
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getParamDeclaration()
-     * @generated
-     */
-    EClass PARAM_DECLARATION = eINSTANCE.getParamDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PARAM_DECLARATION__TYPE = eINSTANCE.getParamDeclaration_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PARAM_DECLARATION__NAME = eINSTANCE.getParamDeclaration_Name();
-
-    /**
      * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.EventDeclImpl <em>Event Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1340,42 +1648,6 @@ public interface EventOrientedLanguagePackage extends EPackage
     EClass COMMAND = eINSTANCE.getCommand();
 
     /**
-     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl <em>Print Output</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getPrintOutput()
-     * @generated
-     */
-    EClass PRINT_OUTPUT = eINSTANCE.getPrintOutput();
-
-    /**
-     * The meta object literal for the '<em><b>Output</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PRINT_OUTPUT__OUTPUT = eINSTANCE.getPrintOutput_Output();
-
-    /**
-     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl <em>Read Input</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getReadInput()
-     * @generated
-     */
-    EClass READ_INPUT = eINSTANCE.getReadInput();
-
-    /**
-     * The meta object literal for the '<em><b>Input</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference READ_INPUT__INPUT = eINSTANCE.getReadInput_Input();
-
-    /**
      * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1400,6 +1672,60 @@ public interface EventOrientedLanguagePackage extends EPackage
      * @generated
      */
     EAttribute VARIABLE_DECLARATION__NAME = eINSTANCE.getVariableDeclaration_Name();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.ExpressionImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getExpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl <em>Compound</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getCompound()
+     * @generated
+     */
+    EClass COMPOUND = eINSTANCE.getCompound();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOUND__BODY = eINSTANCE.getCompound_Body();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl <em>Variable Assign</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableAssign()
+     * @generated
+     */
+    EClass VARIABLE_ASSIGN = eINSTANCE.getVariableAssign();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_ASSIGN__NAME = eINSTANCE.getVariableAssign_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_ASSIGN__VALUE = eINSTANCE.getVariableAssign_Value();
 
     /**
      * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl <em>Bind Handler</em>}' class.
@@ -1454,32 +1780,6 @@ public interface EventOrientedLanguagePackage extends EPackage
     EReference UNBIND_HANDLER__HANDLER_NAME = eINSTANCE.getUnbindHandler_HandlerName();
 
     /**
-     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl <em>Variable Assign</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.VariableAssignImpl
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableAssign()
-     * @generated
-     */
-    EClass VARIABLE_ASSIGN = eINSTANCE.getVariableAssign();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_ASSIGN__NAME = eINSTANCE.getVariableAssign_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_ASSIGN__VALUE = eINSTANCE.getVariableAssign_Value();
-
-    /**
      * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.RaiseEventImpl <em>Raise Event</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1498,30 +1798,188 @@ public interface EventOrientedLanguagePackage extends EPackage
     EReference RAISE_EVENT__EVENT_NAME = eINSTANCE.getRaiseEvent_EventName();
 
     /**
-     * The meta object literal for the '<em><b>Params</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RAISE_EVENT__PARAMS = eINSTANCE.getRaiseEvent_Params();
+    EReference RAISE_EVENT__PARAMS = eINSTANCE.getRaiseEvent_Params();
 
     /**
-     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl <em>Compound</em>}' class.
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl <em>Print Output</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl
-     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getCompound()
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.PrintOutputImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getPrintOutput()
      * @generated
      */
-    EClass COMPOUND = eINSTANCE.getCompound();
+    EClass PRINT_OUTPUT = eINSTANCE.getPrintOutput();
 
     /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPOUND__BODY = eINSTANCE.getCompound_Body();
+    EReference PRINT_OUTPUT__OUTPUT = eINSTANCE.getPrintOutput_Output();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl <em>Read Input</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.ReadInputImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getReadInput()
+     * @generated
+     */
+    EClass READ_INPUT = eINSTANCE.getReadInput();
+
+    /**
+     * The meta object literal for the '<em><b>Input</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference READ_INPUT__INPUT = eINSTANCE.getReadInput_Input();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.PlusImpl <em>Plus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.PlusImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getPlus()
+     * @generated
+     */
+    EClass PLUS = eINSTANCE.getPlus();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PLUS__LEFT = eINSTANCE.getPlus_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PLUS__RIGHT = eINSTANCE.getPlus_Right();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.MinusImpl <em>Minus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.MinusImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getMinus()
+     * @generated
+     */
+    EClass MINUS = eINSTANCE.getMinus();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MINUS__LEFT = eINSTANCE.getMinus_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MINUS__RIGHT = eINSTANCE.getMinus_Right();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.MultiImpl <em>Multi</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.MultiImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getMulti()
+     * @generated
+     */
+    EClass MULTI = eINSTANCE.getMulti();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTI__LEFT = eINSTANCE.getMulti_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTI__RIGHT = eINSTANCE.getMulti_Right();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.DivImpl <em>Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.DivImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getDiv()
+     * @generated
+     */
+    EClass DIV = eINSTANCE.getDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIV__LEFT = eINSTANCE.getDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIV__RIGHT = eINSTANCE.getDiv_Right();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.NumberLiteralImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getNumberLiteral()
+     * @generated
+     */
+    EClass NUMBER_LITERAL = eINSTANCE.getNumberLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMBER_LITERAL__VALUE = eINSTANCE.getNumberLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.impl.VariableReferenceImpl <em>Variable Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.VariableReferenceImpl
+     * @see org.mt.lic.eol.eventOrientedLanguage.impl.EventOrientedLanguagePackageImpl#getVariableReference()
+     * @generated
+     */
+    EClass VARIABLE_REFERENCE = eINSTANCE.getVariableReference();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_REFERENCE__VAR = eINSTANCE.getVariableReference_Var();
 
     /**
      * The meta object literal for the '{@link org.mt.lic.eol.eventOrientedLanguage.Type <em>Type</em>}' enum.

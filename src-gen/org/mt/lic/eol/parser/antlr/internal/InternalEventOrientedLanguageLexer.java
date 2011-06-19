@@ -20,7 +20,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public static final int T27=27;
     public static final int T26=26;
     public static final int T25=25;
-    public static final int Tokens=33;
+    public static final int Tokens=37;
     public static final int T24=24;
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=10;
@@ -34,10 +34,14 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public static final int RULE_REAL=6;
     public static final int T13=13;
     public static final int T14=14;
+    public static final int T34=34;
     public static final int RULE_WS=11;
     public static final int T15=15;
+    public static final int T33=33;
     public static final int T16=16;
+    public static final int T36=36;
     public static final int T17=17;
+    public static final int T35=35;
     public static final int T18=18;
     public static final int T30=30;
     public static final int T19=19;
@@ -256,11 +260,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT24() throws RecognitionException {
         try {
             int _type = T24;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:21:5: ( 'out' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:21:7: 'out'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:21:5: ( '=' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:21:7: '='
             {
-            match("out"); 
-
+            match('='); 
 
             }
 
@@ -275,10 +278,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT25() throws RecognitionException {
         try {
             int _type = T25;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:22:5: ( 'in' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:22:7: 'in'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:22:5: ( '+=' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:22:7: '+='
             {
-            match("in"); 
+            match("+="); 
 
 
             }
@@ -294,10 +297,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT26() throws RecognitionException {
         try {
             int _type = T26;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:23:5: ( '+=' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:23:7: '+='
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:23:5: ( '-=' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:23:7: '-='
             {
-            match("+="); 
+            match("-="); 
 
 
             }
@@ -313,10 +316,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT27() throws RecognitionException {
         try {
             int _type = T27;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:24:5: ( '-=' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:24:7: '-='
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:24:5: ( 'raise' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:24:7: 'raise'
             {
-            match("-="); 
+            match("raise"); 
 
 
             }
@@ -332,10 +335,11 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT28() throws RecognitionException {
         try {
             int _type = T28;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:25:5: ( '=' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:25:7: '='
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:25:5: ( 'out' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:25:7: 'out'
             {
-            match('='); 
+            match("out"); 
+
 
             }
 
@@ -350,10 +354,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT29() throws RecognitionException {
         try {
             int _type = T29;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:26:5: ( 'raise' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:26:7: 'raise'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:26:5: ( 'in' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:26:7: 'in'
             {
-            match("raise"); 
+            match("in"); 
 
 
             }
@@ -369,11 +373,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT30() throws RecognitionException {
         try {
             int _type = T30;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:27:5: ( 'int' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:27:7: 'int'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:27:5: ( '+' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:27:7: '+'
             {
-            match("int"); 
-
+            match('+'); 
 
             }
 
@@ -388,11 +391,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT31() throws RecognitionException {
         try {
             int _type = T31;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:28:5: ( 'real' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:28:7: 'real'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:28:5: ( '-' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:28:7: '-'
             {
-            match("real"); 
-
+            match('-'); 
 
             }
 
@@ -407,8 +409,82 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mT32() throws RecognitionException {
         try {
             int _type = T32;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:29:5: ( 'bool' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:29:7: 'bool'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:29:5: ( '*' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:29:7: '*'
+            {
+            match('*'); 
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T32
+
+    // $ANTLR start T33
+    public final void mT33() throws RecognitionException {
+        try {
+            int _type = T33;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:30:5: ( '/' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:30:7: '/'
+            {
+            match('/'); 
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T33
+
+    // $ANTLR start T34
+    public final void mT34() throws RecognitionException {
+        try {
+            int _type = T34;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:31:5: ( 'int' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:31:7: 'int'
+            {
+            match("int"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T34
+
+    // $ANTLR start T35
+    public final void mT35() throws RecognitionException {
+        try {
+            int _type = T35;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:32:5: ( 'real' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:32:7: 'real'
+            {
+            match("real"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T35
+
+    // $ANTLR start T36
+    public final void mT36() throws RecognitionException {
+        try {
+            int _type = T36;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:33:5: ( 'bool' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:33:7: 'bool'
             {
             match("bool"); 
 
@@ -420,16 +496,16 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end T32
+    // $ANTLR end T36
 
     // $ANTLR start RULE_INT
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1410:10: ( ( '0' .. '9' )+ )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1410:12: ( '0' .. '9' )+
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1541:10: ( ( '0' .. '9' )+ )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1541:12: ( '0' .. '9' )+
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1410:12: ( '0' .. '9' )+
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1541:12: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -443,7 +519,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1410:13: '0' .. '9'
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1541:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -473,10 +549,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_REAL() throws RecognitionException {
         try {
             int _type = RULE_REAL;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:11: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:13: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:11: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:13: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:13: ( '0' .. '9' )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:13: ( '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -489,7 +565,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:14: '0' .. '9'
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:14: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -501,7 +577,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:25: ( '.' ( '0' .. '9' )+ )?
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:25: ( '.' ( '0' .. '9' )+ )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -510,10 +586,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:26: '.' ( '0' .. '9' )+
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:26: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:30: ( '0' .. '9' )+
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:30: ( '0' .. '9' )+
                     int cnt3=0;
                     loop3:
                     do {
@@ -527,7 +603,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1412:31: '0' .. '9'
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1543:31: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -563,10 +639,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_BOOL() throws RecognitionException {
         try {
             int _type = RULE_BOOL;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1414:11: ( ( 'true' | 'false' ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1414:13: ( 'true' | 'false' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1545:11: ( ( 'true' | 'false' ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1545:13: ( 'true' | 'false' )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1414:13: ( 'true' | 'false' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1545:13: ( 'true' | 'false' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -578,13 +654,13 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1414:13: ( 'true' | 'false' )", 5, 0, input);
+                    new NoViableAltException("1545:13: ( 'true' | 'false' )", 5, 0, input);
 
                 throw nvae;
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1414:14: 'true'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1545:14: 'true'
                     {
                     match("true"); 
 
@@ -592,7 +668,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1414:21: 'false'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1545:21: 'false'
                     {
                     match("false"); 
 
@@ -616,10 +692,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1416:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1416:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1547:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1547:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1416:11: ( '^' )?
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1547:11: ( '^' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -628,7 +704,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1416:11: '^'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1547:11: '^'
                     {
                     match('^'); 
 
@@ -647,7 +723,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1416:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1547:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop7:
             do {
                 int alt7=2;
@@ -695,10 +771,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -710,16 +786,16 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1418:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 10, 0, input);
+                    new NoViableAltException("1549:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 10, 0, input);
 
                 throw nvae;
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -735,7 +811,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -752,7 +828,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -778,10 +854,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -797,7 +873,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -814,7 +890,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1418:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1549:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -856,12 +932,12 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1420:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1420:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1551:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1551:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1420:24: ( options {greedy=false; } : . )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1551:24: ( options {greedy=false; } : . )*
             loop11:
             do {
                 int alt11=2;
@@ -886,7 +962,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1420:52: .
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1551:52: .
             	    {
             	    matchAny(); 
 
@@ -914,12 +990,12 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop12:
             do {
                 int alt12=2;
@@ -932,7 +1008,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -953,7 +1029,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:40: ( ( '\\r' )? '\\n' )?
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:40: ( ( '\\r' )? '\\n' )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -962,9 +1038,9 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:41: ( '\\r' )? '\\n'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:41: ( '\\r' )?
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:41: ( '\\r' )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -973,7 +1049,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1422:41: '\\r'
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1553:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1003,10 +1079,10 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1424:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1424:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1555:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1555:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1424:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1555:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt15=0;
             loop15:
             do {
@@ -1059,8 +1135,8 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1426:16: ( . )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1426:18: .
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1557:16: ( . )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1557:18: .
             {
             matchAny(); 
 
@@ -1074,8 +1150,8 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
     // $ANTLR end RULE_ANY_OTHER
 
     public void mTokens() throws RecognitionException {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:8: ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | RULE_INT | RULE_REAL | RULE_BOOL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt16=29;
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:8: ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | RULE_INT | RULE_REAL | RULE_BOOL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt16=33;
         alt16 = dfa16.predict(input);
         switch (alt16) {
             case 1 :
@@ -1219,63 +1295,91 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
                 }
                 break;
             case 21 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:90: RULE_INT
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:90: T33
+                {
+                mT33(); 
+
+                }
+                break;
+            case 22 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:94: T34
+                {
+                mT34(); 
+
+                }
+                break;
+            case 23 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:98: T35
+                {
+                mT35(); 
+
+                }
+                break;
+            case 24 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:102: T36
+                {
+                mT36(); 
+
+                }
+                break;
+            case 25 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:106: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:99: RULE_REAL
+            case 26 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:115: RULE_REAL
                 {
                 mRULE_REAL(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:109: RULE_BOOL
+            case 27 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:125: RULE_BOOL
                 {
                 mRULE_BOOL(); 
 
                 }
                 break;
-            case 24 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:119: RULE_ID
+            case 28 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:135: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:127: RULE_STRING
+            case 29 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:143: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:139: RULE_ML_COMMENT
+            case 30 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:155: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:155: RULE_SL_COMMENT
+            case 31 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:171: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 28 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:171: RULE_WS
+            case 32 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:187: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 29 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:179: RULE_ANY_OTHER
+            case 33 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1:195: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1289,145 +1393,151 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
 
     protected DFA16 dfa16 = new DFA16(this);
     static final String DFA16_eotS =
-        "\1\23\3\36\1\uffff\1\36\5\uffff\1\36\2\34\1\uffff\2\36\1\60\1\34"+
-        "\1\uffff\2\36\1\34\1\uffff\3\34\2\uffff\1\72\1\uffff\3\36\1\uffff"+
-        "\1\36\5\uffff\1\36\3\uffff\3\36\1\uffff\1\60\2\36\4\uffff\1\36\1"+
-        "\106\1\uffff\1\107\3\36\1\113\6\36\2\uffff\3\36\1\uffff\1\125\1"+
-        "\36\1\127\1\130\1\36\1\uffff\3\36\1\uffff\1\135\2\uffff\1\130\3"+
-        "\36\2\uffff\2\36\1\uffff\1\36\1\uffff";
+        "\1\25\3\37\1\uffff\1\37\6\uffff\1\54\1\56\2\37\1\uffff\1\65\1\37"+
+        "\1\67\1\35\1\uffff\2\37\1\35\1\uffff\2\35\2\uffff\1\77\1\uffff\3"+
+        "\37\1\uffff\1\37\12\uffff\3\37\4\uffff\1\37\1\uffff\1\67\2\37\2"+
+        "\uffff\1\112\1\37\1\uffff\1\114\5\37\1\122\3\37\1\uffff\1\37\1\uffff"+
+        "\3\37\1\132\1\37\1\uffff\1\134\1\135\1\37\1\uffff\3\37\1\uffff\1"+
+        "\142\2\uffff\1\135\3\37\2\uffff\2\37\1\uffff\1\37\1\uffff";
     static final String DFA16_eofS =
-        "\144\uffff";
+        "\151\uffff";
     static final String DFA16_minS =
-        "\1\0\2\156\1\154\1\uffff\1\141\5\uffff\1\165\2\75\1\uffff\1\141"+
-        "\1\157\1\56\1\60\1\uffff\1\162\1\141\1\101\1\uffff\2\0\1\52\2\uffff"+
-        "\1\60\1\uffff\1\144\1\145\1\157\1\uffff\1\156\5\uffff\1\164\3\uffff"+
-        "\1\141\1\151\1\157\1\uffff\1\56\1\165\1\154\4\uffff\1\164\1\60\1"+
-        "\uffff\1\60\1\156\1\142\1\144\1\60\1\154\1\163\1\154\1\145\1\163"+
-        "\1\72\2\uffff\1\164\1\141\1\154\1\uffff\1\60\1\145\2\60\1\145\1"+
-        "\uffff\1\163\1\154\1\145\1\uffff\1\60\2\uffff\1\60\1\72\1\163\1"+
-        "\162\2\uffff\1\72\1\163\1\uffff\1\72\1\uffff";
+        "\1\0\2\156\1\154\1\uffff\1\141\6\uffff\2\75\1\141\1\165\1\uffff"+
+        "\1\52\1\157\1\56\1\60\1\uffff\1\162\1\141\1\101\1\uffff\2\0\2\uffff"+
+        "\1\60\1\uffff\1\144\1\145\1\157\1\uffff\1\156\12\uffff\1\141\1\151"+
+        "\1\164\4\uffff\1\157\1\uffff\1\56\1\165\1\154\2\uffff\1\60\1\164"+
+        "\1\uffff\1\60\1\156\1\142\1\144\1\154\1\163\1\60\1\154\1\145\1\163"+
+        "\1\uffff\1\72\1\uffff\1\164\1\141\1\154\1\60\1\145\1\uffff\2\60"+
+        "\1\145\1\uffff\1\163\1\154\1\145\1\uffff\1\60\2\uffff\1\60\1\72"+
+        "\1\163\1\162\2\uffff\1\72\1\163\1\uffff\1\72\1\uffff";
     static final String DFA16_maxS =
-        "\1\ufffe\1\156\1\166\1\154\1\uffff\1\141\5\uffff\1\165\2\75\1\uffff"+
-        "\1\145\1\157\2\71\1\uffff\1\162\1\141\1\172\1\uffff\2\ufffe\1\57"+
-        "\2\uffff\1\172\1\uffff\1\144\1\145\1\157\1\uffff\1\156\5\uffff\1"+
-        "\164\3\uffff\1\141\1\151\1\157\1\uffff\1\71\1\165\1\154\4\uffff"+
-        "\1\164\1\172\1\uffff\1\172\1\156\1\142\1\144\1\172\1\154\1\163\1"+
-        "\154\1\145\1\163\1\72\2\uffff\1\164\1\141\1\154\1\uffff\1\172\1"+
-        "\145\2\172\1\145\1\uffff\1\163\1\154\1\145\1\uffff\1\172\2\uffff"+
-        "\1\172\1\72\1\163\1\162\2\uffff\1\72\1\163\1\uffff\1\72\1\uffff";
+        "\1\ufffe\1\156\1\166\1\154\1\uffff\1\141\6\uffff\2\75\1\145\1\165"+
+        "\1\uffff\1\57\1\157\2\71\1\uffff\1\162\1\141\1\172\1\uffff\2\ufffe"+
+        "\2\uffff\1\172\1\uffff\1\144\1\145\1\157\1\uffff\1\156\12\uffff"+
+        "\1\141\1\151\1\164\4\uffff\1\157\1\uffff\1\71\1\165\1\154\2\uffff"+
+        "\1\172\1\164\1\uffff\1\172\1\156\1\142\1\144\1\154\1\163\1\172\1"+
+        "\154\1\145\1\163\1\uffff\1\72\1\uffff\1\164\1\141\1\154\1\172\1"+
+        "\145\1\uffff\2\172\1\145\1\uffff\1\163\1\154\1\145\1\uffff\1\172"+
+        "\2\uffff\1\172\1\72\1\163\1\162\2\uffff\1\72\1\163\1\uffff\1\72"+
+        "\1\uffff";
     static final String DFA16_acceptS =
-        "\4\uffff\1\4\1\uffff\1\7\1\10\1\11\1\12\1\13\3\uffff\1\20\4\uffff"+
-        "\1\26\3\uffff\1\30\3\uffff\1\34\1\35\1\uffff\1\30\3\uffff\1\4\1"+
-        "\uffff\1\7\1\10\1\11\1\12\1\13\1\uffff\1\16\1\17\1\20\3\uffff\1"+
-        "\25\3\uffff\1\31\1\32\1\33\1\34\2\uffff\1\15\13\uffff\1\22\1\2\3"+
-        "\uffff\1\14\5\uffff\1\1\3\uffff\1\23\1\uffff\1\24\1\27\4\uffff\1"+
-        "\21\1\5\2\uffff\1\3\1\uffff\1\6";
+        "\4\uffff\1\4\1\uffff\1\7\1\10\1\11\1\12\1\13\1\14\4\uffff\1\24\4"+
+        "\uffff\1\32\3\uffff\1\34\2\uffff\1\40\1\41\1\uffff\1\34\3\uffff"+
+        "\1\4\1\uffff\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\22\1\16\1\23\3"+
+        "\uffff\1\24\1\36\1\37\1\25\1\uffff\1\31\3\uffff\1\35\1\40\2\uffff"+
+        "\1\21\12\uffff\1\26\1\uffff\1\2\5\uffff\1\20\3\uffff\1\1\3\uffff"+
+        "\1\27\1\uffff\1\30\1\33\4\uffff\1\17\1\5\2\uffff\1\3\1\uffff\1\6";
     static final String DFA16_specialS =
-        "\144\uffff}>";
+        "\151\uffff}>";
     static final String[] DFA16_transitionS = {
-            "\11\34\2\33\2\34\1\33\22\34\1\33\1\34\1\30\4\34\1\31\1\6\1\10"+
-            "\1\34\1\14\1\7\1\15\1\22\1\32\12\21\1\34\1\4\1\34\1\16\3\34"+
-            "\32\27\3\34\1\26\1\27\1\34\1\27\1\20\2\27\1\2\1\25\1\3\1\5\1"+
-            "\1\5\27\1\13\2\27\1\17\1\27\1\24\6\27\1\11\1\34\1\12\uff81\34",
-            "\1\35",
-            "\1\37\7\uffff\1\40",
-            "\1\41",
+            "\11\35\2\34\2\35\1\34\22\35\1\34\1\35\1\32\4\35\1\33\1\6\1\10"+
+            "\1\20\1\14\1\7\1\15\1\24\1\21\12\23\1\35\1\4\1\35\1\13\3\35"+
+            "\32\31\3\35\1\30\1\31\1\35\1\31\1\22\2\31\1\2\1\27\1\3\1\5\1"+
+            "\1\5\31\1\17\2\31\1\16\1\31\1\26\6\31\1\11\1\35\1\12\uff81\35",
+            "\1\36",
+            "\1\40\7\uffff\1\41",
+            "\1\42",
             "",
-            "\1\43",
-            "",
-            "",
+            "\1\44",
             "",
             "",
             "",
-            "\1\51",
-            "\1\52",
+            "",
+            "",
+            "",
             "\1\53",
+            "\1\55",
+            "\1\60\3\uffff\1\57",
+            "\1\61",
             "",
-            "\1\56\3\uffff\1\55",
-            "\1\57",
-            "\1\23\1\uffff\12\61",
-            "\12\23",
+            "\1\63\4\uffff\1\64",
+            "\1\66",
+            "\1\25\1\uffff\12\70",
+            "\12\25",
             "",
-            "\1\62",
-            "\1\63",
-            "\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\71",
+            "\1\72",
+            "\32\37\4\uffff\1\37\1\uffff\32\37",
             "",
-            "\uffff\64",
-            "\uffff\64",
-            "\1\65\4\uffff\1\66",
-            "",
-            "",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\10\36\1\70\12\36\1"+
-            "\71\6\36",
-            "",
-            "\1\73",
-            "\1\74",
-            "\1\75",
-            "",
-            "\1\76",
+            "\uffff\73",
+            "\uffff\73",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\77",
-            "",
-            "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\10\37\1\76\12\37\1"+
+            "\75\6\37",
             "",
             "\1\100",
             "\1\101",
             "\1\102",
             "",
-            "\1\23\1\uffff\12\61",
             "\1\103",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\104",
-            "",
-            "",
-            "",
-            "",
             "\1\105",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\1\106",
             "",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "",
+            "",
+            "",
+            "\1\107",
+            "",
+            "\1\25\1\uffff\12\70",
             "\1\110",
             "\1\111",
-            "\1\112",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
-            "\1\114",
+            "",
+            "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\1\113",
+            "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
             "\1\121",
-            "",
-            "",
-            "\1\122",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\123",
             "\1\124",
+            "\1\125",
             "",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\126",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "",
+            "\1\127",
+            "\1\130",
             "\1\131",
-            "",
-            "\1\132",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\133",
-            "\1\134",
             "",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
-            "",
-            "",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\136",
+            "",
             "\1\137",
             "\1\140",
-            "",
-            "",
             "\1\141",
-            "\1\142",
             "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "",
+            "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\143",
+            "\1\144",
+            "\1\145",
+            "",
+            "",
+            "\1\146",
+            "\1\147",
+            "",
+            "\1\150",
             ""
     };
 
@@ -1461,7 +1571,7 @@ public class InternalEventOrientedLanguageLexer extends Lexer {
             this.transition = DFA16_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | RULE_INT | RULE_REAL | RULE_BOOL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | RULE_INT | RULE_REAL | RULE_BOOL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
     }
  
