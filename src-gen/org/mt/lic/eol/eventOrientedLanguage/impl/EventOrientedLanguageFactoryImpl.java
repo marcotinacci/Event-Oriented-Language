@@ -77,6 +77,7 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
       case EventOrientedLanguagePackage.ABSTRACT_BLOCK: return createAbstractBlock();
       case EventOrientedLanguagePackage.COMMAND: return createCommand();
       case EventOrientedLanguagePackage.VARIABLE_DECLARATION: return createVariableDeclaration();
+      case EventOrientedLanguagePackage.PARAMETER_DECLARATION: return createParameterDeclaration();
       case EventOrientedLanguagePackage.EXPRESSION: return createExpression();
       case EventOrientedLanguagePackage.COMPOUND: return createCompound();
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN: return createVariableAssign();
@@ -227,6 +228,17 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
     return variableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParameterDeclaration createParameterDeclaration()
+  {
+    ParameterDeclarationImpl parameterDeclaration = new ParameterDeclarationImpl();
+    return parameterDeclaration;
   }
 
   /**

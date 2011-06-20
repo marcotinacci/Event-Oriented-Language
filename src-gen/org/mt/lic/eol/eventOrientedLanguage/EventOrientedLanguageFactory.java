@@ -107,6 +107,15 @@ public interface EventOrientedLanguageFactory extends EFactory
   VariableDeclaration createVariableDeclaration();
 
   /**
+   * Returns a new object of class '<em>Parameter Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter Declaration</em>'.
+   * @generated
+   */
+  ParameterDeclaration createParameterDeclaration();
+
+  /**
    * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

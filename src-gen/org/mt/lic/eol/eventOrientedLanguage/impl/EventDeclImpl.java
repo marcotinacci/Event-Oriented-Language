@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
-import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.ParameterDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class EventDeclImpl extends MinimalEObjectImpl.Container implements Event
    * @generated
    * @ordered
    */
-  protected EList<VariableDeclaration> params;
+  protected EList<ParameterDeclaration> params;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,11 +120,11 @@ public class EventDeclImpl extends MinimalEObjectImpl.Container implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableDeclaration> getParams()
+  public EList<ParameterDeclaration> getParams()
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<VariableDeclaration>(VariableDeclaration.class, this, EventOrientedLanguagePackage.EVENT_DECL__PARAMS);
+      params = new EObjectContainmentEList<ParameterDeclaration>(ParameterDeclaration.class, this, EventOrientedLanguagePackage.EVENT_DECL__PARAMS);
     }
     return params;
   }
@@ -179,7 +179,7 @@ public class EventDeclImpl extends MinimalEObjectImpl.Container implements Event
         return;
       case EventOrientedLanguagePackage.EVENT_DECL__PARAMS:
         getParams().clear();
-        getParams().addAll((Collection<? extends VariableDeclaration>)newValue);
+        getParams().addAll((Collection<? extends ParameterDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

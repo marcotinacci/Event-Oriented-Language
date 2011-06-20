@@ -161,6 +161,13 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EventOrientedLanguagePackage.PARAMETER_DECLARATION:
+      {
+        ParameterDeclaration parameterDeclaration = (ParameterDeclaration)theEObject;
+        T result = caseParameterDeclaration(parameterDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EventOrientedLanguagePackage.EXPRESSION:
       {
         Expression expression = (Expression)theEObject;
@@ -422,6 +429,22 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T caseVariableDeclaration(VariableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameterDeclaration(ParameterDeclaration object)
   {
     return null;
   }

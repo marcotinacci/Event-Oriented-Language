@@ -44,6 +44,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableDeclaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableDeclaration/name"/>
     </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//ParameterDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//ParameterDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//ParameterDeclaration/name"/>
+    </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Expression"/>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Compound">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Compound/body"/>

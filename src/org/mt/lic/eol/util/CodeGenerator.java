@@ -5,9 +5,18 @@ import java.util.HashSet;
 import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.Compound;
+import org.mt.lic.eol.eventOrientedLanguage.Div;
+import org.mt.lic.eol.eventOrientedLanguage.Minus;
+import org.mt.lic.eol.eventOrientedLanguage.Multi;
+import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
+import org.mt.lic.eol.eventOrientedLanguage.ParameterDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
 import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
+import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
+import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
 
 public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
@@ -24,7 +33,7 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	@Override
 	public String casePrintOutput(PrintOutput object) {
 		libraries.add("iostream");
-		return "std::cout << " + object.getOutput() + " << std::endl;\n";
+		return "std::cout << " + doSwitch(object.getOutput()) + " << std::endl;\n";
 	}
 	
 	@Override
@@ -62,4 +71,52 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	public String caseUnbindHandler(UnbindHandler object) {
 		return object.getEventName().getName() + "->detach(" + object.getHandlerName().getName() + ");\n";
 	}
+
+	@Override
+	public String caseVariableDeclaration(VariableDeclaration object) {
+		return NameConventions.convertTypeName(object.getType()) + " " + object.getName() + ";";
+	}
+	
+	@Override
+	public String caseParameterDeclaration(ParameterDeclaration object) {
+		return NameConventions.convertTypeName(object.getType()) + " " + object.getName();
+	}
+
+	@Override
+	public String caseVariableAssign(VariableAssign object) {
+		// TODO Auto-generated method stub
+		return super.caseVariableAssign(object);
+	}
+
+	@Override
+	public String casePlus(Plus object) {
+		return "("+doSwitch(object.getLeft())+"+"+doSwitch(object.getRight())+")";
+	}
+
+	@Override
+	public String caseMinus(Minus object) {
+		return "("+doSwitch(object.getLeft())+"-"+doSwitch(object.getRight())+")";
+	}
+
+	@Override
+	public String caseMulti(Multi object) {
+		return "("+doSwitch(object.getLeft())+"*"+doSwitch(object.getRight())+")";
+	}
+
+	@Override
+	public String caseDiv(Div object) {
+		return "("+doSwitch(object.getLeft())+"/"+doSwitch(object.getRight())+")";
+	}
+
+	@Override
+	public String caseNumberLiteral(NumberLiteral object) {
+		return object.getValue();
+	}
+
+	@Override
+	public String caseVariableReference(VariableReference object) {
+		return object.getVar().getName();
+	}
+	
+	
 }

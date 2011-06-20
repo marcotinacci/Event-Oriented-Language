@@ -4,8 +4,8 @@ import java.util.HashSet;
 
 import org.eclipse.emf.common.util.EList;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
+import org.mt.lic.eol.eventOrientedLanguage.ParameterDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
-import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 public class CodeGeneratorHelper {
 	
@@ -51,7 +51,7 @@ public class CodeGeneratorHelper {
 	 */
 	public static String formatFieldsType(HandlerDecl object) {
 		StringBuffer buf = new StringBuffer();
-		for (VariableDeclaration decl: object.getParams()) {
+		for (ParameterDeclaration decl: object.getParams()) {
 			switch (decl.getType().getValue()) {
 			case Type.TINT_VALUE:
 				buf.append("i");
@@ -79,7 +79,7 @@ public class CodeGeneratorHelper {
 		buf.append("#define	_"+ upStructName +"_\n\n");
 		buf.append("typedef struct "+ structName + "{\n");
 		int counter = 0;
-		for (VariableDeclaration decl: object.getParams()) {
+		for (ParameterDeclaration decl: object.getParams()) {
 			buf.append(decl.getType() + " var"+ counter +";\n");
 			counter++;
 		}

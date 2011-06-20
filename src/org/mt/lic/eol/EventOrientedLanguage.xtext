@@ -24,10 +24,10 @@ HandlerSection:
 	'handlers:' (handlers+=HandlerDecl)+;
 	
 EventDecl:
-	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')';
+	name=ID '(' (params+= ParameterDeclaration (',' params+=ParameterDeclaration)* )? ')';
 
 HandlerDecl:
-	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')' body=AbstractBlock;
+	name=ID '(' (params+= ParameterDeclaration (',' params+=ParameterDeclaration)* )? ')' body=AbstractBlock;
 
 /*
  * Block java-style with Composite
@@ -47,10 +47,13 @@ Command:
 
 VariableDeclaration: 
 	type=Type name=ID;
-
+	
+ParameterDeclaration:
+	type=Type name=ID;
+	
 Expression:
 	Addition;
-
+	
 Addition returns Expression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 
