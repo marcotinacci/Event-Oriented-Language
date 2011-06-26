@@ -40,11 +40,10 @@ protected class ThisRootNode extends RootToken {
 			case 6: return new AbstractBlock_Alternatives(this, this, 6, inst);
 			case 7: return new Command_Alternatives(this, this, 7, inst);
 			case 8: return new VariableDeclaration_Group(this, this, 8, inst);
-			case 9: return new ParameterDeclaration_Group(this, this, 9, inst);
-			case 10: return new Expression_AdditionParserRuleCall(this, this, 10, inst);
-			case 11: return new Addition_Group(this, this, 11, inst);
-			case 12: return new Multiplication_Group(this, this, 12, inst);
-			case 13: return new PrimaryExpression_Alternatives(this, this, 13, inst);
+			case 9: return new Expression_AdditionParserRuleCall(this, this, 9, inst);
+			case 10: return new Addition_Group(this, this, 10, inst);
+			case 11: return new Multiplication_Group(this, this, 11, inst);
+			case 12: return new PrimaryExpression_Alternatives(this, this, 12, inst);
 			default: return null;
 		}	
 	}	
@@ -765,11 +764,11 @@ protected class HandlerSection_HandlersAssignment_1 extends AssignmentToken  {
 /************ begin Rule EventDecl ****************
  *
  * EventDecl:
- * 	name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")";
+ * 	name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")";
  *
  **/
 
-// name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")"
+// name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")"
 protected class EventDecl_Group extends GroupToken {
 	
 	public EventDecl_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -853,7 +852,7 @@ protected class EventDecl_LeftParenthesisKeyword_1 extends KeywordToken  {
 
 }
 
-// (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)?
+// (params+=VariableDeclaration ("," params+=VariableDeclaration)*)?
 protected class EventDecl_Group_2 extends GroupToken {
 	
 	public EventDecl_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -876,7 +875,7 @@ protected class EventDecl_Group_2 extends GroupToken {
 
 }
 
-// params+=ParameterDeclaration
+// params+=VariableDeclaration
 protected class EventDecl_ParamsAssignment_2_0 extends AssignmentToken  {
 	
 	public EventDecl_ParamsAssignment_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -891,7 +890,7 @@ protected class EventDecl_ParamsAssignment_2_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ParameterDeclaration_Group(this, this, 0, inst);
+			case 0: return new VariableDeclaration_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -902,9 +901,9 @@ protected class EventDecl_ParamsAssignment_2_0 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("params");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getParameterDeclarationRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getVariableDeclarationRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getEventDeclAccess().getParamsParameterDeclarationParserRuleCall_2_0_0(); 
+				element = grammarAccess.getEventDeclAccess().getParamsVariableDeclarationParserRuleCall_2_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -922,7 +921,7 @@ protected class EventDecl_ParamsAssignment_2_0 extends AssignmentToken  {
 	}	
 }
 
-// ("," params+=ParameterDeclaration)*
+// ("," params+=VariableDeclaration)*
 protected class EventDecl_Group_2_1 extends GroupToken {
 	
 	public EventDecl_Group_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -967,7 +966,7 @@ protected class EventDecl_CommaKeyword_2_1_0 extends KeywordToken  {
 
 }
 
-// params+=ParameterDeclaration
+// params+=VariableDeclaration
 protected class EventDecl_ParamsAssignment_2_1_1 extends AssignmentToken  {
 	
 	public EventDecl_ParamsAssignment_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -982,7 +981,7 @@ protected class EventDecl_ParamsAssignment_2_1_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ParameterDeclaration_Group(this, this, 0, inst);
+			case 0: return new VariableDeclaration_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -993,9 +992,9 @@ protected class EventDecl_ParamsAssignment_2_1_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("params");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getParameterDeclarationRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getVariableDeclarationRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getEventDeclAccess().getParamsParameterDeclarationParserRuleCall_2_1_1_0(); 
+				element = grammarAccess.getEventDeclAccess().getParamsVariableDeclarationParserRuleCall_2_1_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1045,11 +1044,11 @@ protected class EventDecl_RightParenthesisKeyword_3 extends KeywordToken  {
 /************ begin Rule HandlerDecl ****************
  *
  * HandlerDecl:
- * 	name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")" body=AbstractBlock;
+ * 	name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")" body=AbstractBlock;
  *
  **/
 
-// name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")" body=AbstractBlock
+// name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")" body=AbstractBlock
 protected class HandlerDecl_Group extends GroupToken {
 	
 	public HandlerDecl_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1133,7 +1132,7 @@ protected class HandlerDecl_LeftParenthesisKeyword_1 extends KeywordToken  {
 
 }
 
-// (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)?
+// (params+=VariableDeclaration ("," params+=VariableDeclaration)*)?
 protected class HandlerDecl_Group_2 extends GroupToken {
 	
 	public HandlerDecl_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1156,7 +1155,7 @@ protected class HandlerDecl_Group_2 extends GroupToken {
 
 }
 
-// params+=ParameterDeclaration
+// params+=VariableDeclaration
 protected class HandlerDecl_ParamsAssignment_2_0 extends AssignmentToken  {
 	
 	public HandlerDecl_ParamsAssignment_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1171,7 +1170,7 @@ protected class HandlerDecl_ParamsAssignment_2_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ParameterDeclaration_Group(this, this, 0, inst);
+			case 0: return new VariableDeclaration_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1182,9 +1181,9 @@ protected class HandlerDecl_ParamsAssignment_2_0 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("params");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getParameterDeclarationRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getVariableDeclarationRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getHandlerDeclAccess().getParamsParameterDeclarationParserRuleCall_2_0_0(); 
+				element = grammarAccess.getHandlerDeclAccess().getParamsVariableDeclarationParserRuleCall_2_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1202,7 +1201,7 @@ protected class HandlerDecl_ParamsAssignment_2_0 extends AssignmentToken  {
 	}	
 }
 
-// ("," params+=ParameterDeclaration)*
+// ("," params+=VariableDeclaration)*
 protected class HandlerDecl_Group_2_1 extends GroupToken {
 	
 	public HandlerDecl_Group_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1247,7 +1246,7 @@ protected class HandlerDecl_CommaKeyword_2_1_0 extends KeywordToken  {
 
 }
 
-// params+=ParameterDeclaration
+// params+=VariableDeclaration
 protected class HandlerDecl_ParamsAssignment_2_1_1 extends AssignmentToken  {
 	
 	public HandlerDecl_ParamsAssignment_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1262,7 +1261,7 @@ protected class HandlerDecl_ParamsAssignment_2_1_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ParameterDeclaration_Group(this, this, 0, inst);
+			case 0: return new VariableDeclaration_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1273,9 +1272,9 @@ protected class HandlerDecl_ParamsAssignment_2_1_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("params");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getParameterDeclarationRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getVariableDeclarationRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getHandlerDeclAccess().getParamsParameterDeclarationParserRuleCall_2_1_1_0(); 
+				element = grammarAccess.getHandlerDeclAccess().getParamsVariableDeclarationParserRuleCall_2_1_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2883,113 +2882,6 @@ protected class VariableDeclaration_NameAssignment_1 extends AssignmentToken  {
 
 
 /************ end Rule VariableDeclaration ****************/
-
-
-/************ begin Rule ParameterDeclaration ****************
- *
- * ParameterDeclaration:
- * 	type=Type name=ID;
- *
- **/
-
-// type=Type name=ID
-protected class ParameterDeclaration_Group extends GroupToken {
-	
-	public ParameterDeclaration_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Group getGrammarElement() {
-		return grammarAccess.getParameterDeclarationAccess().getGroup();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ParameterDeclaration_NameAssignment_1(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getParameterDeclarationRule().getType().getClassifier())
-			return null;
-		return eObjectConsumer;
-	}
-
-}
-
-// type=Type
-protected class ParameterDeclaration_TypeAssignment_0 extends AssignmentToken  {
-	
-	public ParameterDeclaration_TypeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getParameterDeclarationAccess().getTypeAssignment_0();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("type",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("type");
-		if(enumLitSerializer.isValid(obj.getEObject(), grammarAccess.getParameterDeclarationAccess().getTypeTypeEnumRuleCall_0_0(), value, null)) { 
-			type = AssignmentType.ENUM_RULE_CALL;
-			element = grammarAccess.getParameterDeclarationAccess().getTypeTypeEnumRuleCall_0_0();
-			return obj;
-		}
-		return null;
-	}
-
-}
-
-// name=ID
-protected class ParameterDeclaration_NameAssignment_1 extends AssignmentToken  {
-	
-	public ParameterDeclaration_NameAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getParameterDeclarationAccess().getNameAssignment_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ParameterDeclaration_TypeAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getParameterDeclarationAccess().getNameIDTerminalRuleCall_1_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getParameterDeclarationAccess().getNameIDTerminalRuleCall_1_0();
-			return obj;
-		}
-		return null;
-	}
-
-}
-
-
-/************ end Rule ParameterDeclaration ****************/
 
 
 /************ begin Rule Expression ****************

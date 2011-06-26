@@ -461,9 +461,9 @@ ruleEventDecl returns [EObject current=null]
 ((
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getEventDeclAccess().getParamsParameterDeclarationParserRuleCall_2_0_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getEventDeclAccess().getParamsVariableDeclarationParserRuleCall_2_0_0(), currentNode); 
 	    }
-		lv_params_2_0=ruleParameterDeclaration		{
+		lv_params_2_0=ruleVariableDeclaration		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getEventDeclRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -473,7 +473,7 @@ ruleEventDecl returns [EObject current=null]
 	       			$current, 
 	       			"params",
 	        		lv_params_2_0, 
-	        		"ParameterDeclaration", 
+	        		"VariableDeclaration", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -489,9 +489,9 @@ ruleEventDecl returns [EObject current=null]
 (
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getEventDeclAccess().getParamsParameterDeclarationParserRuleCall_2_1_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getEventDeclAccess().getParamsVariableDeclarationParserRuleCall_2_1_1_0(), currentNode); 
 	    }
-		lv_params_4_0=ruleParameterDeclaration		{
+		lv_params_4_0=ruleVariableDeclaration		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getEventDeclRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -501,7 +501,7 @@ ruleEventDecl returns [EObject current=null]
 	       			$current, 
 	       			"params",
 	        		lv_params_4_0, 
-	        		"ParameterDeclaration", 
+	        		"VariableDeclaration", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -568,9 +568,9 @@ ruleHandlerDecl returns [EObject current=null]
 ((
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getHandlerDeclAccess().getParamsParameterDeclarationParserRuleCall_2_0_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getHandlerDeclAccess().getParamsVariableDeclarationParserRuleCall_2_0_0(), currentNode); 
 	    }
-		lv_params_2_0=ruleParameterDeclaration		{
+		lv_params_2_0=ruleVariableDeclaration		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getHandlerDeclRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -580,7 +580,7 @@ ruleHandlerDecl returns [EObject current=null]
 	       			$current, 
 	       			"params",
 	        		lv_params_2_0, 
-	        		"ParameterDeclaration", 
+	        		"VariableDeclaration", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -596,9 +596,9 @@ ruleHandlerDecl returns [EObject current=null]
 (
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getHandlerDeclAccess().getParamsParameterDeclarationParserRuleCall_2_1_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getHandlerDeclAccess().getParamsVariableDeclarationParserRuleCall_2_1_1_0(), currentNode); 
 	    }
-		lv_params_4_0=ruleParameterDeclaration		{
+		lv_params_4_0=ruleVariableDeclaration		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getHandlerDeclRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -608,7 +608,7 @@ ruleHandlerDecl returns [EObject current=null]
 	       			$current, 
 	       			"params",
 	        		lv_params_4_0, 
-	        		"ParameterDeclaration", 
+	        		"VariableDeclaration", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -1115,77 +1115,6 @@ ruleVariableDeclaration returns [EObject current=null]
 		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getVariableDeclarationRule().getType().getClassifier());
-	            associateNodeWithAstElement(currentNode, $current);
-	        }
-	        try {
-	       		set(
-	       			$current, 
-	       			"name",
-	        		lv_name_1_0, 
-	        		"ID", 
-	        		lastConsumedNode);
-	        } catch (ValueConverterException vce) {
-				handleValueConverterException(vce);
-	        }
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleParameterDeclaration
-entryRuleParameterDeclaration returns [EObject current=null] 
-	:
-	{ currentNode = createCompositeNode(grammarAccess.getParameterDeclarationRule(), currentNode); }
-	 iv_ruleParameterDeclaration=ruleParameterDeclaration 
-	 { $current=$iv_ruleParameterDeclaration.current; } 
-	 EOF 
-;
-
-// Rule ParameterDeclaration
-ruleParameterDeclaration returns [EObject current=null] 
-    @init { EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-    }
-    @after { resetLookahead(); 
-    	lastConsumedNode = currentNode;
-    }:
-((
-(
-		{ 
-	        currentNode=createCompositeNode(grammarAccess.getParameterDeclarationAccess().getTypeTypeEnumRuleCall_0_0(), currentNode); 
-	    }
-		lv_type_0_0=ruleType		{
-	        if ($current==null) {
-	            $current = factory.create(grammarAccess.getParameterDeclarationRule().getType().getClassifier());
-	            associateNodeWithAstElement(currentNode.getParent(), $current);
-	        }
-	        try {
-	       		set(
-	       			$current, 
-	       			"type",
-	        		lv_type_0_0, 
-	        		"Type", 
-	        		currentNode);
-	        } catch (ValueConverterException vce) {
-				handleValueConverterException(vce);
-	        }
-	        currentNode = currentNode.getParent();
-	    }
-
-)
-)(
-(
-		lv_name_1_0=RULE_ID
-		{
-			createLeafNode(grammarAccess.getParameterDeclarationAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
-		}
-		{
-	        if ($current==null) {
-	            $current = factory.create(grammarAccess.getParameterDeclarationRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode, $current);
 	        }
 	        try {

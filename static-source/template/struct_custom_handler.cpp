@@ -10,14 +10,14 @@ __HANDLERCLASSNAME__::__HANDLERCLASSNAME__() {}
 __HANDLERCLASSNAME__::~__HANDLERCLASSNAME__() {}
 
 void __HANDLERCLASSNAME__::update(void* args) {
-	/*
-	 * downcast of parameters from void* args
-	 */
-	__HANDLERPARAMSCAST__
+/*
+ * downcast of parameters from void* args
+ */
+__HANDLERPARAMSCAST__
 
-	/*
-	 * handler's body
-	 */
-	__HANDLERBODY__
+/*
+ * handler's body
+ */
+__HANDLERBODY__
 
 }

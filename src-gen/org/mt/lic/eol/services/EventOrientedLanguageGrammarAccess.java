@@ -173,18 +173,18 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cParamsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cParamsParameterDeclarationParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
+		private final RuleCall cParamsVariableDeclarationParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cParamsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cParamsParameterDeclarationParserRuleCall_2_1_1_0 = (RuleCall)cParamsAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cParamsVariableDeclarationParserRuleCall_2_1_1_0 = (RuleCall)cParamsAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//EventDecl:
-		//	name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")";
+		//	name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")"
+		//name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")"
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -196,26 +196,26 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//(params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)?
+		//(params+=VariableDeclaration ("," params+=VariableDeclaration)*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//params+=ParameterDeclaration
+		//params+=VariableDeclaration
 		public Assignment getParamsAssignment_2_0() { return cParamsAssignment_2_0; }
 
-		//ParameterDeclaration
-		public RuleCall getParamsParameterDeclarationParserRuleCall_2_0_0() { return cParamsParameterDeclarationParserRuleCall_2_0_0; }
+		//VariableDeclaration
+		public RuleCall getParamsVariableDeclarationParserRuleCall_2_0_0() { return cParamsVariableDeclarationParserRuleCall_2_0_0; }
 
-		//("," params+=ParameterDeclaration)*
+		//("," params+=VariableDeclaration)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//","
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
-		//params+=ParameterDeclaration
+		//params+=VariableDeclaration
 		public Assignment getParamsAssignment_2_1_1() { return cParamsAssignment_2_1_1; }
 
-		//ParameterDeclaration
-		public RuleCall getParamsParameterDeclarationParserRuleCall_2_1_1_0() { return cParamsParameterDeclarationParserRuleCall_2_1_1_0; }
+		//VariableDeclaration
+		public RuleCall getParamsVariableDeclarationParserRuleCall_2_1_1_0() { return cParamsVariableDeclarationParserRuleCall_2_1_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -229,20 +229,20 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cParamsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cParamsParameterDeclarationParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
+		private final RuleCall cParamsVariableDeclarationParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cParamsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cParamsParameterDeclarationParserRuleCall_2_1_1_0 = (RuleCall)cParamsAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cParamsVariableDeclarationParserRuleCall_2_1_1_0 = (RuleCall)cParamsAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBodyAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cBodyAbstractBlockParserRuleCall_4_0 = (RuleCall)cBodyAssignment_4.eContents().get(0);
 		
 		//HandlerDecl:
-		//	name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")" body=AbstractBlock;
+		//	name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")" body=AbstractBlock;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")" body=AbstractBlock
+		//name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")" body=AbstractBlock
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -254,26 +254,26 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//(params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)?
+		//(params+=VariableDeclaration ("," params+=VariableDeclaration)*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//params+=ParameterDeclaration
+		//params+=VariableDeclaration
 		public Assignment getParamsAssignment_2_0() { return cParamsAssignment_2_0; }
 
-		//ParameterDeclaration
-		public RuleCall getParamsParameterDeclarationParserRuleCall_2_0_0() { return cParamsParameterDeclarationParserRuleCall_2_0_0; }
+		//VariableDeclaration
+		public RuleCall getParamsVariableDeclarationParserRuleCall_2_0_0() { return cParamsVariableDeclarationParserRuleCall_2_0_0; }
 
-		//("," params+=ParameterDeclaration)*
+		//("," params+=VariableDeclaration)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//","
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
-		//params+=ParameterDeclaration
+		//params+=VariableDeclaration
 		public Assignment getParamsAssignment_2_1_1() { return cParamsAssignment_2_1_1; }
 
-		//ParameterDeclaration
-		public RuleCall getParamsParameterDeclarationParserRuleCall_2_1_1_0() { return cParamsParameterDeclarationParserRuleCall_2_1_1_0; }
+		//VariableDeclaration
+		public RuleCall getParamsVariableDeclarationParserRuleCall_2_1_1_0() { return cParamsVariableDeclarationParserRuleCall_2_1_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -593,34 +593,6 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 
-	public class ParameterDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParameterDeclaration");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeTypeEnumRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//ParameterDeclaration:
-		//	type=Type name=ID;
-		public ParserRule getRule() { return rule; }
-
-		//type=Type name=ID
-		public Group getGroup() { return cGroup; }
-
-		//type=Type
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
-
-		//Type
-		public RuleCall getTypeTypeEnumRuleCall_0_0() { return cTypeTypeEnumRuleCall_0_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
 		private final RuleCall cAdditionParserRuleCall = (RuleCall)rule.eContents().get(1);
@@ -879,7 +851,6 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 	private AbstractBlockElements pAbstractBlock;
 	private CommandElements pCommand;
 	private VariableDeclarationElements pVariableDeclaration;
-	private ParameterDeclarationElements pParameterDeclaration;
 	private ExpressionElements pExpression;
 	private AdditionElements pAddition;
 	private MultiplicationElements pMultiplication;
@@ -956,7 +927,7 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EventDecl:
-	//	name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")";
+	//	name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")";
 	public EventDeclElements getEventDeclAccess() {
 		return (pEventDecl != null) ? pEventDecl : (pEventDecl = new EventDeclElements());
 	}
@@ -966,7 +937,7 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//HandlerDecl:
-	//	name=ID "(" (params+=ParameterDeclaration ("," params+=ParameterDeclaration)*)? ")" body=AbstractBlock;
+	//	name=ID "(" (params+=VariableDeclaration ("," params+=VariableDeclaration)*)? ")" body=AbstractBlock;
 	public HandlerDeclElements getHandlerDeclAccess() {
 		return (pHandlerDecl != null) ? pHandlerDecl : (pHandlerDecl = new HandlerDeclElements());
 	}
@@ -1008,16 +979,6 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 	
 	public ParserRule getVariableDeclarationRule() {
 		return getVariableDeclarationAccess().getRule();
-	}
-
-	//ParameterDeclaration:
-	//	type=Type name=ID;
-	public ParameterDeclarationElements getParameterDeclarationAccess() {
-		return (pParameterDeclaration != null) ? pParameterDeclaration : (pParameterDeclaration = new ParameterDeclarationElements());
-	}
-	
-	public ParserRule getParameterDeclarationRule() {
-		return getParameterDeclarationAccess().getRule();
 	}
 
 	//Expression:

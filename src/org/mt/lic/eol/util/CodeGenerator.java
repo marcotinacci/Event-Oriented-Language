@@ -9,7 +9,6 @@ import org.mt.lic.eol.eventOrientedLanguage.Div;
 import org.mt.lic.eol.eventOrientedLanguage.Minus;
 import org.mt.lic.eol.eventOrientedLanguage.Multi;
 import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
-import org.mt.lic.eol.eventOrientedLanguage.ParameterDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
@@ -17,6 +16,8 @@ import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
+import org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl;
+import org.mt.lic.eol.eventOrientedLanguage.impl.HandlerDeclImpl;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
 
 public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
@@ -74,12 +75,18 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 
 	@Override
 	public String caseVariableDeclaration(VariableDeclaration object) {
-		return NameConventions.convertTypeName(object.getType()) + " " + object.getName() + ";";
-	}
-	
-	@Override
-	public String caseParameterDeclaration(ParameterDeclaration object) {
-		return NameConventions.convertTypeName(object.getType()) + " " + object.getName();
+		if(object.eContainer().getClass().equals(HandlerDeclImpl.class)){
+			// signature handler case
+			System.out.println("signature handler case");
+		}else if(object.eContainer().getClass().equals(CompoundImpl.class)){
+			// local declaration case
+			System.out.println("local declaration case");
+		}else{
+			// TODO throw exception
+			System.out.println("throw exception");
+		}
+		
+		return NameConventions.convertTypeName(object.getType()) + " " + object.getName() + ";\n";
 	}
 
 	@Override

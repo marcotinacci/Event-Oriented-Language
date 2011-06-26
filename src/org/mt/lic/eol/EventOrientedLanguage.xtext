@@ -24,10 +24,10 @@ HandlerSection:
 	'handlers:' (handlers+=HandlerDecl)+;
 	
 EventDecl:
-	name=ID '(' (params+= ParameterDeclaration (',' params+=ParameterDeclaration)* )? ')';
+	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')';
 
 HandlerDecl:
-	name=ID '(' (params+= ParameterDeclaration (',' params+=ParameterDeclaration)* )? ')' body=AbstractBlock;
+	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')' body=AbstractBlock;
 
 /*
  * Block java-style with Composite
@@ -46,9 +46,6 @@ Command:
 	| { ReadInput } 'in' input=[VariableDeclaration];
 
 VariableDeclaration: 
-	type=Type name=ID;
-	
-ParameterDeclaration:
 	type=Type name=ID;
 	
 Expression:

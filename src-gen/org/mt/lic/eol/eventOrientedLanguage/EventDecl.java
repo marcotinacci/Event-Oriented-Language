@@ -56,7 +56,7 @@ public interface EventDecl extends EObject
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link org.mt.lic.eol.eventOrientedLanguage.ParameterDeclaration}.
+   * The list contents are of type {@link org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
@@ -68,6 +68,6 @@ public interface EventDecl extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ParameterDeclaration> getParams();
+  EList<VariableDeclaration> getParams();
 
 } // EventDecl

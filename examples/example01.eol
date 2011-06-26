@@ -1,11 +1,18 @@
+globals:
+	int pippo;
 
 events:
 	onProduce(int buf);
 
 handlers:
 	
-	consume(int buf){
-		out (3+3*2)-4*buf;
+	consume(int buf, int buf2){
+		{
+			int v3;
+		}
+		int v1;
+		out (3+3*2)-4*v1+pippo+v2+ buf2+v3;
+		int v2;
 	}
 
 init:

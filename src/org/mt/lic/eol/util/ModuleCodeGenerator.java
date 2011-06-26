@@ -1,7 +1,7 @@
 package org.mt.lic.eol.util;
 
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
-import org.mt.lic.eol.eventOrientedLanguage.ParameterDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 public class ModuleCodeGenerator extends CodeGenerator {
 	
@@ -19,7 +19,7 @@ public class ModuleCodeGenerator extends CodeGenerator {
 		// file .cpp
 		content = FileHelper.readFileContent("static-source/template/struct_custom_handler.cpp");
 		StringBuffer temp = new StringBuffer();
-		for (ParameterDeclaration decl : object.getParams()) {
+		for (VariableDeclaration decl : object.getParams()) {
 			temp.append(doSwitch(decl));
 		}
 
