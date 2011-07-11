@@ -5,16 +5,25 @@
  */
 package org.mt.lic.eol.eventOrientedLanguage.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 
 /**
@@ -26,6 +35,7 @@ import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
  * <ul>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getHandlerName <em>Handler Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getBindParams <em>Bind Params</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +62,16 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
    * @ordered
    */
   protected HandlerDecl handlerName;
+
+  /**
+   * The cached value of the '{@link #getBindParams() <em>Bind Params</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBindParams()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expression> bindParams;
 
   /**
    * <!-- begin-user-doc -->
@@ -165,6 +185,36 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Expression> getBindParams()
+  {
+    if (bindParams == null)
+    {
+      bindParams = new EObjectContainmentEList<Expression>(Expression.class, this, EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS);
+    }
+    return bindParams;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
+        return ((InternalEList<?>)getBindParams()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -176,6 +226,8 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         if (resolve) return getHandlerName();
         return basicGetHandlerName();
+      case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
+        return getBindParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -185,6 +237,7 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -195,6 +248,10 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
         return;
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         setHandlerName((HandlerDecl)newValue);
+        return;
+      case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
+        getBindParams().clear();
+        getBindParams().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,6 +273,9 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         setHandlerName((HandlerDecl)null);
         return;
+      case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
+        getBindParams().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -234,6 +294,8 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
         return eventName != null;
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         return handlerName != null;
+      case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
+        return bindParams != null && !bindParams.isEmpty();
     }
     return super.eIsSet(featureID);
   }

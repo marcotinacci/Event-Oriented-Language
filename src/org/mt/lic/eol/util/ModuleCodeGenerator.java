@@ -1,13 +1,10 @@
 package org.mt.lic.eol.util;
 
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
-import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 public class ModuleCodeGenerator extends CodeGenerator {
 	
 	public ModuleCodeGenerator(String moduleName, String folder, HandlerDecl object) {
-		// i.e. datatype_iidb
-		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object));
 
 		// file .h
 		String content = FileHelper.readFileContent("static-source/template/struct_custom_handler.h");
@@ -18,19 +15,12 @@ public class ModuleCodeGenerator extends CodeGenerator {
 		
 		// file .cpp
 		content = FileHelper.readFileContent("static-source/template/struct_custom_handler.cpp");
-		StringBuffer temp = new StringBuffer();
-		for (VariableDeclaration decl : object.getParams()) {
-			temp.append(doSwitch(decl));
-		}
 
 		content = content.replaceAll("__HANDLERCLASSNAME__", moduleName);
-		content = content.replaceAll("__HANDLERPARAMSCAST__", CodeGeneratorHelper.formatParamsCast(structName));
-		// TODO gestire il corpo dell'update -----
+		content = content.replaceAll("__HANDLERPARAMSCAST__", doSwitch(object));
 		content = content.replaceAll("__HANDLERBODY__", doSwitch(object.getBody()));
 		FileHelper.writeFileContent(folder + moduleName + ".cpp", content);
 	}
-
-
 
 	
 }	

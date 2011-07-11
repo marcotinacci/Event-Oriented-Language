@@ -2,22 +2,22 @@ globals:
 	int pippo;
 
 events:
-	onProduce(int buf);
+	onProduce[](int buf);
 
 handlers:
 	
-	consume(int buf, int buf2){
-		{
-			int v3;
-		}
-		int v1;
-		out (3+3*2)-4*v1+pippo+v2+ buf2+v3;
-		int v2;
+	consume[](int buf){
+		out buf;
 	}
 
 init:
 {	
-	onProduce += consume;
-	raise onProduce();
+	onProduce += consume[];
+	raise onProduce(3+6);
+	int x;
+	int y;
+	
+	x = y;
+	
 }
 end

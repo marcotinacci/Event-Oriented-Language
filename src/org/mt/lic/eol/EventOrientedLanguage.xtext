@@ -14,6 +14,8 @@ Program:
 	init=AbstractBlock
 	'end';
 
+// SECTIONS
+
 GlobalSection:
 	'globals:' (globals+=VariableDeclaration ';')+;
 
@@ -22,51 +24,92 @@ EventSection:
 
 HandlerSection:
 	'handlers:' (handlers+=HandlerDecl)+;
-	
+
 EventDecl:
 	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')';
 
 HandlerDecl:
-	name=ID '(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')' body=AbstractBlock;
+	name=ID '[' ( bindParams += VariableDeclaration (',' bindParams += VariableDeclaration)* )? ']'
+		'(' (params+= VariableDeclaration (',' params+=VariableDeclaration)* )? ')' body=AbstractBlock;
 
 /*
  * Block java-style with Composite
  */
 AbstractBlock:
 	Command ';'
+	| Construct
 	| { Compound } '{' (body+=AbstractBlock)* '}';
 
 Command:
 	VariableDeclaration
 	| { VariableAssign } name=[VariableDeclaration] '=' value=Expression
-	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl]
+	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl] 
+		'[' (bindParams+=Expression (',' bindParams+=Expression))? ']'
 	| { UnbindHandler } eventName=[EventDecl] '-=' handlerName=[HandlerDecl]
 	| { RaiseEvent } 'raise' eventName=[EventDecl] '(' (params+=Expression (',' params+=Expression)*)? ')'
 	| { PrintOutput } 'out' output=Expression 
 	| { ReadInput } 'in' input=[VariableDeclaration];
+	
+Construct:
+	{ IfThenElse } 'if' '(' condition=Condition ')' thenBlock=AbstractBlock ( balanced?='else' elseBlock=AbstractBlock )?
+	| { While } 'while' '(' condition=Condition ')' block=AbstractBlock;
 
 VariableDeclaration: 
 	type=Type name=ID;
 	
+// EXPRESSIONS
+
 Expression:
+	MathExpression | Condition;
+
+MathExpression:
 	Addition;
 	
-Addition returns Expression:
+Addition returns MathExpression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 
-Multiplication returns Expression:
+Multiplication returns MathExpression:
 	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
 
-PrimaryExpression returns Expression:
-	'(' Expression ')'
-	| { NumberLiteral } value=Value
+PrimaryExpression returns MathExpression:
+	'(' MathExpression ')'
+	| { NumberLiteral } value=NumericValue
 	| { VariableReference } var=[VariableDeclaration];
 
+// CONDITIONS
+
+Condition:
+	BinaryBoolean;
+	
+BinaryBoolean returns Condition:
+	UnaryBoolean (({And.left=current} 'AND' | {Or.left=current} 'OR' ) right=UnaryBoolean)*;
+	
+UnaryBoolean returns Condition:
+	'(' Condition ')'
+	// true o false
+	| {BooleanLiteral} value=BOOL
+	// negazione
+	| {Not} 'NOT' cond=Condition
+	// riferimento a variabile booleana
+	| {BooleanReference} var=[VariableDeclaration]
+	// confronto tra espressioni
+ 	| MathExpression 
+		(({Leq.left=current} '<=') 
+		| ({Less.left=current} '<')  	
+		| ({Eq.left=current} '==')  	
+		| ({Geq.left=current} '>=')  	
+		| ({Gtr.left=current} '>')) 
+		right=MathExpression;
+
+// TYPES
+
 enum Type:
-	T_INT="int" | T_REAL="real" | T_BOOL="bool";
+	T_INT="int" | T_REAL="real" | T_BOOL="bool" | T_STRING="string";
 
 Value:
-	INT | REAL | BOOL;
+	NumericValue | BOOL | STRING;
+	
+NumericValue: INT | REAL;
 
 terminal INT returns ecore::EInt:
 	('0'..'9')+;
@@ -76,3 +119,8 @@ terminal REAL returns ecore::EDouble:
 
 terminal BOOL returns ecore::EBoolean:
 	'true' | 'false';
+	
+terminal STRING returns ecore::EString:
+	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" 
+	| "\'" ("\\" ("b" | "t" | "n" | "f" | "r" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+

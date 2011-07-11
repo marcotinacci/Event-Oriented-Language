@@ -49,21 +49,21 @@ Workflow {
 
 			// The antlr parser generator fragment.
 			fragment = parser.antlr.XtextAntlrGeneratorFragment {
-			//  options = {
-			//		backtrack = true
-			//	}
+			 	options = {
+					backtrack = true
+				}
 			}
 
 			// java-based API for validation 
 			fragment = validation.JavaValidatorFragment {
 				composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 				// registerForImportedPackages = true
 			}
 
 			// scoping and exporting API
-			// fragment = scoping.ImportURIScopingFragment {}
-			// fragment = exporting.SimpleNamesFragment {}
+//			 fragment = scoping.ImportURIScopingFragment {}
+//			 fragment = exporting.SimpleNamesFragment {}
 
 			// scoping and exporting API 
 			fragment = scoping.ImportNamespacesScopingFragment {}
@@ -88,8 +88,12 @@ Workflow {
 			fragment = contentAssist.JavaBasedContentAssistFragment {}
 
 			// generates a more lightweight Antlr parser and lexer tailored for content assist  
-			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
-
+			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {
+			 	options = {
+					backtrack = true
+				}
+			}
+				
 			// project wizard (optional) 
 			// fragment = projectWizard.SimpleProjectWizardFragment {
 			// 		generatorProjectName = "${projectName}.generator" 

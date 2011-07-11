@@ -1,8 +1,10 @@
 package org.mt.lic.eol.util;
 
 import java.util.HashSet;
+import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
@@ -49,9 +51,9 @@ public class CodeGeneratorHelper {
 	 * @param object dichiarazione dell'handler
 	 * @return stringa con una lettera per ogni tipo dei campi
 	 */
-	public static String formatFieldsType(HandlerDecl object) {
+	public static String formatFieldsType(List<VariableDeclaration> fields) {
 		StringBuffer buf = new StringBuffer();
-		for (VariableDeclaration decl: object.getParams()) {
+		for (VariableDeclaration decl: fields) {
 			switch (decl.getType().getValue()) {
 			case Type.TINT_VALUE:
 				buf.append("i");
@@ -71,7 +73,7 @@ public class CodeGeneratorHelper {
 	}
 	
 	public static String formatStruct(HandlerDecl object) {
-		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object));
+		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object.getParams()));
 		String upStructName = structName.toUpperCase();
 		StringBuffer buf = new StringBuffer();
 		
@@ -89,6 +91,7 @@ public class CodeGeneratorHelper {
 	}
 
 	public static String formatParamsCast(String typeName) {
+		// TODO modificare con i nomi delle variabili, dare dei caratteri suffissi a tutti i nomi per evitare sovrapposizioni
 		return typeName + " *params = (" + typeName + "*)args;\n";
 	}
 
@@ -97,6 +100,33 @@ public class CodeGeneratorHelper {
 		for (HandlerDecl decl : handlers) {
 			toReturn.append(formatStruct(decl)+"\n");
 		}
+		return toReturn.toString();
+	}
+
+	public static String formatHandlerSignature(HandlerDecl handler) {
+		return handler.getName() 
+			+ formatParameters(handler.getBindParams(), true) 
+			+ formatParameters(handler.getParams());
+	}
+
+	public static String formatEventSignature(EventDecl event) {
+		return event.getName() + formatParameters(event.getParams());
+	}
+	
+	public static String formatParameters(List<VariableDeclaration> params){
+		return formatParameters(params, false);
+	}
+	
+	public static String formatParameters(List<VariableDeclaration> params, Boolean isBind){
+		StringBuffer toReturn = new StringBuffer();
+		toReturn.append(isBind?'[':'(');
+		if(params.size() != 0){
+			toReturn.append(NameConventions.convertTypeName(params.get(0).getType()));
+			for (int i = 1; i < params.size(); i++) {
+				toReturn.append(", " + NameConventions.convertTypeName(params.get(i).getType()));				
+			}
+		}
+		toReturn.append(isBind?']':')');
 		return toReturn.toString();
 	}
 	

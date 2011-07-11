@@ -50,7 +50,17 @@ public enum Type implements Enumerator
    * @generated
    * @ordered
    */
-  TBOOL(2, "T_BOOL", "bool");
+  TBOOL(2, "T_BOOL", "bool"),
+
+  /**
+   * The '<em><b>TSTRING</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TSTRING_VALUE
+   * @generated
+   * @ordered
+   */
+  TSTRING(3, "T_STRING", "string");
 
   /**
    * The '<em><b>TINT</b></em>' literal value.
@@ -98,6 +108,21 @@ public enum Type implements Enumerator
   public static final int TBOOL_VALUE = 2;
 
   /**
+   * The '<em><b>TSTRING</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>TSTRING</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #TSTRING
+   * @model name="T_STRING" literal="string"
+   * @generated
+   * @ordered
+   */
+  public static final int TSTRING_VALUE = 3;
+
+  /**
    * An array of all the '<em><b>Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -109,6 +134,7 @@ public enum Type implements Enumerator
       TINT,
       TREAL,
       TBOOL,
+      TSTRING,
     };
 
   /**
@@ -170,6 +196,7 @@ public enum Type implements Enumerator
       case TINT_VALUE: return TINT;
       case TREAL_VALUE: return TREAL;
       case TBOOL_VALUE: return TBOOL;
+      case TSTRING_VALUE: return TSTRING;
     }
     return null;
   }

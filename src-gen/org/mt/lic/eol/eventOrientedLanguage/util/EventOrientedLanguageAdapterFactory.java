@@ -118,6 +118,11 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
         return createCommandAdapter();
       }
       @Override
+      public Adapter caseConstruct(Construct object)
+      {
+        return createConstructAdapter();
+      }
+      @Override
       public Adapter caseVariableDeclaration(VariableDeclaration object)
       {
         return createVariableDeclarationAdapter();
@@ -126,6 +131,16 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExpression(Expression object)
       {
         return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseMathExpression(MathExpression object)
+      {
+        return createMathExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCondition(Condition object)
+      {
+        return createConditionAdapter();
       }
       @Override
       public Adapter caseCompound(Compound object)
@@ -163,6 +178,16 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
         return createReadInputAdapter();
       }
       @Override
+      public Adapter caseIfThenElse(IfThenElse object)
+      {
+        return createIfThenElseAdapter();
+      }
+      @Override
+      public Adapter caseWhile(While object)
+      {
+        return createWhileAdapter();
+      }
+      @Override
       public Adapter casePlus(Plus object)
       {
         return createPlusAdapter();
@@ -191,6 +216,56 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseVariableReference(VariableReference object)
       {
         return createVariableReferenceAdapter();
+      }
+      @Override
+      public Adapter caseAnd(And object)
+      {
+        return createAndAdapter();
+      }
+      @Override
+      public Adapter caseOr(Or object)
+      {
+        return createOrAdapter();
+      }
+      @Override
+      public Adapter caseBooleanLiteral(BooleanLiteral object)
+      {
+        return createBooleanLiteralAdapter();
+      }
+      @Override
+      public Adapter caseNot(Not object)
+      {
+        return createNotAdapter();
+      }
+      @Override
+      public Adapter caseBooleanReference(BooleanReference object)
+      {
+        return createBooleanReferenceAdapter();
+      }
+      @Override
+      public Adapter caseLeq(Leq object)
+      {
+        return createLeqAdapter();
+      }
+      @Override
+      public Adapter caseLess(Less object)
+      {
+        return createLessAdapter();
+      }
+      @Override
+      public Adapter caseEq(Eq object)
+      {
+        return createEqAdapter();
+      }
+      @Override
+      public Adapter caseGeq(Geq object)
+      {
+        return createGeqAdapter();
+      }
+      @Override
+      public Adapter caseGtr(Gtr object)
+      {
+        return createGtrAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -335,6 +410,21 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Construct <em>Construct</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Construct
+   * @generated
+   */
+  public Adapter createConstructAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration <em>Variable Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -360,6 +450,36 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.MathExpression <em>Math Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.MathExpression
+   * @generated
+   */
+  public Adapter createMathExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Condition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Condition
+   * @generated
+   */
+  public Adapter createConditionAdapter()
   {
     return null;
   }
@@ -470,6 +590,36 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.IfThenElse <em>If Then Else</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.IfThenElse
+   * @generated
+   */
+  public Adapter createIfThenElseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.While <em>While</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.While
+   * @generated
+   */
+  public Adapter createWhileAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Plus <em>Plus</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -555,6 +705,156 @@ public class EventOrientedLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.And
+   * @generated
+   */
+  public Adapter createAndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Or
+   * @generated
+   */
+  public Adapter createOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.BooleanLiteral <em>Boolean Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.BooleanLiteral
+   * @generated
+   */
+  public Adapter createBooleanLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Not
+   * @generated
+   */
+  public Adapter createNotAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.BooleanReference <em>Boolean Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.BooleanReference
+   * @generated
+   */
+  public Adapter createBooleanReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Leq <em>Leq</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Leq
+   * @generated
+   */
+  public Adapter createLeqAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Less <em>Less</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Less
+   * @generated
+   */
+  public Adapter createLessAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Eq <em>Eq</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Eq
+   * @generated
+   */
+  public Adapter createEqAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Geq <em>Geq</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Geq
+   * @generated
+   */
+  public Adapter createGeqAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.mt.lic.eol.eventOrientedLanguage.Gtr <em>Gtr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.mt.lic.eol.eventOrientedLanguage.Gtr
+   * @generated
+   */
+  public Adapter createGtrAdapter()
   {
     return null;
   }

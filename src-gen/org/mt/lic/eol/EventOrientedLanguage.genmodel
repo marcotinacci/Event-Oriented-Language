@@ -13,6 +13,7 @@
       <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/T_INT"/>
       <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/T_REAL"/>
       <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/T_BOOL"/>
+      <genEnumLiterals ecoreEnumLiteral="EventOrientedLanguage.ecore#//Type/T_STRING"/>
     </genEnums>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Program">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Program/globals"/>
@@ -35,16 +36,22 @@
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//HandlerDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//HandlerDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//HandlerDecl/bindParams"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//HandlerDecl/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//HandlerDecl/body"/>
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//AbstractBlock"/>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Command"/>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Construct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Construct/condition"/>
+    </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//VariableDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableDeclaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//VariableDeclaration/name"/>
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Expression"/>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//MathExpression"/>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Condition"/>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Compound">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Compound/body"/>
     </genClasses>
@@ -55,6 +62,7 @@
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//BindHandler">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//BindHandler/eventName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//BindHandler/handlerName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//BindHandler/bindParams"/>
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//UnbindHandler">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//UnbindHandler/eventName"/>
@@ -69,6 +77,14 @@
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//ReadInput">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//ReadInput/input"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//IfThenElse">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//IfThenElse/thenBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//IfThenElse/balanced"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//IfThenElse/elseBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//While">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//While/block"/>
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//Plus">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Plus/left"/>
@@ -91,6 +107,43 @@
     </genClasses>
     <genClasses ecoreClass="EventOrientedLanguage.ecore#//VariableReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//VariableReference/var"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute EventOrientedLanguage.ecore#//BooleanLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Not">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Not/cond"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//BooleanReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//BooleanReference/var"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Leq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Leq/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Leq/right"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Less">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Less/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Less/right"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Eq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Eq/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Eq/right"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Geq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Geq/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Geq/right"/>
+    </genClasses>
+    <genClasses ecoreClass="EventOrientedLanguage.ecore#//Gtr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Gtr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference EventOrientedLanguage.ecore#//Gtr/right"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

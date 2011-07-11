@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.HandlerDecl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.HandlerDecl#getBindParams <em>Bind Params</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.HandlerDecl#getParams <em>Params</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.HandlerDecl#getBody <em>Body</em>}</li>
  * </ul>
@@ -54,6 +55,22 @@ public interface HandlerDecl extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Bind Params</b></em>' containment reference list.
+   * The list contents are of type {@link org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bind Params</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bind Params</em>' containment reference list.
+   * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getHandlerDecl_BindParams()
+   * @model containment="true"
+   * @generated
+   */
+  EList<VariableDeclaration> getBindParams();
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.

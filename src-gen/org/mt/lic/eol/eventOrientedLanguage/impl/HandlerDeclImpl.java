@@ -34,6 +34,7 @@ import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.HandlerDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.HandlerDeclImpl#getBindParams <em>Bind Params</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.HandlerDeclImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.HandlerDeclImpl#getBody <em>Body</em>}</li>
  * </ul>
@@ -62,6 +63,16 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getBindParams() <em>Bind Params</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBindParams()
+   * @generated
+   * @ordered
+   */
+  protected EList<VariableDeclaration> bindParams;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -125,6 +136,20 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.HANDLER_DECL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<VariableDeclaration> getBindParams()
+  {
+    if (bindParams == null)
+    {
+      bindParams = new EObjectContainmentEList<VariableDeclaration>(VariableDeclaration.class, this, EventOrientedLanguagePackage.HANDLER_DECL__BIND_PARAMS);
+    }
+    return bindParams;
   }
 
   /**
@@ -199,6 +224,8 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.HANDLER_DECL__BIND_PARAMS:
+        return ((InternalEList<?>)getBindParams()).basicRemove(otherEnd, msgs);
       case EventOrientedLanguagePackage.HANDLER_DECL__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
       case EventOrientedLanguagePackage.HANDLER_DECL__BODY:
@@ -219,6 +246,8 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
     {
       case EventOrientedLanguagePackage.HANDLER_DECL__NAME:
         return getName();
+      case EventOrientedLanguagePackage.HANDLER_DECL__BIND_PARAMS:
+        return getBindParams();
       case EventOrientedLanguagePackage.HANDLER_DECL__PARAMS:
         return getParams();
       case EventOrientedLanguagePackage.HANDLER_DECL__BODY:
@@ -240,6 +269,10 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
     {
       case EventOrientedLanguagePackage.HANDLER_DECL__NAME:
         setName((String)newValue);
+        return;
+      case EventOrientedLanguagePackage.HANDLER_DECL__BIND_PARAMS:
+        getBindParams().clear();
+        getBindParams().addAll((Collection<? extends VariableDeclaration>)newValue);
         return;
       case EventOrientedLanguagePackage.HANDLER_DECL__PARAMS:
         getParams().clear();
@@ -265,6 +298,9 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
       case EventOrientedLanguagePackage.HANDLER_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case EventOrientedLanguagePackage.HANDLER_DECL__BIND_PARAMS:
+        getBindParams().clear();
+        return;
       case EventOrientedLanguagePackage.HANDLER_DECL__PARAMS:
         getParams().clear();
         return;
@@ -287,6 +323,8 @@ public class HandlerDeclImpl extends MinimalEObjectImpl.Container implements Han
     {
       case EventOrientedLanguagePackage.HANDLER_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EventOrientedLanguagePackage.HANDLER_DECL__BIND_PARAMS:
+        return bindParams != null && !bindParams.isEmpty();
       case EventOrientedLanguagePackage.HANDLER_DECL__PARAMS:
         return params != null && !params.isEmpty();
       case EventOrientedLanguagePackage.HANDLER_DECL__BODY:

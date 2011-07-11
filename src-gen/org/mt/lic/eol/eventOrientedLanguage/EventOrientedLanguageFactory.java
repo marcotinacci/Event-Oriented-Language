@@ -98,6 +98,15 @@ public interface EventOrientedLanguageFactory extends EFactory
   Command createCommand();
 
   /**
+   * Returns a new object of class '<em>Construct</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Construct</em>'.
+   * @generated
+   */
+  Construct createConstruct();
+
+  /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,6 +123,24 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Math Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Math Expression</em>'.
+   * @generated
+   */
+  MathExpression createMathExpression();
+
+  /**
+   * Returns a new object of class '<em>Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condition</em>'.
+   * @generated
+   */
+  Condition createCondition();
 
   /**
    * Returns a new object of class '<em>Compound</em>'.
@@ -179,6 +206,24 @@ public interface EventOrientedLanguageFactory extends EFactory
   ReadInput createReadInput();
 
   /**
+   * Returns a new object of class '<em>If Then Else</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Then Else</em>'.
+   * @generated
+   */
+  IfThenElse createIfThenElse();
+
+  /**
+   * Returns a new object of class '<em>While</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While</em>'.
+   * @generated
+   */
+  While createWhile();
+
+  /**
    * Returns a new object of class '<em>Plus</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -231,6 +276,96 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   VariableReference createVariableReference();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
+
+  /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
+
+  /**
+   * Returns a new object of class '<em>Boolean Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Literal</em>'.
+   * @generated
+   */
+  BooleanLiteral createBooleanLiteral();
+
+  /**
+   * Returns a new object of class '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not</em>'.
+   * @generated
+   */
+  Not createNot();
+
+  /**
+   * Returns a new object of class '<em>Boolean Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Reference</em>'.
+   * @generated
+   */
+  BooleanReference createBooleanReference();
+
+  /**
+   * Returns a new object of class '<em>Leq</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Leq</em>'.
+   * @generated
+   */
+  Leq createLeq();
+
+  /**
+   * Returns a new object of class '<em>Less</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Less</em>'.
+   * @generated
+   */
+  Less createLess();
+
+  /**
+   * Returns a new object of class '<em>Eq</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Eq</em>'.
+   * @generated
+   */
+  Eq createEq();
+
+  /**
+   * Returns a new object of class '<em>Geq</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Geq</em>'.
+   * @generated
+   */
+  Geq createGeq();
+
+  /**
+   * Returns a new object of class '<em>Gtr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gtr</em>'.
+   * @generated
+   */
+  Gtr createGtr();
 
   /**
    * Returns the package supported by this factory.

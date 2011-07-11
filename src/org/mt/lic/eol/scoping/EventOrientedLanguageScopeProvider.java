@@ -26,11 +26,6 @@ import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
  *
  */
 public class EventOrientedLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
-
-	IScope scope_VariableDeclaration(AbstractBlock a, EReference ref) {
-		System.out.println("hello abstract");
-		return IScope.NULLSCOPE;
-	}
 	
 	IScope scope_VariableAssign_name(AbstractBlock a, EReference ref){
 		return Scopes.scopeFor(getDeclarations(a));

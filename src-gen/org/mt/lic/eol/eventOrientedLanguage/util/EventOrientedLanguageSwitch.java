@@ -152,6 +152,14 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EventOrientedLanguagePackage.CONSTRUCT:
+      {
+        Construct construct = (Construct)theEObject;
+        T result = caseConstruct(construct);
+        if (result == null) result = caseAbstractBlock(construct);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EventOrientedLanguagePackage.VARIABLE_DECLARATION:
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
@@ -165,6 +173,23 @@ public class EventOrientedLanguageSwitch<T>
       {
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.MATH_EXPRESSION:
+      {
+        MathExpression mathExpression = (MathExpression)theEObject;
+        T result = caseMathExpression(mathExpression);
+        if (result == null) result = caseCondition(mathExpression);
+        if (result == null) result = caseExpression(mathExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.CONDITION:
+      {
+        Condition condition = (Condition)theEObject;
+        T result = caseCondition(condition);
+        if (result == null) result = caseExpression(condition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -230,10 +255,30 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EventOrientedLanguagePackage.IF_THEN_ELSE:
+      {
+        IfThenElse ifThenElse = (IfThenElse)theEObject;
+        T result = caseIfThenElse(ifThenElse);
+        if (result == null) result = caseConstruct(ifThenElse);
+        if (result == null) result = caseAbstractBlock(ifThenElse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.WHILE:
+      {
+        While while_ = (While)theEObject;
+        T result = caseWhile(while_);
+        if (result == null) result = caseConstruct(while_);
+        if (result == null) result = caseAbstractBlock(while_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EventOrientedLanguagePackage.PLUS:
       {
         Plus plus = (Plus)theEObject;
         T result = casePlus(plus);
+        if (result == null) result = caseMathExpression(plus);
+        if (result == null) result = caseCondition(plus);
         if (result == null) result = caseExpression(plus);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -242,6 +287,8 @@ public class EventOrientedLanguageSwitch<T>
       {
         Minus minus = (Minus)theEObject;
         T result = caseMinus(minus);
+        if (result == null) result = caseMathExpression(minus);
+        if (result == null) result = caseCondition(minus);
         if (result == null) result = caseExpression(minus);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -250,6 +297,8 @@ public class EventOrientedLanguageSwitch<T>
       {
         Multi multi = (Multi)theEObject;
         T result = caseMulti(multi);
+        if (result == null) result = caseMathExpression(multi);
+        if (result == null) result = caseCondition(multi);
         if (result == null) result = caseExpression(multi);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -258,6 +307,8 @@ public class EventOrientedLanguageSwitch<T>
       {
         Div div = (Div)theEObject;
         T result = caseDiv(div);
+        if (result == null) result = caseMathExpression(div);
+        if (result == null) result = caseCondition(div);
         if (result == null) result = caseExpression(div);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -266,6 +317,8 @@ public class EventOrientedLanguageSwitch<T>
       {
         NumberLiteral numberLiteral = (NumberLiteral)theEObject;
         T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseMathExpression(numberLiteral);
+        if (result == null) result = caseCondition(numberLiteral);
         if (result == null) result = caseExpression(numberLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -274,7 +327,99 @@ public class EventOrientedLanguageSwitch<T>
       {
         VariableReference variableReference = (VariableReference)theEObject;
         T result = caseVariableReference(variableReference);
+        if (result == null) result = caseMathExpression(variableReference);
+        if (result == null) result = caseCondition(variableReference);
         if (result == null) result = caseExpression(variableReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.AND:
+      {
+        And and = (And)theEObject;
+        T result = caseAnd(and);
+        if (result == null) result = caseCondition(and);
+        if (result == null) result = caseExpression(and);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.OR:
+      {
+        Or or = (Or)theEObject;
+        T result = caseOr(or);
+        if (result == null) result = caseCondition(or);
+        if (result == null) result = caseExpression(or);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.BOOLEAN_LITERAL:
+      {
+        BooleanLiteral booleanLiteral = (BooleanLiteral)theEObject;
+        T result = caseBooleanLiteral(booleanLiteral);
+        if (result == null) result = caseCondition(booleanLiteral);
+        if (result == null) result = caseExpression(booleanLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.NOT:
+      {
+        Not not = (Not)theEObject;
+        T result = caseNot(not);
+        if (result == null) result = caseCondition(not);
+        if (result == null) result = caseExpression(not);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.BOOLEAN_REFERENCE:
+      {
+        BooleanReference booleanReference = (BooleanReference)theEObject;
+        T result = caseBooleanReference(booleanReference);
+        if (result == null) result = caseCondition(booleanReference);
+        if (result == null) result = caseExpression(booleanReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.LEQ:
+      {
+        Leq leq = (Leq)theEObject;
+        T result = caseLeq(leq);
+        if (result == null) result = caseCondition(leq);
+        if (result == null) result = caseExpression(leq);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.LESS:
+      {
+        Less less = (Less)theEObject;
+        T result = caseLess(less);
+        if (result == null) result = caseCondition(less);
+        if (result == null) result = caseExpression(less);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.EQ:
+      {
+        Eq eq = (Eq)theEObject;
+        T result = caseEq(eq);
+        if (result == null) result = caseCondition(eq);
+        if (result == null) result = caseExpression(eq);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.GEQ:
+      {
+        Geq geq = (Geq)theEObject;
+        T result = caseGeq(geq);
+        if (result == null) result = caseCondition(geq);
+        if (result == null) result = caseExpression(geq);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EventOrientedLanguagePackage.GTR:
+      {
+        Gtr gtr = (Gtr)theEObject;
+        T result = caseGtr(gtr);
+        if (result == null) result = caseCondition(gtr);
+        if (result == null) result = caseExpression(gtr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -411,6 +556,22 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Construct</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Construct</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstruct(Construct object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -438,6 +599,38 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Math Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Math Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMathExpression(MathExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCondition(Condition object)
   {
     return null;
   }
@@ -555,6 +748,38 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>If Then Else</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Then Else</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfThenElse(IfThenElse object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhile(While object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Plus</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -646,6 +871,166 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T caseVariableReference(VariableReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>And</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnd(And object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Or</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOr(Or object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanLiteral(BooleanLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Not</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNot(Not object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanReference(BooleanReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Leq</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Leq</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLeq(Leq object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Less</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Less</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLess(Less object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Eq</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Eq</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEq(Eq object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Geq</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Geq</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeq(Geq object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Gtr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Gtr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGtr(Gtr object)
   {
     return null;
   }

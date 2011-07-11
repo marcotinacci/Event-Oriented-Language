@@ -1,11 +1,14 @@
 package org.mt.lic.eol.util;
 
 import java.util.HashSet;
+import java.util.List;
 
 import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.Compound;
 import org.mt.lic.eol.eventOrientedLanguage.Div;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
+import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.Minus;
 import org.mt.lic.eol.eventOrientedLanguage.Multi;
 import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
@@ -50,17 +53,20 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	
 	@Override
 	public String caseRaiseEvent(RaiseEvent object) {
-		// TODO parametri di raise
-		//data_consume *x = new data_consume;
-		//x->var1 = 10;
-		//x->var2 = 3;
-		//onProduce->setState(x);
-		
-		// String structName = NameConventions.HandlerStructName(object.get);
-		StringBuffer buf = new StringBuffer();
-		buf.append(" *x = new data_consume;");
-		
-		return object.getEventName().getName() + "->notify();\n";
+		// TODO delete delle new come lo state!!
+
+		StringBuffer toReturn = new StringBuffer();
+		// nome struttura
+		String structName = NameConventions.DatatypeStructName(
+				CodeGeneratorHelper.formatFieldsType(object.getEventName().getParams()));
+		toReturn.append(structName + " *state = new "+structName+";\n");
+		List<Expression> params = object.getParams();
+		for (int i = 0; i < params.size(); i++) {
+			toReturn.append("state->var" + i + " = " + doSwitch(params.get(i)) + ";\n");
+		}
+		toReturn.append(object.getEventName().getName() + "->setState(state);\n");
+		toReturn.append(object.getEventName().getName() + "->notify();\n");
+		return toReturn.toString();
 	}
 
 	@Override
@@ -72,7 +78,7 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	public String caseUnbindHandler(UnbindHandler object) {
 		return object.getEventName().getName() + "->detach(" + object.getHandlerName().getName() + ");\n";
 	}
-
+	
 	@Override
 	public String caseVariableDeclaration(VariableDeclaration object) {
 		if(object.eContainer().getClass().equals(HandlerDeclImpl.class)){
@@ -90,9 +96,23 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	}
 
 	@Override
+	public String caseHandlerDecl(HandlerDecl object) {
+		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object.getParams()));
+		StringBuffer toReturn = new StringBuffer();
+		// esegui cast da void*
+		toReturn.append(CodeGeneratorHelper.formatParamsCast(structName) + "\n");
+
+		List<VariableDeclaration> params = object.getParams();
+		for(int i=0; i < params.size(); i++){
+			toReturn.append( NameConventions.convertTypeName(params.get(i).getType()) + " " +
+				params.get(i).getName() + "= params->var"+ i +";\n");
+		}
+		return toReturn.toString();
+	}
+	
+	@Override
 	public String caseVariableAssign(VariableAssign object) {
-		// TODO Auto-generated method stub
-		return super.caseVariableAssign(object);
+		return object.getName().getName() + " = " + doSwitch(object.getValue()) + ";\n";
 	}
 
 	@Override
@@ -124,6 +144,5 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	public String caseVariableReference(VariableReference object) {
 		return object.getVar().getName();
 	}
-	
 	
 }
