@@ -45,7 +45,7 @@ __MODULECLASSNAME__(){
 	__EVENTINIT__
 }
 
-~__MODULECLASSNAME(){
+~__MODULECLASSNAME__(){
 	/*
 	 * Events deallcoation
 	 */

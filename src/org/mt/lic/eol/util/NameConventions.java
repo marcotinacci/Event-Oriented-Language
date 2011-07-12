@@ -1,5 +1,7 @@
 package org.mt.lic.eol.util;
 
+import java.io.File;
+
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 
 /**
@@ -39,5 +41,10 @@ public class NameConventions {
 
 	public static String ModuleClassName(String moduleName) {
 		return "Module_" + moduleName;
+	}
+
+	public static String getFileNameFromPath(String path) {
+		return path.substring(path.lastIndexOf(File.separatorChar) + 1, 
+				path.lastIndexOf('.'));
 	}
 }

@@ -1,10 +1,15 @@
 package org.mt.lic.eol.util;
 
+import java.io.File;
+import java.util.HashSet;
+import java.util.List;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.Program;
 
 public class ModuleCodeGenerator extends CodeGenerator {
@@ -20,24 +25,6 @@ public class ModuleCodeGenerator extends CodeGenerator {
 		return instance;
 	}
 	
-//	public synchronized void generateModule(String moduleName, String folder, HandlerDecl object) {
-//
-//		// file .h
-//		String content = FileHelper.readFileContent("static-source/template/struct_custom_handler.h");
-//		content = content.replaceAll("__UPPERHANDLERCLASSNAME__", moduleName.toUpperCase());
-//		content = content.replaceAll("__HANDLERCLASSNAME__", moduleName);
-//		content = content.replaceAll("__HANDLERSTRUCTDEF__", CodeGeneratorHelper.formatStruct(object));		
-//		FileHelper.writeFileContent(folder + moduleName + ".h", content);
-//		
-//		// file .cpp
-//		content = FileHelper.readFileContent("static-source/template/struct_custom_handler.cpp");
-//
-//		content = content.replaceAll("__HANDLERCLASSNAME__", moduleName);
-//		content = content.replaceAll("__HANDLERPARAMSCAST__", doSwitch(object));
-//		content = content.replaceAll("__HANDLERBODY__", doSwitch(object.getBody()));
-//		FileHelper.writeFileContent(folder + moduleName + ".cpp", content);
-//	}
-	
 	private String moduleCode;
 	private String moduleName;
 	
@@ -46,36 +33,56 @@ public class ModuleCodeGenerator extends CodeGenerator {
 	 * @param moduleName
 	 * @param projectPath
 	 */
-	public synchronized void generateModule(String moduleName, String projectPath) {
-		this.moduleName = moduleName;
+	public synchronized void generateModule(String sourceName, String projectPath) {
+		this.moduleName = NameConventions.getFileNameFromPath(sourceName);
+		
+		modules = new HashSet<String>();
+		libraries = new HashSet<String>();
+		// crea cartella
+		folder = projectPath;
+		File project = new File(folder);
+		project.mkdirs();
+
 		// leggi il file da compilare
 		ResourceSet rs = new ResourceSetImpl();
-		Resource resource = rs.getResource(URI.createURI(moduleName), true);
+		Resource resource = rs.getResource(URI.createURI(sourceName), true);
 		EObject root = resource.getContents().get(0);
 		
-		// lettura del template
-		moduleCode = FileHelper.readFileContent("static-source/template/struct_module.cpp");
 		// inizia la visita
-		doSwitch(root);
-		
-		moduleCode = moduleCode.replaceAll("__MODULECLASSNAME__", moduleName);
-		moduleCode = moduleCode.replaceAll("__HANDLERS__", null);
-		moduleCode = moduleCode.replaceAll("__EVENTDECL__", null);
-		moduleCode = moduleCode.replaceAll("__EVENTINIT__", null);
-		moduleCode = moduleCode.replaceAll("__EVENTDELETE__", null);
-		moduleCode = moduleCode.replaceAll("__INIT__", null);
-		// le librerie sono inserite per ultime, dopo aver determinato le dipendenze
-		moduleCode = moduleCode.replaceAll("__LIBRARIES__", null);
+		moduleCode = doSwitch(root);
+		// nome del modulo
+		moduleCode = moduleCode.replaceAll("__MODULECLASSNAME__", NameConventions.ModuleClassName(moduleName));
+		// scrittura inclusioni moduli
+		moduleCode = moduleCode.replace("__MODULES__", CodeGeneratorHelper.formatModules(modules));
+		// scrittura inclusioni librerie
+		moduleCode = moduleCode.replace("__LIBRARIES__", CodeGeneratorHelper.formatLibraries(libraries));
 		
 		FileHelper.writeFileContent(folder + moduleName + ".cpp", moduleCode);
 	}
 
 	@Override
 	public String caseProgram(Program object) {
+		List<EventDecl> events = object.getEvents().getEvents();
+		// lettura del template
 		String toReturn = FileHelper.readFileContent("static-source/template/struct_module.cpp");
-		toReturn = toReturn.replace("__GLOBALVARS__", doSwitch(object.getGlobals()));
+		// variabili globali
+		toReturn = toReturn.replace("__GLOBALVARS__", 
+				CodeGeneratorHelper.formatAllGlobalVariables(object.getGlobals().getGlobals()));
+		// definizione degli handler del modulo
 		toReturn = toReturn.replace("__HANDLERS__", 
-				CodeGeneratorHelper.formatAllHandlerClasses(object.getHandlers(),moduleName));
+				CodeGeneratorHelper.formatAllHandlerClasses(object.getHandlers(), moduleName));
+		// dichiarazione degli eventi
+		toReturn = toReturn.replace("__EVENTDECL__", CodeGeneratorHelper.formatAllEventDeclarations(events));
+		// allocazione degli eventi nel costruttore
+		toReturn = toReturn.replace("__EVENTINIT__", CodeGeneratorHelper.formatAllEventAllocations(events));
+		// deallocazione degli eventi nel distruttore
+		toReturn = toReturn.replace("__EVENTDELETE__", CodeGeneratorHelper.formatAllEventDeallocations(events));
+		// corpo dell'init
+		toReturn = toReturn.replace("__INIT__", doSwitch(object.getInit()));
+		// aggiungi le strutture richieste dagli handler
+		StructCodeGenerator.getInstance().addStructs(object.getHandlers().getHandlers());
+		// includi il modulo delle definizioni delle strutture
+		modules.add("Datatype.h");
 		return toReturn;
 	}
 	

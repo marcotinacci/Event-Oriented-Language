@@ -1,12 +1,13 @@
 package org.mt.lic.eol.util;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.EList;
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
+import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 public class CodeGeneratorHelper {
@@ -48,13 +49,13 @@ public class CodeGeneratorHelper {
 	/**
 	 * metodo che definisce il suffisso del nome della struttura dati per il passaggio di parametri
 	 * (i.e. con un int avremo "i", con un bool, un double e un int avremo "bdi" e cos“ via)
-	 * @param object dichiarazione dell'handler
+	 * @param types lista dei tipi
 	 * @return stringa con una lettera per ogni tipo dei campi
 	 */
-	public static String formatFieldsType(List<VariableDeclaration> fields) {
+	public static String formatFieldsType(List<Type> types) {
 		StringBuffer buf = new StringBuffer();
-		for (VariableDeclaration decl: fields) {
-			switch (decl.getType()) {
+		for (Type type: types) {
+			switch (type) {
 			case TINT:
 				buf.append("i");
 				break;
@@ -74,21 +75,30 @@ public class CodeGeneratorHelper {
 		return buf.toString();
 	}
 	
-	public static String formatStruct(HandlerDecl object) {
-		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object.getParams()));
-		String upStructName = structName.toUpperCase();
+	/**
+	 * facciata alternativa del metodo formatFieldsType(List<Type>)
+	 * @param params lista delle dichiarazioni dei parametri
+	 * @return stringa con una lettera per ogni tipo dei campi
+	 */
+	public static String formatFieldsTypeFromParams(List<VariableDeclaration> params){
+		List<Type> types = new LinkedList<Type>();
+		for (VariableDeclaration param : params) {
+			types.add(param.getType());
+		}
+		return formatFieldsType(types);
+	}
+	
+	public static String formatStruct(List<Type> types) {
+		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(types));
 		StringBuffer buf = new StringBuffer();
 		
-		buf.append("#ifndef _"+ upStructName +"_\n");
-		buf.append("#define	_"+ upStructName +"_\n\n");
-		buf.append("typedef struct "+ structName + "{\n");
+		buf.append("typedef struct " + structName + "{\n");
 		int counter = 0;
-		for (VariableDeclaration decl: object.getParams()) {
-			buf.append(decl.getType() + " var"+ counter +";\n");
+		for (Type type: types) {
+			buf.append("\t" + type + " var" + counter + ";\n");
 			counter++;
 		}
-		buf.append("};\n");
-		buf.append("#endif /* _"+ upStructName +"_ */\n");
+		buf.append("};\n\n");
 		return buf.toString();
 	}
 
@@ -97,10 +107,10 @@ public class CodeGeneratorHelper {
 		return typeName + " *params = (" + typeName + "*)args;\n";
 	}
 
-	public static String formatAllStruct(EList<HandlerDecl> handlers) {
+	public static String formatAllStruct(HashSet<List<Type>> set) {
 		StringBuffer toReturn = new StringBuffer();
-		for (HandlerDecl decl : handlers) {
-			toReturn.append(formatStruct(decl)+"\n");
+		for (List<Type> types : set) {
+			toReturn.append(formatStruct(types));
 		}
 		return toReturn.toString();
 	}
@@ -145,8 +155,57 @@ public class CodeGeneratorHelper {
 		return handlerModel
 			.replace("__HANDLERCLASSNAME__", NameConventions.HandlerClassName(handler.getName()))
 			.replace("__MODULECLASSNAME__", NameConventions.ModuleClassName(moduleName))
-			.replace("__HANDLERPARAMS__", ModuleCodeGenerator.getInstance().doSwitch(handler))
+			.replace("__HANDLERPARAMSCAST__", ModuleCodeGenerator.getInstance().doSwitch(handler))
 			.replace("__HANDLERBODY__", ModuleCodeGenerator.getInstance().doSwitch(handler.getBody()));
+	}
+
+	public static String formatAllEventDeclarations(List<EventDecl> events) {
+		StringBuffer toReturn = new StringBuffer();
+		for (EventDecl event : events) {
+			toReturn.append(formatEventDeclaration(event));
+		}
+		return toReturn.toString();
+	}
+
+	public static String formatEventDeclaration(EventDecl event) {
+		return "Event* "+ event.getName() +";\n";
+	}
+
+	public static String formatAllEventAllocations(List<EventDecl> events) {
+		StringBuffer toReturn = new StringBuffer();
+		for (EventDecl event : events) {
+			toReturn.append(formatEventAllocation(event));
+		}
+		return toReturn.toString();
+	}
+
+	public static String formatEventAllocation(EventDecl event) {
+		return event.getName() + " = new Event();\n";
+	}
+
+	public static String formatAllEventDeallocations(
+			List<EventDecl> events) {
+		StringBuffer toReturn = new StringBuffer();
+		for (EventDecl event : events) {
+			toReturn.append(formatEventDeallocation(event));
+		}
+		return toReturn.toString();
+	}
+
+	public static String formatEventDeallocation(EventDecl event) {
+		return "delete "+ event.getName() + ";\n";
+	}
+
+	public static String formatAllGlobalVariables(List<VariableDeclaration> vars) {
+		StringBuffer toReturn = new StringBuffer();
+		for (VariableDeclaration decl : vars) {
+			toReturn.append(formatGlobalVariable(decl));
+		}
+		return toReturn.toString();
+	}
+
+	public static String formatGlobalVariable(VariableDeclaration decl) {
+		return NameConventions.convertTypeName(decl.getType()) + " " + decl.getName() + ";\n";
 	}
 	
 }

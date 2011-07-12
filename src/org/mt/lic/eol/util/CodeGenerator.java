@@ -58,7 +58,7 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 		StringBuffer toReturn = new StringBuffer();
 		// nome struttura
 		String structName = NameConventions.DatatypeStructName(
-				CodeGeneratorHelper.formatFieldsType(object.getEvent().getParams()));
+				CodeGeneratorHelper.formatFieldsTypeFromParams(object.getEvent().getParams()));
 		toReturn.append(structName + " *state = new " + structName + ";\n");
 		List<Expression> params = object.getParams();
 		for (int i = 0; i < params.size(); i++) {
@@ -97,7 +97,8 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 
 	@Override
 	public String caseHandlerDecl(HandlerDecl object) {
-		String structName = NameConventions.DatatypeStructName(CodeGeneratorHelper.formatFieldsType(object.getParams()));
+		String structName = NameConventions.DatatypeStructName(
+				CodeGeneratorHelper.formatFieldsTypeFromParams(object.getParams()));
 		StringBuffer toReturn = new StringBuffer();
 		// esegui cast da void*
 		toReturn.append(CodeGeneratorHelper.formatParamsCast(structName) + "\n");

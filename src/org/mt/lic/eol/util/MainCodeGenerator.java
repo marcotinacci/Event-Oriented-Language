@@ -72,7 +72,7 @@ public class MainCodeGenerator extends CodeGenerator {
 		// scrittura inclusioni librerie
 		toReturn = toReturn.replaceFirst("__LIBRARIES__", CodeGeneratorHelper.formatLibraries(libraries));
 		// scrittura delle strutture necessarie al passaggio di valori tra gestori e eventi
-		toReturn = toReturn.replaceFirst("__MAINSTRUCTDEF__", CodeGeneratorHelper.formatAllStruct(object.getHandlers().getHandlers()));
+		//toReturn = toReturn.replaceFirst("__MAINSTRUCTDEF__", CodeGeneratorHelper.formatAllStruct(object.getHandlers().getHandlers()));
 		
 		return toReturn;
 	}
@@ -91,8 +91,7 @@ public class MainCodeGenerator extends CodeGenerator {
 		// nome della classe handler
 		String handlerClassName = NameConventions.HandlerClassName(object.getName());
 		
-		// TODO appena commentata la seguente riga...
-		//ModuleCodeGenerator.getInstance().generateModule(handlerClassName, folder, object);
+		// ModuleCodeGenerator.getInstance().generateModule(handlerClassName, folder, object);
 		
 		// aggiungi l'handler alle inclusioni
 		modules.add(handlerClassName);
