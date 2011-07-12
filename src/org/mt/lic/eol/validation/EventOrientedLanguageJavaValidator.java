@@ -17,6 +17,7 @@ import org.mt.lic.eol.util.TypeHelper;
  
 public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLanguageJavaValidator {
 
+	// TODO controllo uso e inizializzazione variabili globali su init
 	// TODO controllo raise con tipi dei parametri corretti
 	// TODO controllo codice morto
 	// TODO controllo codice non raggiungibile
@@ -46,8 +47,8 @@ public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLan
 	 */
 	@Check
 	public void checkRaise(RaiseEvent raise){
-		if(!TypeHelper.compatibleParams(raise.getParams(), raise.getEventName().getParams())){
-			error("The event " + CodeGeneratorHelper.formatEventSignature(raise.getEventName()) +  
+		if(!TypeHelper.compatibleParams(raise.getParams(), raise.getEvent().getParams())){
+			error("The event " + CodeGeneratorHelper.formatEventSignature(raise.getEvent()) +  
 					" cannot be raised with " + raise.getParams().size() + " parameters", null);
 		}
 	}

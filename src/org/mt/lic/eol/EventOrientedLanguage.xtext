@@ -46,7 +46,7 @@ Command:
 	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl] 
 		'[' (bindParams+=Expression (',' bindParams+=Expression))? ']'
 	| { UnbindHandler } eventName=[EventDecl] '-=' handlerName=[HandlerDecl]
-	| { RaiseEvent } 'raise' eventName=[EventDecl] '(' (params+=Expression (',' params+=Expression)*)? ')'
+	| { RaiseEvent } 'raise' event=[EventDecl] '(' (params+=Expression (',' params+=Expression)*)? ')'
 	| { PrintOutput } 'out' output=Expression 
 	| { ReadInput } 'in' input=[VariableDeclaration];
 	

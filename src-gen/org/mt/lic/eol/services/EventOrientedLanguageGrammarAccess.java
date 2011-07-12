@@ -420,9 +420,9 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Action cRaiseEventAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Keyword cRaiseKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cEventNameAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final CrossReference cEventNameEventDeclCrossReference_4_2_0 = (CrossReference)cEventNameAssignment_4_2.eContents().get(0);
-		private final RuleCall cEventNameEventDeclIDTerminalRuleCall_4_2_0_1 = (RuleCall)cEventNameEventDeclCrossReference_4_2_0.eContents().get(1);
+		private final Assignment cEventAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final CrossReference cEventEventDeclCrossReference_4_2_0 = (CrossReference)cEventAssignment_4_2.eContents().get(0);
+		private final RuleCall cEventEventDeclIDTerminalRuleCall_4_2_0_1 = (RuleCall)cEventEventDeclCrossReference_4_2_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		private final Group cGroup_4_4 = (Group)cGroup_4.eContents().get(4);
 		private final Assignment cParamsAssignment_4_4_0 = (Assignment)cGroup_4_4.eContents().get(0);
@@ -447,14 +447,14 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		//Command:
 		//	VariableDeclaration | {VariableAssign} name=[VariableDeclaration] "=" value=Expression | {BindHandler}
 		//	eventName=[EventDecl] "+=" handlerName=[HandlerDecl] "[" (bindParams+=Expression ("," bindParams+=Expression))? "]" |
-		//	{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" eventName=[EventDecl] "("
+		//	{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" event=[EventDecl] "("
 		//	(params+=Expression ("," params+=Expression)*)? ")" | {PrintOutput} "out" output=Expression | {ReadInput} "in"
 		//	input=[VariableDeclaration];
 		public ParserRule getRule() { return rule; }
 
 		//VariableDeclaration | {VariableAssign} name=[VariableDeclaration] "=" value=Expression | {BindHandler}
 		//eventName=[EventDecl] "+=" handlerName=[HandlerDecl] "[" (bindParams+=Expression ("," bindParams+=Expression))? "]" |
-		//{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" eventName=[EventDecl] "("
+		//{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" event=[EventDecl] "("
 		//(params+=Expression ("," params+=Expression)*)? ")" | {PrintOutput} "out" output=Expression | {ReadInput} "in"
 		//input=[VariableDeclaration]
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -568,7 +568,7 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getHandlerNameHandlerDeclIDTerminalRuleCall_3_3_0_1() { return cHandlerNameHandlerDeclIDTerminalRuleCall_3_3_0_1; }
 
-		//{RaiseEvent} "raise" eventName=[EventDecl] "(" (params+=Expression ("," params+=Expression)*)? ")"
+		//{RaiseEvent} "raise" event=[EventDecl] "(" (params+=Expression ("," params+=Expression)*)? ")"
 		public Group getGroup_4() { return cGroup_4; }
 
 		//{RaiseEvent}
@@ -577,14 +577,14 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 		//"raise"
 		public Keyword getRaiseKeyword_4_1() { return cRaiseKeyword_4_1; }
 
-		//eventName=[EventDecl]
-		public Assignment getEventNameAssignment_4_2() { return cEventNameAssignment_4_2; }
+		//event=[EventDecl]
+		public Assignment getEventAssignment_4_2() { return cEventAssignment_4_2; }
 
 		//[EventDecl]
-		public CrossReference getEventNameEventDeclCrossReference_4_2_0() { return cEventNameEventDeclCrossReference_4_2_0; }
+		public CrossReference getEventEventDeclCrossReference_4_2_0() { return cEventEventDeclCrossReference_4_2_0; }
 
 		//ID
-		public RuleCall getEventNameEventDeclIDTerminalRuleCall_4_2_0_1() { return cEventNameEventDeclIDTerminalRuleCall_4_2_0_1; }
+		public RuleCall getEventEventDeclIDTerminalRuleCall_4_2_0_1() { return cEventEventDeclIDTerminalRuleCall_4_2_0_1; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_4_3() { return cLeftParenthesisKeyword_4_3; }
@@ -1455,7 +1455,7 @@ public class EventOrientedLanguageGrammarAccess extends AbstractGrammarElementFi
 	//Command:
 	//	VariableDeclaration | {VariableAssign} name=[VariableDeclaration] "=" value=Expression | {BindHandler}
 	//	eventName=[EventDecl] "+=" handlerName=[HandlerDecl] "[" (bindParams+=Expression ("," bindParams+=Expression))? "]" |
-	//	{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" eventName=[EventDecl] "("
+	//	{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" event=[EventDecl] "("
 	//	(params+=Expression ("," params+=Expression)*)? ")" | {PrintOutput} "out" output=Expression | {ReadInput} "in"
 	//	input=[VariableDeclaration];
 	public CommandElements getCommandAccess() {

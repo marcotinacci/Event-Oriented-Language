@@ -1118,7 +1118,7 @@ ruleCommand returns [EObject current=null]
         }
 	RULE_ID
 	{
-		createLeafNode(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_4_2_0(), "eventName"); 
+		createLeafNode(grammarAccess.getCommandAccess().getEventEventDeclCrossReference_4_2_0(), "event"); 
 	}
 
 )

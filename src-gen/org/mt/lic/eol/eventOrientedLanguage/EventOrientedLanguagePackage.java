@@ -610,13 +610,13 @@ public interface EventOrientedLanguagePackage extends EPackage
   int RAISE_EVENT = 17;
 
   /**
-   * The feature id for the '<em><b>Event Name</b></em>' reference.
+   * The feature id for the '<em><b>Event</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RAISE_EVENT__EVENT_NAME = COMMAND_FEATURE_COUNT + 0;
+  int RAISE_EVENT__EVENT = COMMAND_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1787,15 +1787,15 @@ public interface EventOrientedLanguagePackage extends EPackage
   EClass getRaiseEvent();
 
   /**
-   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEventName <em>Event Name</em>}'.
+   * Returns the meta object for the reference '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEvent <em>Event</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Event Name</em>'.
-   * @see org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEventName()
+   * @return the meta object for the reference '<em>Event</em>'.
+   * @see org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEvent()
    * @see #getRaiseEvent()
    * @generated
    */
-  EReference getRaiseEvent_EventName();
+  EReference getRaiseEvent_Event();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getParams <em>Params</em>}'.
@@ -2777,12 +2777,12 @@ public interface EventOrientedLanguagePackage extends EPackage
     EClass RAISE_EVENT = eINSTANCE.getRaiseEvent();
 
     /**
-     * The meta object literal for the '<em><b>Event Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Event</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RAISE_EVENT__EVENT_NAME = eINSTANCE.getRaiseEvent_EventName();
+    EReference RAISE_EVENT__EVENT = eINSTANCE.getRaiseEvent_Event();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.

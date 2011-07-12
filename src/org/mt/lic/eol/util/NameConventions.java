@@ -9,7 +9,7 @@ import org.mt.lic.eol.eventOrientedLanguage.Type;
 public class NameConventions {
 	
 	public static String HandlerClassName(String handlerName) {
-		return "Handler_"+handlerName;
+		return "Handler_" + handlerName;
 	}
 
 	public static String DatatypeStructName(String typeSuffix) {
@@ -28,10 +28,16 @@ public class NameConventions {
 		case TREAL:
 			toReturn = "double";
 			break;
+		case TSTRING:
+			toReturn = "string";
 		default:
 			// TODO throw exception
 			toReturn = "";
 		}
 		return toReturn;
+	}
+
+	public static String ModuleClassName(String moduleName) {
+		return "Module_" + moduleName;
 	}
 }

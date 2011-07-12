@@ -1917,7 +1917,7 @@ protected class AbstractBlock_RightCurlyBracketKeyword_2_3 extends KeywordToken 
  * Command:
  * 	VariableDeclaration | {VariableAssign} name=[VariableDeclaration] "=" value=Expression | {BindHandler}
  * 	eventName=[EventDecl] "+=" handlerName=[HandlerDecl] "[" (bindParams+=Expression ("," bindParams+=Expression))? "]" |
- * 	{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" eventName=[EventDecl] "("
+ * 	{UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" event=[EventDecl] "("
  * 	(params+=Expression ("," params+=Expression)*)? ")" | {PrintOutput} "out" output=Expression | {ReadInput} "in"
  * 	input=[VariableDeclaration];
  *
@@ -1925,7 +1925,7 @@ protected class AbstractBlock_RightCurlyBracketKeyword_2_3 extends KeywordToken 
 
 // VariableDeclaration | {VariableAssign} name=[VariableDeclaration] "=" value=Expression | {BindHandler}
 // eventName=[EventDecl] "+=" handlerName=[HandlerDecl] "[" (bindParams+=Expression ("," bindParams+=Expression))? "]" |
-// {UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" eventName=[EventDecl] "("
+// {UnbindHandler} eventName=[EventDecl] "-=" handlerName=[HandlerDecl] | {RaiseEvent} "raise" event=[EventDecl] "("
 // (params+=Expression ("," params+=Expression)*)? ")" | {PrintOutput} "out" output=Expression | {ReadInput} "in"
 // input=[VariableDeclaration]
 protected class Command_Alternatives extends AlternativesToken {
@@ -2675,7 +2675,7 @@ protected class Command_HandlerNameAssignment_3_3 extends AssignmentToken  {
 }
 
 
-// {RaiseEvent} "raise" eventName=[EventDecl] "(" (params+=Expression ("," params+=Expression)*)? ")"
+// {RaiseEvent} "raise" event=[EventDecl] "(" (params+=Expression ("," params+=Expression)*)? ")"
 protected class Command_Group_4 extends GroupToken {
 	
 	public Command_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2752,16 +2752,16 @@ protected class Command_RaiseKeyword_4_1 extends KeywordToken  {
 
 }
 
-// eventName=[EventDecl]
-protected class Command_EventNameAssignment_4_2 extends AssignmentToken  {
+// event=[EventDecl]
+protected class Command_EventAssignment_4_2 extends AssignmentToken  {
 	
-	public Command_EventNameAssignment_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Command_EventAssignment_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getCommandAccess().getEventNameAssignment_4_2();
+		return grammarAccess.getCommandAccess().getEventAssignment_4_2();
 	}
 
     @Override
@@ -2774,13 +2774,13 @@ protected class Command_EventNameAssignment_4_2 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("eventName",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("eventName");
+		if((value = eObjectConsumer.getConsumable("event",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("event");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_4_2_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getCommandAccess().getEventEventDeclCrossReference_4_2_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_4_2_0(); 
+				element = grammarAccess.getCommandAccess().getEventEventDeclCrossReference_4_2_0(); 
 				return obj;
 			}
 		}
@@ -2804,7 +2804,7 @@ protected class Command_LeftParenthesisKeyword_4_3 extends KeywordToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Command_EventNameAssignment_4_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Command_EventAssignment_4_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

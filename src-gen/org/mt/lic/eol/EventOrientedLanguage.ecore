@@ -78,7 +78,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="handlerName" eType="#//HandlerDecl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RaiseEvent" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventName" eType="#//EventDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>

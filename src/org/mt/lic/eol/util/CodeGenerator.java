@@ -58,14 +58,14 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 		StringBuffer toReturn = new StringBuffer();
 		// nome struttura
 		String structName = NameConventions.DatatypeStructName(
-				CodeGeneratorHelper.formatFieldsType(object.getEventName().getParams()));
-		toReturn.append(structName + " *state = new "+structName+";\n");
+				CodeGeneratorHelper.formatFieldsType(object.getEvent().getParams()));
+		toReturn.append(structName + " *state = new " + structName + ";\n");
 		List<Expression> params = object.getParams();
 		for (int i = 0; i < params.size(); i++) {
 			toReturn.append("state->var" + i + " = " + doSwitch(params.get(i)) + ";\n");
 		}
-		toReturn.append(object.getEventName().getName() + "->setState(state);\n");
-		toReturn.append(object.getEventName().getName() + "->notify();\n");
+		toReturn.append(object.getEvent().getName() + "->setState(state);\n");
+		toReturn.append(object.getEvent().getName() + "->notify();\n");
 		return toReturn.toString();
 	}
 

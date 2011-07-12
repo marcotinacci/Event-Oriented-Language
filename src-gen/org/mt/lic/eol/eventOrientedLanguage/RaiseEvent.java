@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEventName <em>Event Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEvent <em>Event</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
@@ -27,30 +27,30 @@ import org.eclipse.emf.common.util.EList;
 public interface RaiseEvent extends Command
 {
   /**
-   * Returns the value of the '<em><b>Event Name</b></em>' reference.
+   * Returns the value of the '<em><b>Event</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Event Name</em>' reference isn't clear,
+   * If the meaning of the '<em>Event</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Event Name</em>' reference.
-   * @see #setEventName(EventDecl)
-   * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getRaiseEvent_EventName()
+   * @return the value of the '<em>Event</em>' reference.
+   * @see #setEvent(EventDecl)
+   * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getRaiseEvent_Event()
    * @model
    * @generated
    */
-  EventDecl getEventName();
+  EventDecl getEvent();
 
   /**
-   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEventName <em>Event Name</em>}' reference.
+   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.RaiseEvent#getEvent <em>Event</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Event Name</em>' reference.
-   * @see #getEventName()
+   * @param value the new value of the '<em>Event</em>' reference.
+   * @see #getEvent()
    * @generated
    */
-  void setEventName(EventDecl value);
+  void setEvent(EventDecl value);
 
   /**
    * Returns the value of the '<em><b>Params</b></em>' containment reference list.

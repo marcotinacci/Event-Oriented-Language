@@ -38,6 +38,7 @@ public class MainCodeGenerator extends CodeGenerator {
 		File project = new File(folder);
 		project.mkdirs();
 		// leggi il file da compilare (eobject)
+		ModuleCodeGenerator.getInstance().generateModule(fileName, projectPath);
 		ResourceSet rs = new ResourceSetImpl();
 		Resource resource = rs.getResource(URI.createURI(fileName), true);
 		EObject eobject = resource.getContents().get(0);
@@ -90,7 +91,8 @@ public class MainCodeGenerator extends CodeGenerator {
 		// nome della classe handler
 		String handlerClassName = NameConventions.HandlerClassName(object.getName());
 		
-		new ModuleCodeGenerator(handlerClassName, folder, object);
+		// TODO appena commentata la seguente riga...
+		//ModuleCodeGenerator.getInstance().generateModule(handlerClassName, folder, object);
 		
 		// aggiungi l'handler alle inclusioni
 		modules.add(handlerClassName);

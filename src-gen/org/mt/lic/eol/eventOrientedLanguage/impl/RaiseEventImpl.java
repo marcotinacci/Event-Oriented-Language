@@ -32,7 +32,7 @@ import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.RaiseEventImpl#getEventName <em>Event Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.RaiseEventImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.RaiseEventImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
@@ -42,14 +42,14 @@ import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
 public class RaiseEventImpl extends CommandImpl implements RaiseEvent
 {
   /**
-   * The cached value of the '{@link #getEventName() <em>Event Name</em>}' reference.
+   * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEventName()
+   * @see #getEvent()
    * @generated
    * @ordered
    */
-  protected EventDecl eventName;
+  protected EventDecl event;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
@@ -87,19 +87,19 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventDecl getEventName()
+  public EventDecl getEvent()
   {
-    if (eventName != null && eventName.eIsProxy())
+    if (event != null && event.eIsProxy())
     {
-      InternalEObject oldEventName = (InternalEObject)eventName;
-      eventName = (EventDecl)eResolveProxy(oldEventName);
-      if (eventName != oldEventName)
+      InternalEObject oldEvent = (InternalEObject)event;
+      event = (EventDecl)eResolveProxy(oldEvent);
+      if (event != oldEvent)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventOrientedLanguagePackage.RAISE_EVENT__EVENT_NAME, oldEventName, eventName));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventOrientedLanguagePackage.RAISE_EVENT__EVENT, oldEvent, event));
       }
     }
-    return eventName;
+    return event;
   }
 
   /**
@@ -107,9 +107,9 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventDecl basicGetEventName()
+  public EventDecl basicGetEvent()
   {
-    return eventName;
+    return event;
   }
 
   /**
@@ -117,12 +117,12 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEventName(EventDecl newEventName)
+  public void setEvent(EventDecl newEvent)
   {
-    EventDecl oldEventName = eventName;
-    eventName = newEventName;
+    EventDecl oldEvent = event;
+    event = newEvent;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.RAISE_EVENT__EVENT_NAME, oldEventName, eventName));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.RAISE_EVENT__EVENT, oldEvent, event));
   }
 
   /**
@@ -165,9 +165,9 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT_NAME:
-        if (resolve) return getEventName();
-        return basicGetEventName();
+      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT:
+        if (resolve) return getEvent();
+        return basicGetEvent();
       case EventOrientedLanguagePackage.RAISE_EVENT__PARAMS:
         return getParams();
     }
@@ -185,8 +185,8 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT_NAME:
-        setEventName((EventDecl)newValue);
+      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT:
+        setEvent((EventDecl)newValue);
         return;
       case EventOrientedLanguagePackage.RAISE_EVENT__PARAMS:
         getParams().clear();
@@ -206,8 +206,8 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT_NAME:
-        setEventName((EventDecl)null);
+      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT:
+        setEvent((EventDecl)null);
         return;
       case EventOrientedLanguagePackage.RAISE_EVENT__PARAMS:
         getParams().clear();
@@ -226,8 +226,8 @@ public class RaiseEventImpl extends CommandImpl implements RaiseEvent
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT_NAME:
-        return eventName != null;
+      case EventOrientedLanguagePackage.RAISE_EVENT__EVENT:
+        return event != null;
       case EventOrientedLanguagePackage.RAISE_EVENT__PARAMS:
         return params != null && !params.isEmpty();
     }

@@ -2583,7 +2583,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1832); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      		createLeafNode(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_4_2_0(), "eventName"); 
+                      		createLeafNode(grammarAccess.getCommandAccess().getEventEventDeclCrossReference_4_2_0(), "event"); 
                       	
                     }
 

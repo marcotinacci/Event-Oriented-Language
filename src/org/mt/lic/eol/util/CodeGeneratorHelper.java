@@ -6,7 +6,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
-import org.mt.lic.eol.eventOrientedLanguage.Type;
+import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 
 public class CodeGeneratorHelper {
@@ -54,16 +54,18 @@ public class CodeGeneratorHelper {
 	public static String formatFieldsType(List<VariableDeclaration> fields) {
 		StringBuffer buf = new StringBuffer();
 		for (VariableDeclaration decl: fields) {
-			switch (decl.getType().getValue()) {
-			case Type.TINT_VALUE:
+			switch (decl.getType()) {
+			case TINT:
 				buf.append("i");
 				break;
-			case Type.TREAL_VALUE:
+			case TREAL:
 				buf.append("d");
 				break;
-			case Type.TBOOL_VALUE:
+			case TBOOL:
 				buf.append("b");
 				break;
+			case TSTRING:
+				buf.append("s");
 			default:
 				// TODO throw exception
 				break;
@@ -128,6 +130,23 @@ public class CodeGeneratorHelper {
 		}
 		toReturn.append(isBind?']':')');
 		return toReturn.toString();
+	}
+
+	public static String formatAllHandlerClasses(HandlerSection handlers, String moduleName) {
+		StringBuffer toReturn = new StringBuffer();
+		for (HandlerDecl handler : handlers.getHandlers()) {
+			toReturn.append(formatHandlerClass(handler, moduleName)+'\n');
+		}
+		return toReturn.toString();
+	}
+
+	public static String formatHandlerClass(HandlerDecl handler, String moduleName) {
+		String handlerModel = FileHelper.readFileContent("static-source/template/struct_handler.cpp"); 
+		return handlerModel
+			.replace("__HANDLERCLASSNAME__", NameConventions.HandlerClassName(handler.getName()))
+			.replace("__MODULECLASSNAME__", NameConventions.ModuleClassName(moduleName))
+			.replace("__HANDLERPARAMS__", ModuleCodeGenerator.getInstance().doSwitch(handler))
+			.replace("__HANDLERBODY__", ModuleCodeGenerator.getInstance().doSwitch(handler.getBody()));
 	}
 	
 }

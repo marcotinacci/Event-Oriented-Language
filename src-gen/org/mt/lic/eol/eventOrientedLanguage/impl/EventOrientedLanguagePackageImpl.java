@@ -824,7 +824,7 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRaiseEvent_EventName()
+  public EReference getRaiseEvent_Event()
   {
     return (EReference)raiseEventEClass.getEStructuralFeatures().get(0);
   }
@@ -1468,7 +1468,7 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
     createEReference(unbindHandlerEClass, UNBIND_HANDLER__HANDLER_NAME);
 
     raiseEventEClass = createEClass(RAISE_EVENT);
-    createEReference(raiseEventEClass, RAISE_EVENT__EVENT_NAME);
+    createEReference(raiseEventEClass, RAISE_EVENT__EVENT);
     createEReference(raiseEventEClass, RAISE_EVENT__PARAMS);
 
     printOutputEClass = createEClass(PRINT_OUTPUT);
@@ -1669,7 +1669,7 @@ public class EventOrientedLanguagePackageImpl extends EPackageImpl implements Ev
     initEReference(getUnbindHandler_HandlerName(), this.getHandlerDecl(), null, "handlerName", null, 0, 1, UnbindHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(raiseEventEClass, RaiseEvent.class, "RaiseEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRaiseEvent_EventName(), this.getEventDecl(), null, "eventName", null, 0, 1, RaiseEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRaiseEvent_Event(), this.getEventDecl(), null, "event", null, 0, 1, RaiseEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRaiseEvent_Params(), this.getExpression(), null, "params", null, 0, -1, RaiseEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(printOutputEClass, PrintOutput.class, "PrintOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
