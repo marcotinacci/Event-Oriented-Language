@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
+import org.mt.lic.eol.eventOrientedLanguage.GlobalSection;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
@@ -151,12 +152,12 @@ public class CodeGeneratorHelper {
 	}
 
 	public static String formatHandlerClass(HandlerDecl handler, String moduleName) {
-		String handlerModel = FileHelper.readFileContent("static-source/template/struct_handler.cpp"); 
+		String handlerModel = FileHelper.readFileContent("static-source/template/struct_handler.cpp");
 		return handlerModel
 			.replace("__HANDLERCLASSNAME__", NameConventions.HandlerClassName(handler.getName()))
 			.replace("__MODULECLASSNAME__", NameConventions.ModuleClassName(moduleName))
-			.replace("__HANDLERPARAMSCAST__", ModuleCodeGenerator.getInstance().doSwitch(handler))
-			.replace("__HANDLERBODY__", ModuleCodeGenerator.getInstance().doSwitch(handler.getBody()));
+			.replace("__HANDLERPARAMSCAST__", HandlerCodeGenerator.getInstance().doSwitch(handler))
+			.replace("__HANDLERBODY__", HandlerCodeGenerator.getInstance().doSwitch(handler.getBody()));
 	}
 
 	public static String formatAllEventDeclarations(List<EventDecl> events) {
@@ -206,6 +207,15 @@ public class CodeGeneratorHelper {
 
 	public static String formatGlobalVariable(VariableDeclaration decl) {
 		return NameConventions.convertTypeName(decl.getType()) + " " + decl.getName() + ";\n";
+	}
+
+	public static String formatVariableReference(VariableDeclaration decl) {
+		String toReturn = decl.getName();
+		// caso variabile di modulo
+		if(decl.eContainer() instanceof GlobalSection){
+			return NameConventions.moduleReference() + toReturn;
+		}
+		return toReturn;
 	}
 	
 }

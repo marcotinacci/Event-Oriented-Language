@@ -15,23 +15,28 @@ import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
 import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
+import org.mt.lic.eol.eventOrientedLanguage.ReadInput;
 import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
-import org.mt.lic.eol.eventOrientedLanguage.impl.CompoundImpl;
-import org.mt.lic.eol.eventOrientedLanguage.impl.HandlerDeclImpl;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
 
-public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
+abstract public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	
 	protected HashSet<String> libraries;
 	protected HashSet<String> modules;
 	protected String folder;
 	
 	public CodeGenerator() {
+		reset();
+	}
+	
+	public void reset(){
 		libraries = new HashSet<String>();
 		modules = new HashSet<String>();
+		modules.add("Event.h");
+		modules.add("Handler.h");
 	}
 	
 	@Override
@@ -81,17 +86,6 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	
 	@Override
 	public String caseVariableDeclaration(VariableDeclaration object) {
-		if(object.eContainer().getClass().equals(HandlerDeclImpl.class)){
-			// signature handler case
-			System.out.println("signature handler case");
-		}else if(object.eContainer().getClass().equals(CompoundImpl.class)){
-			// local declaration case
-			System.out.println("local declaration case");
-		}else{
-			// TODO throw exception
-			System.out.println("throw exception");
-		}
-		
 		return NameConventions.convertTypeName(object.getType()) + " " + object.getName() + ";\n";
 	}
 
@@ -144,6 +138,36 @@ public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	@Override
 	public String caseVariableReference(VariableReference object) {
 		return object.getVar().getName();
+	}
+
+	@Override
+	public String caseReadInput(ReadInput object) {
+		libraries.add("iostream");
+		return "std::cin >> " + object.getInput().getName() + ";\n";
+	}
+
+	public HashSet<String> getLibraries() {
+		return libraries;
+	}
+
+	public void setLibraries(HashSet<String> libraries) {
+		this.libraries = libraries;
+	}
+
+	public HashSet<String> getModules() {
+		return modules;
+	}
+
+	public void setModules(HashSet<String> modules) {
+		this.modules = modules;
+	}
+
+	public String getFolder() {
+		return folder;
+	}
+
+	public void setFolder(String folder) {
+		this.folder = folder;
 	}
 	
 }

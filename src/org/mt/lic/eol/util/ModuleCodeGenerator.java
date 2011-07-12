@@ -1,7 +1,6 @@
 package org.mt.lic.eol.util;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
@@ -33,11 +32,10 @@ public class ModuleCodeGenerator extends CodeGenerator {
 	 * @param moduleName
 	 * @param projectPath
 	 */
-	public synchronized void generateModule(String sourceName, String projectPath) {
+	public void generateModule(String sourceName, String projectPath) {
+		reset();
 		this.moduleName = NameConventions.getFileNameFromPath(sourceName);
-		
-		modules = new HashSet<String>();
-		libraries = new HashSet<String>();
+
 		// crea cartella
 		folder = projectPath;
 		File project = new File(folder);
@@ -85,7 +83,5 @@ public class ModuleCodeGenerator extends CodeGenerator {
 		modules.add("Datatype.h");
 		return toReturn;
 	}
-	
-	
 	
 }	

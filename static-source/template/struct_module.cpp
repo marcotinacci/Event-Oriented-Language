@@ -8,10 +8,11 @@
  * Libraries
  */
 __LIBRARIES__
-#include <iostream>
-#include "Event.h"
-#include "Handler.h"
-#include "Datatype.h"
+
+/*
+ * Modules
+ */
+__MODULES__
 
 /*
  * Module class definition

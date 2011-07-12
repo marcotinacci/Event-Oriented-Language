@@ -47,4 +47,8 @@ public class NameConventions {
 		return path.substring(path.lastIndexOf(File.separatorChar) + 1, 
 				path.lastIndexOf('.'));
 	}
+
+	public static String moduleReference() {
+		return "module->";
+	}
 }
