@@ -1,4 +1,4 @@
-package org.mt.lic.eol.util;
+package org.mt.lic.eol.generating;
 
 import java.util.HashSet;
 import java.util.List;
@@ -21,8 +21,9 @@ import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
+import org.mt.lic.eol.util.NameConventions;
 
-abstract public class CodeGenerator extends EventOrientedLanguageSwitch<String> {
+abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	
 	protected HashSet<String> libraries;
 	protected HashSet<String> modules;
@@ -76,7 +77,11 @@ abstract public class CodeGenerator extends EventOrientedLanguageSwitch<String> 
 
 	@Override
 	public String caseBindHandler(BindHandler object) {
-		return object.getEventName().getName() + "->attach(" + object.getHandlerName().getName() + ");\n";
+		String handlerClassName = NameConventions.HandlerClassName(object.getHandlerName().getName());
+		return object.getEventName().getName() + "->attach(new " + handlerClassName + "(this));\n";
+//		return handlerClassName + "* "+ object.getHandlerName().getName() 
+//			+ " = new " + handlerClassName + "(this);\n" 
+//			+ object.getEventName().getName() + "->attach(" + object.getHandlerName().getName() + ");\n"; 
 	}
 	
 	@Override

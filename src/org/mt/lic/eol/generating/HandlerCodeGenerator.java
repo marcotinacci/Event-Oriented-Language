@@ -1,4 +1,4 @@
-package org.mt.lic.eol.util;
+package org.mt.lic.eol.generating;
 
 import org.mt.lic.eol.eventOrientedLanguage.BooleanReference;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
@@ -6,7 +6,7 @@ import org.mt.lic.eol.eventOrientedLanguage.ReadInput;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
 
-public class HandlerCodeGenerator extends CodeGenerator{
+class HandlerCodeGenerator extends CodeGenerator{
 	
 	static private HandlerCodeGenerator instance = null;
 	

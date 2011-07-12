@@ -12,7 +12,7 @@ import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
-import org.mt.lic.eol.util.CodeGeneratorHelper;
+import org.mt.lic.eol.generating.CodeGeneratorHelper;
 import org.mt.lic.eol.util.TypeHelper;
  
 public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLanguageJavaValidator {

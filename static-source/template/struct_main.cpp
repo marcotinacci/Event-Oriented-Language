@@ -5,36 +5,12 @@
  */
 
 /*
- * Libraries
- */
-__LIBRARIES__
-
-/*
  * Modules
  */
 __MODULES__
 
-/*
- * Struct def
- */
-__MAINSTRUCTDEF__
-
 int main()
 {
-/*
- * Events declarations
- */
-__EVENTS__
-
-/*
- * Handlers declarations
- */
-__HANDLERS__
-
-/*
- * Init section
- */
-__INIT__
-
+__MAIN__
 return 0;
 }

@@ -1,4 +1,4 @@
-package org.mt.lic.eol.util;
+package org.mt.lic.eol.generating;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -7,8 +7,10 @@ import java.util.List;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
+import org.mt.lic.eol.util.FileHelper;
+import org.mt.lic.eol.util.NameConventions;
 
-public class StructCodeGenerator {
+class StructCodeGenerator {
 	
 	private static StructCodeGenerator instance = null;
 	
@@ -42,12 +44,12 @@ public class StructCodeGenerator {
 	
 	/**
 	 * genera il modulo contenente le definizioni delle strutture necessarie
-	 * @param handlers
 	 */
-	public synchronized void generateStructModule(List<HandlerDecl> handlers){
+	public void generateStructModule(String folder){
 		// lettura del template
-		String moduleCode = FileHelper.readFileContent("static-source/template/struct_module.cpp");
-		moduleCode = moduleCode.replaceFirst("__STRUCTDEFS__", CodeGeneratorHelper.formatAllStruct(datatypes));
+		String structCode = FileHelper.readFileContent("static-source/template/struct_datatype.cpp");
+		structCode = structCode.replaceFirst("__STRUCTDEFS__", CodeGeneratorHelper.formatAllStruct(datatypes));
+		FileHelper.writeFileContent(folder + NameConventions.getDatatypeFilename(), structCode);
 	}
 	
 	/**

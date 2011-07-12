@@ -1,4 +1,4 @@
-package org.mt.lic.eol.util;
+package org.mt.lic.eol.generating;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -10,6 +10,8 @@ import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
+import org.mt.lic.eol.util.FileHelper;
+import org.mt.lic.eol.util.NameConventions;
 
 public class CodeGeneratorHelper {
 	
@@ -21,7 +23,7 @@ public class CodeGeneratorHelper {
 	static public String formatModules(HashSet<String> modules){
 		StringBuffer toReturn = new StringBuffer();
 		for (String module : modules) {
-			toReturn.append("#include \""+module+".h\"\n");
+			toReturn.append("#include \""+module+"\"\n");
 		}
 		return toReturn.toString();
 	}
@@ -42,7 +44,7 @@ public class CodeGeneratorHelper {
 	public static String formatMakefileSources(HashSet<String> modules) {
 		StringBuffer toReturn = new StringBuffer();
 		for (String module : modules) {
-			toReturn.append(module+".cpp ");
+			toReturn.append(module+' ');
 		}
 		return toReturn.toString();
 	}
@@ -146,6 +148,8 @@ public class CodeGeneratorHelper {
 	public static String formatAllHandlerClasses(HandlerSection handlers, String moduleName) {
 		StringBuffer toReturn = new StringBuffer();
 		for (HandlerDecl handler : handlers.getHandlers()) {
+			//MainCodeGenerator.getInstance().getDatatypes().add(Conversions.variablesToTypes(handler.getParams()));
+			StructCodeGenerator.getInstance().addStructs(handlers.getHandlers());
 			toReturn.append(formatHandlerClass(handler, moduleName)+'\n');
 		}
 		return toReturn.toString();
@@ -216,6 +220,11 @@ public class CodeGeneratorHelper {
 			return NameConventions.moduleReference() + toReturn;
 		}
 		return toReturn;
+	}
+
+	public static String formatMain(String mainModuleName) {
+		String moduleClassName = NameConventions.ModuleClassName(mainModuleName);
+		return moduleClassName+" *m = new "+moduleClassName+"();\nm->main();";
 	}
 	
 }

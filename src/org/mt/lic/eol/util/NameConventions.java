@@ -51,4 +51,8 @@ public class NameConventions {
 	public static String moduleReference() {
 		return "module->";
 	}
+
+	public static String getDatatypeFilename() {
+		return "Datatype.h";
+	}
 }

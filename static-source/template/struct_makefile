@@ -7,7 +7,7 @@ CC=g++
 # opzioni compilatore
 CFLAGS= -c -Wall -O6
 # lista dei file sorgenti
-SOURCES=main.cpp Handler.cpp __SOURCELIST__
+SOURCES=main.cpp Handler.cpp Event.cpp __SOURCELIST__
 # lista dei file oggetto
 OBJECTS=$(SOURCES:.cpp=.o)
 # nome file eseguibile prodotto

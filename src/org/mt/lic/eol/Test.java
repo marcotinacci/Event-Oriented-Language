@@ -1,24 +1,17 @@
 package org.mt.lic.eol;
 
-import org.mt.lic.eol.util.ModuleCodeGenerator;
+import org.mt.lic.eol.generating.MainCodeGenerator;
+
 
 /**
  * classe dedicata alle prove
- * @author marco tinacci
+ * @author Marco Tinacci
  *
  */
 public class Test {
 	public static void main(String[] args){
 		new EventOrientedLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
-		ModuleCodeGenerator.getInstance().generateModule("examples/example01.eol", "generated-cpp/prova01/");
-//		try {
-//			MainCodeGenerator cg = new MainCodeGenerator();
-//			cg.generateCode("examples/example01.eol", "generated-cpp/prova01/");
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		}
-		
-		
+		MainCodeGenerator.getInstance().generateCode("examples/example01.eol", "generated-cpp/prova01/");		
 	}
 
 }

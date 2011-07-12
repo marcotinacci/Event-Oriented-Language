@@ -1,4 +1,4 @@
-package org.mt.lic.eol.util;
+package org.mt.lic.eol.generating;
 
 import java.io.File;
 import java.util.List;
@@ -10,8 +10,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.Program;
+import org.mt.lic.eol.util.FileHelper;
+import org.mt.lic.eol.util.NameConventions;
 
-public class ModuleCodeGenerator extends CodeGenerator {
+class ModuleCodeGenerator extends CodeGenerator {
 	
 	static private ModuleCodeGenerator instance = null;
 	
@@ -80,7 +82,7 @@ public class ModuleCodeGenerator extends CodeGenerator {
 		// aggiungi le strutture richieste dagli handler
 		StructCodeGenerator.getInstance().addStructs(object.getHandlers().getHandlers());
 		// includi il modulo delle definizioni delle strutture
-		modules.add("Datatype.h");
+		modules.add(NameConventions.getDatatypeFilename());
 		return toReturn;
 	}
 	
