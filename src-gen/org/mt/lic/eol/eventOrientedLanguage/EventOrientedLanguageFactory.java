@@ -98,15 +98,6 @@ public interface EventOrientedLanguageFactory extends EFactory
   Command createCommand();
 
   /**
-   * Returns a new object of class '<em>Construct</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Construct</em>'.
-   * @generated
-   */
-  Construct createConstruct();
-
-  /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -123,24 +114,6 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   Expression createExpression();
-
-  /**
-   * Returns a new object of class '<em>Math Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Math Expression</em>'.
-   * @generated
-   */
-  MathExpression createMathExpression();
-
-  /**
-   * Returns a new object of class '<em>Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Condition</em>'.
-   * @generated
-   */
-  Condition createCondition();
 
   /**
    * Returns a new object of class '<em>Compound</em>'.
@@ -197,6 +170,15 @@ public interface EventOrientedLanguageFactory extends EFactory
   PrintOutput createPrintOutput();
 
   /**
+   * Returns a new object of class '<em>Print String</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Print String</em>'.
+   * @generated
+   */
+  PrintString createPrintString();
+
+  /**
    * Returns a new object of class '<em>Read Input</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -224,60 +206,6 @@ public interface EventOrientedLanguageFactory extends EFactory
   While createWhile();
 
   /**
-   * Returns a new object of class '<em>Plus</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Plus</em>'.
-   * @generated
-   */
-  Plus createPlus();
-
-  /**
-   * Returns a new object of class '<em>Minus</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Minus</em>'.
-   * @generated
-   */
-  Minus createMinus();
-
-  /**
-   * Returns a new object of class '<em>Multi</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi</em>'.
-   * @generated
-   */
-  Multi createMulti();
-
-  /**
-   * Returns a new object of class '<em>Div</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Div</em>'.
-   * @generated
-   */
-  Div createDiv();
-
-  /**
-   * Returns a new object of class '<em>Number Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Literal</em>'.
-   * @generated
-   */
-  NumberLiteral createNumberLiteral();
-
-  /**
-   * Returns a new object of class '<em>Variable Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Reference</em>'.
-   * @generated
-   */
-  VariableReference createVariableReference();
-
-  /**
    * Returns a new object of class '<em>And</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -294,33 +222,6 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   Or createOr();
-
-  /**
-   * Returns a new object of class '<em>Boolean Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Literal</em>'.
-   * @generated
-   */
-  BooleanLiteral createBooleanLiteral();
-
-  /**
-   * Returns a new object of class '<em>Not</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Not</em>'.
-   * @generated
-   */
-  Not createNot();
-
-  /**
-   * Returns a new object of class '<em>Boolean Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Reference</em>'.
-   * @generated
-   */
-  BooleanReference createBooleanReference();
 
   /**
    * Returns a new object of class '<em>Leq</em>'.
@@ -366,6 +267,69 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   Gtr createGtr();
+
+  /**
+   * Returns a new object of class '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Plus</em>'.
+   * @generated
+   */
+  Plus createPlus();
+
+  /**
+   * Returns a new object of class '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Minus</em>'.
+   * @generated
+   */
+  Minus createMinus();
+
+  /**
+   * Returns a new object of class '<em>Multi</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi</em>'.
+   * @generated
+   */
+  Multi createMulti();
+
+  /**
+   * Returns a new object of class '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Div</em>'.
+   * @generated
+   */
+  Div createDiv();
+
+  /**
+   * Returns a new object of class '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not</em>'.
+   * @generated
+   */
+  Not createNot();
+
+  /**
+   * Returns a new object of class '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Literal</em>'.
+   * @generated
+   */
+  NumberLiteral createNumberLiteral();
+
+  /**
+   * Returns a new object of class '<em>Variable Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Reference</em>'.
+   * @generated
+   */
+  VariableReference createVariableReference();
 
   /**
    * Returns the package supported by this factory.

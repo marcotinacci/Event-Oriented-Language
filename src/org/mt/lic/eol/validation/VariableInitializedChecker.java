@@ -4,8 +4,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.Command;
 import org.mt.lic.eol.eventOrientedLanguage.Compound;
+import org.mt.lic.eol.eventOrientedLanguage.GlobalSection;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.IfThenElse;
+import org.mt.lic.eol.eventOrientedLanguage.Program;
 import org.mt.lic.eol.eventOrientedLanguage.ReadInput;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
@@ -27,10 +29,24 @@ public class VariableInitializedChecker extends EventOrientedLanguageSwitch<Bool
 	
 	private VariableReference reference = null;
 	
+	/**
+	 * metodo principale della classe, controlla che dato un riferimento a
+	 * variabile questa sia effettivamente stata inizializzata precedentemente
+	 * @param ref riferimento a variabile
+	 * @return true se  stata inizializzata correttamente, false altrimenti 
+	 */
 	public Boolean checkVariableInitialized(VariableReference ref){
 		reference = ref;
 		EObject node = ref;
 		EObject father = node.eContainer();
+		Program root = (Program)ref.eResource().getContents().get(0);
+		
+		// controllo se la variabile e' globale
+		if(root.getGlobals().getGlobals().contains(ref.getVar()))
+		{
+			return doSwitch(root.getInit());
+		}
+		
 		// risali al nodo Command
 		while(!(node instanceof Command)){
 			node = father;
@@ -47,16 +63,14 @@ public class VariableInitializedChecker extends EventOrientedLanguageSwitch<Bool
 			}
 			node = container;
 		}
-		// risali alla sezione
-		while(node.eContainer() instanceof Compound){
-			Compound container = (Compound)node.eContainer();
-			node = container;
-		}
 		// se era un parametro di handler non viene segnalata la mancata inizializzazione
 		if(node.eContainer() instanceof HandlerDecl 
 				&& (((HandlerDecl)node.eContainer()).getParams().contains(ref.getVar())
 						|| ((HandlerDecl)node.eContainer()).getBindParams().contains(ref.getVar())))
 		{
+			return true;
+		}else if(node.eContainer() instanceof GlobalSection){
+			// se era una variabile globale non viene 
 			return true;
 		}
 		return false;

@@ -23,7 +23,7 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * @model
  * @generated
  */
-public interface And extends Condition
+public interface And extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -34,12 +34,12 @@ public interface And extends Condition
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(Condition)
+   * @see #setLeft(Expression)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getAnd_Left()
    * @model containment="true"
    * @generated
    */
-  Condition getLeft();
+  Expression getLeft();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.And#getLeft <em>Left</em>}' containment reference.
@@ -49,7 +49,7 @@ public interface And extends Condition
    * @see #getLeft()
    * @generated
    */
-  void setLeft(Condition value);
+  void setLeft(Expression value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.
@@ -60,12 +60,12 @@ public interface And extends Condition
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(Condition)
+   * @see #setRight(Expression)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getAnd_Right()
    * @model containment="true"
    * @generated
    */
-  Condition getRight();
+  Expression getRight();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.And#getRight <em>Right</em>}' containment reference.
@@ -75,6 +75,6 @@ public interface And extends Condition
    * @see #getRight()
    * @generated
    */
-  void setRight(Condition value);
+  void setRight(Expression value);
 
 } // And

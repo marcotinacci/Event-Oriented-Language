@@ -14,6 +14,7 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.IfThenElse#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.IfThenElse#getThenBlock <em>Then Block</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.IfThenElse#isBalanced <em>Balanced</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.IfThenElse#getElseBlock <em>Else Block</em>}</li>
@@ -24,8 +25,34 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * @model
  * @generated
  */
-public interface IfThenElse extends Construct
+public interface IfThenElse extends Command
 {
+  /**
+   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Condition</em>' containment reference.
+   * @see #setCondition(Expression)
+   * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getIfThenElse_Condition()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getCondition();
+
+  /**
+   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.IfThenElse#getCondition <em>Condition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Condition</em>' containment reference.
+   * @see #getCondition()
+   * @generated
+   */
+  void setCondition(Expression value);
+
   /**
    * Returns the value of the '<em><b>Then Block</b></em>' containment reference.
    * <!-- begin-user-doc -->

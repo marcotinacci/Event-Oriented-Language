@@ -27,12 +27,12 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_BOOL", "RULE_INT", "RULE_REAL", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'init:'", "'end'", "'globals:'", "';'", "'events:'", "'handlers:'", "'('", "','", "')'", "'['", "']'", "'{'", "'}'", "'='", "'+='", "'-='", "'raise'", "'out'", "'in'", "'if'", "'else'", "'while'", "'+'", "'-'", "'*'", "'/'", "'AND'", "'OR'", "'NOT'", "'<='", "'<'", "'=='", "'>='", "'>'", "'int'", "'real'", "'bool'", "'string'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_REAL", "RULE_BOOL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'init:'", "'end'", "'globals:'", "';'", "'events:'", "'handlers:'", "'('", "','", "')'", "'['", "']'", "'{'", "'}'", "'='", "'+='", "'-='", "'raise'", "'out'", "'in'", "'if'", "'else'", "'while'", "'AND'", "'OR'", "'<='", "'<'", "'=='", "'>='", "'>'", "'+'", "'-'", "'*'", "'/'", "'NOT'", "'int'", "'real'", "'bool'", "'string'"
     };
     public static final int RULE_ID=4;
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=5;
     public static final int RULE_ANY_OTHER=12;
-    public static final int RULE_BOOL=5;
+    public static final int RULE_BOOL=8;
     public static final int RULE_INT=6;
     public static final int RULE_REAL=7;
     public static final int RULE_WS=11;
@@ -42,7 +42,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
         public InternalEventOrientedLanguageParser(TokenStream input) {
             super(input);
-            ruleMemo = new HashMap[86+1];
+            ruleMemo = new HashMap[80+1];
          }
         
 
@@ -1688,63 +1688,41 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start ruleAbstractBlock
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:746:1: ruleAbstractBlock returns [EObject current=null] : ( (this_Command_0= ruleCommand ';' ) | this_Construct_2= ruleConstruct | ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' ) ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:746:1: ruleAbstractBlock returns [EObject current=null] : (this_Command_0= ruleCommand | ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' ) ) ;
     public final EObject ruleAbstractBlock() throws RecognitionException {
         EObject current = null;
 
         EObject this_Command_0 = null;
 
-        EObject this_Construct_2 = null;
-
-        EObject lv_body_5_0 = null;
+        EObject lv_body_3_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:751:6: ( ( (this_Command_0= ruleCommand ';' ) | this_Construct_2= ruleConstruct | ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:752:1: ( (this_Command_0= ruleCommand ';' ) | this_Construct_2= ruleConstruct | ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:751:6: ( (this_Command_0= ruleCommand | ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:752:1: (this_Command_0= ruleCommand | ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' ) )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:752:1: ( (this_Command_0= ruleCommand ';' ) | this_Construct_2= ruleConstruct | ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' ) )
-            int alt12=3;
-            switch ( input.LA(1) ) {
-            case RULE_ID:
-            case 29:
-            case 30:
-            case 31:
-            case 47:
-            case 48:
-            case 49:
-            case 50:
-                {
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:752:1: (this_Command_0= ruleCommand | ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==RULE_ID||(LA12_0>=29 && LA12_0<=32)||LA12_0==34||(LA12_0>=47 && LA12_0<=50)) ) {
                 alt12=1;
-                }
-                break;
-            case 32:
-            case 34:
-                {
+            }
+            else if ( (LA12_0==24) ) {
                 alt12=2;
-                }
-                break;
-            case 24:
-                {
-                alt12=3;
-                }
-                break;
-            default:
+            }
+            else {
                 if (backtracking>0) {failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("752:1: ( (this_Command_0= ruleCommand ';' ) | this_Construct_2= ruleConstruct | ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' ) )", 12, 0, input);
+                    new NoViableAltException("752:1: (this_Command_0= ruleCommand | ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' ) )", 12, 0, input);
 
                 throw nvae;
             }
-
             switch (alt12) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:752:2: (this_Command_0= ruleCommand ';' )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:752:2: (this_Command_0= ruleCommand ';' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:753:2: this_Command_0= ruleCommand ';'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:753:2: this_Command_0= ruleCommand
                     {
                     if ( backtracking==0 ) {
                        
@@ -1753,10 +1731,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              currentNode=createCompositeNode(grammarAccess.getAbstractBlockAccess().getCommandParserRuleCall_0_0(), currentNode); 
+                              currentNode=createCompositeNode(grammarAccess.getAbstractBlockAccess().getCommandParserRuleCall_0(), currentNode); 
                           
                     }
-                    pushFollow(FOLLOW_ruleCommand_in_ruleAbstractBlock1286);
+                    pushFollow(FOLLOW_ruleCommand_in_ruleAbstractBlock1285);
                     this_Command_0=ruleCommand();
                     _fsp--;
                     if (failed) return current;
@@ -1766,20 +1744,17 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                               currentNode = currentNode.getParent();
                           
                     }
-                    match(input,16,FOLLOW_16_in_ruleAbstractBlock1295); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getAbstractBlockAccess().getSemicolonKeyword_0_1(), null); 
-                          
-                    }
-
-                    }
-
 
                     }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:770:2: this_Construct_2= ruleConstruct
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:765:6: ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' )
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:765:6: ( () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:765:7: () '{' ( (lv_body_3_0= ruleAbstractBlock ) )* '}'
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:765:7: ()
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:766:2: 
                     {
                     if ( backtracking==0 ) {
                        
@@ -1788,42 +1763,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              currentNode=createCompositeNode(grammarAccess.getAbstractBlockAccess().getConstructParserRuleCall_1(), currentNode); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleConstruct_in_ruleAbstractBlock1327);
-                    this_Construct_2=ruleConstruct();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-                       
-                              current = this_Construct_2; 
-                              currentNode = currentNode.getParent();
-                          
-                    }
-
-                    }
-                    break;
-                case 3 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:782:6: ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:782:6: ( () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:782:7: () '{' ( (lv_body_5_0= ruleAbstractBlock ) )* '}'
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:782:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:783:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getAbstractBlockAccess().getCompoundAction_2_0().getType().getClassifier());
+                              temp=factory.create(grammarAccess.getAbstractBlockAccess().getCompoundAction_1_0().getType().getClassifier());
                               current = temp; 
                               temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getAbstractBlockAccess().getCompoundAction_2_0(), currentNode.getParent());
+                              CompositeNode newNode = createCompositeNode(grammarAccess.getAbstractBlockAccess().getCompoundAction_1_0(), currentNode.getParent());
                           newNode.getChildren().add(currentNode);
                           moveLookaheadInfo(currentNode, newNode);
                           currentNode = newNode; 
@@ -1833,13 +1776,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-                    match(input,24,FOLLOW_24_in_ruleAbstractBlock1355); if (failed) return current;
+                    match(input,24,FOLLOW_24_in_ruleAbstractBlock1313); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                              createLeafNode(grammarAccess.getAbstractBlockAccess().getLeftCurlyBracketKeyword_2_1(), null); 
+                              createLeafNode(grammarAccess.getAbstractBlockAccess().getLeftCurlyBracketKeyword_1_1(), null); 
                           
                     }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:800:1: ( (lv_body_5_0= ruleAbstractBlock ) )*
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:783:1: ( (lv_body_3_0= ruleAbstractBlock ) )*
                     loop11:
                     do {
                         int alt11=2;
@@ -1852,18 +1795,18 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:801:1: (lv_body_5_0= ruleAbstractBlock )
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:784:1: (lv_body_3_0= ruleAbstractBlock )
                     	    {
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:801:1: (lv_body_5_0= ruleAbstractBlock )
-                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:802:3: lv_body_5_0= ruleAbstractBlock
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:784:1: (lv_body_3_0= ruleAbstractBlock )
+                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:785:3: lv_body_3_0= ruleAbstractBlock
                     	    {
                     	    if ( backtracking==0 ) {
                     	       
-                    	      	        currentNode=createCompositeNode(grammarAccess.getAbstractBlockAccess().getBodyAbstractBlockParserRuleCall_2_2_0(), currentNode); 
+                    	      	        currentNode=createCompositeNode(grammarAccess.getAbstractBlockAccess().getBodyAbstractBlockParserRuleCall_1_2_0(), currentNode); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleAbstractBlock_in_ruleAbstractBlock1376);
-                    	    lv_body_5_0=ruleAbstractBlock();
+                    	    pushFollow(FOLLOW_ruleAbstractBlock_in_ruleAbstractBlock1334);
+                    	    lv_body_3_0=ruleAbstractBlock();
                     	    _fsp--;
                     	    if (failed) return current;
                     	    if ( backtracking==0 ) {
@@ -1876,7 +1819,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     	      	       		add(
                     	      	       			current, 
                     	      	       			"body",
-                    	      	        		lv_body_5_0, 
+                    	      	        		lv_body_3_0, 
                     	      	        		"AbstractBlock", 
                     	      	        		currentNode);
                     	      	        } catch (ValueConverterException vce) {
@@ -1897,10 +1840,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                         }
                     } while (true);
 
-                    match(input,25,FOLLOW_25_in_ruleAbstractBlock1387); if (failed) return current;
+                    match(input,25,FOLLOW_25_in_ruleAbstractBlock1345); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                              createLeafNode(grammarAccess.getAbstractBlockAccess().getRightCurlyBracketKeyword_2_3(), null); 
+                              createLeafNode(grammarAccess.getAbstractBlockAccess().getRightCurlyBracketKeyword_1_3(), null); 
                           
                     }
 
@@ -1934,7 +1877,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start entryRuleCommand
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:836:1: entryRuleCommand returns [EObject current=null] : iv_ruleCommand= ruleCommand EOF ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:819:1: entryRuleCommand returns [EObject current=null] : iv_ruleCommand= ruleCommand EOF ;
     public final EObject entryRuleCommand() throws RecognitionException {
         EObject current = null;
 
@@ -1942,20 +1885,20 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:837:2: (iv_ruleCommand= ruleCommand EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:838:2: iv_ruleCommand= ruleCommand EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:820:2: (iv_ruleCommand= ruleCommand EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:821:2: iv_ruleCommand= ruleCommand EOF
             {
             if ( backtracking==0 ) {
                currentNode = createCompositeNode(grammarAccess.getCommandRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleCommand_in_entryRuleCommand1424);
+            pushFollow(FOLLOW_ruleCommand_in_entryRuleCommand1382);
             iv_ruleCommand=ruleCommand();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
                current =iv_ruleCommand; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCommand1434); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCommand1392); if (failed) return current;
 
             }
 
@@ -1973,10 +1916,12 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start ruleCommand
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:845:1: ruleCommand returns [EObject current=null] : (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:828:1: ruleCommand returns [EObject current=null] : ( ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' ) | ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) ) ) ;
     public final EObject ruleCommand() throws RecognitionException {
         EObject current = null;
 
+        Token lv_output_31_0=null;
+        Token lv_balanced_42_0=null;
         EObject this_VariableDeclaration_0 = null;
 
         EObject lv_value_4_0 = null;
@@ -1991,110 +1936,1084 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
         EObject lv_output_28_0 = null;
 
+        EObject lv_condition_39_0 = null;
+
+        EObject lv_thenBlock_41_0 = null;
+
+        EObject lv_elseBlock_43_0 = null;
+
+        EObject lv_condition_47_0 = null;
+
+        EObject lv_block_49_0 = null;
+
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:850:6: ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:851:1: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:833:6: ( ( ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' ) | ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:834:1: ( ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' ) | ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) ) )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:851:1: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )
-            int alt16=7;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:834:1: ( ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' ) | ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) ) )
+            int alt18=3;
             switch ( input.LA(1) ) {
+            case RULE_ID:
+            case 29:
+            case 30:
+            case 31:
             case 47:
             case 48:
             case 49:
             case 50:
                 {
-                alt16=1;
+                alt18=1;
                 }
                 break;
-            case RULE_ID:
+            case 32:
                 {
-                switch ( input.LA(2) ) {
-                case 27:
-                    {
-                    alt16=3;
-                    }
-                    break;
-                case 26:
-                    {
-                    alt16=2;
-                    }
-                    break;
-                case 28:
-                    {
-                    alt16=4;
-                    }
-                    break;
-                default:
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("851:1: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )", 16, 2, input);
-
-                    throw nvae;
-                }
-
+                alt18=2;
                 }
                 break;
-            case 29:
+            case 34:
                 {
-                alt16=5;
-                }
-                break;
-            case 30:
-                {
-                alt16=6;
-                }
-                break;
-            case 31:
-                {
-                alt16=7;
+                alt18=3;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("851:1: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )", 16, 0, input);
+                    new NoViableAltException("834:1: ( ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' ) | ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) ) )", 18, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt16) {
+            switch (alt18) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:852:2: this_VariableDeclaration_0= ruleVariableDeclaration
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:834:2: ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' )
                     {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:834:2: ( (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:834:3: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) ) ';'
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:834:3: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )
+                    int alt16=8;
+                    switch ( input.LA(1) ) {
+                    case 47:
+                    case 48:
+                    case 49:
+                    case 50:
+                        {
+                        alt16=1;
+                        }
+                        break;
+                    case RULE_ID:
+                        {
+                        switch ( input.LA(2) ) {
+                        case 27:
+                            {
+                            alt16=3;
+                            }
+                            break;
+                        case 26:
+                            {
+                            alt16=2;
+                            }
+                            break;
+                        case 28:
+                            {
+                            alt16=4;
+                            }
+                            break;
+                        default:
+                            if (backtracking>0) {failed=true; return current;}
+                            NoViableAltException nvae =
+                                new NoViableAltException("834:3: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )", 16, 2, input);
+
+                            throw nvae;
+                        }
+
+                        }
+                        break;
+                    case 29:
+                        {
+                        alt16=5;
+                        }
+                        break;
+                    case 30:
+                        {
+                        int LA16_4 = input.LA(2);
+
+                        if ( (LA16_4==RULE_STRING) ) {
+                            int LA16_9 = input.LA(3);
+
+                            if ( (synpred23()) ) {
+                                alt16=6;
+                            }
+                            else if ( (synpred24()) ) {
+                                alt16=7;
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return current;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("834:3: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )", 16, 9, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else if ( (LA16_4==RULE_ID||(LA16_4>=RULE_INT && LA16_4<=RULE_BOOL)||LA16_4==19||LA16_4==46) ) {
+                            alt16=6;
+                        }
+                        else {
+                            if (backtracking>0) {failed=true; return current;}
+                            NoViableAltException nvae =
+                                new NoViableAltException("834:3: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )", 16, 4, input);
+
+                            throw nvae;
+                        }
+                        }
+                        break;
+                    case 31:
+                        {
+                        alt16=8;
+                        }
+                        break;
+                    default:
+                        if (backtracking>0) {failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("834:3: (this_VariableDeclaration_0= ruleVariableDeclaration | ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) ) | ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' ) | ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) ) | ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' ) | ( () 'out' ( (lv_output_28_0= ruleExpression ) ) ) | ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) ) | ( () 'in' ( ( RULE_ID ) ) ) )", 16, 0, input);
+
+                        throw nvae;
                     }
-                    if ( backtracking==0 ) {
-                       
-                              currentNode=createCompositeNode(grammarAccess.getCommandAccess().getVariableDeclarationParserRuleCall_0(), currentNode); 
-                          
+
+                    switch (alt16) {
+                        case 1 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:835:2: this_VariableDeclaration_0= ruleVariableDeclaration
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      currentNode=createCompositeNode(grammarAccess.getCommandAccess().getVariableDeclarationParserRuleCall_0_0_0(), currentNode); 
+                                  
+                            }
+                            pushFollow(FOLLOW_ruleVariableDeclaration_in_ruleCommand1444);
+                            this_VariableDeclaration_0=ruleVariableDeclaration();
+                            _fsp--;
+                            if (failed) return current;
+                            if ( backtracking==0 ) {
+                               
+                                      current = this_VariableDeclaration_0; 
+                                      currentNode = currentNode.getParent();
+                                  
+                            }
+
+                            }
+                            break;
+                        case 2 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:847:6: ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:847:6: ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:847:7: () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:847:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:848:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getVariableAssignAction_0_0_1_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getVariableAssignAction_0_0_1_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:861:2: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:862:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:862:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:863:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1484); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getNameVariableDeclarationCrossReference_0_0_1_1_0(), "name"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+                            match(input,26,FOLLOW_26_in_ruleCommand1494); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getEqualsSignKeyword_0_0_1_2(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:882:1: ( (lv_value_4_0= ruleExpression ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:883:1: (lv_value_4_0= ruleExpression )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:883:1: (lv_value_4_0= ruleExpression )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:884:3: lv_value_4_0= ruleExpression
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getValueExpressionParserRuleCall_0_0_1_3_0(), currentNode); 
+                              	    
+                            }
+                            pushFollow(FOLLOW_ruleExpression_in_ruleCommand1515);
+                            lv_value_4_0=ruleExpression();
+                            _fsp--;
+                            if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode.getParent(), current);
+                              	        }
+                              	        try {
+                              	       		set(
+                              	       			current, 
+                              	       			"value",
+                              	        		lv_value_4_0, 
+                              	        		"Expression", 
+                              	        		currentNode);
+                              	        } catch (ValueConverterException vce) {
+                              				handleValueConverterException(vce);
+                              	        }
+                              	        currentNode = currentNode.getParent();
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 3 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:907:6: ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:907:6: ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:907:7: () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']'
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:907:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:908:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getBindHandlerAction_0_0_2_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getBindHandlerAction_0_0_2_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:921:2: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:922:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:922:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:923:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1557); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_0_0_2_1_0(), "eventName"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+                            match(input,27,FOLLOW_27_in_ruleCommand1567); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getPlusSignEqualsSignKeyword_0_0_2_2(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:942:1: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:943:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:943:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:944:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1589); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getHandlerNameHandlerDeclCrossReference_0_0_2_3_0(), "handlerName"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+                            match(input,22,FOLLOW_22_in_ruleCommand1599); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getLeftSquareBracketKeyword_0_0_2_4(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:963:1: ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )?
+                            int alt13=2;
+                            int LA13_0 = input.LA(1);
+
+                            if ( ((LA13_0>=RULE_ID && LA13_0<=RULE_BOOL)||LA13_0==19||LA13_0==46) ) {
+                                alt13=1;
+                            }
+                            switch (alt13) {
+                                case 1 :
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:963:2: ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) )
+                                    {
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:963:2: ( (lv_bindParams_10_0= ruleExpression ) )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:964:1: (lv_bindParams_10_0= ruleExpression )
+                                    {
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:964:1: (lv_bindParams_10_0= ruleExpression )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:965:3: lv_bindParams_10_0= ruleExpression
+                                    {
+                                    if ( backtracking==0 ) {
+                                       
+                                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getBindParamsExpressionParserRuleCall_0_0_2_5_0_0(), currentNode); 
+                                      	    
+                                    }
+                                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1621);
+                                    lv_bindParams_10_0=ruleExpression();
+                                    _fsp--;
+                                    if (failed) return current;
+                                    if ( backtracking==0 ) {
+
+                                      	        if (current==null) {
+                                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                                      	            associateNodeWithAstElement(currentNode.getParent(), current);
+                                      	        }
+                                      	        try {
+                                      	       		add(
+                                      	       			current, 
+                                      	       			"bindParams",
+                                      	        		lv_bindParams_10_0, 
+                                      	        		"Expression", 
+                                      	        		currentNode);
+                                      	        } catch (ValueConverterException vce) {
+                                      				handleValueConverterException(vce);
+                                      	        }
+                                      	        currentNode = currentNode.getParent();
+                                      	    
+                                    }
+
+                                    }
+
+
+                                    }
+
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:987:2: ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:987:4: ',' ( (lv_bindParams_12_0= ruleExpression ) )
+                                    {
+                                    match(input,20,FOLLOW_20_in_ruleCommand1632); if (failed) return current;
+                                    if ( backtracking==0 ) {
+
+                                              createLeafNode(grammarAccess.getCommandAccess().getCommaKeyword_0_0_2_5_1_0(), null); 
+                                          
+                                    }
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:991:1: ( (lv_bindParams_12_0= ruleExpression ) )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:992:1: (lv_bindParams_12_0= ruleExpression )
+                                    {
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:992:1: (lv_bindParams_12_0= ruleExpression )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:993:3: lv_bindParams_12_0= ruleExpression
+                                    {
+                                    if ( backtracking==0 ) {
+                                       
+                                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getBindParamsExpressionParserRuleCall_0_0_2_5_1_1_0(), currentNode); 
+                                      	    
+                                    }
+                                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1653);
+                                    lv_bindParams_12_0=ruleExpression();
+                                    _fsp--;
+                                    if (failed) return current;
+                                    if ( backtracking==0 ) {
+
+                                      	        if (current==null) {
+                                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                                      	            associateNodeWithAstElement(currentNode.getParent(), current);
+                                      	        }
+                                      	        try {
+                                      	       		add(
+                                      	       			current, 
+                                      	       			"bindParams",
+                                      	        		lv_bindParams_12_0, 
+                                      	        		"Expression", 
+                                      	        		currentNode);
+                                      	        } catch (ValueConverterException vce) {
+                                      				handleValueConverterException(vce);
+                                      	        }
+                                      	        currentNode = currentNode.getParent();
+                                      	    
+                                    }
+
+                                    }
+
+
+                                    }
+
+
+                                    }
+
+
+                                    }
+                                    break;
+
+                            }
+
+                            match(input,23,FOLLOW_23_in_ruleCommand1666); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getRightSquareBracketKeyword_0_0_2_6(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+                        case 4 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1020:6: ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1020:6: ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1020:7: () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1020:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1021:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getUnbindHandlerAction_0_0_3_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getUnbindHandlerAction_0_0_3_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1034:2: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1035:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1035:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1036:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1708); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_0_0_3_1_0(), "eventName"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+                            match(input,28,FOLLOW_28_in_ruleCommand1718); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getHyphenMinusEqualsSignKeyword_0_0_3_2(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1055:1: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1056:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1056:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1057:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1740); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getHandlerNameHandlerDeclCrossReference_0_0_3_3_0(), "handlerName"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 5 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1073:6: ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1073:6: ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1073:7: () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')'
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1073:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1074:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getRaiseEventAction_0_0_4_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getRaiseEventAction_0_0_4_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,29,FOLLOW_29_in_ruleCommand1770); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getRaiseKeyword_0_0_4_1(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1091:1: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1092:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1092:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1093:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1792); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getEventEventDeclCrossReference_0_0_4_2_0(), "event"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+                            match(input,19,FOLLOW_19_in_ruleCommand1802); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getLeftParenthesisKeyword_0_0_4_3(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1112:1: ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )?
+                            int alt15=2;
+                            int LA15_0 = input.LA(1);
+
+                            if ( ((LA15_0>=RULE_ID && LA15_0<=RULE_BOOL)||LA15_0==19||LA15_0==46) ) {
+                                alt15=1;
+                            }
+                            switch (alt15) {
+                                case 1 :
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1112:2: ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )*
+                                    {
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1112:2: ( (lv_params_22_0= ruleExpression ) )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1113:1: (lv_params_22_0= ruleExpression )
+                                    {
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1113:1: (lv_params_22_0= ruleExpression )
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1114:3: lv_params_22_0= ruleExpression
+                                    {
+                                    if ( backtracking==0 ) {
+                                       
+                                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getParamsExpressionParserRuleCall_0_0_4_4_0_0(), currentNode); 
+                                      	    
+                                    }
+                                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1824);
+                                    lv_params_22_0=ruleExpression();
+                                    _fsp--;
+                                    if (failed) return current;
+                                    if ( backtracking==0 ) {
+
+                                      	        if (current==null) {
+                                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                                      	            associateNodeWithAstElement(currentNode.getParent(), current);
+                                      	        }
+                                      	        try {
+                                      	       		add(
+                                      	       			current, 
+                                      	       			"params",
+                                      	        		lv_params_22_0, 
+                                      	        		"Expression", 
+                                      	        		currentNode);
+                                      	        } catch (ValueConverterException vce) {
+                                      				handleValueConverterException(vce);
+                                      	        }
+                                      	        currentNode = currentNode.getParent();
+                                      	    
+                                    }
+
+                                    }
+
+
+                                    }
+
+                                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1136:2: ( ',' ( (lv_params_24_0= ruleExpression ) ) )*
+                                    loop14:
+                                    do {
+                                        int alt14=2;
+                                        int LA14_0 = input.LA(1);
+
+                                        if ( (LA14_0==20) ) {
+                                            alt14=1;
+                                        }
+
+
+                                        switch (alt14) {
+                                    	case 1 :
+                                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1136:4: ',' ( (lv_params_24_0= ruleExpression ) )
+                                    	    {
+                                    	    match(input,20,FOLLOW_20_in_ruleCommand1835); if (failed) return current;
+                                    	    if ( backtracking==0 ) {
+
+                                    	              createLeafNode(grammarAccess.getCommandAccess().getCommaKeyword_0_0_4_4_1_0(), null); 
+                                    	          
+                                    	    }
+                                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1140:1: ( (lv_params_24_0= ruleExpression ) )
+                                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1141:1: (lv_params_24_0= ruleExpression )
+                                    	    {
+                                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1141:1: (lv_params_24_0= ruleExpression )
+                                    	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1142:3: lv_params_24_0= ruleExpression
+                                    	    {
+                                    	    if ( backtracking==0 ) {
+                                    	       
+                                    	      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getParamsExpressionParserRuleCall_0_0_4_4_1_1_0(), currentNode); 
+                                    	      	    
+                                    	    }
+                                    	    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1856);
+                                    	    lv_params_24_0=ruleExpression();
+                                    	    _fsp--;
+                                    	    if (failed) return current;
+                                    	    if ( backtracking==0 ) {
+
+                                    	      	        if (current==null) {
+                                    	      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                                    	      	            associateNodeWithAstElement(currentNode.getParent(), current);
+                                    	      	        }
+                                    	      	        try {
+                                    	      	       		add(
+                                    	      	       			current, 
+                                    	      	       			"params",
+                                    	      	        		lv_params_24_0, 
+                                    	      	        		"Expression", 
+                                    	      	        		currentNode);
+                                    	      	        } catch (ValueConverterException vce) {
+                                    	      				handleValueConverterException(vce);
+                                    	      	        }
+                                    	      	        currentNode = currentNode.getParent();
+                                    	      	    
+                                    	    }
+
+                                    	    }
+
+
+                                    	    }
+
+
+                                    	    }
+                                    	    break;
+
+                                    	default :
+                                    	    break loop14;
+                                        }
+                                    } while (true);
+
+
+                                    }
+                                    break;
+
+                            }
+
+                            match(input,21,FOLLOW_21_in_ruleCommand1870); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getRightParenthesisKeyword_0_0_4_5(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+                        case 6 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:6: ( () 'out' ( (lv_output_28_0= ruleExpression ) ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:6: ( () 'out' ( (lv_output_28_0= ruleExpression ) ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:7: () 'out' ( (lv_output_28_0= ruleExpression ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1170:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getPrintOutputAction_0_0_5_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getPrintOutputAction_0_0_5_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,30,FOLLOW_30_in_ruleCommand1900); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getOutKeyword_0_0_5_1(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1187:1: ( (lv_output_28_0= ruleExpression ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1188:1: (lv_output_28_0= ruleExpression )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1188:1: (lv_output_28_0= ruleExpression )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1189:3: lv_output_28_0= ruleExpression
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getOutputExpressionParserRuleCall_0_0_5_2_0(), currentNode); 
+                              	    
+                            }
+                            pushFollow(FOLLOW_ruleExpression_in_ruleCommand1921);
+                            lv_output_28_0=ruleExpression();
+                            _fsp--;
+                            if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode.getParent(), current);
+                              	        }
+                              	        try {
+                              	       		set(
+                              	       			current, 
+                              	       			"output",
+                              	        		lv_output_28_0, 
+                              	        		"Expression", 
+                              	        		currentNode);
+                              	        } catch (ValueConverterException vce) {
+                              				handleValueConverterException(vce);
+                              	        }
+                              	        currentNode = currentNode.getParent();
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 7 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:6: ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:6: ( () 'out' ( (lv_output_31_0= RULE_STRING ) ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:7: () 'out' ( (lv_output_31_0= RULE_STRING ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1213:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getPrintStringAction_0_0_6_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getPrintStringAction_0_0_6_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,30,FOLLOW_30_in_ruleCommand1951); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getOutKeyword_0_0_6_1(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1230:1: ( (lv_output_31_0= RULE_STRING ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1231:1: (lv_output_31_0= RULE_STRING )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1231:1: (lv_output_31_0= RULE_STRING )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1232:3: lv_output_31_0= RULE_STRING
+                            {
+                            lv_output_31_0=(Token)input.LT(1);
+                            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCommand1968); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              			createLeafNode(grammarAccess.getCommandAccess().getOutputSTRINGTerminalRuleCall_0_0_6_2_0(), "output"); 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                              	        try {
+                              	       		set(
+                              	       			current, 
+                              	       			"output",
+                              	        		lv_output_31_0, 
+                              	        		"STRING", 
+                              	        		lastConsumedNode);
+                              	        } catch (ValueConverterException vce) {
+                              				handleValueConverterException(vce);
+                              	        }
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 8 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1255:6: ( () 'in' ( ( RULE_ID ) ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1255:6: ( () 'in' ( ( RULE_ID ) ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1255:7: () 'in' ( ( RULE_ID ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1255:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1256:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getCommandAccess().getReadInputAction_0_0_7_0().getType().getClassifier());
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getReadInputAction_0_0_7_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,31,FOLLOW_31_in_ruleCommand2003); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getInKeyword_0_0_7_1(), null); 
+                                  
+                            }
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1273:1: ( ( RULE_ID ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1274:1: ( RULE_ID )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1274:1: ( RULE_ID )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1275:3: RULE_ID
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              		  /* */ 
+                              		
+                            }
+                            if ( backtracking==0 ) {
+
+                              			if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                                      
+                            }
+                            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand2025); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              		createLeafNode(grammarAccess.getCommandAccess().getInputVariableDeclarationCrossReference_0_0_7_2_0(), "input"); 
+                              	
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+
                     }
-                    pushFollow(FOLLOW_ruleVariableDeclaration_in_ruleCommand1484);
-                    this_VariableDeclaration_0=ruleVariableDeclaration();
-                    _fsp--;
-                    if (failed) return current;
+
+                    match(input,16,FOLLOW_16_in_ruleCommand2037); if (failed) return current;
                     if ( backtracking==0 ) {
-                       
-                              current = this_VariableDeclaration_0; 
-                              currentNode = currentNode.getParent();
+
+                              createLeafNode(grammarAccess.getCommandAccess().getSemicolonKeyword_0_1(), null); 
                           
                     }
 
                     }
+
+
+                    }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:864:6: ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1295:6: ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:864:6: ( () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:864:7: () ( ( RULE_ID ) ) '=' ( (lv_value_4_0= ruleExpression ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1295:6: ( () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )? )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1295:7: () 'if' '(' ( (lv_condition_39_0= ruleExpression ) ) ')' ( (lv_thenBlock_41_0= ruleAbstractBlock ) ) ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )?
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:864:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:865:2: 
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1295:7: ()
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1296:2: 
                     {
                     if ( backtracking==0 ) {
                        
@@ -2103,10 +3022,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              temp=factory.create(grammarAccess.getCommandAccess().getVariableAssignAction_1_0().getType().getClassifier());
+                              temp=factory.create(grammarAccess.getCommandAccess().getIfThenElseAction_1_0().getType().getClassifier());
                               current = temp; 
                               temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getVariableAssignAction_1_0(), currentNode.getParent());
+                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getIfThenElseAction_1_0(), currentNode.getParent());
                           newNode.getChildren().add(currentNode);
                           moveLookaheadInfo(currentNode, newNode);
                           currentNode = newNode; 
@@ -2116,56 +3035,31 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:878:2: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:879:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:879:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:880:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
+                    match(input,32,FOLLOW_32_in_ruleCommand2067); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1524); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getNameVariableDeclarationCrossReference_1_1_0(), "name"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,26,FOLLOW_26_in_ruleCommand1534); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getEqualsSignKeyword_1_2(), null); 
+                              createLeafNode(grammarAccess.getCommandAccess().getIfKeyword_1_1(), null); 
                           
                     }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:899:1: ( (lv_value_4_0= ruleExpression ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:900:1: (lv_value_4_0= ruleExpression )
+                    match(input,19,FOLLOW_19_in_ruleCommand2077); if (failed) return current;
+                    if ( backtracking==0 ) {
+
+                              createLeafNode(grammarAccess.getCommandAccess().getLeftParenthesisKeyword_1_2(), null); 
+                          
+                    }
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1317:1: ( (lv_condition_39_0= ruleExpression ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1318:1: (lv_condition_39_0= ruleExpression )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:900:1: (lv_value_4_0= ruleExpression )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:901:3: lv_value_4_0= ruleExpression
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1318:1: (lv_condition_39_0= ruleExpression )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1319:3: lv_condition_39_0= ruleExpression
                     {
                     if ( backtracking==0 ) {
                        
-                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getValueExpressionParserRuleCall_1_3_0(), currentNode); 
+                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getConditionExpressionParserRuleCall_1_3_0(), currentNode); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1555);
-                    lv_value_4_0=ruleExpression();
+                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand2098);
+                    lv_condition_39_0=ruleExpression();
                     _fsp--;
                     if (failed) return current;
                     if ( backtracking==0 ) {
@@ -2177,8 +3071,8 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                       	        try {
                       	       		set(
                       	       			current, 
-                      	       			"value",
-                      	        		lv_value_4_0, 
+                      	       			"condition",
+                      	        		lv_condition_39_0, 
                       	        		"Expression", 
                       	        		currentNode);
                       	        } catch (ValueConverterException vce) {
@@ -2190,6 +3084,146 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
+
+                    }
+
+                    match(input,21,FOLLOW_21_in_ruleCommand2108); if (failed) return current;
+                    if ( backtracking==0 ) {
+
+                              createLeafNode(grammarAccess.getCommandAccess().getRightParenthesisKeyword_1_4(), null); 
+                          
+                    }
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1345:1: ( (lv_thenBlock_41_0= ruleAbstractBlock ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1346:1: (lv_thenBlock_41_0= ruleAbstractBlock )
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1346:1: (lv_thenBlock_41_0= ruleAbstractBlock )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1347:3: lv_thenBlock_41_0= ruleAbstractBlock
+                    {
+                    if ( backtracking==0 ) {
+                       
+                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getThenBlockAbstractBlockParserRuleCall_1_5_0(), currentNode); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleAbstractBlock_in_ruleCommand2129);
+                    lv_thenBlock_41_0=ruleAbstractBlock();
+                    _fsp--;
+                    if (failed) return current;
+                    if ( backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                      	            associateNodeWithAstElement(currentNode.getParent(), current);
+                      	        }
+                      	        try {
+                      	       		set(
+                      	       			current, 
+                      	       			"thenBlock",
+                      	        		lv_thenBlock_41_0, 
+                      	        		"AbstractBlock", 
+                      	        		currentNode);
+                      	        } catch (ValueConverterException vce) {
+                      				handleValueConverterException(vce);
+                      	        }
+                      	        currentNode = currentNode.getParent();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1369:2: ( ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) ) )?
+                    int alt17=2;
+                    int LA17_0 = input.LA(1);
+
+                    if ( (LA17_0==33) ) {
+                        int LA17_1 = input.LA(2);
+
+                        if ( (synpred26()) ) {
+                            alt17=1;
+                        }
+                    }
+                    switch (alt17) {
+                        case 1 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1369:3: ( (lv_balanced_42_0= 'else' ) ) ( (lv_elseBlock_43_0= ruleAbstractBlock ) )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1369:3: ( (lv_balanced_42_0= 'else' ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1370:1: (lv_balanced_42_0= 'else' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1370:1: (lv_balanced_42_0= 'else' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1371:3: lv_balanced_42_0= 'else'
+                            {
+                            lv_balanced_42_0=(Token)input.LT(1);
+                            match(input,33,FOLLOW_33_in_ruleCommand2148); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getCommandAccess().getBalancedElseKeyword_1_6_0_0(), "balanced"); 
+                                  
+                            }
+                            if ( backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode, current);
+                              	        }
+                              	        
+                              	        try {
+                              	       		set(current, "balanced", true, "else", lastConsumedNode);
+                              	        } catch (ValueConverterException vce) {
+                              				handleValueConverterException(vce);
+                              	        }
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1390:2: ( (lv_elseBlock_43_0= ruleAbstractBlock ) )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1391:1: (lv_elseBlock_43_0= ruleAbstractBlock )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1391:1: (lv_elseBlock_43_0= ruleAbstractBlock )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1392:3: lv_elseBlock_43_0= ruleAbstractBlock
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getElseBlockAbstractBlockParserRuleCall_1_6_1_0(), currentNode); 
+                              	    
+                            }
+                            pushFollow(FOLLOW_ruleAbstractBlock_in_ruleCommand2182);
+                            lv_elseBlock_43_0=ruleAbstractBlock();
+                            _fsp--;
+                            if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
+                              	            associateNodeWithAstElement(currentNode.getParent(), current);
+                              	        }
+                              	        try {
+                              	       		set(
+                              	       			current, 
+                              	       			"elseBlock",
+                              	        		lv_elseBlock_43_0, 
+                              	        		"AbstractBlock", 
+                              	        		currentNode);
+                              	        } catch (ValueConverterException vce) {
+                              				handleValueConverterException(vce);
+                              	        }
+                              	        currentNode = currentNode.getParent();
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
 
                     }
 
@@ -2200,13 +3234,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:924:6: ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1415:6: ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:924:6: ( () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:924:7: () ( ( RULE_ID ) ) '+=' ( ( RULE_ID ) ) '[' ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )? ']'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1415:6: ( () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1415:7: () 'while' '(' ( (lv_condition_47_0= ruleExpression ) ) ')' ( (lv_block_49_0= ruleAbstractBlock ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:924:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:925:2: 
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1415:7: ()
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1416:2: 
                     {
                     if ( backtracking==0 ) {
                        
@@ -2215,10 +3249,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              temp=factory.create(grammarAccess.getCommandAccess().getBindHandlerAction_2_0().getType().getClassifier());
+                              temp=factory.create(grammarAccess.getCommandAccess().getWhileAction_2_0().getType().getClassifier());
                               current = temp; 
                               temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getBindHandlerAction_2_0(), currentNode.getParent());
+                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getWhileAction_2_0(), currentNode.getParent());
                           newNode.getChildren().add(currentNode);
                           moveLookaheadInfo(currentNode, newNode);
                           currentNode = newNode; 
@@ -2228,563 +3262,31 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:938:2: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:939:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:939:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:940:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
+                    match(input,34,FOLLOW_34_in_ruleCommand2214); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1597); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_2_1_0(), "eventName"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,27,FOLLOW_27_in_ruleCommand1607); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getPlusSignEqualsSignKeyword_2_2(), null); 
+                              createLeafNode(grammarAccess.getCommandAccess().getWhileKeyword_2_1(), null); 
                           
                     }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:959:1: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:960:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:960:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:961:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
+                    match(input,19,FOLLOW_19_in_ruleCommand2224); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1629); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getHandlerNameHandlerDeclCrossReference_2_3_0(), "handlerName"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,22,FOLLOW_22_in_ruleCommand1639); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getLeftSquareBracketKeyword_2_4(), null); 
+                              createLeafNode(grammarAccess.getCommandAccess().getLeftParenthesisKeyword_2_2(), null); 
                           
                     }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:980:1: ( ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) ) )?
-                    int alt13=2;
-                    int LA13_0 = input.LA(1);
-
-                    if ( ((LA13_0>=RULE_ID && LA13_0<=RULE_REAL)||LA13_0==19||LA13_0==41) ) {
-                        alt13=1;
-                    }
-                    switch (alt13) {
-                        case 1 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:980:2: ( (lv_bindParams_10_0= ruleExpression ) ) ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:980:2: ( (lv_bindParams_10_0= ruleExpression ) )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:981:1: (lv_bindParams_10_0= ruleExpression )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:981:1: (lv_bindParams_10_0= ruleExpression )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:982:3: lv_bindParams_10_0= ruleExpression
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getBindParamsExpressionParserRuleCall_2_5_0_0(), currentNode); 
-                              	    
-                            }
-                            pushFollow(FOLLOW_ruleExpression_in_ruleCommand1661);
-                            lv_bindParams_10_0=ruleExpression();
-                            _fsp--;
-                            if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                              	            associateNodeWithAstElement(currentNode.getParent(), current);
-                              	        }
-                              	        try {
-                              	       		add(
-                              	       			current, 
-                              	       			"bindParams",
-                              	        		lv_bindParams_10_0, 
-                              	        		"Expression", 
-                              	        		currentNode);
-                              	        } catch (ValueConverterException vce) {
-                              				handleValueConverterException(vce);
-                              	        }
-                              	        currentNode = currentNode.getParent();
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1004:2: ( ',' ( (lv_bindParams_12_0= ruleExpression ) ) )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1004:4: ',' ( (lv_bindParams_12_0= ruleExpression ) )
-                            {
-                            match(input,20,FOLLOW_20_in_ruleCommand1672); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getCommandAccess().getCommaKeyword_2_5_1_0(), null); 
-                                  
-                            }
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1008:1: ( (lv_bindParams_12_0= ruleExpression ) )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1009:1: (lv_bindParams_12_0= ruleExpression )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1009:1: (lv_bindParams_12_0= ruleExpression )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1010:3: lv_bindParams_12_0= ruleExpression
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getBindParamsExpressionParserRuleCall_2_5_1_1_0(), currentNode); 
-                              	    
-                            }
-                            pushFollow(FOLLOW_ruleExpression_in_ruleCommand1693);
-                            lv_bindParams_12_0=ruleExpression();
-                            _fsp--;
-                            if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                              	            associateNodeWithAstElement(currentNode.getParent(), current);
-                              	        }
-                              	        try {
-                              	       		add(
-                              	       			current, 
-                              	       			"bindParams",
-                              	        		lv_bindParams_12_0, 
-                              	        		"Expression", 
-                              	        		currentNode);
-                              	        } catch (ValueConverterException vce) {
-                              				handleValueConverterException(vce);
-                              	        }
-                              	        currentNode = currentNode.getParent();
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
-                    match(input,23,FOLLOW_23_in_ruleCommand1706); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getRightSquareBracketKeyword_2_6(), null); 
-                          
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1037:6: ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1437:1: ( (lv_condition_47_0= ruleExpression ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1438:1: (lv_condition_47_0= ruleExpression )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1037:6: ( () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1037:7: () ( ( RULE_ID ) ) '-=' ( ( RULE_ID ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1037:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1038:2: 
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1438:1: (lv_condition_47_0= ruleExpression )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1439:3: lv_condition_47_0= ruleExpression
                     {
                     if ( backtracking==0 ) {
                        
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getCommandAccess().getUnbindHandlerAction_3_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getUnbindHandlerAction_3_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1051:2: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1052:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1052:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1053:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
-                    if ( backtracking==0 ) {
-
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1748); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getEventNameEventDeclCrossReference_3_1_0(), "eventName"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,28,FOLLOW_28_in_ruleCommand1758); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getHyphenMinusEqualsSignKeyword_3_2(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1072:1: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1073:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1073:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1074:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
-                    if ( backtracking==0 ) {
-
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1780); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getHandlerNameHandlerDeclCrossReference_3_3_0(), "handlerName"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1090:6: ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1090:6: ( () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1090:7: () 'raise' ( ( RULE_ID ) ) '(' ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )? ')'
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1090:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1091:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getCommandAccess().getRaiseEventAction_4_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getRaiseEventAction_4_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    match(input,29,FOLLOW_29_in_ruleCommand1810); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getRaiseKeyword_4_1(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1108:1: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1109:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1109:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1110:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
-                    if ( backtracking==0 ) {
-
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand1832); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getEventEventDeclCrossReference_4_2_0(), "event"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,19,FOLLOW_19_in_ruleCommand1842); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getLeftParenthesisKeyword_4_3(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1129:1: ( ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )* )?
-                    int alt15=2;
-                    int LA15_0 = input.LA(1);
-
-                    if ( ((LA15_0>=RULE_ID && LA15_0<=RULE_REAL)||LA15_0==19||LA15_0==41) ) {
-                        alt15=1;
-                    }
-                    switch (alt15) {
-                        case 1 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1129:2: ( (lv_params_22_0= ruleExpression ) ) ( ',' ( (lv_params_24_0= ruleExpression ) ) )*
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1129:2: ( (lv_params_22_0= ruleExpression ) )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1130:1: (lv_params_22_0= ruleExpression )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1130:1: (lv_params_22_0= ruleExpression )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1131:3: lv_params_22_0= ruleExpression
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getParamsExpressionParserRuleCall_4_4_0_0(), currentNode); 
-                              	    
-                            }
-                            pushFollow(FOLLOW_ruleExpression_in_ruleCommand1864);
-                            lv_params_22_0=ruleExpression();
-                            _fsp--;
-                            if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                              	            associateNodeWithAstElement(currentNode.getParent(), current);
-                              	        }
-                              	        try {
-                              	       		add(
-                              	       			current, 
-                              	       			"params",
-                              	        		lv_params_22_0, 
-                              	        		"Expression", 
-                              	        		currentNode);
-                              	        } catch (ValueConverterException vce) {
-                              				handleValueConverterException(vce);
-                              	        }
-                              	        currentNode = currentNode.getParent();
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1153:2: ( ',' ( (lv_params_24_0= ruleExpression ) ) )*
-                            loop14:
-                            do {
-                                int alt14=2;
-                                int LA14_0 = input.LA(1);
-
-                                if ( (LA14_0==20) ) {
-                                    alt14=1;
-                                }
-
-
-                                switch (alt14) {
-                            	case 1 :
-                            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1153:4: ',' ( (lv_params_24_0= ruleExpression ) )
-                            	    {
-                            	    match(input,20,FOLLOW_20_in_ruleCommand1875); if (failed) return current;
-                            	    if ( backtracking==0 ) {
-
-                            	              createLeafNode(grammarAccess.getCommandAccess().getCommaKeyword_4_4_1_0(), null); 
-                            	          
-                            	    }
-                            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1157:1: ( (lv_params_24_0= ruleExpression ) )
-                            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1158:1: (lv_params_24_0= ruleExpression )
-                            	    {
-                            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1158:1: (lv_params_24_0= ruleExpression )
-                            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1159:3: lv_params_24_0= ruleExpression
-                            	    {
-                            	    if ( backtracking==0 ) {
-                            	       
-                            	      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getParamsExpressionParserRuleCall_4_4_1_1_0(), currentNode); 
-                            	      	    
-                            	    }
-                            	    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1896);
-                            	    lv_params_24_0=ruleExpression();
-                            	    _fsp--;
-                            	    if (failed) return current;
-                            	    if ( backtracking==0 ) {
-
-                            	      	        if (current==null) {
-                            	      	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                            	      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                            	      	        }
-                            	      	        try {
-                            	      	       		add(
-                            	      	       			current, 
-                            	      	       			"params",
-                            	      	        		lv_params_24_0, 
-                            	      	        		"Expression", 
-                            	      	        		currentNode);
-                            	      	        } catch (ValueConverterException vce) {
-                            	      				handleValueConverterException(vce);
-                            	      	        }
-                            	      	        currentNode = currentNode.getParent();
-                            	      	    
-                            	    }
-
-                            	    }
-
-
-                            	    }
-
-
-                            	    }
-                            	    break;
-
-                            	default :
-                            	    break loop14;
-                                }
-                            } while (true);
-
-
-                            }
-                            break;
-
-                    }
-
-                    match(input,21,FOLLOW_21_in_ruleCommand1910); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getRightParenthesisKeyword_4_5(), null); 
-                          
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1186:6: ( () 'out' ( (lv_output_28_0= ruleExpression ) ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1186:6: ( () 'out' ( (lv_output_28_0= ruleExpression ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1186:7: () 'out' ( (lv_output_28_0= ruleExpression ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1186:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1187:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getCommandAccess().getPrintOutputAction_5_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getPrintOutputAction_5_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    match(input,30,FOLLOW_30_in_ruleCommand1940); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getOutKeyword_5_1(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1204:1: ( (lv_output_28_0= ruleExpression ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1205:1: (lv_output_28_0= ruleExpression )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1205:1: (lv_output_28_0= ruleExpression )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1206:3: lv_output_28_0= ruleExpression
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getOutputExpressionParserRuleCall_5_2_0(), currentNode); 
+                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getConditionExpressionParserRuleCall_2_3_0(), currentNode); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand1961);
-                    lv_output_28_0=ruleExpression();
+                    pushFollow(FOLLOW_ruleExpression_in_ruleCommand2245);
+                    lv_condition_47_0=ruleExpression();
                     _fsp--;
                     if (failed) return current;
                     if ( backtracking==0 ) {
@@ -2796,8 +3298,8 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                       	        try {
                       	       		set(
                       	       			current, 
-                      	       			"output",
-                      	        		lv_output_28_0, 
+                      	       			"condition",
+                      	        		lv_condition_47_0, 
                       	        		"Expression", 
                       	        		currentNode);
                       	        } catch (ValueConverterException vce) {
@@ -2812,71 +3314,45 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1229:6: ( () 'in' ( ( RULE_ID ) ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1229:6: ( () 'in' ( ( RULE_ID ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1229:7: () 'in' ( ( RULE_ID ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1229:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1230:2: 
-                    {
+                    match(input,21,FOLLOW_21_in_ruleCommand2255); if (failed) return current;
                     if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getCommandAccess().getReadInputAction_6_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getCommandAccess().getReadInputAction_6_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
+
+                              createLeafNode(grammarAccess.getCommandAccess().getRightParenthesisKeyword_2_4(), null); 
                           
                     }
-
-                    }
-
-                    match(input,31,FOLLOW_31_in_ruleCommand1991); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getCommandAccess().getInKeyword_6_1(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1247:1: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1248:1: ( RULE_ID )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1465:1: ( (lv_block_49_0= ruleAbstractBlock ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1466:1: (lv_block_49_0= ruleAbstractBlock )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1248:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1249:3: RULE_ID
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1466:1: (lv_block_49_0= ruleAbstractBlock )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1467:3: lv_block_49_0= ruleAbstractBlock
                     {
                     if ( backtracking==0 ) {
                        
-                      		  /* */ 
-                      		
+                      	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getBlockAbstractBlockParserRuleCall_2_5_0(), currentNode); 
+                      	    
                     }
+                    pushFollow(FOLLOW_ruleAbstractBlock_in_ruleCommand2276);
+                    lv_block_49_0=ruleAbstractBlock();
+                    _fsp--;
+                    if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      			if (current==null) {
+                      	        if (current==null) {
                       	            current = factory.create(grammarAccess.getCommandRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
+                      	            associateNodeWithAstElement(currentNode.getParent(), current);
                       	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommand2013); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getCommandAccess().getInputVariableDeclarationCrossReference_6_2_0(), "input"); 
-                      	
+                      	        try {
+                      	       		set(
+                      	       			current, 
+                      	       			"block",
+                      	        		lv_block_49_0, 
+                      	        		"AbstractBlock", 
+                      	        		currentNode);
+                      	        } catch (ValueConverterException vce) {
+                      				handleValueConverterException(vce);
+                      	        }
+                      	        currentNode = currentNode.getParent();
+                      	    
                     }
 
                     }
@@ -2914,472 +3390,8 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
     // $ANTLR end ruleCommand
 
 
-    // $ANTLR start entryRuleConstruct
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1272:1: entryRuleConstruct returns [EObject current=null] : iv_ruleConstruct= ruleConstruct EOF ;
-    public final EObject entryRuleConstruct() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleConstruct = null;
-
-
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1273:2: (iv_ruleConstruct= ruleConstruct EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1274:2: iv_ruleConstruct= ruleConstruct EOF
-            {
-            if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getConstructRule(), currentNode); 
-            }
-            pushFollow(FOLLOW_ruleConstruct_in_entryRuleConstruct2050);
-            iv_ruleConstruct=ruleConstruct();
-            _fsp--;
-            if (failed) return current;
-            if ( backtracking==0 ) {
-               current =iv_ruleConstruct; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstruct2060); if (failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRuleConstruct
-
-
-    // $ANTLR start ruleConstruct
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1281:1: ruleConstruct returns [EObject current=null] : ( ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) ) ) ;
-    public final EObject ruleConstruct() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_balanced_6_0=null;
-        EObject lv_condition_3_0 = null;
-
-        EObject lv_thenBlock_5_0 = null;
-
-        EObject lv_elseBlock_7_0 = null;
-
-        EObject lv_condition_11_0 = null;
-
-        EObject lv_block_13_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1286:6: ( ( ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1287:1: ( ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) ) )
-            {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1287:1: ( ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) ) )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0==32) ) {
-                alt18=1;
-            }
-            else if ( (LA18_0==34) ) {
-                alt18=2;
-            }
-            else {
-                if (backtracking>0) {failed=true; return current;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1287:1: ( ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? ) | ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) ) )", 18, 0, input);
-
-                throw nvae;
-            }
-            switch (alt18) {
-                case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1287:2: ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1287:2: ( () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )? )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1287:3: () 'if' '(' ( (lv_condition_3_0= ruleCondition ) ) ')' ( (lv_thenBlock_5_0= ruleAbstractBlock ) ) ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )?
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1287:3: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1288:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getConstructAccess().getIfThenElseAction_0_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getConstructAccess().getIfThenElseAction_0_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    match(input,32,FOLLOW_32_in_ruleConstruct2108); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getConstructAccess().getIfKeyword_0_1(), null); 
-                          
-                    }
-                    match(input,19,FOLLOW_19_in_ruleConstruct2118); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getConstructAccess().getLeftParenthesisKeyword_0_2(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1309:1: ( (lv_condition_3_0= ruleCondition ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1310:1: (lv_condition_3_0= ruleCondition )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1310:1: (lv_condition_3_0= ruleCondition )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1311:3: lv_condition_3_0= ruleCondition
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getConstructAccess().getConditionConditionParserRuleCall_0_3_0(), currentNode); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleCondition_in_ruleConstruct2139);
-                    lv_condition_3_0=ruleCondition();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getConstructRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                      	        }
-                      	        try {
-                      	       		set(
-                      	       			current, 
-                      	       			"condition",
-                      	        		lv_condition_3_0, 
-                      	        		"Condition", 
-                      	        		currentNode);
-                      	        } catch (ValueConverterException vce) {
-                      				handleValueConverterException(vce);
-                      	        }
-                      	        currentNode = currentNode.getParent();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,21,FOLLOW_21_in_ruleConstruct2149); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getConstructAccess().getRightParenthesisKeyword_0_4(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1337:1: ( (lv_thenBlock_5_0= ruleAbstractBlock ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1338:1: (lv_thenBlock_5_0= ruleAbstractBlock )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1338:1: (lv_thenBlock_5_0= ruleAbstractBlock )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1339:3: lv_thenBlock_5_0= ruleAbstractBlock
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getConstructAccess().getThenBlockAbstractBlockParserRuleCall_0_5_0(), currentNode); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleAbstractBlock_in_ruleConstruct2170);
-                    lv_thenBlock_5_0=ruleAbstractBlock();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getConstructRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                      	        }
-                      	        try {
-                      	       		set(
-                      	       			current, 
-                      	       			"thenBlock",
-                      	        		lv_thenBlock_5_0, 
-                      	        		"AbstractBlock", 
-                      	        		currentNode);
-                      	        } catch (ValueConverterException vce) {
-                      				handleValueConverterException(vce);
-                      	        }
-                      	        currentNode = currentNode.getParent();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1361:2: ( ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) ) )?
-                    int alt17=2;
-                    int LA17_0 = input.LA(1);
-
-                    if ( (LA17_0==33) ) {
-                        int LA17_1 = input.LA(2);
-
-                        if ( (synpred25()) ) {
-                            alt17=1;
-                        }
-                    }
-                    switch (alt17) {
-                        case 1 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1361:3: ( (lv_balanced_6_0= 'else' ) ) ( (lv_elseBlock_7_0= ruleAbstractBlock ) )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1361:3: ( (lv_balanced_6_0= 'else' ) )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1362:1: (lv_balanced_6_0= 'else' )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1362:1: (lv_balanced_6_0= 'else' )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1363:3: lv_balanced_6_0= 'else'
-                            {
-                            lv_balanced_6_0=(Token)input.LT(1);
-                            match(input,33,FOLLOW_33_in_ruleConstruct2189); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getConstructAccess().getBalancedElseKeyword_0_6_0_0(), "balanced"); 
-                                  
-                            }
-                            if ( backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = factory.create(grammarAccess.getConstructRule().getType().getClassifier());
-                              	            associateNodeWithAstElement(currentNode, current);
-                              	        }
-                              	        
-                              	        try {
-                              	       		set(current, "balanced", true, "else", lastConsumedNode);
-                              	        } catch (ValueConverterException vce) {
-                              				handleValueConverterException(vce);
-                              	        }
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1382:2: ( (lv_elseBlock_7_0= ruleAbstractBlock ) )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1383:1: (lv_elseBlock_7_0= ruleAbstractBlock )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1383:1: (lv_elseBlock_7_0= ruleAbstractBlock )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1384:3: lv_elseBlock_7_0= ruleAbstractBlock
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	        currentNode=createCompositeNode(grammarAccess.getConstructAccess().getElseBlockAbstractBlockParserRuleCall_0_6_1_0(), currentNode); 
-                              	    
-                            }
-                            pushFollow(FOLLOW_ruleAbstractBlock_in_ruleConstruct2223);
-                            lv_elseBlock_7_0=ruleAbstractBlock();
-                            _fsp--;
-                            if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = factory.create(grammarAccess.getConstructRule().getType().getClassifier());
-                              	            associateNodeWithAstElement(currentNode.getParent(), current);
-                              	        }
-                              	        try {
-                              	       		set(
-                              	       			current, 
-                              	       			"elseBlock",
-                              	        		lv_elseBlock_7_0, 
-                              	        		"AbstractBlock", 
-                              	        		currentNode);
-                              	        } catch (ValueConverterException vce) {
-                              				handleValueConverterException(vce);
-                              	        }
-                              	        currentNode = currentNode.getParent();
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1407:6: ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1407:6: ( () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1407:7: () 'while' '(' ( (lv_condition_11_0= ruleCondition ) ) ')' ( (lv_block_13_0= ruleAbstractBlock ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1407:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1408:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getConstructAccess().getWhileAction_1_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getConstructAccess().getWhileAction_1_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    match(input,34,FOLLOW_34_in_ruleConstruct2255); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getConstructAccess().getWhileKeyword_1_1(), null); 
-                          
-                    }
-                    match(input,19,FOLLOW_19_in_ruleConstruct2265); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getConstructAccess().getLeftParenthesisKeyword_1_2(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1429:1: ( (lv_condition_11_0= ruleCondition ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1430:1: (lv_condition_11_0= ruleCondition )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1430:1: (lv_condition_11_0= ruleCondition )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1431:3: lv_condition_11_0= ruleCondition
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getConstructAccess().getConditionConditionParserRuleCall_1_3_0(), currentNode); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleCondition_in_ruleConstruct2286);
-                    lv_condition_11_0=ruleCondition();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getConstructRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                      	        }
-                      	        try {
-                      	       		set(
-                      	       			current, 
-                      	       			"condition",
-                      	        		lv_condition_11_0, 
-                      	        		"Condition", 
-                      	        		currentNode);
-                      	        } catch (ValueConverterException vce) {
-                      				handleValueConverterException(vce);
-                      	        }
-                      	        currentNode = currentNode.getParent();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    match(input,21,FOLLOW_21_in_ruleConstruct2296); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getConstructAccess().getRightParenthesisKeyword_1_4(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1457:1: ( (lv_block_13_0= ruleAbstractBlock ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1458:1: (lv_block_13_0= ruleAbstractBlock )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1458:1: (lv_block_13_0= ruleAbstractBlock )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1459:3: lv_block_13_0= ruleAbstractBlock
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getConstructAccess().getBlockAbstractBlockParserRuleCall_1_5_0(), currentNode); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleAbstractBlock_in_ruleConstruct2317);
-                    lv_block_13_0=ruleAbstractBlock();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getConstructRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                      	        }
-                      	        try {
-                      	       		set(
-                      	       			current, 
-                      	       			"block",
-                      	        		lv_block_13_0, 
-                      	        		"AbstractBlock", 
-                      	        		currentNode);
-                      	        } catch (ValueConverterException vce) {
-                      				handleValueConverterException(vce);
-                      	        }
-                      	        currentNode = currentNode.getParent();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-               resetLookahead(); 
-                  	lastConsumedNode = currentNode;
-                  
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end ruleConstruct
-
-
     // $ANTLR start entryRuleVariableDeclaration
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1489:1: entryRuleVariableDeclaration returns [EObject current=null] : iv_ruleVariableDeclaration= ruleVariableDeclaration EOF ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1497:1: entryRuleVariableDeclaration returns [EObject current=null] : iv_ruleVariableDeclaration= ruleVariableDeclaration EOF ;
     public final EObject entryRuleVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -3387,20 +3399,20 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1490:2: (iv_ruleVariableDeclaration= ruleVariableDeclaration EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1491:2: iv_ruleVariableDeclaration= ruleVariableDeclaration EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1498:2: (iv_ruleVariableDeclaration= ruleVariableDeclaration EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1499:2: iv_ruleVariableDeclaration= ruleVariableDeclaration EOF
             {
             if ( backtracking==0 ) {
                currentNode = createCompositeNode(grammarAccess.getVariableDeclarationRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration2354);
+            pushFollow(FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration2313);
             iv_ruleVariableDeclaration=ruleVariableDeclaration();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
                current =iv_ruleVariableDeclaration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDeclaration2364); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDeclaration2323); if (failed) return current;
 
             }
 
@@ -3418,7 +3430,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start ruleVariableDeclaration
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1498:1: ruleVariableDeclaration returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1506:1: ruleVariableDeclaration returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -3429,24 +3441,24 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1503:6: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1504:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1511:6: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1512:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1504:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1504:2: ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1512:1: ( ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1512:2: ( (lv_type_0_0= ruleType ) ) ( (lv_name_1_0= RULE_ID ) )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1504:2: ( (lv_type_0_0= ruleType ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1505:1: (lv_type_0_0= ruleType )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1512:2: ( (lv_type_0_0= ruleType ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1513:1: (lv_type_0_0= ruleType )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1505:1: (lv_type_0_0= ruleType )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1506:3: lv_type_0_0= ruleType
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1513:1: (lv_type_0_0= ruleType )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1514:3: lv_type_0_0= ruleType
             {
             if ( backtracking==0 ) {
                
               	        currentNode=createCompositeNode(grammarAccess.getVariableDeclarationAccess().getTypeTypeEnumRuleCall_0_0(), currentNode); 
               	    
             }
-            pushFollow(FOLLOW_ruleType_in_ruleVariableDeclaration2410);
+            pushFollow(FOLLOW_ruleType_in_ruleVariableDeclaration2369);
             lv_type_0_0=ruleType();
             _fsp--;
             if (failed) return current;
@@ -3475,14 +3487,14 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1528:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1529:1: (lv_name_1_0= RULE_ID )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1536:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1537:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1529:1: (lv_name_1_0= RULE_ID )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1530:3: lv_name_1_0= RULE_ID
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1537:1: (lv_name_1_0= RULE_ID )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1538:3: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableDeclaration2427); if (failed) return current;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableDeclaration2386); if (failed) return current;
             if ( backtracking==0 ) {
 
               			createLeafNode(grammarAccess.getVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
@@ -3537,7 +3549,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start entryRuleExpression
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1560:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1568:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3545,20 +3557,20 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1561:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1562:2: iv_ruleExpression= ruleExpression EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1569:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1570:2: iv_ruleExpression= ruleExpression EOF
             {
             if ( backtracking==0 ) {
                currentNode = createCompositeNode(grammarAccess.getExpressionRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression2468);
+            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression2427);
             iv_ruleExpression=ruleExpression();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
                current =iv_ruleExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression2478); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression2437); if (failed) return current;
 
             }
 
@@ -3576,170 +3588,39 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start ruleExpression
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1569:1: ruleExpression returns [EObject current=null] : (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1577:1: ruleExpression returns [EObject current=null] : this_Logical_0= ruleLogical ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject this_MathExpression_0 = null;
-
-        EObject this_Condition_1 = null;
+        EObject this_Logical_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1574:6: ( (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1582:6: (this_Logical_0= ruleLogical )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1584:2: this_Logical_0= ruleLogical
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )
-            int alt19=2;
-            switch ( input.LA(1) ) {
-            case 19:
-                {
-                int LA19_1 = input.LA(2);
-
-                if ( (synpred27()) ) {
-                    alt19=1;
-                }
-                else if ( (true) ) {
-                    alt19=2;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )", 19, 1, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_INT:
-                {
-                int LA19_2 = input.LA(2);
-
-                if ( (synpred27()) ) {
-                    alt19=1;
-                }
-                else if ( (true) ) {
-                    alt19=2;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )", 19, 2, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_REAL:
-                {
-                int LA19_3 = input.LA(2);
-
-                if ( (synpred27()) ) {
-                    alt19=1;
-                }
-                else if ( (true) ) {
-                    alt19=2;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )", 19, 3, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_ID:
-                {
-                int LA19_4 = input.LA(2);
-
-                if ( (synpred27()) ) {
-                    alt19=1;
-                }
-                else if ( (true) ) {
-                    alt19=2;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )", 19, 4, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_BOOL:
-            case 41:
-                {
-                alt19=2;
-                }
-                break;
-            default:
-                if (backtracking>0) {failed=true; return current;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1575:1: (this_MathExpression_0= ruleMathExpression | this_Condition_1= ruleCondition )", 19, 0, input);
-
-                throw nvae;
+            if ( backtracking==0 ) {
+               
+              	  /* */ 
+              	
             }
-
-            switch (alt19) {
-                case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1576:2: this_MathExpression_0= ruleMathExpression
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              currentNode=createCompositeNode(grammarAccess.getExpressionAccess().getMathExpressionParserRuleCall_0(), currentNode); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleMathExpression_in_ruleExpression2528);
-                    this_MathExpression_0=ruleMathExpression();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-                       
-                              current = this_MathExpression_0; 
-                              currentNode = currentNode.getParent();
-                          
-                    }
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1589:2: this_Condition_1= ruleCondition
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              currentNode=createCompositeNode(grammarAccess.getExpressionAccess().getConditionParserRuleCall_1(), currentNode); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleCondition_in_ruleExpression2558);
-                    this_Condition_1=ruleCondition();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-                       
-                              current = this_Condition_1; 
-                              currentNode = currentNode.getParent();
-                          
-                    }
-
-                    }
-                    break;
-
+            if ( backtracking==0 ) {
+               
+                      currentNode=createCompositeNode(grammarAccess.getExpressionAccess().getLogicalParserRuleCall(), currentNode); 
+                  
             }
-
+            pushFollow(FOLLOW_ruleLogical_in_ruleExpression2486);
+            this_Logical_0=ruleLogical();
+            _fsp--;
+            if (failed) return current;
+            if ( backtracking==0 ) {
+               
+                      current = this_Logical_0; 
+                      currentNode = currentNode.getParent();
+                  
+            }
 
             }
 
@@ -3761,29 +3642,29 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
     // $ANTLR end ruleExpression
 
 
-    // $ANTLR start entryRuleMathExpression
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1608:1: entryRuleMathExpression returns [EObject current=null] : iv_ruleMathExpression= ruleMathExpression EOF ;
-    public final EObject entryRuleMathExpression() throws RecognitionException {
+    // $ANTLR start entryRuleLogical
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1603:1: entryRuleLogical returns [EObject current=null] : iv_ruleLogical= ruleLogical EOF ;
+    public final EObject entryRuleLogical() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleMathExpression = null;
+        EObject iv_ruleLogical = null;
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1609:2: (iv_ruleMathExpression= ruleMathExpression EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1610:2: iv_ruleMathExpression= ruleMathExpression EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1604:2: (iv_ruleLogical= ruleLogical EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1605:2: iv_ruleLogical= ruleLogical EOF
             {
             if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getMathExpressionRule(), currentNode); 
+               currentNode = createCompositeNode(grammarAccess.getLogicalRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleMathExpression_in_entryRuleMathExpression2593);
-            iv_ruleMathExpression=ruleMathExpression();
+            pushFollow(FOLLOW_ruleLogical_in_entryRuleLogical2520);
+            iv_ruleLogical=ruleLogical();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
-               current =iv_ruleMathExpression; 
+               current =iv_ruleLogical; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMathExpression2603); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLogical2530); if (failed) return current;
 
             }
 
@@ -3797,22 +3678,27 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end entryRuleMathExpression
+    // $ANTLR end entryRuleLogical
 
 
-    // $ANTLR start ruleMathExpression
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1617:1: ruleMathExpression returns [EObject current=null] : this_Addition_0= ruleAddition ;
-    public final EObject ruleMathExpression() throws RecognitionException {
+    // $ANTLR start ruleLogical
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1612:1: ruleLogical returns [EObject current=null] : (this_Relation_0= ruleRelation ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) ) )* ) ;
+    public final EObject ruleLogical() throws RecognitionException {
         EObject current = null;
 
-        EObject this_Addition_0 = null;
+        EObject this_Relation_0 = null;
+
+        EObject lv_right_5_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1622:6: (this_Addition_0= ruleAddition )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1624:2: this_Addition_0= ruleAddition
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1617:6: ( (this_Relation_0= ruleRelation ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) ) )* ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1618:1: (this_Relation_0= ruleRelation ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) ) )* )
+            {
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1618:1: (this_Relation_0= ruleRelation ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) ) )* )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1619:2: this_Relation_0= ruleRelation ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) ) )*
             {
             if ( backtracking==0 ) {
                
@@ -3821,19 +3707,214 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
             }
             if ( backtracking==0 ) {
                
-                      currentNode=createCompositeNode(grammarAccess.getMathExpressionAccess().getAdditionParserRuleCall(), currentNode); 
+                      currentNode=createCompositeNode(grammarAccess.getLogicalAccess().getRelationParserRuleCall_0(), currentNode); 
                   
             }
-            pushFollow(FOLLOW_ruleAddition_in_ruleMathExpression2652);
-            this_Addition_0=ruleAddition();
+            pushFollow(FOLLOW_ruleRelation_in_ruleLogical2580);
+            this_Relation_0=ruleRelation();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
                
-                      current = this_Addition_0; 
+                      current = this_Relation_0; 
                       currentNode = currentNode.getParent();
                   
             }
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:1: ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) ) )*
+            loop20:
+            do {
+                int alt20=2;
+                int LA20_0 = input.LA(1);
+
+                if ( (LA20_0==35) ) {
+                    int LA20_2 = input.LA(2);
+
+                    if ( (synpred29()) ) {
+                        alt20=1;
+                    }
+
+
+                }
+                else if ( (LA20_0==36) ) {
+                    int LA20_3 = input.LA(2);
+
+                    if ( (synpred29()) ) {
+                        alt20=1;
+                    }
+
+
+                }
+
+
+                switch (alt20) {
+            	case 1 :
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:2: ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleRelation ) )
+            	    {
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:2: ( ( () 'AND' ) | ( () 'OR' ) )
+            	    int alt19=2;
+            	    int LA19_0 = input.LA(1);
+
+            	    if ( (LA19_0==35) ) {
+            	        alt19=1;
+            	    }
+            	    else if ( (LA19_0==36) ) {
+            	        alt19=2;
+            	    }
+            	    else {
+            	        if (backtracking>0) {failed=true; return current;}
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("1630:2: ( ( () 'AND' ) | ( () 'OR' ) )", 19, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt19) {
+            	        case 1 :
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:3: ( () 'AND' )
+            	            {
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:3: ( () 'AND' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:4: () 'AND'
+            	            {
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:4: ()
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1631:2: 
+            	            {
+            	            if ( backtracking==0 ) {
+            	               
+            	              	  /* */ 
+            	              	
+            	            }
+            	            if ( backtracking==0 ) {
+            	               
+            	                      temp=factory.create(grammarAccess.getLogicalAccess().getAndLeftAction_1_0_0_0().getType().getClassifier());
+            	                      try {
+            	                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+            	                      } catch(ValueConverterException vce) {
+            	                      	handleValueConverterException(vce);
+            	                      }
+            	                      current = temp; 
+            	                      temp = null;
+            	                      CompositeNode newNode = createCompositeNode(grammarAccess.getLogicalAccess().getAndLeftAction_1_0_0_0(), currentNode.getParent());
+            	                  newNode.getChildren().add(currentNode);
+            	                  moveLookaheadInfo(currentNode, newNode);
+            	                  currentNode = newNode; 
+            	                      associateNodeWithAstElement(currentNode, current); 
+            	                  
+            	            }
+
+            	            }
+
+            	            match(input,35,FOLLOW_35_in_ruleLogical2604); if (failed) return current;
+            	            if ( backtracking==0 ) {
+
+            	                      createLeafNode(grammarAccess.getLogicalAccess().getANDKeyword_1_0_0_1(), null); 
+            	                  
+            	            }
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:6: ( () 'OR' )
+            	            {
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:6: ( () 'OR' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:7: () 'OR'
+            	            {
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:7: ()
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1655:2: 
+            	            {
+            	            if ( backtracking==0 ) {
+            	               
+            	              	  /* */ 
+            	              	
+            	            }
+            	            if ( backtracking==0 ) {
+            	               
+            	                      temp=factory.create(grammarAccess.getLogicalAccess().getOrLeftAction_1_0_1_0().getType().getClassifier());
+            	                      try {
+            	                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+            	                      } catch(ValueConverterException vce) {
+            	                      	handleValueConverterException(vce);
+            	                      }
+            	                      current = temp; 
+            	                      temp = null;
+            	                      CompositeNode newNode = createCompositeNode(grammarAccess.getLogicalAccess().getOrLeftAction_1_0_1_0(), currentNode.getParent());
+            	                  newNode.getChildren().add(currentNode);
+            	                  moveLookaheadInfo(currentNode, newNode);
+            	                  currentNode = newNode; 
+            	                      associateNodeWithAstElement(currentNode, current); 
+            	                  
+            	            }
+
+            	            }
+
+            	            match(input,36,FOLLOW_36_in_ruleLogical2634); if (failed) return current;
+            	            if ( backtracking==0 ) {
+
+            	                      createLeafNode(grammarAccess.getLogicalAccess().getORKeyword_1_0_1_1(), null); 
+            	                  
+            	            }
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1677:3: ( (lv_right_5_0= ruleRelation ) )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1678:1: (lv_right_5_0= ruleRelation )
+            	    {
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1678:1: (lv_right_5_0= ruleRelation )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1679:3: lv_right_5_0= ruleRelation
+            	    {
+            	    if ( backtracking==0 ) {
+            	       
+            	      	        currentNode=createCompositeNode(grammarAccess.getLogicalAccess().getRightRelationParserRuleCall_1_1_0(), currentNode); 
+            	      	    
+            	    }
+            	    pushFollow(FOLLOW_ruleRelation_in_ruleLogical2657);
+            	    lv_right_5_0=ruleRelation();
+            	    _fsp--;
+            	    if (failed) return current;
+            	    if ( backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = factory.create(grammarAccess.getLogicalRule().getType().getClassifier());
+            	      	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	      	        }
+            	      	        try {
+            	      	       		set(
+            	      	       			current, 
+            	      	       			"right",
+            	      	        		lv_right_5_0, 
+            	      	        		"Relation", 
+            	      	        		currentNode);
+            	      	        } catch (ValueConverterException vce) {
+            	      				handleValueConverterException(vce);
+            	      	        }
+            	      	        currentNode = currentNode.getParent();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop20;
+                }
+            } while (true);
+
+
+            }
+
 
             }
 
@@ -3852,11 +3933,483 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end ruleMathExpression
+    // $ANTLR end ruleLogical
+
+
+    // $ANTLR start entryRuleRelation
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1709:1: entryRuleRelation returns [EObject current=null] : iv_ruleRelation= ruleRelation EOF ;
+    public final EObject entryRuleRelation() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleRelation = null;
+
+
+        try {
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1710:2: (iv_ruleRelation= ruleRelation EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1711:2: iv_ruleRelation= ruleRelation EOF
+            {
+            if ( backtracking==0 ) {
+               currentNode = createCompositeNode(grammarAccess.getRelationRule(), currentNode); 
+            }
+            pushFollow(FOLLOW_ruleRelation_in_entryRuleRelation2695);
+            iv_ruleRelation=ruleRelation();
+            _fsp--;
+            if (failed) return current;
+            if ( backtracking==0 ) {
+               current =iv_ruleRelation; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRelation2705); if (failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end entryRuleRelation
+
+
+    // $ANTLR start ruleRelation
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1718:1: ruleRelation returns [EObject current=null] : (this_Addition_0= ruleAddition ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) ) )? ) ;
+    public final EObject ruleRelation() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_Addition_0 = null;
+
+        EObject lv_right_11_0 = null;
+
+
+         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+            
+        try {
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1723:6: ( (this_Addition_0= ruleAddition ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) ) )? ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1724:1: (this_Addition_0= ruleAddition ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) ) )? )
+            {
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1724:1: (this_Addition_0= ruleAddition ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) ) )? )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1725:2: this_Addition_0= ruleAddition ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) ) )?
+            {
+            if ( backtracking==0 ) {
+               
+              	  /* */ 
+              	
+            }
+            if ( backtracking==0 ) {
+               
+                      currentNode=createCompositeNode(grammarAccess.getRelationAccess().getAdditionParserRuleCall_0(), currentNode); 
+                  
+            }
+            pushFollow(FOLLOW_ruleAddition_in_ruleRelation2755);
+            this_Addition_0=ruleAddition();
+            _fsp--;
+            if (failed) return current;
+            if ( backtracking==0 ) {
+               
+                      current = this_Addition_0; 
+                      currentNode = currentNode.getParent();
+                  
+            }
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:1: ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) ) )?
+            int alt22=2;
+            switch ( input.LA(1) ) {
+                case 37:
+                    {
+                    int LA22_1 = input.LA(2);
+
+                    if ( (synpred34()) ) {
+                        alt22=1;
+                    }
+                    }
+                    break;
+                case 38:
+                    {
+                    int LA22_2 = input.LA(2);
+
+                    if ( (synpred34()) ) {
+                        alt22=1;
+                    }
+                    }
+                    break;
+                case 39:
+                    {
+                    int LA22_3 = input.LA(2);
+
+                    if ( (synpred34()) ) {
+                        alt22=1;
+                    }
+                    }
+                    break;
+                case 40:
+                    {
+                    int LA22_4 = input.LA(2);
+
+                    if ( (synpred34()) ) {
+                        alt22=1;
+                    }
+                    }
+                    break;
+                case 41:
+                    {
+                    int LA22_5 = input.LA(2);
+
+                    if ( (synpred34()) ) {
+                        alt22=1;
+                    }
+                    }
+                    break;
+            }
+
+            switch (alt22) {
+                case 1 :
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:2: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_11_0= ruleAddition ) )
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:2: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) )
+                    int alt21=5;
+                    switch ( input.LA(1) ) {
+                    case 37:
+                        {
+                        alt21=1;
+                        }
+                        break;
+                    case 38:
+                        {
+                        alt21=2;
+                        }
+                        break;
+                    case 39:
+                        {
+                        alt21=3;
+                        }
+                        break;
+                    case 40:
+                        {
+                        alt21=4;
+                        }
+                        break;
+                    case 41:
+                        {
+                        alt21=5;
+                        }
+                        break;
+                    default:
+                        if (backtracking>0) {failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("1736:2: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) )", 21, 0, input);
+
+                        throw nvae;
+                    }
+
+                    switch (alt21) {
+                        case 1 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:3: ( () '<=' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:3: ( () '<=' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:4: () '<='
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:4: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1737:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getRelationAccess().getLeqLeftAction_1_0_0_0().getType().getClassifier());
+                                      try {
+                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+                                      } catch(ValueConverterException vce) {
+                                      	handleValueConverterException(vce);
+                                      }
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getRelationAccess().getLeqLeftAction_1_0_0_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,37,FOLLOW_37_in_ruleRelation2779); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getRelationAccess().getLessThanSignEqualsSignKeyword_1_0_0_1(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:6: ( () '<' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:6: ( () '<' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:7: () '<'
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1761:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getRelationAccess().getLessLeftAction_1_0_1_0().getType().getClassifier());
+                                      try {
+                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+                                      } catch(ValueConverterException vce) {
+                                      	handleValueConverterException(vce);
+                                      }
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getRelationAccess().getLessLeftAction_1_0_1_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,38,FOLLOW_38_in_ruleRelation2809); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getRelationAccess().getLessThanSignKeyword_1_0_1_1(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+                        case 3 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:6: ( () '==' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:6: ( () '==' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:7: () '=='
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1785:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getRelationAccess().getEqLeftAction_1_0_2_0().getType().getClassifier());
+                                      try {
+                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+                                      } catch(ValueConverterException vce) {
+                                      	handleValueConverterException(vce);
+                                      }
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getRelationAccess().getEqLeftAction_1_0_2_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,39,FOLLOW_39_in_ruleRelation2839); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getRelationAccess().getEqualsSignEqualsSignKeyword_1_0_2_1(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+                        case 4 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:6: ( () '>=' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:6: ( () '>=' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:7: () '>='
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1809:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getRelationAccess().getGeqLeftAction_1_0_3_0().getType().getClassifier());
+                                      try {
+                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+                                      } catch(ValueConverterException vce) {
+                                      	handleValueConverterException(vce);
+                                      }
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getRelationAccess().getGeqLeftAction_1_0_3_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,40,FOLLOW_40_in_ruleRelation2869); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getRelationAccess().getGreaterThanSignEqualsSignKeyword_1_0_3_1(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+                        case 5 :
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:6: ( () '>' )
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:6: ( () '>' )
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:7: () '>'
+                            {
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:7: ()
+                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1833:2: 
+                            {
+                            if ( backtracking==0 ) {
+                               
+                              	  /* */ 
+                              	
+                            }
+                            if ( backtracking==0 ) {
+                               
+                                      temp=factory.create(grammarAccess.getRelationAccess().getGtrLeftAction_1_0_4_0().getType().getClassifier());
+                                      try {
+                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
+                                      } catch(ValueConverterException vce) {
+                                      	handleValueConverterException(vce);
+                                      }
+                                      current = temp; 
+                                      temp = null;
+                                      CompositeNode newNode = createCompositeNode(grammarAccess.getRelationAccess().getGtrLeftAction_1_0_4_0(), currentNode.getParent());
+                                  newNode.getChildren().add(currentNode);
+                                  moveLookaheadInfo(currentNode, newNode);
+                                  currentNode = newNode; 
+                                      associateNodeWithAstElement(currentNode, current); 
+                                  
+                            }
+
+                            }
+
+                            match(input,41,FOLLOW_41_in_ruleRelation2899); if (failed) return current;
+                            if ( backtracking==0 ) {
+
+                                      createLeafNode(grammarAccess.getRelationAccess().getGreaterThanSignKeyword_1_0_4_1(), null); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1855:3: ( (lv_right_11_0= ruleAddition ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1856:1: (lv_right_11_0= ruleAddition )
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1856:1: (lv_right_11_0= ruleAddition )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1857:3: lv_right_11_0= ruleAddition
+                    {
+                    if ( backtracking==0 ) {
+                       
+                      	        currentNode=createCompositeNode(grammarAccess.getRelationAccess().getRightAdditionParserRuleCall_1_1_0(), currentNode); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleAddition_in_ruleRelation2922);
+                    lv_right_11_0=ruleAddition();
+                    _fsp--;
+                    if (failed) return current;
+                    if ( backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = factory.create(grammarAccess.getRelationRule().getType().getClassifier());
+                      	            associateNodeWithAstElement(currentNode.getParent(), current);
+                      	        }
+                      	        try {
+                      	       		set(
+                      	       			current, 
+                      	       			"right",
+                      	        		lv_right_11_0, 
+                      	        		"Addition", 
+                      	        		currentNode);
+                      	        } catch (ValueConverterException vce) {
+                      				handleValueConverterException(vce);
+                      	        }
+                      	        currentNode = currentNode.getParent();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( backtracking==0 ) {
+               resetLookahead(); 
+                  	lastConsumedNode = currentNode;
+                  
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end ruleRelation
 
 
     // $ANTLR start entryRuleAddition
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1643:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1887:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
     public final EObject entryRuleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -3864,20 +4417,20 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1644:2: (iv_ruleAddition= ruleAddition EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1645:2: iv_ruleAddition= ruleAddition EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1888:2: (iv_ruleAddition= ruleAddition EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1889:2: iv_ruleAddition= ruleAddition EOF
             {
             if ( backtracking==0 ) {
                currentNode = createCompositeNode(grammarAccess.getAdditionRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleAddition_in_entryRuleAddition2686);
+            pushFollow(FOLLOW_ruleAddition_in_entryRuleAddition2960);
             iv_ruleAddition=ruleAddition();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
                current =iv_ruleAddition; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAddition2696); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAddition2970); if (failed) return current;
 
             }
 
@@ -3895,7 +4448,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start ruleAddition
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1652:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1896:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) ;
     public final EObject ruleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -3907,11 +4460,11 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1657:6: ( (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1658:1: (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1901:6: ( (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1902:1: (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1658:1: (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1659:2: this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1902:1: (this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1903:2: this_Multiplication_0= ruleMultiplication ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
             {
             if ( backtracking==0 ) {
                
@@ -3923,7 +4476,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                       currentNode=createCompositeNode(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0(), currentNode); 
                   
             }
-            pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition2746);
+            pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition3020);
             this_Multiplication_0=ruleMultiplication();
             _fsp--;
             if (failed) return current;
@@ -3933,47 +4486,62 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                       currentNode = currentNode.getParent();
                   
             }
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:1: ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
-            loop21:
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:1: ( ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
+            loop24:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( ((LA21_0>=35 && LA21_0<=36)) ) {
-                    alt21=1;
+                if ( (LA24_0==42) ) {
+                    int LA24_2 = input.LA(2);
+
+                    if ( (synpred36()) ) {
+                        alt24=1;
+                    }
+
+
+                }
+                else if ( (LA24_0==43) ) {
+                    int LA24_3 = input.LA(2);
+
+                    if ( (synpred36()) ) {
+                        alt24=1;
+                    }
+
+
                 }
 
 
-                switch (alt21) {
+                switch (alt24) {
             	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:2: ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:2: ( ( () '+' ) | ( () '-' ) ) ( (lv_right_5_0= ruleMultiplication ) )
             	    {
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:2: ( ( () '+' ) | ( () '-' ) )
-            	    int alt20=2;
-            	    int LA20_0 = input.LA(1);
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:2: ( ( () '+' ) | ( () '-' ) )
+            	    int alt23=2;
+            	    int LA23_0 = input.LA(1);
 
-            	    if ( (LA20_0==35) ) {
-            	        alt20=1;
+            	    if ( (LA23_0==42) ) {
+            	        alt23=1;
             	    }
-            	    else if ( (LA20_0==36) ) {
-            	        alt20=2;
+            	    else if ( (LA23_0==43) ) {
+            	        alt23=2;
             	    }
             	    else {
             	        if (backtracking>0) {failed=true; return current;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("1670:2: ( ( () '+' ) | ( () '-' ) )", 20, 0, input);
+            	            new NoViableAltException("1914:2: ( ( () '+' ) | ( () '-' ) )", 23, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt20) {
+            	    switch (alt23) {
             	        case 1 :
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:3: ( () '+' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:3: ( () '+' )
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:3: ( () '+' )
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:4: () '+'
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:3: ( () '+' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:4: () '+'
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1670:4: ()
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1671:2: 
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:4: ()
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1915:2: 
             	            {
             	            if ( backtracking==0 ) {
             	               
@@ -4000,7 +4568,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             	            }
 
-            	            match(input,35,FOLLOW_35_in_ruleAddition2770); if (failed) return current;
+            	            match(input,42,FOLLOW_42_in_ruleAddition3044); if (failed) return current;
             	            if ( backtracking==0 ) {
 
             	                      createLeafNode(grammarAccess.getAdditionAccess().getPlusSignKeyword_1_0_0_1(), null); 
@@ -4013,13 +4581,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
             	            }
             	            break;
             	        case 2 :
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1694:6: ( () '-' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:6: ( () '-' )
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1694:6: ( () '-' )
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1694:7: () '-'
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:6: ( () '-' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:7: () '-'
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1694:7: ()
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1695:2: 
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:7: ()
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1939:2: 
             	            {
             	            if ( backtracking==0 ) {
             	               
@@ -4046,7 +4614,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             	            }
 
-            	            match(input,36,FOLLOW_36_in_ruleAddition2800); if (failed) return current;
+            	            match(input,43,FOLLOW_43_in_ruleAddition3074); if (failed) return current;
             	            if ( backtracking==0 ) {
 
             	                      createLeafNode(grammarAccess.getAdditionAccess().getHyphenMinusKeyword_1_0_1_1(), null); 
@@ -4061,18 +4629,18 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             	    }
 
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1717:3: ( (lv_right_5_0= ruleMultiplication ) )
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1718:1: (lv_right_5_0= ruleMultiplication )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1961:3: ( (lv_right_5_0= ruleMultiplication ) )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1962:1: (lv_right_5_0= ruleMultiplication )
             	    {
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1718:1: (lv_right_5_0= ruleMultiplication )
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1719:3: lv_right_5_0= ruleMultiplication
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1962:1: (lv_right_5_0= ruleMultiplication )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1963:3: lv_right_5_0= ruleMultiplication
             	    {
             	    if ( backtracking==0 ) {
             	       
             	      	        currentNode=createCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_1_0(), currentNode); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition2823);
+            	    pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition3097);
             	    lv_right_5_0=ruleMultiplication();
             	    _fsp--;
             	    if (failed) return current;
@@ -4106,7 +4674,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop24;
                 }
             } while (true);
 
@@ -4135,7 +4703,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start entryRuleMultiplication
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1749:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1993:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
     public final EObject entryRuleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -4143,20 +4711,20 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1750:2: (iv_ruleMultiplication= ruleMultiplication EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1751:2: iv_ruleMultiplication= ruleMultiplication EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1994:2: (iv_ruleMultiplication= ruleMultiplication EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1995:2: iv_ruleMultiplication= ruleMultiplication EOF
             {
             if ( backtracking==0 ) {
                currentNode = createCompositeNode(grammarAccess.getMultiplicationRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleMultiplication_in_entryRuleMultiplication2861);
+            pushFollow(FOLLOW_ruleMultiplication_in_entryRuleMultiplication3135);
             iv_ruleMultiplication=ruleMultiplication();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
                current =iv_ruleMultiplication; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplication2871); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplication3145); if (failed) return current;
 
             }
 
@@ -4174,7 +4742,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start ruleMultiplication
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1758:1: ruleMultiplication returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2002:1: ruleMultiplication returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) ;
     public final EObject ruleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -4186,11 +4754,11 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1763:6: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1764:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2007:6: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2008:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1764:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1765:2: this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2008:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2009:2: this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
             {
             if ( backtracking==0 ) {
                
@@ -4202,7 +4770,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                       currentNode=createCompositeNode(grammarAccess.getMultiplicationAccess().getPrimaryExpressionParserRuleCall_0(), currentNode); 
                   
             }
-            pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication2921);
+            pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication3195);
             this_PrimaryExpression_0=rulePrimaryExpression();
             _fsp--;
             if (failed) return current;
@@ -4212,47 +4780,62 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                       currentNode = currentNode.getParent();
                   
             }
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:1: ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
-            loop23:
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:1: ( ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
+            loop26:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( ((LA23_0>=37 && LA23_0<=38)) ) {
-                    alt23=1;
+                if ( (LA26_0==44) ) {
+                    int LA26_2 = input.LA(2);
+
+                    if ( (synpred38()) ) {
+                        alt26=1;
+                    }
+
+
+                }
+                else if ( (LA26_0==45) ) {
+                    int LA26_3 = input.LA(2);
+
+                    if ( (synpred38()) ) {
+                        alt26=1;
+                    }
+
+
                 }
 
 
-                switch (alt23) {
+                switch (alt26) {
             	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:2: ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:2: ( ( () '*' ) | ( () '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) )
             	    {
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:2: ( ( () '*' ) | ( () '/' ) )
-            	    int alt22=2;
-            	    int LA22_0 = input.LA(1);
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:2: ( ( () '*' ) | ( () '/' ) )
+            	    int alt25=2;
+            	    int LA25_0 = input.LA(1);
 
-            	    if ( (LA22_0==37) ) {
-            	        alt22=1;
+            	    if ( (LA25_0==44) ) {
+            	        alt25=1;
             	    }
-            	    else if ( (LA22_0==38) ) {
-            	        alt22=2;
+            	    else if ( (LA25_0==45) ) {
+            	        alt25=2;
             	    }
             	    else {
             	        if (backtracking>0) {failed=true; return current;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("1776:2: ( ( () '*' ) | ( () '/' ) )", 22, 0, input);
+            	            new NoViableAltException("2020:2: ( ( () '*' ) | ( () '/' ) )", 25, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt22) {
+            	    switch (alt25) {
             	        case 1 :
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:3: ( () '*' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:3: ( () '*' )
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:3: ( () '*' )
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:4: () '*'
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:3: ( () '*' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:4: () '*'
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1776:4: ()
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1777:2: 
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:4: ()
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2021:2: 
             	            {
             	            if ( backtracking==0 ) {
             	               
@@ -4279,7 +4862,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             	            }
 
-            	            match(input,37,FOLLOW_37_in_ruleMultiplication2945); if (failed) return current;
+            	            match(input,44,FOLLOW_44_in_ruleMultiplication3219); if (failed) return current;
             	            if ( backtracking==0 ) {
 
             	                      createLeafNode(grammarAccess.getMultiplicationAccess().getAsteriskKeyword_1_0_0_1(), null); 
@@ -4292,13 +4875,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
             	            }
             	            break;
             	        case 2 :
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1800:6: ( () '/' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:6: ( () '/' )
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1800:6: ( () '/' )
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1800:7: () '/'
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:6: ( () '/' )
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:7: () '/'
             	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1800:7: ()
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1801:2: 
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:7: ()
+            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2045:2: 
             	            {
             	            if ( backtracking==0 ) {
             	               
@@ -4325,7 +4908,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             	            }
 
-            	            match(input,38,FOLLOW_38_in_ruleMultiplication2975); if (failed) return current;
+            	            match(input,45,FOLLOW_45_in_ruleMultiplication3249); if (failed) return current;
             	            if ( backtracking==0 ) {
 
             	                      createLeafNode(grammarAccess.getMultiplicationAccess().getSolidusKeyword_1_0_1_1(), null); 
@@ -4340,18 +4923,18 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
             	    }
 
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1823:3: ( (lv_right_5_0= rulePrimaryExpression ) )
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1824:1: (lv_right_5_0= rulePrimaryExpression )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2067:3: ( (lv_right_5_0= rulePrimaryExpression ) )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2068:1: (lv_right_5_0= rulePrimaryExpression )
             	    {
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1824:1: (lv_right_5_0= rulePrimaryExpression )
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1825:3: lv_right_5_0= rulePrimaryExpression
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2068:1: (lv_right_5_0= rulePrimaryExpression )
+            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2069:3: lv_right_5_0= rulePrimaryExpression
             	    {
             	    if ( backtracking==0 ) {
             	       
             	      	        currentNode=createCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrimaryExpressionParserRuleCall_1_1_0(), currentNode); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication2998);
+            	    pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication3272);
             	    lv_right_5_0=rulePrimaryExpression();
             	    _fsp--;
             	    if (failed) return current;
@@ -4367,686 +4950,6 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
             	      	       			"right",
             	      	        		lv_right_5_0, 
             	      	        		"PrimaryExpression", 
-            	      	        		currentNode);
-            	      	        } catch (ValueConverterException vce) {
-            	      				handleValueConverterException(vce);
-            	      	        }
-            	      	        currentNode = currentNode.getParent();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop23;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-               resetLookahead(); 
-                  	lastConsumedNode = currentNode;
-                  
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end ruleMultiplication
-
-
-    // $ANTLR start entryRulePrimaryExpression
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1855:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
-    public final EObject entryRulePrimaryExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulePrimaryExpression = null;
-
-
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1856:2: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1857:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
-            {
-            if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getPrimaryExpressionRule(), currentNode); 
-            }
-            pushFollow(FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression3036);
-            iv_rulePrimaryExpression=rulePrimaryExpression();
-            _fsp--;
-            if (failed) return current;
-            if ( backtracking==0 ) {
-               current =iv_rulePrimaryExpression; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpression3046); if (failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRulePrimaryExpression
-
-
-    // $ANTLR start rulePrimaryExpression
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1864:1: rulePrimaryExpression returns [EObject current=null] : ( ( '(' this_MathExpression_1= ruleMathExpression ')' ) | ( () ( (lv_value_4_0= ruleNumericValue ) ) ) | ( () ( ( RULE_ID ) ) ) ) ;
-    public final EObject rulePrimaryExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_MathExpression_1 = null;
-
-        AntlrDatatypeRuleToken lv_value_4_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1869:6: ( ( ( '(' this_MathExpression_1= ruleMathExpression ')' ) | ( () ( (lv_value_4_0= ruleNumericValue ) ) ) | ( () ( ( RULE_ID ) ) ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1870:1: ( ( '(' this_MathExpression_1= ruleMathExpression ')' ) | ( () ( (lv_value_4_0= ruleNumericValue ) ) ) | ( () ( ( RULE_ID ) ) ) )
-            {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1870:1: ( ( '(' this_MathExpression_1= ruleMathExpression ')' ) | ( () ( (lv_value_4_0= ruleNumericValue ) ) ) | ( () ( ( RULE_ID ) ) ) )
-            int alt24=3;
-            switch ( input.LA(1) ) {
-            case 19:
-                {
-                alt24=1;
-                }
-                break;
-            case RULE_INT:
-            case RULE_REAL:
-                {
-                alt24=2;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt24=3;
-                }
-                break;
-            default:
-                if (backtracking>0) {failed=true; return current;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1870:1: ( ( '(' this_MathExpression_1= ruleMathExpression ')' ) | ( () ( (lv_value_4_0= ruleNumericValue ) ) ) | ( () ( ( RULE_ID ) ) ) )", 24, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt24) {
-                case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1870:2: ( '(' this_MathExpression_1= ruleMathExpression ')' )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1870:2: ( '(' this_MathExpression_1= ruleMathExpression ')' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1870:4: '(' this_MathExpression_1= ruleMathExpression ')'
-                    {
-                    match(input,19,FOLLOW_19_in_rulePrimaryExpression3082); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0(), null); 
-                          
-                    }
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              currentNode=createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getMathExpressionParserRuleCall_0_1(), currentNode); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleMathExpression_in_rulePrimaryExpression3107);
-                    this_MathExpression_1=ruleMathExpression();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-                       
-                              current = this_MathExpression_1; 
-                              currentNode = currentNode.getParent();
-                          
-                    }
-                    match(input,21,FOLLOW_21_in_rulePrimaryExpression3116); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2(), null); 
-                          
-                    }
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1891:6: ( () ( (lv_value_4_0= ruleNumericValue ) ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1891:6: ( () ( (lv_value_4_0= ruleNumericValue ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1891:7: () ( (lv_value_4_0= ruleNumericValue ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1891:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1892:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getPrimaryExpressionAccess().getNumberLiteralAction_1_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getNumberLiteralAction_1_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1905:2: ( (lv_value_4_0= ruleNumericValue ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1906:1: (lv_value_4_0= ruleNumericValue )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1906:1: (lv_value_4_0= ruleNumericValue )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1907:3: lv_value_4_0= ruleNumericValue
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getValueNumericValueParserRuleCall_1_1_0(), currentNode); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleNumericValue_in_rulePrimaryExpression3157);
-                    lv_value_4_0=ruleNumericValue();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getPrimaryExpressionRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                      	        }
-                      	        try {
-                      	       		set(
-                      	       			current, 
-                      	       			"value",
-                      	        		lv_value_4_0, 
-                      	        		"NumericValue", 
-                      	        		currentNode);
-                      	        } catch (ValueConverterException vce) {
-                      				handleValueConverterException(vce);
-                      	        }
-                      	        currentNode = currentNode.getParent();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1930:6: ( () ( ( RULE_ID ) ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1930:6: ( () ( ( RULE_ID ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1930:7: () ( ( RULE_ID ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1930:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1931:2: 
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              temp=factory.create(grammarAccess.getPrimaryExpressionAccess().getVariableReferenceAction_2_0().getType().getClassifier());
-                              current = temp; 
-                              temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getVariableReferenceAction_2_0(), currentNode.getParent());
-                          newNode.getChildren().add(currentNode);
-                          moveLookaheadInfo(currentNode, newNode);
-                          currentNode = newNode; 
-                              associateNodeWithAstElement(currentNode, current); 
-                          
-                    }
-
-                    }
-
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1944:2: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1945:1: ( RULE_ID )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1945:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1946:3: RULE_ID
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      		  /* */ 
-                      		
-                    }
-                    if ( backtracking==0 ) {
-
-                      			if (current==null) {
-                      	            current = factory.create(grammarAccess.getPrimaryExpressionRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
-                      	        }
-                              
-                    }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimaryExpression3199); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      		createLeafNode(grammarAccess.getPrimaryExpressionAccess().getVarVariableDeclarationCrossReference_2_1_0(), "var"); 
-                      	
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            if ( backtracking==0 ) {
-               resetLookahead(); 
-                  	lastConsumedNode = currentNode;
-                  
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end rulePrimaryExpression
-
-
-    // $ANTLR start entryRuleCondition
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1969:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
-    public final EObject entryRuleCondition() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleCondition = null;
-
-
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1970:2: (iv_ruleCondition= ruleCondition EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1971:2: iv_ruleCondition= ruleCondition EOF
-            {
-            if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getConditionRule(), currentNode); 
-            }
-            pushFollow(FOLLOW_ruleCondition_in_entryRuleCondition3236);
-            iv_ruleCondition=ruleCondition();
-            _fsp--;
-            if (failed) return current;
-            if ( backtracking==0 ) {
-               current =iv_ruleCondition; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCondition3246); if (failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRuleCondition
-
-
-    // $ANTLR start ruleCondition
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1978:1: ruleCondition returns [EObject current=null] : this_BinaryBoolean_0= ruleBinaryBoolean ;
-    public final EObject ruleCondition() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_BinaryBoolean_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1983:6: (this_BinaryBoolean_0= ruleBinaryBoolean )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1985:2: this_BinaryBoolean_0= ruleBinaryBoolean
-            {
-            if ( backtracking==0 ) {
-               
-              	  /* */ 
-              	
-            }
-            if ( backtracking==0 ) {
-               
-                      currentNode=createCompositeNode(grammarAccess.getConditionAccess().getBinaryBooleanParserRuleCall(), currentNode); 
-                  
-            }
-            pushFollow(FOLLOW_ruleBinaryBoolean_in_ruleCondition3295);
-            this_BinaryBoolean_0=ruleBinaryBoolean();
-            _fsp--;
-            if (failed) return current;
-            if ( backtracking==0 ) {
-               
-                      current = this_BinaryBoolean_0; 
-                      currentNode = currentNode.getParent();
-                  
-            }
-
-            }
-
-            if ( backtracking==0 ) {
-               resetLookahead(); 
-                  	lastConsumedNode = currentNode;
-                  
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end ruleCondition
-
-
-    // $ANTLR start entryRuleBinaryBoolean
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2004:1: entryRuleBinaryBoolean returns [EObject current=null] : iv_ruleBinaryBoolean= ruleBinaryBoolean EOF ;
-    public final EObject entryRuleBinaryBoolean() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleBinaryBoolean = null;
-
-
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2005:2: (iv_ruleBinaryBoolean= ruleBinaryBoolean EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2006:2: iv_ruleBinaryBoolean= ruleBinaryBoolean EOF
-            {
-            if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getBinaryBooleanRule(), currentNode); 
-            }
-            pushFollow(FOLLOW_ruleBinaryBoolean_in_entryRuleBinaryBoolean3329);
-            iv_ruleBinaryBoolean=ruleBinaryBoolean();
-            _fsp--;
-            if (failed) return current;
-            if ( backtracking==0 ) {
-               current =iv_ruleBinaryBoolean; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBinaryBoolean3339); if (failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRuleBinaryBoolean
-
-
-    // $ANTLR start ruleBinaryBoolean
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2013:1: ruleBinaryBoolean returns [EObject current=null] : (this_UnaryBoolean_0= ruleUnaryBoolean ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) ) )* ) ;
-    public final EObject ruleBinaryBoolean() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_UnaryBoolean_0 = null;
-
-        EObject lv_right_5_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2018:6: ( (this_UnaryBoolean_0= ruleUnaryBoolean ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) ) )* ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2019:1: (this_UnaryBoolean_0= ruleUnaryBoolean ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) ) )* )
-            {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2019:1: (this_UnaryBoolean_0= ruleUnaryBoolean ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) ) )* )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:2: this_UnaryBoolean_0= ruleUnaryBoolean ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) ) )*
-            {
-            if ( backtracking==0 ) {
-               
-              	  /* */ 
-              	
-            }
-            if ( backtracking==0 ) {
-               
-                      currentNode=createCompositeNode(grammarAccess.getBinaryBooleanAccess().getUnaryBooleanParserRuleCall_0(), currentNode); 
-                  
-            }
-            pushFollow(FOLLOW_ruleUnaryBoolean_in_ruleBinaryBoolean3389);
-            this_UnaryBoolean_0=ruleUnaryBoolean();
-            _fsp--;
-            if (failed) return current;
-            if ( backtracking==0 ) {
-               
-                      current = this_UnaryBoolean_0; 
-                      currentNode = currentNode.getParent();
-                  
-            }
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:1: ( ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) ) )*
-            loop26:
-            do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
-
-                if ( (LA26_0==39) ) {
-                    int LA26_2 = input.LA(2);
-
-                    if ( (synpred35()) ) {
-                        alt26=1;
-                    }
-
-
-                }
-                else if ( (LA26_0==40) ) {
-                    int LA26_3 = input.LA(2);
-
-                    if ( (synpred35()) ) {
-                        alt26=1;
-                    }
-
-
-                }
-
-
-                switch (alt26) {
-            	case 1 :
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:2: ( ( () 'AND' ) | ( () 'OR' ) ) ( (lv_right_5_0= ruleUnaryBoolean ) )
-            	    {
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:2: ( ( () 'AND' ) | ( () 'OR' ) )
-            	    int alt25=2;
-            	    int LA25_0 = input.LA(1);
-
-            	    if ( (LA25_0==39) ) {
-            	        alt25=1;
-            	    }
-            	    else if ( (LA25_0==40) ) {
-            	        alt25=2;
-            	    }
-            	    else {
-            	        if (backtracking>0) {failed=true; return current;}
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("2031:2: ( ( () 'AND' ) | ( () 'OR' ) )", 25, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt25) {
-            	        case 1 :
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:3: ( () 'AND' )
-            	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:3: ( () 'AND' )
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:4: () 'AND'
-            	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:4: ()
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2032:2: 
-            	            {
-            	            if ( backtracking==0 ) {
-            	               
-            	              	  /* */ 
-            	              	
-            	            }
-            	            if ( backtracking==0 ) {
-            	               
-            	                      temp=factory.create(grammarAccess.getBinaryBooleanAccess().getAndLeftAction_1_0_0_0().getType().getClassifier());
-            	                      try {
-            	                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-            	                      } catch(ValueConverterException vce) {
-            	                      	handleValueConverterException(vce);
-            	                      }
-            	                      current = temp; 
-            	                      temp = null;
-            	                      CompositeNode newNode = createCompositeNode(grammarAccess.getBinaryBooleanAccess().getAndLeftAction_1_0_0_0(), currentNode.getParent());
-            	                  newNode.getChildren().add(currentNode);
-            	                  moveLookaheadInfo(currentNode, newNode);
-            	                  currentNode = newNode; 
-            	                      associateNodeWithAstElement(currentNode, current); 
-            	                  
-            	            }
-
-            	            }
-
-            	            match(input,39,FOLLOW_39_in_ruleBinaryBoolean3413); if (failed) return current;
-            	            if ( backtracking==0 ) {
-
-            	                      createLeafNode(grammarAccess.getBinaryBooleanAccess().getANDKeyword_1_0_0_1(), null); 
-            	                  
-            	            }
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:6: ( () 'OR' )
-            	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:6: ( () 'OR' )
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:7: () 'OR'
-            	            {
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:7: ()
-            	            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2056:2: 
-            	            {
-            	            if ( backtracking==0 ) {
-            	               
-            	              	  /* */ 
-            	              	
-            	            }
-            	            if ( backtracking==0 ) {
-            	               
-            	                      temp=factory.create(grammarAccess.getBinaryBooleanAccess().getOrLeftAction_1_0_1_0().getType().getClassifier());
-            	                      try {
-            	                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-            	                      } catch(ValueConverterException vce) {
-            	                      	handleValueConverterException(vce);
-            	                      }
-            	                      current = temp; 
-            	                      temp = null;
-            	                      CompositeNode newNode = createCompositeNode(grammarAccess.getBinaryBooleanAccess().getOrLeftAction_1_0_1_0(), currentNode.getParent());
-            	                  newNode.getChildren().add(currentNode);
-            	                  moveLookaheadInfo(currentNode, newNode);
-            	                  currentNode = newNode; 
-            	                      associateNodeWithAstElement(currentNode, current); 
-            	                  
-            	            }
-
-            	            }
-
-            	            match(input,40,FOLLOW_40_in_ruleBinaryBoolean3443); if (failed) return current;
-            	            if ( backtracking==0 ) {
-
-            	                      createLeafNode(grammarAccess.getBinaryBooleanAccess().getORKeyword_1_0_1_1(), null); 
-            	                  
-            	            }
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2078:3: ( (lv_right_5_0= ruleUnaryBoolean ) )
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2079:1: (lv_right_5_0= ruleUnaryBoolean )
-            	    {
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2079:1: (lv_right_5_0= ruleUnaryBoolean )
-            	    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2080:3: lv_right_5_0= ruleUnaryBoolean
-            	    {
-            	    if ( backtracking==0 ) {
-            	       
-            	      	        currentNode=createCompositeNode(grammarAccess.getBinaryBooleanAccess().getRightUnaryBooleanParserRuleCall_1_1_0(), currentNode); 
-            	      	    
-            	    }
-            	    pushFollow(FOLLOW_ruleUnaryBoolean_in_ruleBinaryBoolean3466);
-            	    lv_right_5_0=ruleUnaryBoolean();
-            	    _fsp--;
-            	    if (failed) return current;
-            	    if ( backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = factory.create(grammarAccess.getBinaryBooleanRule().getType().getClassifier());
-            	      	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	      	        }
-            	      	        try {
-            	      	       		set(
-            	      	       			current, 
-            	      	       			"right",
-            	      	        		lv_right_5_0, 
-            	      	        		"UnaryBoolean", 
             	      	        		currentNode);
             	      	        } catch (ValueConverterException vce) {
             	      				handleValueConverterException(vce);
@@ -5090,32 +4993,32 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end ruleBinaryBoolean
+    // $ANTLR end ruleMultiplication
 
 
-    // $ANTLR start entryRuleUnaryBoolean
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2110:1: entryRuleUnaryBoolean returns [EObject current=null] : iv_ruleUnaryBoolean= ruleUnaryBoolean EOF ;
-    public final EObject entryRuleUnaryBoolean() throws RecognitionException {
+    // $ANTLR start entryRulePrimaryExpression
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2099:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
+    public final EObject entryRulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleUnaryBoolean = null;
+        EObject iv_rulePrimaryExpression = null;
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2111:2: (iv_ruleUnaryBoolean= ruleUnaryBoolean EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2112:2: iv_ruleUnaryBoolean= ruleUnaryBoolean EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2100:2: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2101:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
             {
             if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getUnaryBooleanRule(), currentNode); 
+               currentNode = createCompositeNode(grammarAccess.getPrimaryExpressionRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleUnaryBoolean_in_entryRuleUnaryBoolean3504);
-            iv_ruleUnaryBoolean=ruleUnaryBoolean();
+            pushFollow(FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression3310);
+            iv_rulePrimaryExpression=rulePrimaryExpression();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
-               current =iv_ruleUnaryBoolean; 
+               current =iv_rulePrimaryExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnaryBoolean3514); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpression3320); if (failed) return current;
 
             }
 
@@ -5129,106 +5032,72 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end entryRuleUnaryBoolean
+    // $ANTLR end entryRulePrimaryExpression
 
 
-    // $ANTLR start ruleUnaryBoolean
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2119:1: ruleUnaryBoolean returns [EObject current=null] : ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) ) ;
-    public final EObject ruleUnaryBoolean() throws RecognitionException {
+    // $ANTLR start rulePrimaryExpression
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2108:1: rulePrimaryExpression returns [EObject current=null] : ( ( '(' this_Expression_1= ruleExpression ')' ) | ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) ) | ( () ( (lv_value_7_0= ruleValue ) ) ) | ( () ( ( RULE_ID ) ) ) ) ;
+    public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
-        Token lv_value_4_0=null;
-        EObject this_Condition_1 = null;
+        EObject this_Expression_1 = null;
 
-        EObject lv_cond_7_0 = null;
+        EObject lv_cond_5_0 = null;
 
-        EObject this_MathExpression_10 = null;
-
-        EObject lv_right_21_0 = null;
+        AntlrDatatypeRuleToken lv_value_7_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2124:6: ( ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:1: ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2113:6: ( ( ( '(' this_Expression_1= ruleExpression ')' ) | ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) ) | ( () ( (lv_value_7_0= ruleValue ) ) ) | ( () ( ( RULE_ID ) ) ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2114:1: ( ( '(' this_Expression_1= ruleExpression ')' ) | ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) ) | ( () ( (lv_value_7_0= ruleValue ) ) ) | ( () ( ( RULE_ID ) ) ) )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:1: ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) )
-            int alt28=5;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2114:1: ( ( '(' this_Expression_1= ruleExpression ')' ) | ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) ) | ( () ( (lv_value_7_0= ruleValue ) ) ) | ( () ( ( RULE_ID ) ) ) )
+            int alt27=4;
             switch ( input.LA(1) ) {
             case 19:
                 {
-                int LA28_1 = input.LA(2);
-
-                if ( (synpred36()) ) {
-                    alt28=1;
-                }
-                else if ( (true) ) {
-                    alt28=5;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("2125:1: ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) )", 28, 1, input);
-
-                    throw nvae;
-                }
+                alt27=1;
                 }
                 break;
+            case 46:
+                {
+                alt27=2;
+                }
+                break;
+            case RULE_STRING:
+            case RULE_INT:
+            case RULE_REAL:
             case RULE_BOOL:
                 {
-                alt28=2;
-                }
-                break;
-            case 41:
-                {
-                alt28=3;
+                alt27=3;
                 }
                 break;
             case RULE_ID:
                 {
-                int LA28_4 = input.LA(2);
-
-                if ( (synpred39()) ) {
-                    alt28=4;
-                }
-                else if ( (true) ) {
-                    alt28=5;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("2125:1: ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) )", 28, 4, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case RULE_INT:
-            case RULE_REAL:
-                {
-                alt28=5;
+                alt27=4;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("2125:1: ( ( '(' this_Condition_1= ruleCondition ')' ) | ( () ( (lv_value_4_0= RULE_BOOL ) ) ) | ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) ) | ( () ( ( RULE_ID ) ) ) | (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) ) )", 28, 0, input);
+                    new NoViableAltException("2114:1: ( ( '(' this_Expression_1= ruleExpression ')' ) | ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) ) | ( () ( (lv_value_7_0= ruleValue ) ) ) | ( () ( ( RULE_ID ) ) ) )", 27, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt28) {
+            switch (alt27) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:2: ( '(' this_Condition_1= ruleCondition ')' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2114:2: ( '(' this_Expression_1= ruleExpression ')' )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:2: ( '(' this_Condition_1= ruleCondition ')' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:4: '(' this_Condition_1= ruleCondition ')'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2114:2: ( '(' this_Expression_1= ruleExpression ')' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2114:4: '(' this_Expression_1= ruleExpression ')'
                     {
-                    match(input,19,FOLLOW_19_in_ruleUnaryBoolean3550); if (failed) return current;
+                    match(input,19,FOLLOW_19_in_rulePrimaryExpression3356); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                              createLeafNode(grammarAccess.getUnaryBooleanAccess().getLeftParenthesisKeyword_0_0(), null); 
+                              createLeafNode(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0(), null); 
                           
                     }
                     if ( backtracking==0 ) {
@@ -5238,23 +5107,23 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              currentNode=createCompositeNode(grammarAccess.getUnaryBooleanAccess().getConditionParserRuleCall_0_1(), currentNode); 
+                              currentNode=createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getExpressionParserRuleCall_0_1(), currentNode); 
                           
                     }
-                    pushFollow(FOLLOW_ruleCondition_in_ruleUnaryBoolean3575);
-                    this_Condition_1=ruleCondition();
+                    pushFollow(FOLLOW_ruleExpression_in_rulePrimaryExpression3381);
+                    this_Expression_1=ruleExpression();
                     _fsp--;
                     if (failed) return current;
                     if ( backtracking==0 ) {
                        
-                              current = this_Condition_1; 
+                              current = this_Expression_1; 
                               currentNode = currentNode.getParent();
                           
                     }
-                    match(input,21,FOLLOW_21_in_ruleUnaryBoolean3584); if (failed) return current;
+                    match(input,21,FOLLOW_21_in_rulePrimaryExpression3390); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                              createLeafNode(grammarAccess.getUnaryBooleanAccess().getRightParenthesisKeyword_0_2(), null); 
+                              createLeafNode(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2(), null); 
                           
                     }
 
@@ -5264,13 +5133,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2146:6: ( () ( (lv_value_4_0= RULE_BOOL ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2135:6: ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2146:6: ( () ( (lv_value_4_0= RULE_BOOL ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2146:7: () ( (lv_value_4_0= RULE_BOOL ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2135:6: ( () 'NOT' ( (lv_cond_5_0= ruleExpression ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2135:7: () 'NOT' ( (lv_cond_5_0= ruleExpression ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2146:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2147:2: 
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2135:7: ()
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2136:2: 
                     {
                     if ( backtracking==0 ) {
                        
@@ -5279,10 +5148,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              temp=factory.create(grammarAccess.getUnaryBooleanAccess().getBooleanLiteralAction_1_0().getType().getClassifier());
+                              temp=factory.create(grammarAccess.getPrimaryExpressionAccess().getNotAction_1_0().getType().getClassifier());
                               current = temp; 
                               temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getBooleanLiteralAction_1_0(), currentNode.getParent());
+                              CompositeNode newNode = createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getNotAction_1_0(), currentNode.getParent());
                           newNode.getChildren().add(currentNode);
                           moveLookaheadInfo(currentNode, newNode);
                           currentNode = newNode; 
@@ -5292,35 +5161,44 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2160:2: ( (lv_value_4_0= RULE_BOOL ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2161:1: (lv_value_4_0= RULE_BOOL )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2161:1: (lv_value_4_0= RULE_BOOL )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2162:3: lv_value_4_0= RULE_BOOL
-                    {
-                    lv_value_4_0=(Token)input.LT(1);
-                    match(input,RULE_BOOL,FOLLOW_RULE_BOOL_in_ruleUnaryBoolean3621); if (failed) return current;
+                    match(input,46,FOLLOW_46_in_rulePrimaryExpression3420); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      			createLeafNode(grammarAccess.getUnaryBooleanAccess().getValueBOOLTerminalRuleCall_1_1_0(), "value"); 
-                      		
+                              createLeafNode(grammarAccess.getPrimaryExpressionAccess().getNOTKeyword_1_1(), null); 
+                          
                     }
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2153:1: ( (lv_cond_5_0= ruleExpression ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2154:1: (lv_cond_5_0= ruleExpression )
+                    {
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2154:1: (lv_cond_5_0= ruleExpression )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2155:3: lv_cond_5_0= ruleExpression
+                    {
+                    if ( backtracking==0 ) {
+                       
+                      	        currentNode=createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getCondExpressionParserRuleCall_1_2_0(), currentNode); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleExpression_in_rulePrimaryExpression3441);
+                    lv_cond_5_0=ruleExpression();
+                    _fsp--;
+                    if (failed) return current;
                     if ( backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getUnaryBooleanRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode, current);
+                      	            current = factory.create(grammarAccess.getPrimaryExpressionRule().getType().getClassifier());
+                      	            associateNodeWithAstElement(currentNode.getParent(), current);
                       	        }
                       	        try {
                       	       		set(
                       	       			current, 
-                      	       			"value",
-                      	        		lv_value_4_0, 
-                      	        		"BOOL", 
-                      	        		lastConsumedNode);
+                      	       			"cond",
+                      	        		lv_cond_5_0, 
+                      	        		"Expression", 
+                      	        		currentNode);
                       	        } catch (ValueConverterException vce) {
                       				handleValueConverterException(vce);
                       	        }
+                      	        currentNode = currentNode.getParent();
                       	    
                     }
 
@@ -5336,13 +5214,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2185:6: ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2178:6: ( () ( (lv_value_7_0= ruleValue ) ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2185:6: ( () 'NOT' ( (lv_cond_7_0= ruleCondition ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2185:7: () 'NOT' ( (lv_cond_7_0= ruleCondition ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2178:6: ( () ( (lv_value_7_0= ruleValue ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2178:7: () ( (lv_value_7_0= ruleValue ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2185:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2186:2: 
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2178:7: ()
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2179:2: 
                     {
                     if ( backtracking==0 ) {
                        
@@ -5351,10 +5229,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              temp=factory.create(grammarAccess.getUnaryBooleanAccess().getNotAction_2_0().getType().getClassifier());
+                              temp=factory.create(grammarAccess.getPrimaryExpressionAccess().getNumberLiteralAction_2_0().getType().getClassifier());
                               current = temp; 
                               temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getNotAction_2_0(), currentNode.getParent());
+                              CompositeNode newNode = createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getNumberLiteralAction_2_0(), currentNode.getParent());
                           newNode.getChildren().add(currentNode);
                           moveLookaheadInfo(currentNode, newNode);
                           currentNode = newNode; 
@@ -5364,39 +5242,33 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-                    match(input,41,FOLLOW_41_in_ruleUnaryBoolean3656); if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                              createLeafNode(grammarAccess.getUnaryBooleanAccess().getNOTKeyword_2_1(), null); 
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2203:1: ( (lv_cond_7_0= ruleCondition ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2204:1: (lv_cond_7_0= ruleCondition )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2192:2: ( (lv_value_7_0= ruleValue ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2193:1: (lv_value_7_0= ruleValue )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2204:1: (lv_cond_7_0= ruleCondition )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2205:3: lv_cond_7_0= ruleCondition
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2193:1: (lv_value_7_0= ruleValue )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2194:3: lv_value_7_0= ruleValue
                     {
                     if ( backtracking==0 ) {
                        
-                      	        currentNode=createCompositeNode(grammarAccess.getUnaryBooleanAccess().getCondConditionParserRuleCall_2_2_0(), currentNode); 
+                      	        currentNode=createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getValueValueParserRuleCall_2_1_0(), currentNode); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCondition_in_ruleUnaryBoolean3677);
-                    lv_cond_7_0=ruleCondition();
+                    pushFollow(FOLLOW_ruleValue_in_rulePrimaryExpression3482);
+                    lv_value_7_0=ruleValue();
                     _fsp--;
                     if (failed) return current;
                     if ( backtracking==0 ) {
 
                       	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getUnaryBooleanRule().getType().getClassifier());
+                      	            current = factory.create(grammarAccess.getPrimaryExpressionRule().getType().getClassifier());
                       	            associateNodeWithAstElement(currentNode.getParent(), current);
                       	        }
                       	        try {
                       	       		set(
                       	       			current, 
-                      	       			"cond",
-                      	        		lv_cond_7_0, 
-                      	        		"Condition", 
+                      	       			"value",
+                      	        		lv_value_7_0, 
+                      	        		"Value", 
                       	        		currentNode);
                       	        } catch (ValueConverterException vce) {
                       				handleValueConverterException(vce);
@@ -5417,13 +5289,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 4 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:6: ( () ( ( RULE_ID ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2217:6: ( () ( ( RULE_ID ) ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:6: ( () ( ( RULE_ID ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:7: () ( ( RULE_ID ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2217:6: ( () ( ( RULE_ID ) ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2217:7: () ( ( RULE_ID ) )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:7: ()
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2229:2: 
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2217:7: ()
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2218:2: 
                     {
                     if ( backtracking==0 ) {
                        
@@ -5432,10 +5304,10 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                              temp=factory.create(grammarAccess.getUnaryBooleanAccess().getBooleanReferenceAction_3_0().getType().getClassifier());
+                              temp=factory.create(grammarAccess.getPrimaryExpressionAccess().getVariableReferenceAction_3_0().getType().getClassifier());
                               current = temp; 
                               temp = null;
-                              CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getBooleanReferenceAction_3_0(), currentNode.getParent());
+                              CompositeNode newNode = createCompositeNode(grammarAccess.getPrimaryExpressionAccess().getVariableReferenceAction_3_0(), currentNode.getParent());
                           newNode.getChildren().add(currentNode);
                           moveLookaheadInfo(currentNode, newNode);
                           currentNode = newNode; 
@@ -5445,11 +5317,11 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2242:2: ( ( RULE_ID ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2243:1: ( RULE_ID )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2231:2: ( ( RULE_ID ) )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2232:1: ( RULE_ID )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2243:1: ( RULE_ID )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2244:3: RULE_ID
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2232:1: ( RULE_ID )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2233:3: RULE_ID
                     {
                     if ( backtracking==0 ) {
                        
@@ -5459,358 +5331,16 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     if ( backtracking==0 ) {
 
                       			if (current==null) {
-                      	            current = factory.create(grammarAccess.getUnaryBooleanRule().getType().getClassifier());
+                      	            current = factory.create(grammarAccess.getPrimaryExpressionRule().getType().getClassifier());
                       	            associateNodeWithAstElement(currentNode, current);
                       	        }
                               
                     }
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleUnaryBoolean3719); if (failed) return current;
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimaryExpression3524); if (failed) return current;
                     if ( backtracking==0 ) {
 
-                      		createLeafNode(grammarAccess.getUnaryBooleanAccess().getVarVariableDeclarationCrossReference_3_1_0(), "var"); 
+                      		createLeafNode(grammarAccess.getPrimaryExpressionAccess().getVarVariableDeclarationCrossReference_3_1_0(), "var"); 
                       	
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2260:6: (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2260:6: (this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2261:2: this_MathExpression_10= ruleMathExpression ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( (lv_right_21_0= ruleMathExpression ) )
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	  /* */ 
-                      	
-                    }
-                    if ( backtracking==0 ) {
-                       
-                              currentNode=createCompositeNode(grammarAccess.getUnaryBooleanAccess().getMathExpressionParserRuleCall_4_0(), currentNode); 
-                          
-                    }
-                    pushFollow(FOLLOW_ruleMathExpression_in_ruleUnaryBoolean3752);
-                    this_MathExpression_10=ruleMathExpression();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-                       
-                              current = this_MathExpression_10; 
-                              currentNode = currentNode.getParent();
-                          
-                    }
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2272:1: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) )
-                    int alt27=5;
-                    switch ( input.LA(1) ) {
-                    case 42:
-                        {
-                        alt27=1;
-                        }
-                        break;
-                    case 43:
-                        {
-                        alt27=2;
-                        }
-                        break;
-                    case 44:
-                        {
-                        alt27=3;
-                        }
-                        break;
-                    case 45:
-                        {
-                        alt27=4;
-                        }
-                        break;
-                    case 46:
-                        {
-                        alt27=5;
-                        }
-                        break;
-                    default:
-                        if (backtracking>0) {failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("2272:1: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) )", 27, 0, input);
-
-                        throw nvae;
-                    }
-
-                    switch (alt27) {
-                        case 1 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2272:2: ( () '<=' )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2272:2: ( () '<=' )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2272:3: () '<='
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2272:3: ()
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2273:2: 
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	  /* */ 
-                              	
-                            }
-                            if ( backtracking==0 ) {
-                               
-                                      temp=factory.create(grammarAccess.getUnaryBooleanAccess().getLeqLeftAction_4_1_0_0().getType().getClassifier());
-                                      try {
-                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-                                      } catch(ValueConverterException vce) {
-                                      	handleValueConverterException(vce);
-                                      }
-                                      current = temp; 
-                                      temp = null;
-                                      CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getLeqLeftAction_4_1_0_0(), currentNode.getParent());
-                                  newNode.getChildren().add(currentNode);
-                                  moveLookaheadInfo(currentNode, newNode);
-                                  currentNode = newNode; 
-                                      associateNodeWithAstElement(currentNode, current); 
-                                  
-                            }
-
-                            }
-
-                            match(input,42,FOLLOW_42_in_ruleUnaryBoolean3775); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getUnaryBooleanAccess().getLessThanSignEqualsSignKeyword_4_1_0_1(), null); 
-                                  
-                            }
-
-                            }
-
-
-                            }
-                            break;
-                        case 2 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2296:6: ( () '<' )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2296:6: ( () '<' )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2296:7: () '<'
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2296:7: ()
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2297:2: 
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	  /* */ 
-                              	
-                            }
-                            if ( backtracking==0 ) {
-                               
-                                      temp=factory.create(grammarAccess.getUnaryBooleanAccess().getLessLeftAction_4_1_1_0().getType().getClassifier());
-                                      try {
-                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-                                      } catch(ValueConverterException vce) {
-                                      	handleValueConverterException(vce);
-                                      }
-                                      current = temp; 
-                                      temp = null;
-                                      CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getLessLeftAction_4_1_1_0(), currentNode.getParent());
-                                  newNode.getChildren().add(currentNode);
-                                  moveLookaheadInfo(currentNode, newNode);
-                                  currentNode = newNode; 
-                                      associateNodeWithAstElement(currentNode, current); 
-                                  
-                            }
-
-                            }
-
-                            match(input,43,FOLLOW_43_in_ruleUnaryBoolean3805); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getUnaryBooleanAccess().getLessThanSignKeyword_4_1_1_1(), null); 
-                                  
-                            }
-
-                            }
-
-
-                            }
-                            break;
-                        case 3 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2320:6: ( () '==' )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2320:6: ( () '==' )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2320:7: () '=='
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2320:7: ()
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2321:2: 
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	  /* */ 
-                              	
-                            }
-                            if ( backtracking==0 ) {
-                               
-                                      temp=factory.create(grammarAccess.getUnaryBooleanAccess().getEqLeftAction_4_1_2_0().getType().getClassifier());
-                                      try {
-                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-                                      } catch(ValueConverterException vce) {
-                                      	handleValueConverterException(vce);
-                                      }
-                                      current = temp; 
-                                      temp = null;
-                                      CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getEqLeftAction_4_1_2_0(), currentNode.getParent());
-                                  newNode.getChildren().add(currentNode);
-                                  moveLookaheadInfo(currentNode, newNode);
-                                  currentNode = newNode; 
-                                      associateNodeWithAstElement(currentNode, current); 
-                                  
-                            }
-
-                            }
-
-                            match(input,44,FOLLOW_44_in_ruleUnaryBoolean3835); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getUnaryBooleanAccess().getEqualsSignEqualsSignKeyword_4_1_2_1(), null); 
-                                  
-                            }
-
-                            }
-
-
-                            }
-                            break;
-                        case 4 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2344:6: ( () '>=' )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2344:6: ( () '>=' )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2344:7: () '>='
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2344:7: ()
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2345:2: 
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	  /* */ 
-                              	
-                            }
-                            if ( backtracking==0 ) {
-                               
-                                      temp=factory.create(grammarAccess.getUnaryBooleanAccess().getGeqLeftAction_4_1_3_0().getType().getClassifier());
-                                      try {
-                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-                                      } catch(ValueConverterException vce) {
-                                      	handleValueConverterException(vce);
-                                      }
-                                      current = temp; 
-                                      temp = null;
-                                      CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getGeqLeftAction_4_1_3_0(), currentNode.getParent());
-                                  newNode.getChildren().add(currentNode);
-                                  moveLookaheadInfo(currentNode, newNode);
-                                  currentNode = newNode; 
-                                      associateNodeWithAstElement(currentNode, current); 
-                                  
-                            }
-
-                            }
-
-                            match(input,45,FOLLOW_45_in_ruleUnaryBoolean3865); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getUnaryBooleanAccess().getGreaterThanSignEqualsSignKeyword_4_1_3_1(), null); 
-                                  
-                            }
-
-                            }
-
-
-                            }
-                            break;
-                        case 5 :
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2368:6: ( () '>' )
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2368:6: ( () '>' )
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2368:7: () '>'
-                            {
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2368:7: ()
-                            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2369:2: 
-                            {
-                            if ( backtracking==0 ) {
-                               
-                              	  /* */ 
-                              	
-                            }
-                            if ( backtracking==0 ) {
-                               
-                                      temp=factory.create(grammarAccess.getUnaryBooleanAccess().getGtrLeftAction_4_1_4_0().getType().getClassifier());
-                                      try {
-                                      	factory.set(temp, "left", current, null /*ParserRule*/, currentNode);
-                                      } catch(ValueConverterException vce) {
-                                      	handleValueConverterException(vce);
-                                      }
-                                      current = temp; 
-                                      temp = null;
-                                      CompositeNode newNode = createCompositeNode(grammarAccess.getUnaryBooleanAccess().getGtrLeftAction_4_1_4_0(), currentNode.getParent());
-                                  newNode.getChildren().add(currentNode);
-                                  moveLookaheadInfo(currentNode, newNode);
-                                  currentNode = newNode; 
-                                      associateNodeWithAstElement(currentNode, current); 
-                                  
-                            }
-
-                            }
-
-                            match(input,46,FOLLOW_46_in_ruleUnaryBoolean3895); if (failed) return current;
-                            if ( backtracking==0 ) {
-
-                                      createLeafNode(grammarAccess.getUnaryBooleanAccess().getGreaterThanSignKeyword_4_1_4_1(), null); 
-                                  
-                            }
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2391:3: ( (lv_right_21_0= ruleMathExpression ) )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2392:1: (lv_right_21_0= ruleMathExpression )
-                    {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2392:1: (lv_right_21_0= ruleMathExpression )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2393:3: lv_right_21_0= ruleMathExpression
-                    {
-                    if ( backtracking==0 ) {
-                       
-                      	        currentNode=createCompositeNode(grammarAccess.getUnaryBooleanAccess().getRightMathExpressionParserRuleCall_4_2_0(), currentNode); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleMathExpression_in_ruleUnaryBoolean3918);
-                    lv_right_21_0=ruleMathExpression();
-                    _fsp--;
-                    if (failed) return current;
-                    if ( backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = factory.create(grammarAccess.getUnaryBooleanRule().getType().getClassifier());
-                      	            associateNodeWithAstElement(currentNode.getParent(), current);
-                      	        }
-                      	        try {
-                      	       		set(
-                      	       			current, 
-                      	       			"right",
-                      	        		lv_right_21_0, 
-                      	        		"MathExpression", 
-                      	        		currentNode);
-                      	        } catch (ValueConverterException vce) {
-                      				handleValueConverterException(vce);
-                      	        }
-                      	        currentNode = currentNode.getParent();
-                      	    
                     }
 
                     }
@@ -5845,32 +5375,32 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end ruleUnaryBoolean
+    // $ANTLR end rulePrimaryExpression
 
 
-    // $ANTLR start entryRuleNumericValue
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2425:1: entryRuleNumericValue returns [String current=null] : iv_ruleNumericValue= ruleNumericValue EOF ;
-    public final String entryRuleNumericValue() throws RecognitionException {
+    // $ANTLR start entryRuleValue
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2256:1: entryRuleValue returns [String current=null] : iv_ruleValue= ruleValue EOF ;
+    public final String entryRuleValue() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleNumericValue = null;
+        AntlrDatatypeRuleToken iv_ruleValue = null;
 
 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2426:2: (iv_ruleNumericValue= ruleNumericValue EOF )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2427:2: iv_ruleNumericValue= ruleNumericValue EOF
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2257:2: (iv_ruleValue= ruleValue EOF )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2258:2: iv_ruleValue= ruleValue EOF
             {
             if ( backtracking==0 ) {
-               currentNode = createCompositeNode(grammarAccess.getNumericValueRule(), currentNode); 
+               currentNode = createCompositeNode(grammarAccess.getValueRule(), currentNode); 
             }
-            pushFollow(FOLLOW_ruleNumericValue_in_entryRuleNumericValue3958);
-            iv_ruleNumericValue=ruleNumericValue();
+            pushFollow(FOLLOW_ruleValue_in_entryRuleValue3562);
+            iv_ruleValue=ruleValue();
             _fsp--;
             if (failed) return current;
             if ( backtracking==0 ) {
-               current =iv_ruleNumericValue.getText(); 
+               current =iv_ruleValue.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumericValue3969); if (failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValue3573); if (failed) return current;
 
             }
 
@@ -5884,46 +5414,62 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end entryRuleNumericValue
+    // $ANTLR end entryRuleValue
 
 
-    // $ANTLR start ruleNumericValue
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2434:1: ruleNumericValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL ) ;
-    public final AntlrDatatypeRuleToken ruleNumericValue() throws RecognitionException {
+    // $ANTLR start ruleValue
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2265:1: ruleValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL | this_BOOL_2= RULE_BOOL | this_STRING_3= RULE_STRING ) ;
+    public final AntlrDatatypeRuleToken ruleValue() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_INT_0=null;
         Token this_REAL_1=null;
+        Token this_BOOL_2=null;
+        Token this_STRING_3=null;
 
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2439:6: ( (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2440:1: (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2270:6: ( (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL | this_BOOL_2= RULE_BOOL | this_STRING_3= RULE_STRING ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2271:1: (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL | this_BOOL_2= RULE_BOOL | this_STRING_3= RULE_STRING )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2440:1: (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
-
-            if ( (LA29_0==RULE_INT) ) {
-                alt29=1;
-            }
-            else if ( (LA29_0==RULE_REAL) ) {
-                alt29=2;
-            }
-            else {
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2271:1: (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL | this_BOOL_2= RULE_BOOL | this_STRING_3= RULE_STRING )
+            int alt28=4;
+            switch ( input.LA(1) ) {
+            case RULE_INT:
+                {
+                alt28=1;
+                }
+                break;
+            case RULE_REAL:
+                {
+                alt28=2;
+                }
+                break;
+            case RULE_BOOL:
+                {
+                alt28=3;
+                }
+                break;
+            case RULE_STRING:
+                {
+                alt28=4;
+                }
+                break;
+            default:
                 if (backtracking>0) {failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("2440:1: (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL )", 29, 0, input);
+                    new NoViableAltException("2271:1: (this_INT_0= RULE_INT | this_REAL_1= RULE_REAL | this_BOOL_2= RULE_BOOL | this_STRING_3= RULE_STRING )", 28, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+
+            switch (alt28) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2440:6: this_INT_0= RULE_INT
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2271:6: this_INT_0= RULE_INT
                     {
                     this_INT_0=(Token)input.LT(1);
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumericValue4009); if (failed) return current;
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleValue3613); if (failed) return current;
                     if ( backtracking==0 ) {
 
                       		current.merge(this_INT_0);
@@ -5931,17 +5477,17 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                          createLeafNode(grammarAccess.getNumericValueAccess().getINTTerminalRuleCall_0(), null); 
+                          createLeafNode(grammarAccess.getValueAccess().getINTTerminalRuleCall_0(), null); 
                           
                     }
 
                     }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2448:10: this_REAL_1= RULE_REAL
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2279:10: this_REAL_1= RULE_REAL
                     {
                     this_REAL_1=(Token)input.LT(1);
-                    match(input,RULE_REAL,FOLLOW_RULE_REAL_in_ruleNumericValue4035); if (failed) return current;
+                    match(input,RULE_REAL,FOLLOW_RULE_REAL_in_ruleValue3639); if (failed) return current;
                     if ( backtracking==0 ) {
 
                       		current.merge(this_REAL_1);
@@ -5949,7 +5495,43 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     if ( backtracking==0 ) {
                        
-                          createLeafNode(grammarAccess.getNumericValueAccess().getREALTerminalRuleCall_1(), null); 
+                          createLeafNode(grammarAccess.getValueAccess().getREALTerminalRuleCall_1(), null); 
+                          
+                    }
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2287:10: this_BOOL_2= RULE_BOOL
+                    {
+                    this_BOOL_2=(Token)input.LT(1);
+                    match(input,RULE_BOOL,FOLLOW_RULE_BOOL_in_ruleValue3665); if (failed) return current;
+                    if ( backtracking==0 ) {
+
+                      		current.merge(this_BOOL_2);
+                          
+                    }
+                    if ( backtracking==0 ) {
+                       
+                          createLeafNode(grammarAccess.getValueAccess().getBOOLTerminalRuleCall_2(), null); 
+                          
+                    }
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2295:10: this_STRING_3= RULE_STRING
+                    {
+                    this_STRING_3=(Token)input.LT(1);
+                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleValue3691); if (failed) return current;
+                    if ( backtracking==0 ) {
+
+                      		current.merge(this_STRING_3);
+                          
+                    }
+                    if ( backtracking==0 ) {
+                       
+                          createLeafNode(grammarAccess.getValueAccess().getSTRINGTerminalRuleCall_3(), null); 
                           
                     }
 
@@ -5976,58 +5558,58 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         }
         return current;
     }
-    // $ANTLR end ruleNumericValue
+    // $ANTLR end ruleValue
 
 
     // $ANTLR start ruleType
-    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2463:1: ruleType returns [Enumerator current=null] : ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) ) ;
+    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2310:1: ruleType returns [Enumerator current=null] : ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) ) ;
     public final Enumerator ruleType() throws RecognitionException {
         Enumerator current = null;
 
          setCurrentLookahead(); resetLookahead(); 
         try {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2467:6: ( ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) ) )
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2468:1: ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2314:6: ( ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) ) )
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2315:1: ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) )
             {
-            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2468:1: ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) )
-            int alt30=4;
+            // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2315:1: ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) )
+            int alt29=4;
             switch ( input.LA(1) ) {
             case 47:
                 {
-                alt30=1;
+                alt29=1;
                 }
                 break;
             case 48:
                 {
-                alt30=2;
+                alt29=2;
                 }
                 break;
             case 49:
                 {
-                alt30=3;
+                alt29=3;
                 }
                 break;
             case 50:
                 {
-                alt30=4;
+                alt29=4;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("2468:1: ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) )", 30, 0, input);
+                    new NoViableAltException("2315:1: ( ( 'int' ) | ( 'real' ) | ( 'bool' ) | ( 'string' ) )", 29, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt30) {
+            switch (alt29) {
                 case 1 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2468:2: ( 'int' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2315:2: ( 'int' )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2468:2: ( 'int' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2468:4: 'int'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2315:2: ( 'int' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2315:4: 'int'
                     {
-                    match(input,47,FOLLOW_47_in_ruleType4092); if (failed) return current;
+                    match(input,47,FOLLOW_47_in_ruleType3748); if (failed) return current;
                     if ( backtracking==0 ) {
 
                               current = grammarAccess.getTypeAccess().getT_INTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -6041,12 +5623,12 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2474:6: ( 'real' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2321:6: ( 'real' )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2474:6: ( 'real' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2474:8: 'real'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2321:6: ( 'real' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2321:8: 'real'
                     {
-                    match(input,48,FOLLOW_48_in_ruleType4107); if (failed) return current;
+                    match(input,48,FOLLOW_48_in_ruleType3763); if (failed) return current;
                     if ( backtracking==0 ) {
 
                               current = grammarAccess.getTypeAccess().getT_REALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -6060,12 +5642,12 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2480:6: ( 'bool' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2327:6: ( 'bool' )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2480:6: ( 'bool' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2480:8: 'bool'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2327:6: ( 'bool' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2327:8: 'bool'
                     {
-                    match(input,49,FOLLOW_49_in_ruleType4122); if (failed) return current;
+                    match(input,49,FOLLOW_49_in_ruleType3778); if (failed) return current;
                     if ( backtracking==0 ) {
 
                               current = grammarAccess.getTypeAccess().getT_BOOLEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -6079,12 +5661,12 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 4 :
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2486:6: ( 'string' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2333:6: ( 'string' )
                     {
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2486:6: ( 'string' )
-                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2486:8: 'string'
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2333:6: ( 'string' )
+                    // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2333:8: 'string'
                     {
-                    match(input,50,FOLLOW_50_in_ruleType4137); if (failed) return current;
+                    match(input,50,FOLLOW_50_in_ruleType3793); if (failed) return current;
                     if ( backtracking==0 ) {
 
                               current = grammarAccess.getTypeAccess().getT_STRINGEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -6264,36 +5846,126 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
     }
     // $ANTLR end synpred3
 
-    // $ANTLR start synpred25
-    public final void synpred25_fragment() throws RecognitionException {   
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1361:3: ( ( ( 'else' ) ) ( ( ruleAbstractBlock ) ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1361:3: ( ( 'else' ) ) ( ( ruleAbstractBlock ) )
+    // $ANTLR start synpred23
+    public final void synpred23_fragment() throws RecognitionException {   
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:6: ( ( () 'out' ( ( ruleExpression ) ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:6: ( () 'out' ( ( ruleExpression ) ) )
         {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1361:3: ( ( 'else' ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1362:1: ( 'else' )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:6: ( () 'out' ( ( ruleExpression ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:7: () 'out' ( ( ruleExpression ) )
         {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1362:1: ( 'else' )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1363:3: 'else'
-        {
-        match(input,33,FOLLOW_33_in_synpred252189); if (failed) return ;
-
-        }
-
-
-        }
-
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1382:2: ( ( ruleAbstractBlock ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1383:1: ( ruleAbstractBlock )
-        {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1383:1: ( ruleAbstractBlock )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1384:3: ruleAbstractBlock
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1169:7: ()
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1170:2: 
         {
         if ( backtracking==0 ) {
            
-          	        currentNode=createCompositeNode(grammarAccess.getConstructAccess().getElseBlockAbstractBlockParserRuleCall_0_6_1_0(), currentNode); 
+          	  /* */ 
+          	
+        }
+
+        }
+
+        match(input,30,FOLLOW_30_in_synpred231900); if (failed) return ;
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1187:1: ( ( ruleExpression ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1188:1: ( ruleExpression )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1188:1: ( ruleExpression )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1189:3: ruleExpression
+        {
+        if ( backtracking==0 ) {
+           
+          	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getOutputExpressionParserRuleCall_0_0_5_2_0(), currentNode); 
           	    
         }
-        pushFollow(FOLLOW_ruleAbstractBlock_in_synpred252223);
+        pushFollow(FOLLOW_ruleExpression_in_synpred231921);
+        ruleExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred23
+
+    // $ANTLR start synpred24
+    public final void synpred24_fragment() throws RecognitionException {   
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:6: ( ( () 'out' ( ( RULE_STRING ) ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:6: ( () 'out' ( ( RULE_STRING ) ) )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:6: ( () 'out' ( ( RULE_STRING ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:7: () 'out' ( ( RULE_STRING ) )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1212:7: ()
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1213:2: 
+        {
+        if ( backtracking==0 ) {
+           
+          	  /* */ 
+          	
+        }
+
+        }
+
+        match(input,30,FOLLOW_30_in_synpred241951); if (failed) return ;
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1230:1: ( ( RULE_STRING ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1231:1: ( RULE_STRING )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1231:1: ( RULE_STRING )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1232:3: RULE_STRING
+        {
+        match(input,RULE_STRING,FOLLOW_RULE_STRING_in_synpred241968); if (failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred24
+
+    // $ANTLR start synpred26
+    public final void synpred26_fragment() throws RecognitionException {   
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1369:3: ( ( ( 'else' ) ) ( ( ruleAbstractBlock ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1369:3: ( ( 'else' ) ) ( ( ruleAbstractBlock ) )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1369:3: ( ( 'else' ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1370:1: ( 'else' )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1370:1: ( 'else' )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1371:3: 'else'
+        {
+        match(input,33,FOLLOW_33_in_synpred262148); if (failed) return ;
+
+        }
+
+
+        }
+
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1390:2: ( ( ruleAbstractBlock ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1391:1: ( ruleAbstractBlock )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1391:1: ( ruleAbstractBlock )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1392:3: ruleAbstractBlock
+        {
+        if ( backtracking==0 ) {
+           
+          	        currentNode=createCompositeNode(grammarAccess.getCommandAccess().getElseBlockAbstractBlockParserRuleCall_1_6_1_0(), currentNode); 
+          	    
+        }
+        pushFollow(FOLLOW_ruleAbstractBlock_in_synpred262182);
         ruleAbstractBlock();
         _fsp--;
         if (failed) return ;
@@ -6306,58 +5978,39 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
         }
     }
-    // $ANTLR end synpred25
+    // $ANTLR end synpred26
 
-    // $ANTLR start synpred27
-    public final void synpred27_fragment() throws RecognitionException {   
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1576:2: ( ruleMathExpression )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1576:2: ruleMathExpression
+    // $ANTLR start synpred29
+    public final void synpred29_fragment() throws RecognitionException {   
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:2: ( ( ( () 'AND' ) | ( () 'OR' ) ) ( ( ruleRelation ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:2: ( ( () 'AND' ) | ( () 'OR' ) ) ( ( ruleRelation ) )
         {
-        if ( backtracking==0 ) {
-           
-          	  /* */ 
-          	
-        }
-        pushFollow(FOLLOW_ruleMathExpression_in_synpred272528);
-        ruleMathExpression();
-        _fsp--;
-        if (failed) return ;
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:2: ( ( () 'AND' ) | ( () 'OR' ) )
+        int alt42=2;
+        int LA42_0 = input.LA(1);
 
+        if ( (LA42_0==35) ) {
+            alt42=1;
         }
-    }
-    // $ANTLR end synpred27
-
-    // $ANTLR start synpred35
-    public final void synpred35_fragment() throws RecognitionException {   
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:2: ( ( ( () 'AND' ) | ( () 'OR' ) ) ( ( ruleUnaryBoolean ) ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:2: ( ( () 'AND' ) | ( () 'OR' ) ) ( ( ruleUnaryBoolean ) )
-        {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:2: ( ( () 'AND' ) | ( () 'OR' ) )
-        int alt41=2;
-        int LA41_0 = input.LA(1);
-
-        if ( (LA41_0==39) ) {
-            alt41=1;
-        }
-        else if ( (LA41_0==40) ) {
-            alt41=2;
+        else if ( (LA42_0==36) ) {
+            alt42=2;
         }
         else {
             if (backtracking>0) {failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("2031:2: ( ( () 'AND' ) | ( () 'OR' ) )", 41, 0, input);
+                new NoViableAltException("1630:2: ( ( () 'AND' ) | ( () 'OR' ) )", 42, 0, input);
 
             throw nvae;
         }
-        switch (alt41) {
+        switch (alt42) {
             case 1 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:3: ( () 'AND' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:3: ( () 'AND' )
                 {
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:3: ( () 'AND' )
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:4: () 'AND'
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:3: ( () 'AND' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:4: () 'AND'
                 {
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2031:4: ()
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2032:2: 
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1630:4: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1631:2: 
                 {
                 if ( backtracking==0 ) {
                    
@@ -6367,7 +6020,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                 }
 
-                match(input,39,FOLLOW_39_in_synpred353413); if (failed) return ;
+                match(input,35,FOLLOW_35_in_synpred292604); if (failed) return ;
 
                 }
 
@@ -6375,13 +6028,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
                 }
                 break;
             case 2 :
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:6: ( () 'OR' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:6: ( () 'OR' )
                 {
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:6: ( () 'OR' )
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:7: () 'OR'
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:6: ( () 'OR' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:7: () 'OR'
                 {
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2055:7: ()
-                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2056:2: 
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1654:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1655:2: 
                 {
                 if ( backtracking==0 ) {
                    
@@ -6391,7 +6044,7 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
                 }
 
-                match(input,40,FOLLOW_40_in_synpred353443); if (failed) return ;
+                match(input,36,FOLLOW_36_in_synpred292634); if (failed) return ;
 
                 }
 
@@ -6401,19 +6054,19 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
         }
 
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2078:3: ( ( ruleUnaryBoolean ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2079:1: ( ruleUnaryBoolean )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1677:3: ( ( ruleRelation ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1678:1: ( ruleRelation )
         {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2079:1: ( ruleUnaryBoolean )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2080:3: ruleUnaryBoolean
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1678:1: ( ruleRelation )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1679:3: ruleRelation
         {
         if ( backtracking==0 ) {
            
-          	        currentNode=createCompositeNode(grammarAccess.getBinaryBooleanAccess().getRightUnaryBooleanParserRuleCall_1_1_0(), currentNode); 
+          	        currentNode=createCompositeNode(grammarAccess.getLogicalAccess().getRightRelationParserRuleCall_1_1_0(), currentNode); 
           	    
         }
-        pushFollow(FOLLOW_ruleUnaryBoolean_in_synpred353466);
-        ruleUnaryBoolean();
+        pushFollow(FOLLOW_ruleRelation_in_synpred292657);
+        ruleRelation();
         _fsp--;
         if (failed) return ;
 
@@ -6425,22 +6078,291 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
         }
     }
-    // $ANTLR end synpred35
+    // $ANTLR end synpred29
+
+    // $ANTLR start synpred34
+    public final void synpred34_fragment() throws RecognitionException {   
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:2: ( ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( ( ruleAddition ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:2: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) ) ( ( ruleAddition ) )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:2: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) )
+        int alt43=5;
+        switch ( input.LA(1) ) {
+        case 37:
+            {
+            alt43=1;
+            }
+            break;
+        case 38:
+            {
+            alt43=2;
+            }
+            break;
+        case 39:
+            {
+            alt43=3;
+            }
+            break;
+        case 40:
+            {
+            alt43=4;
+            }
+            break;
+        case 41:
+            {
+            alt43=5;
+            }
+            break;
+        default:
+            if (backtracking>0) {failed=true; return ;}
+            NoViableAltException nvae =
+                new NoViableAltException("1736:2: ( ( () '<=' ) | ( () '<' ) | ( () '==' ) | ( () '>=' ) | ( () '>' ) )", 43, 0, input);
+
+            throw nvae;
+        }
+
+        switch (alt43) {
+            case 1 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:3: ( () '<=' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:3: ( () '<=' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:4: () '<='
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1736:4: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1737:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,37,FOLLOW_37_in_synpred342779); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 2 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:6: ( () '<' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:6: ( () '<' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:7: () '<'
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1760:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1761:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,38,FOLLOW_38_in_synpred342809); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 3 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:6: ( () '==' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:6: ( () '==' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:7: () '=='
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1784:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1785:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,39,FOLLOW_39_in_synpred342839); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 4 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:6: ( () '>=' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:6: ( () '>=' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:7: () '>='
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1808:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1809:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,40,FOLLOW_40_in_synpred342869); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 5 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:6: ( () '>' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:6: ( () '>' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:7: () '>'
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1832:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1833:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,41,FOLLOW_41_in_synpred342899); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+
+        }
+
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1855:3: ( ( ruleAddition ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1856:1: ( ruleAddition )
+        {
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1856:1: ( ruleAddition )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1857:3: ruleAddition
+        {
+        if ( backtracking==0 ) {
+           
+          	        currentNode=createCompositeNode(grammarAccess.getRelationAccess().getRightAdditionParserRuleCall_1_1_0(), currentNode); 
+          	    
+        }
+        pushFollow(FOLLOW_ruleAddition_in_synpred342922);
+        ruleAddition();
+        _fsp--;
+        if (failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred34
 
     // $ANTLR start synpred36
     public final void synpred36_fragment() throws RecognitionException {   
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:2: ( ( '(' ruleCondition ')' ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:2: ( '(' ruleCondition ')' )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:2: ( ( ( () '+' ) | ( () '-' ) ) ( ( ruleMultiplication ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:2: ( ( () '+' ) | ( () '-' ) ) ( ( ruleMultiplication ) )
         {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:2: ( '(' ruleCondition ')' )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2125:4: '(' ruleCondition ')'
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:2: ( ( () '+' ) | ( () '-' ) )
+        int alt44=2;
+        int LA44_0 = input.LA(1);
+
+        if ( (LA44_0==42) ) {
+            alt44=1;
+        }
+        else if ( (LA44_0==43) ) {
+            alt44=2;
+        }
+        else {
+            if (backtracking>0) {failed=true; return ;}
+            NoViableAltException nvae =
+                new NoViableAltException("1914:2: ( ( () '+' ) | ( () '-' ) )", 44, 0, input);
+
+            throw nvae;
+        }
+        switch (alt44) {
+            case 1 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:3: ( () '+' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:3: ( () '+' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:4: () '+'
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1914:4: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1915:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,42,FOLLOW_42_in_synpred363044); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 2 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:6: ( () '-' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:6: ( () '-' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:7: () '-'
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1938:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1939:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,43,FOLLOW_43_in_synpred363074); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+
+        }
+
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1961:3: ( ( ruleMultiplication ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1962:1: ( ruleMultiplication )
         {
-        match(input,19,FOLLOW_19_in_synpred363550); if (failed) return ;
-        pushFollow(FOLLOW_ruleCondition_in_synpred363575);
-        ruleCondition();
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1962:1: ( ruleMultiplication )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:1963:3: ruleMultiplication
+        {
+        if ( backtracking==0 ) {
+           
+          	        currentNode=createCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_1_0(), currentNode); 
+          	    
+        }
+        pushFollow(FOLLOW_ruleMultiplication_in_synpred363097);
+        ruleMultiplication();
         _fsp--;
         if (failed) return ;
-        match(input,21,FOLLOW_21_in_synpred363584); if (failed) return ;
+
+        }
+
 
         }
 
@@ -6449,40 +6371,95 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
     }
     // $ANTLR end synpred36
 
-    // $ANTLR start synpred39
-    public final void synpred39_fragment() throws RecognitionException {   
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:6: ( ( () ( ( RULE_ID ) ) ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:6: ( () ( ( RULE_ID ) ) )
+    // $ANTLR start synpred38
+    public final void synpred38_fragment() throws RecognitionException {   
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:2: ( ( ( () '*' ) | ( () '/' ) ) ( ( rulePrimaryExpression ) ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:2: ( ( () '*' ) | ( () '/' ) ) ( ( rulePrimaryExpression ) )
         {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:6: ( () ( ( RULE_ID ) ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:7: () ( ( RULE_ID ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:2: ( ( () '*' ) | ( () '/' ) )
+        int alt45=2;
+        int LA45_0 = input.LA(1);
+
+        if ( (LA45_0==44) ) {
+            alt45=1;
+        }
+        else if ( (LA45_0==45) ) {
+            alt45=2;
+        }
+        else {
+            if (backtracking>0) {failed=true; return ;}
+            NoViableAltException nvae =
+                new NoViableAltException("2020:2: ( ( () '*' ) | ( () '/' ) )", 45, 0, input);
+
+            throw nvae;
+        }
+        switch (alt45) {
+            case 1 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:3: ( () '*' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:3: ( () '*' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:4: () '*'
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2020:4: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2021:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,44,FOLLOW_44_in_synpred383219); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 2 :
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:6: ( () '/' )
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:6: ( () '/' )
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:7: () '/'
+                {
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2044:7: ()
+                // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2045:2: 
+                {
+                if ( backtracking==0 ) {
+                   
+                  	  /* */ 
+                  	
+                }
+
+                }
+
+                match(input,45,FOLLOW_45_in_synpred383249); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+
+        }
+
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2067:3: ( ( rulePrimaryExpression ) )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2068:1: ( rulePrimaryExpression )
         {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2228:7: ()
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2229:2: 
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2068:1: ( rulePrimaryExpression )
+        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2069:3: rulePrimaryExpression
         {
         if ( backtracking==0 ) {
            
-          	  /* */ 
-          	
+          	        currentNode=createCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrimaryExpressionParserRuleCall_1_1_0(), currentNode); 
+          	    
         }
-
-        }
-
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2242:2: ( ( RULE_ID ) )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2243:1: ( RULE_ID )
-        {
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2243:1: ( RULE_ID )
-        // ../org.mt.lic.eol/src-gen/org/mt/lic/eol/parser/antlr/internal/InternalEventOrientedLanguage.g:2244:3: RULE_ID
-        {
-        if ( backtracking==0 ) {
-           
-          		  /* */ 
-          		
-        }
-        match(input,RULE_ID,FOLLOW_RULE_ID_in_synpred393719); if (failed) return ;
-
-        }
-
+        pushFollow(FOLLOW_rulePrimaryExpression_in_synpred383272);
+        rulePrimaryExpression();
+        _fsp--;
+        if (failed) return ;
 
         }
 
@@ -6492,13 +6469,13 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
 
         }
     }
-    // $ANTLR end synpred39
+    // $ANTLR end synpred38
 
-    public final boolean synpred35() {
+    public final boolean synpred34() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred35_fragment(); // can never throw exception
+            synpred34_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -6508,11 +6485,11 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         failed=false;
         return success;
     }
-    public final boolean synpred39() {
+    public final boolean synpred38() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred39_fragment(); // can never throw exception
+            synpred38_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -6536,11 +6513,11 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         failed=false;
         return success;
     }
-    public final boolean synpred27() {
+    public final boolean synpred29() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred27_fragment(); // can never throw exception
+            synpred29_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -6550,11 +6527,25 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         failed=false;
         return success;
     }
-    public final boolean synpred25() {
+    public final boolean synpred26() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred25_fragment(); // can never throw exception
+            synpred26_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred23() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -6569,6 +6560,20 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
         int start = input.mark();
         try {
             synpred1_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred24() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred24_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -6656,129 +6661,129 @@ public class InternalEventOrientedLanguageParser extends AbstractInternalAntlrPa
     public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleHandlerDecl1189 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAbstractBlock_in_entryRuleAbstractBlock1225 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAbstractBlock1235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCommand_in_ruleAbstractBlock1286 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleAbstractBlock1295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct_in_ruleAbstractBlock1327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleAbstractBlock1355 = new BitSet(new long[]{0x00078005E3000010L});
-    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleAbstractBlock1376 = new BitSet(new long[]{0x00078005E3000010L});
-    public static final BitSet FOLLOW_25_in_ruleAbstractBlock1387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCommand_in_entryRuleCommand1424 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCommand1434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDeclaration_in_ruleCommand1484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1524 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleCommand1534 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1597 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleCommand1607 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1629 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleCommand1639 = new BitSet(new long[]{0x00000200008800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1661 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleCommand1672 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1693 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleCommand1706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1748 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleCommand1758 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleCommand1810 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1832 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleCommand1842 = new BitSet(new long[]{0x00000200002800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1864 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_ruleCommand1875 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1896 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_ruleCommand1910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleCommand1940 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleCommand1991 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand2013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstruct_in_entryRuleConstruct2050 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstruct2060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleConstruct2108 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleConstruct2118 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleConstruct2139 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleConstruct2149 = new BitSet(new long[]{0x00078005E1000010L});
-    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleConstruct2170 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_ruleConstruct2189 = new BitSet(new long[]{0x00078005E1000010L});
-    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleConstruct2223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleConstruct2255 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleConstruct2265 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleConstruct2286 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleConstruct2296 = new BitSet(new long[]{0x00078005E1000010L});
-    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleConstruct2317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration2354 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDeclaration2364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_ruleVariableDeclaration2410 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableDeclaration2427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression2468 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression2478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathExpression_in_ruleExpression2528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleExpression2558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathExpression_in_entryRuleMathExpression2593 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMathExpression2603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAddition_in_ruleMathExpression2652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition2686 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAddition2696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition2746 = new BitSet(new long[]{0x0000001800000002L});
-    public static final BitSet FOLLOW_35_in_ruleAddition2770 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_36_in_ruleAddition2800 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition2823 = new BitSet(new long[]{0x0000001800000002L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication2861 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication2871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication2921 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_37_in_ruleMultiplication2945 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_38_in_ruleMultiplication2975 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication2998 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression3036 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpression3046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rulePrimaryExpression3082 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_ruleMathExpression_in_rulePrimaryExpression3107 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_rulePrimaryExpression3116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericValue_in_rulePrimaryExpression3157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePrimaryExpression3199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition3236 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCondition3246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBinaryBoolean_in_ruleCondition3295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBinaryBoolean_in_entryRuleBinaryBoolean3329 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBinaryBoolean3339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnaryBoolean_in_ruleBinaryBoolean3389 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_39_in_ruleBinaryBoolean3413 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_40_in_ruleBinaryBoolean3443 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleUnaryBoolean_in_ruleBinaryBoolean3466 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_ruleUnaryBoolean_in_entryRuleUnaryBoolean3504 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnaryBoolean3514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleUnaryBoolean3550 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleUnaryBoolean3575 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleUnaryBoolean3584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_BOOL_in_ruleUnaryBoolean3621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleUnaryBoolean3656 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleUnaryBoolean3677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleUnaryBoolean3719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathExpression_in_ruleUnaryBoolean3752 = new BitSet(new long[]{0x00007C0000000000L});
-    public static final BitSet FOLLOW_42_in_ruleUnaryBoolean3775 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_43_in_ruleUnaryBoolean3805 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_44_in_ruleUnaryBoolean3835 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_45_in_ruleUnaryBoolean3865 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_46_in_ruleUnaryBoolean3895 = new BitSet(new long[]{0x00000000000800D0L});
-    public static final BitSet FOLLOW_ruleMathExpression_in_ruleUnaryBoolean3918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumericValue_in_entryRuleNumericValue3958 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumericValue3969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumericValue4009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_REAL_in_ruleNumericValue4035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleType4092 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleType4107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleType4122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleType4137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCommand_in_ruleAbstractBlock1285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleAbstractBlock1313 = new BitSet(new long[]{0x00078005E3000010L});
+    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleAbstractBlock1334 = new BitSet(new long[]{0x00078005E3000010L});
+    public static final BitSet FOLLOW_25_in_ruleAbstractBlock1345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCommand_in_entryRuleCommand1382 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCommand1392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDeclaration_in_ruleCommand1444 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1484 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleCommand1494 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1515 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1557 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleCommand1567 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1589 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleCommand1599 = new BitSet(new long[]{0x00004000008801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1621 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleCommand1632 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1653 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleCommand1666 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1708 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleCommand1718 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1740 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_29_in_ruleCommand1770 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand1792 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleCommand1802 = new BitSet(new long[]{0x00004000002801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1824 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_20_in_ruleCommand1835 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1856 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_21_in_ruleCommand1870 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_30_in_ruleCommand1900 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand1921 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_30_in_ruleCommand1951 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleCommand1968 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_31_in_ruleCommand2003 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommand2025 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleCommand2037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleCommand2067 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleCommand2077 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand2098 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleCommand2108 = new BitSet(new long[]{0x00078005E1000010L});
+    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleCommand2129 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_33_in_ruleCommand2148 = new BitSet(new long[]{0x00078005E1000010L});
+    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleCommand2182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleCommand2214 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleCommand2224 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCommand2245 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleCommand2255 = new BitSet(new long[]{0x00078005E1000010L});
+    public static final BitSet FOLLOW_ruleAbstractBlock_in_ruleCommand2276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration2313 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDeclaration2323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_ruleVariableDeclaration2369 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableDeclaration2386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression2427 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpression2437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLogical_in_ruleExpression2486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLogical_in_entryRuleLogical2520 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLogical2530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelation_in_ruleLogical2580 = new BitSet(new long[]{0x0000001800000002L});
+    public static final BitSet FOLLOW_35_in_ruleLogical2604 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_36_in_ruleLogical2634 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleRelation_in_ruleLogical2657 = new BitSet(new long[]{0x0000001800000002L});
+    public static final BitSet FOLLOW_ruleRelation_in_entryRuleRelation2695 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRelation2705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAddition_in_ruleRelation2755 = new BitSet(new long[]{0x000003E000000002L});
+    public static final BitSet FOLLOW_37_in_ruleRelation2779 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_38_in_ruleRelation2809 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_39_in_ruleRelation2839 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_40_in_ruleRelation2869 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_41_in_ruleRelation2899 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleAddition_in_ruleRelation2922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition2960 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAddition2970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition3020 = new BitSet(new long[]{0x00000C0000000002L});
+    public static final BitSet FOLLOW_42_in_ruleAddition3044 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_43_in_ruleAddition3074 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition3097 = new BitSet(new long[]{0x00000C0000000002L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication3135 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication3145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication3195 = new BitSet(new long[]{0x0000300000000002L});
+    public static final BitSet FOLLOW_44_in_ruleMultiplication3219 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_45_in_ruleMultiplication3249 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication3272 = new BitSet(new long[]{0x0000300000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression3310 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpression3320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rulePrimaryExpression3356 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_rulePrimaryExpression3381 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_rulePrimaryExpression3390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rulePrimaryExpression3420 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_rulePrimaryExpression3441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rulePrimaryExpression3482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePrimaryExpression3524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_entryRuleValue3562 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValue3573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleValue3613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_REAL_in_ruleValue3639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_BOOL_in_ruleValue3665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleValue3691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleType3748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleType3763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleType3778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleType3793 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGlobalSection_in_synpred1189 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEventSection_in_synpred2260 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleHandlerSection_in_synpred3331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_synpred252189 = new BitSet(new long[]{0x00078005E1000010L});
-    public static final BitSet FOLLOW_ruleAbstractBlock_in_synpred252223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMathExpression_in_synpred272528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_synpred353413 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_40_in_synpred353443 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleUnaryBoolean_in_synpred353466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_synpred363550 = new BitSet(new long[]{0x00000200000800F0L});
-    public static final BitSet FOLLOW_ruleCondition_in_synpred363575 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_synpred363584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_synpred393719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_synpred231900 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_synpred231921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_synpred241951 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_synpred241968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_synpred262148 = new BitSet(new long[]{0x00078005E1000010L});
+    public static final BitSet FOLLOW_ruleAbstractBlock_in_synpred262182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_synpred292604 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_36_in_synpred292634 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleRelation_in_synpred292657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_synpred342779 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_38_in_synpred342809 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_39_in_synpred342839 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_40_in_synpred342869 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_41_in_synpred342899 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleAddition_in_synpred342922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_synpred363044 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_43_in_synpred363074 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_synpred363097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_synpred383219 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_45_in_synpred383249 = new BitSet(new long[]{0x00004000000801F0L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_synpred383272 = new BitSet(new long[]{0x0000000000000002L});
 
 }

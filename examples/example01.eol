@@ -13,6 +13,8 @@ handlers:
 
 init:
 {	
+	out "hello world";
+
 	pippo = 0;
 
 	onProduce += consume[];

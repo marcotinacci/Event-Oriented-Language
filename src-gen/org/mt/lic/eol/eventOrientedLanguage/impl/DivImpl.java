@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.mt.lic.eol.eventOrientedLanguage.Div;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
-import org.mt.lic.eol.eventOrientedLanguage.MathExpression;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.mt.lic.eol.eventOrientedLanguage.MathExpression;
  *
  * @generated
  */
-public class DivImpl extends MathExpressionImpl implements Div
+public class DivImpl extends ExpressionImpl implements Div
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -41,7 +41,7 @@ public class DivImpl extends MathExpressionImpl implements Div
    * @generated
    * @ordered
    */
-  protected MathExpression left;
+  protected Expression left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -51,7 +51,7 @@ public class DivImpl extends MathExpressionImpl implements Div
    * @generated
    * @ordered
    */
-  protected MathExpression right;
+  protected Expression right;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class DivImpl extends MathExpressionImpl implements Div
    * <!-- end-user-doc -->
    * @generated
    */
-  public MathExpression getLeft()
+  public Expression getLeft()
   {
     return left;
   }
@@ -89,9 +89,9 @@ public class DivImpl extends MathExpressionImpl implements Div
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(MathExpression newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
   {
-    MathExpression oldLeft = left;
+    Expression oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -106,7 +106,7 @@ public class DivImpl extends MathExpressionImpl implements Div
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(MathExpression newLeft)
+  public void setLeft(Expression newLeft)
   {
     if (newLeft != left)
     {
@@ -127,7 +127,7 @@ public class DivImpl extends MathExpressionImpl implements Div
    * <!-- end-user-doc -->
    * @generated
    */
-  public MathExpression getRight()
+  public Expression getRight()
   {
     return right;
   }
@@ -137,9 +137,9 @@ public class DivImpl extends MathExpressionImpl implements Div
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(MathExpression newRight, NotificationChain msgs)
+  public NotificationChain basicSetRight(Expression newRight, NotificationChain msgs)
   {
-    MathExpression oldRight = right;
+    Expression oldRight = right;
     right = newRight;
     if (eNotificationRequired())
     {
@@ -154,7 +154,7 @@ public class DivImpl extends MathExpressionImpl implements Div
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(MathExpression newRight)
+  public void setRight(Expression newRight)
   {
     if (newRight != right)
     {
@@ -217,10 +217,10 @@ public class DivImpl extends MathExpressionImpl implements Div
     switch (featureID)
     {
       case EventOrientedLanguagePackage.DIV__LEFT:
-        setLeft((MathExpression)newValue);
+        setLeft((Expression)newValue);
         return;
       case EventOrientedLanguagePackage.DIV__RIGHT:
-        setRight((MathExpression)newValue);
+        setRight((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,10 +237,10 @@ public class DivImpl extends MathExpressionImpl implements Div
     switch (featureID)
     {
       case EventOrientedLanguagePackage.DIV__LEFT:
-        setLeft((MathExpression)null);
+        setLeft((Expression)null);
         return;
       case EventOrientedLanguagePackage.DIV__RIGHT:
-        setRight((MathExpression)null);
+        setRight((Expression)null);
         return;
     }
     super.eUnset(featureID);

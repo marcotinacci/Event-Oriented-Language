@@ -22,7 +22,7 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * @model
  * @generated
  */
-public interface VariableReference extends MathExpression
+public interface VariableReference extends Expression
 {
   /**
    * Returns the value of the '<em><b>Var</b></em>' reference.

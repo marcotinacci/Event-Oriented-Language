@@ -27,7 +27,7 @@ import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
  *
  * @generated
  */
-public class NumberLiteralImpl extends MathExpressionImpl implements NumberLiteral
+public class NumberLiteralImpl extends ExpressionImpl implements NumberLiteral
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

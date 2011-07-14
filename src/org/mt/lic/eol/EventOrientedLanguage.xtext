@@ -36,23 +36,21 @@ HandlerDecl:
  * Block java-style with Composite
  */
 AbstractBlock:
-	Command ';'
-	| Construct
+	Command 
 	| { Compound } '{' (body+=AbstractBlock)* '}';
 
 Command:
-	VariableDeclaration
+	(VariableDeclaration
 	| { VariableAssign } name=[VariableDeclaration] '=' value=Expression
 	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl] 
 		'[' (bindParams+=Expression (',' bindParams+=Expression))? ']'
 	| { UnbindHandler } eventName=[EventDecl] '-=' handlerName=[HandlerDecl]
 	| { RaiseEvent } 'raise' event=[EventDecl] '(' (params+=Expression (',' params+=Expression)*)? ')'
-	| { PrintOutput } 'out' output=Expression 
-	| { ReadInput } 'in' input=[VariableDeclaration];
-	
-Construct:
-	{ IfThenElse } 'if' '(' condition=Condition ')' thenBlock=AbstractBlock ( balanced?='else' elseBlock=AbstractBlock )?
-	| { While } 'while' '(' condition=Condition ')' block=AbstractBlock;
+	| { PrintOutput } 'out' output=Expression
+	| { PrintString } 'out' output=STRING 
+	| { ReadInput } 'in' input=[VariableDeclaration]) ';'
+	| { IfThenElse } 'if' '(' condition=Expression ')' thenBlock=AbstractBlock ( balanced?='else' elseBlock=AbstractBlock )?
+	| { While } 'while' '(' condition=Expression ')' block=AbstractBlock;
 
 VariableDeclaration: 
 	type=Type name=ID;
@@ -60,46 +58,31 @@ VariableDeclaration:
 // EXPRESSIONS
 
 Expression:
-	MathExpression | Condition;
-
-MathExpression:
-	Addition;
+	Logical;
 	
-Addition returns MathExpression:
+Logical returns Expression:
+	Relation (({And.left=current} 'AND' | {Or.left=current} 'OR') right=Relation)*;
+	
+Relation returns Expression:
+	Addition 
+		(({Leq.left=current} '<='
+		| {Less.left=current} '<'
+		| {Eq.left=current} '=='
+		| {Geq.left=current} '>='
+		| {Gtr.left=current} '>')
+		right=Addition)?;
+	
+Addition returns Expression:
 	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
 
-Multiplication returns MathExpression:
+Multiplication returns Expression:
 	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=PrimaryExpression)*;
 
-PrimaryExpression returns MathExpression:
-	'(' MathExpression ')'
-	| { NumberLiteral } value=NumericValue
+PrimaryExpression returns Expression:
+	'(' Expression ')'
+	| { Not } 'NOT' cond=Expression
+	| { NumberLiteral } value=Value
 	| { VariableReference } var=[VariableDeclaration];
-
-// CONDITIONS
-
-Condition:
-	BinaryBoolean;
-	
-BinaryBoolean returns Condition:
-	UnaryBoolean (({And.left=current} 'AND' | {Or.left=current} 'OR' ) right=UnaryBoolean)*;
-	
-UnaryBoolean returns Condition:
-	'(' Condition ')'
-	// true o false
-	| {BooleanLiteral} value=BOOL
-	// negazione
-	| {Not} 'NOT' cond=Condition
-	// riferimento a variabile booleana
-	| {BooleanReference} var=[VariableDeclaration]
-	// confronto tra espressioni
- 	| MathExpression 
-		(({Leq.left=current} '<=') 
-		| ({Less.left=current} '<')  	
-		| ({Eq.left=current} '==')  	
-		| ({Geq.left=current} '>=')  	
-		| ({Gtr.left=current} '>')) 
-		right=MathExpression;
 
 // TYPES
 
@@ -107,9 +90,7 @@ enum Type:
 	T_INT="int" | T_REAL="real" | T_BOOL="bool" | T_STRING="string";
 
 Value:
-	NumericValue | BOOL | STRING;
-	
-NumericValue: INT | REAL;
+	 INT | REAL | BOOL | STRING;
 
 terminal INT returns ecore::EInt:
 	('0'..'9')+;

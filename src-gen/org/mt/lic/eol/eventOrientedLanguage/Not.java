@@ -22,7 +22,7 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * @model
  * @generated
  */
-public interface Not extends Condition
+public interface Not extends Expression
 {
   /**
    * Returns the value of the '<em><b>Cond</b></em>' containment reference.
@@ -33,12 +33,12 @@ public interface Not extends Condition
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cond</em>' containment reference.
-   * @see #setCond(Condition)
+   * @see #setCond(Expression)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getNot_Cond()
    * @model containment="true"
    * @generated
    */
-  Condition getCond();
+  Expression getCond();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.Not#getCond <em>Cond</em>}' containment reference.
@@ -48,6 +48,6 @@ public interface Not extends Condition
    * @see #getCond()
    * @generated
    */
-  void setCond(Condition value);
+  void setCond(Expression value);
 
 } // Not

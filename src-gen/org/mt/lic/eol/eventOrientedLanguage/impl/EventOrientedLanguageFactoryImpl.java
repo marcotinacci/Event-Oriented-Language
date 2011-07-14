@@ -76,36 +76,32 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
       case EventOrientedLanguagePackage.HANDLER_DECL: return createHandlerDecl();
       case EventOrientedLanguagePackage.ABSTRACT_BLOCK: return createAbstractBlock();
       case EventOrientedLanguagePackage.COMMAND: return createCommand();
-      case EventOrientedLanguagePackage.CONSTRUCT: return createConstruct();
       case EventOrientedLanguagePackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case EventOrientedLanguagePackage.EXPRESSION: return createExpression();
-      case EventOrientedLanguagePackage.MATH_EXPRESSION: return createMathExpression();
-      case EventOrientedLanguagePackage.CONDITION: return createCondition();
       case EventOrientedLanguagePackage.COMPOUND: return createCompound();
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN: return createVariableAssign();
       case EventOrientedLanguagePackage.BIND_HANDLER: return createBindHandler();
       case EventOrientedLanguagePackage.UNBIND_HANDLER: return createUnbindHandler();
       case EventOrientedLanguagePackage.RAISE_EVENT: return createRaiseEvent();
       case EventOrientedLanguagePackage.PRINT_OUTPUT: return createPrintOutput();
+      case EventOrientedLanguagePackage.PRINT_STRING: return createPrintString();
       case EventOrientedLanguagePackage.READ_INPUT: return createReadInput();
       case EventOrientedLanguagePackage.IF_THEN_ELSE: return createIfThenElse();
       case EventOrientedLanguagePackage.WHILE: return createWhile();
-      case EventOrientedLanguagePackage.PLUS: return createPlus();
-      case EventOrientedLanguagePackage.MINUS: return createMinus();
-      case EventOrientedLanguagePackage.MULTI: return createMulti();
-      case EventOrientedLanguagePackage.DIV: return createDiv();
-      case EventOrientedLanguagePackage.NUMBER_LITERAL: return createNumberLiteral();
-      case EventOrientedLanguagePackage.VARIABLE_REFERENCE: return createVariableReference();
       case EventOrientedLanguagePackage.AND: return createAnd();
       case EventOrientedLanguagePackage.OR: return createOr();
-      case EventOrientedLanguagePackage.BOOLEAN_LITERAL: return createBooleanLiteral();
-      case EventOrientedLanguagePackage.NOT: return createNot();
-      case EventOrientedLanguagePackage.BOOLEAN_REFERENCE: return createBooleanReference();
       case EventOrientedLanguagePackage.LEQ: return createLeq();
       case EventOrientedLanguagePackage.LESS: return createLess();
       case EventOrientedLanguagePackage.EQ: return createEq();
       case EventOrientedLanguagePackage.GEQ: return createGeq();
       case EventOrientedLanguagePackage.GTR: return createGtr();
+      case EventOrientedLanguagePackage.PLUS: return createPlus();
+      case EventOrientedLanguagePackage.MINUS: return createMinus();
+      case EventOrientedLanguagePackage.MULTI: return createMulti();
+      case EventOrientedLanguagePackage.DIV: return createDiv();
+      case EventOrientedLanguagePackage.NOT: return createNot();
+      case EventOrientedLanguagePackage.NUMBER_LITERAL: return createNumberLiteral();
+      case EventOrientedLanguagePackage.VARIABLE_REFERENCE: return createVariableReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -238,17 +234,6 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public Construct createConstruct()
-  {
-    ConstructImpl construct = new ConstructImpl();
-    return construct;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public VariableDeclaration createVariableDeclaration()
   {
     VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
@@ -264,28 +249,6 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MathExpression createMathExpression()
-  {
-    MathExpressionImpl mathExpression = new MathExpressionImpl();
-    return mathExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Condition createCondition()
-  {
-    ConditionImpl condition = new ConditionImpl();
-    return condition;
   }
 
   /**
@@ -359,6 +322,17 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
+  public PrintString createPrintString()
+  {
+    PrintStringImpl printString = new PrintStringImpl();
+    return printString;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ReadInput createReadInput()
   {
     ReadInputImpl readInput = new ReadInputImpl();
@@ -392,72 +366,6 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public Plus createPlus()
-  {
-    PlusImpl plus = new PlusImpl();
-    return plus;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Minus createMinus()
-  {
-    MinusImpl minus = new MinusImpl();
-    return minus;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Multi createMulti()
-  {
-    MultiImpl multi = new MultiImpl();
-    return multi;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Div createDiv()
-  {
-    DivImpl div = new DivImpl();
-    return div;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberLiteral createNumberLiteral()
-  {
-    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
-    return numberLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableReference createVariableReference()
-  {
-    VariableReferenceImpl variableReference = new VariableReferenceImpl();
-    return variableReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public And createAnd()
   {
     AndImpl and = new AndImpl();
@@ -473,39 +381,6 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     OrImpl or = new OrImpl();
     return or;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BooleanLiteral createBooleanLiteral()
-  {
-    BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
-    return booleanLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Not createNot()
-  {
-    NotImpl not = new NotImpl();
-    return not;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BooleanReference createBooleanReference()
-  {
-    BooleanReferenceImpl booleanReference = new BooleanReferenceImpl();
-    return booleanReference;
   }
 
   /**
@@ -561,6 +436,83 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     GtrImpl gtr = new GtrImpl();
     return gtr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Plus createPlus()
+  {
+    PlusImpl plus = new PlusImpl();
+    return plus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Minus createMinus()
+  {
+    MinusImpl minus = new MinusImpl();
+    return minus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multi createMulti()
+  {
+    MultiImpl multi = new MultiImpl();
+    return multi;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Div createDiv()
+  {
+    DivImpl div = new DivImpl();
+    return div;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Not createNot()
+  {
+    NotImpl not = new NotImpl();
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberLiteral createNumberLiteral()
+  {
+    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
+    return numberLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableReference createVariableReference()
+  {
+    VariableReferenceImpl variableReference = new VariableReferenceImpl();
+    return variableReference;
   }
 
   /**

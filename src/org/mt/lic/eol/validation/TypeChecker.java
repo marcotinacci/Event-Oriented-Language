@@ -1,10 +1,7 @@
 package org.mt.lic.eol.validation;
 
-import org.mt.lic.eol.util.TypeHelper;
 import org.eclipse.emf.ecore.EObject;
 import org.mt.lic.eol.eventOrientedLanguage.And;
-import org.mt.lic.eol.eventOrientedLanguage.BooleanLiteral;
-import org.mt.lic.eol.eventOrientedLanguage.BooleanReference;
 import org.mt.lic.eol.eventOrientedLanguage.Div;
 import org.mt.lic.eol.eventOrientedLanguage.Eq;
 import org.mt.lic.eol.eventOrientedLanguage.Geq;
@@ -20,6 +17,7 @@ import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
+import org.mt.lic.eol.util.TypeHelper;
 
 public class TypeChecker extends EventOrientedLanguageSwitch<Type> {
 	
@@ -79,18 +77,8 @@ public class TypeChecker extends EventOrientedLanguageSwitch<Type> {
 	}
 
 	@Override
-	public Type caseBooleanLiteral(BooleanLiteral object) {
-		return Type.TBOOL;
-	}
-
-	@Override
 	public Type caseNot(Not object) {
 		return doSwitch(object.getCond());
-	}
-
-	@Override
-	public Type caseBooleanReference(BooleanReference object) {
-		return object.getVar().getType();
 	}
 
 	@Override

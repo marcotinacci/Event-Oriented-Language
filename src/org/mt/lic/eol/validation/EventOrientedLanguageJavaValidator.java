@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.eclipse.xtext.validation.Check;
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
-import org.mt.lic.eol.eventOrientedLanguage.BooleanReference;
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
-import org.mt.lic.eol.eventOrientedLanguage.Type;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
 import org.mt.lic.eol.generating.CodeGeneratorHelper;
@@ -80,12 +78,13 @@ public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLan
 	 * Controllo che i riferimenti a variabili nelle condizioni siano unicamente booleani
 	 * @param ref
 	 */
-	@Check
-	public void checkBooleanReference(BooleanReference ref){
-		if(!ref.getVar().getType().equals(Type.TBOOL)){
-			error("The variable "+ ref.getVar().getName() +" must be boolean", null);
-		}
-	}
+//	@Check
+//	public void checkBooleanReference(BooleanReference ref){
+		// TODO  
+//		if(!ref.getVar().getType().equals(Type.TBOOL)){
+//			error("The variable "+ ref.getVar().getName() +" must be boolean", null);
+//		}
+//	}
 	
 	/**
 	 * Controllo che i nomi degli handler siano unici

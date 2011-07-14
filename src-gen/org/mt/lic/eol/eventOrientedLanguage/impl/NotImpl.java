@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.mt.lic.eol.eventOrientedLanguage.Condition;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
 import org.mt.lic.eol.eventOrientedLanguage.Not;
 
 /**
@@ -30,7 +30,7 @@ import org.mt.lic.eol.eventOrientedLanguage.Not;
  *
  * @generated
  */
-public class NotImpl extends ConditionImpl implements Not
+public class NotImpl extends ExpressionImpl implements Not
 {
   /**
    * The cached value of the '{@link #getCond() <em>Cond</em>}' containment reference.
@@ -40,7 +40,7 @@ public class NotImpl extends ConditionImpl implements Not
    * @generated
    * @ordered
    */
-  protected Condition cond;
+  protected Expression cond;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +68,7 @@ public class NotImpl extends ConditionImpl implements Not
    * <!-- end-user-doc -->
    * @generated
    */
-  public Condition getCond()
+  public Expression getCond()
   {
     return cond;
   }
@@ -78,9 +78,9 @@ public class NotImpl extends ConditionImpl implements Not
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCond(Condition newCond, NotificationChain msgs)
+  public NotificationChain basicSetCond(Expression newCond, NotificationChain msgs)
   {
-    Condition oldCond = cond;
+    Expression oldCond = cond;
     cond = newCond;
     if (eNotificationRequired())
     {
@@ -95,7 +95,7 @@ public class NotImpl extends ConditionImpl implements Not
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCond(Condition newCond)
+  public void setCond(Expression newCond)
   {
     if (newCond != cond)
     {
@@ -154,7 +154,7 @@ public class NotImpl extends ConditionImpl implements Not
     switch (featureID)
     {
       case EventOrientedLanguagePackage.NOT__COND:
-        setCond((Condition)newValue);
+        setCond((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +171,7 @@ public class NotImpl extends ConditionImpl implements Not
     switch (featureID)
     {
       case EventOrientedLanguagePackage.NOT__COND:
-        setCond((Condition)null);
+        setCond((Expression)null);
         return;
     }
     super.eUnset(featureID);

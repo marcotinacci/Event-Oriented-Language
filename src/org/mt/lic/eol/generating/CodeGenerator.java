@@ -4,22 +4,32 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
+import org.mt.lic.eol.eventOrientedLanguage.And;
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.Compound;
 import org.mt.lic.eol.eventOrientedLanguage.Div;
+import org.mt.lic.eol.eventOrientedLanguage.Eq;
 import org.mt.lic.eol.eventOrientedLanguage.Expression;
-import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
+import org.mt.lic.eol.eventOrientedLanguage.Geq;
+import org.mt.lic.eol.eventOrientedLanguage.Gtr;
+import org.mt.lic.eol.eventOrientedLanguage.IfThenElse;
+import org.mt.lic.eol.eventOrientedLanguage.Leq;
+import org.mt.lic.eol.eventOrientedLanguage.Less;
 import org.mt.lic.eol.eventOrientedLanguage.Minus;
 import org.mt.lic.eol.eventOrientedLanguage.Multi;
+import org.mt.lic.eol.eventOrientedLanguage.Not;
 import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
+import org.mt.lic.eol.eventOrientedLanguage.Or;
 import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
+import org.mt.lic.eol.eventOrientedLanguage.PrintString;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
 import org.mt.lic.eol.eventOrientedLanguage.ReadInput;
 import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
+import org.mt.lic.eol.eventOrientedLanguage.While;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
 import org.mt.lic.eol.util.NameConventions;
 
@@ -43,7 +53,7 @@ abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	@Override
 	public String casePrintOutput(PrintOutput object) {
 		libraries.add("iostream");
-		return "std::cout << " + doSwitch(object.getOutput()) + " << std::endl;\n";
+		return "std::cout << " + doSwitch(object.getOutput()) + ";\n";
 	}
 	
 	@Override
@@ -92,22 +102,6 @@ abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	@Override
 	public String caseVariableDeclaration(VariableDeclaration object) {
 		return NameConventions.convertTypeName(object.getType()) + " " + object.getName() + ";\n";
-	}
-
-	@Override
-	public String caseHandlerDecl(HandlerDecl object) {
-		String structName = NameConventions.DatatypeStructName(
-				CodeGeneratorHelper.formatFieldsTypeFromParams(object.getParams()));
-		StringBuffer toReturn = new StringBuffer();
-		// esegui cast da void*
-		toReturn.append(CodeGeneratorHelper.formatParamsCast(structName) + "\n");
-
-		List<VariableDeclaration> params = object.getParams();
-		for(int i=0; i < params.size(); i++){
-			toReturn.append( NameConventions.convertTypeName(params.get(i).getType()) + " " +
-				params.get(i).getName() + "= params->var"+ i +";\n");
-		}
-		return toReturn.toString();
 	}
 	
 	@Override
@@ -173,6 +167,63 @@ abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 
 	public void setFolder(String folder) {
 		this.folder = folder;
+	}
+
+	@Override
+	public String casePrintString(PrintString object) {
+		libraries.add("iostream");
+		return "std::cout << \"" + object.getOutput() + "\";\n";
+	}
+
+	@Override
+	public String caseIfThenElse(IfThenElse object) {
+		return "if("+doSwitch(object.getCondition())+")\n"+doSwitch(object.getThenBlock())
+			+ (object.isBalanced() ? "else" + doSwitch(object.getElseBlock()) : "")+'\n';
+	}
+
+	@Override
+	public String caseWhile(While object) {
+		return "while("+doSwitch(object.getCondition())+")\n"+doSwitch(object.getBlock())+'\n';
+	}
+
+	@Override
+	public String caseAnd(And object) {
+		return '('+doSwitch(object.getLeft())+" && "+doSwitch(object.getRight())+')';
+	}
+
+	@Override
+	public String caseOr(Or object) {
+		return '('+doSwitch(object.getLeft())+" || "+doSwitch(object.getRight())+')';
+	}
+
+	@Override
+	public String caseNot(Not object) {
+		return "( !"+ doSwitch(object.getCond()) + ")";
+	}
+
+	@Override
+	public String caseLeq(Leq object) {
+		return '(' + doSwitch(object.getLeft()) + "<=" + doSwitch(object.getRight()) + ')';
+	}
+
+	@Override
+	public String caseLess(Less object) {
+		return '(' + doSwitch(object.getLeft()) + '<' + doSwitch(object.getRight()) + ')';
+	}
+
+	@Override
+	public String caseEq(Eq object) {
+		return '(' + doSwitch(object.getLeft()) + "==" + doSwitch(object.getRight()) + ')';
+	}
+
+	@Override
+	public String caseGeq(Geq object) {
+		return '(' + doSwitch(object.getLeft()) + ">=" + doSwitch(object.getRight()) + ')';
+	}
+
+	@Override
+	public String caseGtr(Gtr object) {
+		return '(' + doSwitch(object.getLeft()) + ">" + doSwitch(object.getRight()) + ')';	
 	}
 	
 }

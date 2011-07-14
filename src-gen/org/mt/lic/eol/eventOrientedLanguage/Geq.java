@@ -23,7 +23,7 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * @model
  * @generated
  */
-public interface Geq extends Condition
+public interface Geq extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -34,12 +34,12 @@ public interface Geq extends Condition
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(MathExpression)
+   * @see #setLeft(Expression)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getGeq_Left()
    * @model containment="true"
    * @generated
    */
-  MathExpression getLeft();
+  Expression getLeft();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.Geq#getLeft <em>Left</em>}' containment reference.
@@ -49,7 +49,7 @@ public interface Geq extends Condition
    * @see #getLeft()
    * @generated
    */
-  void setLeft(MathExpression value);
+  void setLeft(Expression value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.
@@ -60,12 +60,12 @@ public interface Geq extends Condition
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(MathExpression)
+   * @see #setRight(Expression)
    * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getGeq_Right()
    * @model containment="true"
    * @generated
    */
-  MathExpression getRight();
+  Expression getRight();
 
   /**
    * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.Geq#getRight <em>Right</em>}' containment reference.
@@ -75,6 +75,6 @@ public interface Geq extends Condition
    * @see #getRight()
    * @generated
    */
-  void setRight(MathExpression value);
+  void setRight(Expression value);
 
 } // Geq

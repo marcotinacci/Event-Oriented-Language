@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.mt.lic.eol.eventOrientedLanguage.AbstractBlock;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
 import org.mt.lic.eol.eventOrientedLanguage.IfThenElse;
 
 /**
@@ -24,6 +25,7 @@ import org.mt.lic.eol.eventOrientedLanguage.IfThenElse;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.IfThenElseImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.IfThenElseImpl#getThenBlock <em>Then Block</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.IfThenElseImpl#isBalanced <em>Balanced</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.IfThenElseImpl#getElseBlock <em>Else Block</em>}</li>
@@ -32,8 +34,18 @@ import org.mt.lic.eol.eventOrientedLanguage.IfThenElse;
  *
  * @generated
  */
-public class IfThenElseImpl extends ConstructImpl implements IfThenElse
+public class IfThenElseImpl extends CommandImpl implements IfThenElse
 {
+  /**
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCondition()
+   * @generated
+   * @ordered
+   */
+  protected Expression condition;
+
   /**
    * The cached value of the '{@link #getThenBlock() <em>Then Block</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -93,6 +105,54 @@ public class IfThenElseImpl extends ConstructImpl implements IfThenElse
   protected EClass eStaticClass()
   {
     return EventOrientedLanguagePackage.Literals.IF_THEN_ELSE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getCondition()
+  {
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
+  {
+    Expression oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION, oldCondition, newCondition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCondition(Expression newCondition)
+  {
+    if (newCondition != condition)
+    {
+      NotificationChain msgs = null;
+      if (condition != null)
+        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION, null, msgs);
+      if (newCondition != null)
+        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION, null, msgs);
+      msgs = basicSetCondition(newCondition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION, newCondition, newCondition));
   }
 
   /**
@@ -224,6 +284,8 @@ public class IfThenElseImpl extends ConstructImpl implements IfThenElse
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION:
+        return basicSetCondition(null, msgs);
       case EventOrientedLanguagePackage.IF_THEN_ELSE__THEN_BLOCK:
         return basicSetThenBlock(null, msgs);
       case EventOrientedLanguagePackage.IF_THEN_ELSE__ELSE_BLOCK:
@@ -242,6 +304,8 @@ public class IfThenElseImpl extends ConstructImpl implements IfThenElse
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION:
+        return getCondition();
       case EventOrientedLanguagePackage.IF_THEN_ELSE__THEN_BLOCK:
         return getThenBlock();
       case EventOrientedLanguagePackage.IF_THEN_ELSE__BALANCED:
@@ -262,6 +326,9 @@ public class IfThenElseImpl extends ConstructImpl implements IfThenElse
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION:
+        setCondition((Expression)newValue);
+        return;
       case EventOrientedLanguagePackage.IF_THEN_ELSE__THEN_BLOCK:
         setThenBlock((AbstractBlock)newValue);
         return;
@@ -285,6 +352,9 @@ public class IfThenElseImpl extends ConstructImpl implements IfThenElse
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION:
+        setCondition((Expression)null);
+        return;
       case EventOrientedLanguagePackage.IF_THEN_ELSE__THEN_BLOCK:
         setThenBlock((AbstractBlock)null);
         return;
@@ -308,6 +378,8 @@ public class IfThenElseImpl extends ConstructImpl implements IfThenElse
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.IF_THEN_ELSE__CONDITION:
+        return condition != null;
       case EventOrientedLanguagePackage.IF_THEN_ELSE__THEN_BLOCK:
         return thenBlock != null;
       case EventOrientedLanguagePackage.IF_THEN_ELSE__BALANCED:

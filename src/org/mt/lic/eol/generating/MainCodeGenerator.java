@@ -6,8 +6,6 @@ import java.util.HashSet;
 import org.mt.lic.eol.util.FileHelper;
 import org.mt.lic.eol.util.NameConventions;
 
-// TODO eliminare la detach degli handler? si potrebbe direttamente deallocare l'evento e i rispettivi handler dal distruttore alla chiusura del blocco dove è stato dichiarato
-
 public class MainCodeGenerator{
 	
 	/**

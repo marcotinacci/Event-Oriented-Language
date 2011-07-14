@@ -184,10 +184,5 @@ public class VariableUseChecker extends EventOrientedLanguageSwitch<Boolean>{
 	public Boolean caseGtr(Gtr object) {
 		return doSwitch(object.getLeft()) || doSwitch(object.getRight());
 	}
-	
-	
-	
-	
-	
 
 }

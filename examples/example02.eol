@@ -1,0 +1,53 @@
+globals:
+	int sum;
+	int limit;
+
+events:
+	onProduce();
+	onConsume();
+
+handlers:
+	
+	produce[](){
+		if(sum >= limit){
+			out "Limite massimo raggiunto!\n";
+		}else{
+			out sum;
+			sum = sum + 1;
+			raise onProduce();
+		} 
+	}
+	
+	consume[](){
+		if(sum < 0){
+			out "Limite minimo raggiunto!\n";
+		}else{
+			//sum = sum - 1;
+			raise onConsume();
+		} 
+	}
+	
+	print[](){
+		out "current: ";
+		out sum;
+	}
+
+init:
+{	
+	out "--- inizio programma ---\n";
+	sum = 0;
+	limit = 3;
+
+	out sum;
+	onProduce += consume[];
+	onConsume += produce[];
+	//onConsume += produce[];
+	//onProduce += print[];
+	//onConsume += print[];
+	
+	raise onProduce();
+	
+	out "--- fine programma ---\n";
+	
+}
+end

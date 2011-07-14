@@ -22,7 +22,7 @@ package org.mt.lic.eol.eventOrientedLanguage;
  * @model
  * @generated
  */
-public interface NumberLiteral extends MathExpression
+public interface NumberLiteral extends Expression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

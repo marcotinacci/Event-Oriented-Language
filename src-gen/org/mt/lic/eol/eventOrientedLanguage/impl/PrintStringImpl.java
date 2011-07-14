@@ -8,45 +8,53 @@ package org.mt.lic.eol.eventOrientedLanguage.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.mt.lic.eol.eventOrientedLanguage.BooleanReference;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
-import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
+import org.mt.lic.eol.eventOrientedLanguage.PrintString;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Boolean Reference</b></em>'.
+ * An implementation of the model object '<em><b>Print String</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BooleanReferenceImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.PrintStringImpl#getOutput <em>Output</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BooleanReferenceImpl extends ConditionImpl implements BooleanReference
+public class PrintStringImpl extends CommandImpl implements PrintString
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
+   * The default value of the '{@link #getOutput() <em>Output</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getOutput()
    * @generated
    * @ordered
    */
-  protected VariableDeclaration var;
+  protected static final String OUTPUT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOutput() <em>Output</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOutput()
+   * @generated
+   * @ordered
+   */
+  protected String output = OUTPUT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BooleanReferenceImpl()
+  protected PrintStringImpl()
   {
     super();
   }
@@ -59,7 +67,7 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
   @Override
   protected EClass eStaticClass()
   {
-    return EventOrientedLanguagePackage.Literals.BOOLEAN_REFERENCE;
+    return EventOrientedLanguagePackage.Literals.PRINT_STRING;
   }
 
   /**
@@ -67,19 +75,9 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration getVar()
+  public String getOutput()
   {
-    if (var != null && var.eIsProxy())
-    {
-      InternalEObject oldVar = (InternalEObject)var;
-      var = (VariableDeclaration)eResolveProxy(oldVar);
-      if (var != oldVar)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EventOrientedLanguagePackage.BOOLEAN_REFERENCE__VAR, oldVar, var));
-      }
-    }
-    return var;
+    return output;
   }
 
   /**
@@ -87,22 +85,12 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration basicGetVar()
+  public void setOutput(String newOutput)
   {
-    return var;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVar(VariableDeclaration newVar)
-  {
-    VariableDeclaration oldVar = var;
-    var = newVar;
+    String oldOutput = output;
+    output = newOutput;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.BOOLEAN_REFERENCE__VAR, oldVar, var));
+      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.PRINT_STRING__OUTPUT, oldOutput, output));
   }
 
   /**
@@ -115,9 +103,8 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.BOOLEAN_REFERENCE__VAR:
-        if (resolve) return getVar();
-        return basicGetVar();
+      case EventOrientedLanguagePackage.PRINT_STRING__OUTPUT:
+        return getOutput();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,8 +119,8 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.BOOLEAN_REFERENCE__VAR:
-        setVar((VariableDeclaration)newValue);
+      case EventOrientedLanguagePackage.PRINT_STRING__OUTPUT:
+        setOutput((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -149,8 +136,8 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.BOOLEAN_REFERENCE__VAR:
-        setVar((VariableDeclaration)null);
+      case EventOrientedLanguagePackage.PRINT_STRING__OUTPUT:
+        setOutput(OUTPUT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -166,10 +153,27 @@ public class BooleanReferenceImpl extends ConditionImpl implements BooleanRefere
   {
     switch (featureID)
     {
-      case EventOrientedLanguagePackage.BOOLEAN_REFERENCE__VAR:
-        return var != null;
+      case EventOrientedLanguagePackage.PRINT_STRING__OUTPUT:
+        return OUTPUT_EDEFAULT == null ? output != null : !OUTPUT_EDEFAULT.equals(output);
     }
     return super.eIsSet(featureID);
   }
 
-} //BooleanReferenceImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (output: ");
+    result.append(output);
+    result.append(')');
+    return result.toString();
+  }
+
+} //PrintStringImpl

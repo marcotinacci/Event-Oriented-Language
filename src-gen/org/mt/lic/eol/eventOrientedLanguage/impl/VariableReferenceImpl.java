@@ -29,7 +29,7 @@ import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
  *
  * @generated
  */
-public class VariableReferenceImpl extends MathExpressionImpl implements VariableReference
+public class VariableReferenceImpl extends ExpressionImpl implements VariableReference
 {
   /**
    * The cached value of the '{@link #getVar() <em>Var</em>}' reference.

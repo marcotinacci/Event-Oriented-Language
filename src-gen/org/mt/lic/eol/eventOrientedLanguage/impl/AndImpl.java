@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.mt.lic.eol.eventOrientedLanguage.And;
-import org.mt.lic.eol.eventOrientedLanguage.Condition;
 import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage;
  *
  * @generated
  */
-public class AndImpl extends ConditionImpl implements And
+public class AndImpl extends ExpressionImpl implements And
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -41,7 +41,7 @@ public class AndImpl extends ConditionImpl implements And
    * @generated
    * @ordered
    */
-  protected Condition left;
+  protected Expression left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -51,7 +51,7 @@ public class AndImpl extends ConditionImpl implements And
    * @generated
    * @ordered
    */
-  protected Condition right;
+  protected Expression right;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class AndImpl extends ConditionImpl implements And
    * <!-- end-user-doc -->
    * @generated
    */
-  public Condition getLeft()
+  public Expression getLeft()
   {
     return left;
   }
@@ -89,9 +89,9 @@ public class AndImpl extends ConditionImpl implements And
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(Condition newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
   {
-    Condition oldLeft = left;
+    Expression oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -106,7 +106,7 @@ public class AndImpl extends ConditionImpl implements And
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(Condition newLeft)
+  public void setLeft(Expression newLeft)
   {
     if (newLeft != left)
     {
@@ -127,7 +127,7 @@ public class AndImpl extends ConditionImpl implements And
    * <!-- end-user-doc -->
    * @generated
    */
-  public Condition getRight()
+  public Expression getRight()
   {
     return right;
   }
@@ -137,9 +137,9 @@ public class AndImpl extends ConditionImpl implements And
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(Condition newRight, NotificationChain msgs)
+  public NotificationChain basicSetRight(Expression newRight, NotificationChain msgs)
   {
-    Condition oldRight = right;
+    Expression oldRight = right;
     right = newRight;
     if (eNotificationRequired())
     {
@@ -154,7 +154,7 @@ public class AndImpl extends ConditionImpl implements And
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(Condition newRight)
+  public void setRight(Expression newRight)
   {
     if (newRight != right)
     {
@@ -217,10 +217,10 @@ public class AndImpl extends ConditionImpl implements And
     switch (featureID)
     {
       case EventOrientedLanguagePackage.AND__LEFT:
-        setLeft((Condition)newValue);
+        setLeft((Expression)newValue);
         return;
       case EventOrientedLanguagePackage.AND__RIGHT:
-        setRight((Condition)newValue);
+        setRight((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,10 +237,10 @@ public class AndImpl extends ConditionImpl implements And
     switch (featureID)
     {
       case EventOrientedLanguagePackage.AND__LEFT:
-        setLeft((Condition)null);
+        setLeft((Expression)null);
         return;
       case EventOrientedLanguagePackage.AND__RIGHT:
-        setRight((Condition)null);
+        setRight((Expression)null);
         return;
     }
     super.eUnset(featureID);
