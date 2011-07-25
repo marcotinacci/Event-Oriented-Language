@@ -81,10 +81,8 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
       case EventOrientedLanguagePackage.COMPOUND: return createCompound();
       case EventOrientedLanguagePackage.VARIABLE_ASSIGN: return createVariableAssign();
       case EventOrientedLanguagePackage.BIND_HANDLER: return createBindHandler();
-      case EventOrientedLanguagePackage.UNBIND_HANDLER: return createUnbindHandler();
       case EventOrientedLanguagePackage.RAISE_EVENT: return createRaiseEvent();
       case EventOrientedLanguagePackage.PRINT_OUTPUT: return createPrintOutput();
-      case EventOrientedLanguagePackage.PRINT_STRING: return createPrintString();
       case EventOrientedLanguagePackage.READ_INPUT: return createReadInput();
       case EventOrientedLanguagePackage.IF_THEN_ELSE: return createIfThenElse();
       case EventOrientedLanguagePackage.WHILE: return createWhile();
@@ -100,7 +98,7 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
       case EventOrientedLanguagePackage.MULTI: return createMulti();
       case EventOrientedLanguagePackage.DIV: return createDiv();
       case EventOrientedLanguagePackage.NOT: return createNot();
-      case EventOrientedLanguagePackage.NUMBER_LITERAL: return createNumberLiteral();
+      case EventOrientedLanguagePackage.LITERAL: return createLiteral();
       case EventOrientedLanguagePackage.VARIABLE_REFERENCE: return createVariableReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -289,17 +287,6 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public UnbindHandler createUnbindHandler()
-  {
-    UnbindHandlerImpl unbindHandler = new UnbindHandlerImpl();
-    return unbindHandler;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public RaiseEvent createRaiseEvent()
   {
     RaiseEventImpl raiseEvent = new RaiseEventImpl();
@@ -315,17 +302,6 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
   {
     PrintOutputImpl printOutput = new PrintOutputImpl();
     return printOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PrintString createPrintString()
-  {
-    PrintStringImpl printString = new PrintStringImpl();
-    return printString;
   }
 
   /**
@@ -498,10 +474,10 @@ public class EventOrientedLanguageFactoryImpl extends EFactoryImpl implements Ev
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberLiteral createNumberLiteral()
+  public Literal createLiteral()
   {
-    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
-    return numberLiteral;
+    LiteralImpl literal = new LiteralImpl();
+    return literal;
   }
 
   /**

@@ -35,6 +35,8 @@ import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
  * <ul>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getHandlerName <em>Handler Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#isConsumable <em>Consumable</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getConsumability <em>Consumability</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.impl.BindHandlerImpl#getBindParams <em>Bind Params</em>}</li>
  * </ul>
  * </p>
@@ -62,6 +64,36 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
    * @ordered
    */
   protected HandlerDecl handlerName;
+
+  /**
+   * The default value of the '{@link #isConsumable() <em>Consumable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConsumable()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CONSUMABLE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isConsumable() <em>Consumable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConsumable()
+   * @generated
+   * @ordered
+   */
+  protected boolean consumable = CONSUMABLE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getConsumability() <em>Consumability</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConsumability()
+   * @generated
+   * @ordered
+   */
+  protected Expression consumability;
 
   /**
    * The cached value of the '{@link #getBindParams() <em>Bind Params</em>}' containment reference list.
@@ -185,6 +217,77 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isConsumable()
+  {
+    return consumable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConsumable(boolean newConsumable)
+  {
+    boolean oldConsumable = consumable;
+    consumable = newConsumable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABLE, oldConsumable, consumable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getConsumability()
+  {
+    return consumability;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConsumability(Expression newConsumability, NotificationChain msgs)
+  {
+    Expression oldConsumability = consumability;
+    consumability = newConsumability;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY, oldConsumability, newConsumability);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConsumability(Expression newConsumability)
+  {
+    if (newConsumability != consumability)
+    {
+      NotificationChain msgs = null;
+      if (consumability != null)
+        msgs = ((InternalEObject)consumability).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY, null, msgs);
+      if (newConsumability != null)
+        msgs = ((InternalEObject)newConsumability).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY, null, msgs);
+      msgs = basicSetConsumability(newConsumability, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY, newConsumability, newConsumability));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Expression> getBindParams()
   {
     if (bindParams == null)
@@ -204,6 +307,8 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
   {
     switch (featureID)
     {
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY:
+        return basicSetConsumability(null, msgs);
       case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
         return ((InternalEList<?>)getBindParams()).basicRemove(otherEnd, msgs);
     }
@@ -226,6 +331,10 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         if (resolve) return getHandlerName();
         return basicGetHandlerName();
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABLE:
+        return isConsumable();
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY:
+        return getConsumability();
       case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
         return getBindParams();
     }
@@ -248,6 +357,12 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
         return;
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         setHandlerName((HandlerDecl)newValue);
+        return;
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABLE:
+        setConsumable((Boolean)newValue);
+        return;
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY:
+        setConsumability((Expression)newValue);
         return;
       case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
         getBindParams().clear();
@@ -273,6 +388,12 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         setHandlerName((HandlerDecl)null);
         return;
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABLE:
+        setConsumable(CONSUMABLE_EDEFAULT);
+        return;
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY:
+        setConsumability((Expression)null);
+        return;
       case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
         getBindParams().clear();
         return;
@@ -294,10 +415,31 @@ public class BindHandlerImpl extends CommandImpl implements BindHandler
         return eventName != null;
       case EventOrientedLanguagePackage.BIND_HANDLER__HANDLER_NAME:
         return handlerName != null;
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABLE:
+        return consumable != CONSUMABLE_EDEFAULT;
+      case EventOrientedLanguagePackage.BIND_HANDLER__CONSUMABILITY:
+        return consumability != null;
       case EventOrientedLanguagePackage.BIND_HANDLER__BIND_PARAMS:
         return bindParams != null && !bindParams.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (consumable: ");
+    result.append(consumable);
+    result.append(')');
+    return result.toString();
   }
 
 } //BindHandlerImpl

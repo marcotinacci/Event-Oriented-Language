@@ -7,7 +7,7 @@
 #include "Event.h"
 
 Event::Event() {
-    _handlers = new list<Handler*>();
+    _handlers = new queue<Handler*>();
 }
 
 Event::~Event() {
@@ -23,17 +23,14 @@ void Event::setState(void* args){
 }
 
 void Event::attach(Handler* handler){
-    _handlers->push_back(handler);
-}
-
-void Event::detach(Handler* handler){
-    _handlers->remove(handler);
+    _handlers->push(handler);
 }
 
 void Event::notify(){
-	// TODO inserire politica di scheduling omp!
-	list<Handler*>::iterator it;
-	for(it = _handlers->begin(); it != _handlers->end(); it++){
-		(*it)->update(this->getState());
+	while(!_handlers->empty()){
+        Handler *current = _handlers->front();
+        _handlers->pop();
+		current->update(this->getState());
+		delete current;
 	}
 }

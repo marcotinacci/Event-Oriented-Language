@@ -15,17 +15,15 @@ import org.mt.lic.eol.eventOrientedLanguage.Gtr;
 import org.mt.lic.eol.eventOrientedLanguage.IfThenElse;
 import org.mt.lic.eol.eventOrientedLanguage.Leq;
 import org.mt.lic.eol.eventOrientedLanguage.Less;
+import org.mt.lic.eol.eventOrientedLanguage.Literal;
 import org.mt.lic.eol.eventOrientedLanguage.Minus;
 import org.mt.lic.eol.eventOrientedLanguage.Multi;
 import org.mt.lic.eol.eventOrientedLanguage.Not;
-import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
 import org.mt.lic.eol.eventOrientedLanguage.Or;
 import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
-import org.mt.lic.eol.eventOrientedLanguage.PrintString;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
 import org.mt.lic.eol.eventOrientedLanguage.ReadInput;
-import org.mt.lic.eol.eventOrientedLanguage.UnbindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.VariableAssign;
 import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
@@ -33,6 +31,13 @@ import org.mt.lic.eol.eventOrientedLanguage.While;
 import org.mt.lic.eol.eventOrientedLanguage.util.EventOrientedLanguageSwitch;
 import org.mt.lic.eol.util.NameConventions;
 
+/**
+ * Classe astratta di generazione del codice, racchiude le implementazioni default
+ * dei case al fine di poter essere estesa dai generatori concreti che si distingueranno
+ * solo per le implementazioni particolari.
+ * @author Marco Tinacci
+ *
+ */
 abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	
 	protected HashSet<String> libraries;
@@ -89,14 +94,6 @@ abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	public String caseBindHandler(BindHandler object) {
 		String handlerClassName = NameConventions.HandlerClassName(object.getHandlerName().getName());
 		return object.getEventName().getName() + "->attach(new " + handlerClassName + "(this));\n";
-//		return handlerClassName + "* "+ object.getHandlerName().getName() 
-//			+ " = new " + handlerClassName + "(this);\n" 
-//			+ object.getEventName().getName() + "->attach(" + object.getHandlerName().getName() + ");\n"; 
-	}
-	
-	@Override
-	public String caseUnbindHandler(UnbindHandler object) {
-		return object.getEventName().getName() + "->detach(" + object.getHandlerName().getName() + ");\n";
 	}
 	
 	@Override
@@ -130,7 +127,7 @@ abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 	}
 
 	@Override
-	public String caseNumberLiteral(NumberLiteral object) {
+	public String caseLiteral(Literal object) {
 		return object.getValue();
 	}
 
@@ -167,12 +164,6 @@ abstract class CodeGenerator extends EventOrientedLanguageSwitch<String> {
 
 	public void setFolder(String folder) {
 		this.folder = folder;
-	}
-
-	@Override
-	public String casePrintString(PrintString object) {
-		libraries.add("iostream");
-		return "std::cout << \"" + object.getOutput() + "\";\n";
 	}
 
 	@Override

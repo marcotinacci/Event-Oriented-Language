@@ -143,15 +143,6 @@ public interface EventOrientedLanguageFactory extends EFactory
   BindHandler createBindHandler();
 
   /**
-   * Returns a new object of class '<em>Unbind Handler</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unbind Handler</em>'.
-   * @generated
-   */
-  UnbindHandler createUnbindHandler();
-
-  /**
    * Returns a new object of class '<em>Raise Event</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -168,15 +159,6 @@ public interface EventOrientedLanguageFactory extends EFactory
    * @generated
    */
   PrintOutput createPrintOutput();
-
-  /**
-   * Returns a new object of class '<em>Print String</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Print String</em>'.
-   * @generated
-   */
-  PrintString createPrintString();
 
   /**
    * Returns a new object of class '<em>Read Input</em>'.
@@ -314,13 +296,13 @@ public interface EventOrientedLanguageFactory extends EFactory
   Not createNot();
 
   /**
-   * Returns a new object of class '<em>Number Literal</em>'.
+   * Returns a new object of class '<em>Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Literal</em>'.
+   * @return a new object of class '<em>Literal</em>'.
    * @generated
    */
-  NumberLiteral createNumberLiteral();
+  Literal createLiteral();
 
   /**
    * Returns a new object of class '<em>Variable Reference</em>'.

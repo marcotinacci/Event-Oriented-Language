@@ -2,6 +2,7 @@ package org.mt.lic.eol.generating;
 
 import java.util.List;
 
+import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.Expression;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.PrintOutput;
@@ -12,6 +13,11 @@ import org.mt.lic.eol.eventOrientedLanguage.VariableDeclaration;
 import org.mt.lic.eol.eventOrientedLanguage.VariableReference;
 import org.mt.lic.eol.util.NameConventions;
 
+/**
+ * Classe di generazione del codice di una sottoclasse di Handler
+ * @author Marco Tinacci
+ *
+ */
 class HandlerCodeGenerator extends CodeGenerator{
 	
 	static private HandlerCodeGenerator instance = null;
@@ -39,12 +45,11 @@ class HandlerCodeGenerator extends CodeGenerator{
 	@Override
 	public String casePrintOutput(PrintOutput object) {
 		ModuleCodeGenerator.getInstance().getLibraries().add("iostream");
-		return "std::cout << " + doSwitch(object.getOutput()) + " << std::endl;\n";
+		return "std::cout << " + doSwitch(object.getOutput()) + ";\n";
 	}
 	
 	@Override
 	public String caseReadInput(ReadInput object) {
-		// aggiungi la libreria iostream al modulo
 		ModuleCodeGenerator.getInstance().getLibraries().add("iostream");
 		return "std::cin >> " + CodeGeneratorHelper.formatVariableReference(object.getInput()) + ";\n";
 	}
@@ -62,9 +67,9 @@ class HandlerCodeGenerator extends CodeGenerator{
 		for (int i = 0; i < params.size(); i++) {
 			toReturn.append("state->var" + i + " = " + doSwitch(params.get(i)) + ";\n");
 		}
-		toReturn.append(NameConventions.moduleReference()
+		toReturn.append(NameConventions.moduleReference()+ "->"
 				+object.getEvent().getName() + "->setState(state);\n");
-		toReturn.append(NameConventions.moduleReference()
+		toReturn.append(NameConventions.moduleReference()+ "->"
 				+object.getEvent().getName() + "->notify();\n");
 		return toReturn.toString();
 	}
@@ -89,6 +94,13 @@ class HandlerCodeGenerator extends CodeGenerator{
 			return toReturn.toString();
 		}
 		return "";
+	}
+
+	@Override
+	public String caseBindHandler(BindHandler object) {
+		String handlerClassName = NameConventions.HandlerClassName(object.getHandlerName().getName());
+		return NameConventions.moduleReference() +"->"+ object.getEventName().getName() + 
+			"->attach(new " + handlerClassName + "("+ NameConventions.moduleReference() +"));\n";
 	}
 	
 }

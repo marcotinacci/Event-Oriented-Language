@@ -17,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#getEventName <em>Event Name</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#getHandlerName <em>Handler Name</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#isConsumable <em>Consumable</em>}</li>
+ *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#getConsumability <em>Consumability</em>}</li>
  *   <li>{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#getBindParams <em>Bind Params</em>}</li>
  * </ul>
  * </p>
@@ -78,6 +80,58 @@ public interface BindHandler extends Command
    * @generated
    */
   void setHandlerName(HandlerDecl value);
+
+  /**
+   * Returns the value of the '<em><b>Consumable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Consumable</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Consumable</em>' attribute.
+   * @see #setConsumable(boolean)
+   * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getBindHandler_Consumable()
+   * @model
+   * @generated
+   */
+  boolean isConsumable();
+
+  /**
+   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#isConsumable <em>Consumable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Consumable</em>' attribute.
+   * @see #isConsumable()
+   * @generated
+   */
+  void setConsumable(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Consumability</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Consumability</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Consumability</em>' containment reference.
+   * @see #setConsumability(Expression)
+   * @see org.mt.lic.eol.eventOrientedLanguage.EventOrientedLanguagePackage#getBindHandler_Consumability()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getConsumability();
+
+  /**
+   * Sets the value of the '{@link org.mt.lic.eol.eventOrientedLanguage.BindHandler#getConsumability <em>Consumability</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Consumability</em>' containment reference.
+   * @see #getConsumability()
+   * @generated
+   */
+  void setConsumability(Expression value);
 
   /**
    * Returns the value of the '<em><b>Bind Params</b></em>' containment reference list.

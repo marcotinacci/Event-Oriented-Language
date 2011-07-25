@@ -201,6 +201,15 @@
                   <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
                 </terminal>
               </elements>
+              <elements xsi:type="xtext:Group" cardinality="?">
+                <elements xsi:type="xtext:Assignment" feature="consumable" operator="?=">
+                  <terminal xsi:type="xtext:Keyword" value="&lt;"/>
+                </elements>
+                <elements xsi:type="xtext:Assignment" feature="consumability" operator="=">
+                  <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
+                </elements>
+                <elements xsi:type="xtext:Keyword" value=">"/>
+              </elements>
               <elements xsi:type="xtext:Keyword" value="["/>
               <elements xsi:type="xtext:Group" cardinality="?">
                 <elements xsi:type="xtext:Assignment" feature="bindParams" operator="+=">
@@ -214,30 +223,6 @@
                 </elements>
               </elements>
               <elements xsi:type="xtext:Keyword" value="]"/>
-            </elements>
-            <elements xsi:type="xtext:Group">
-              <elements xsi:type="xtext:Action">
-                <type metamodel="/0/@metamodelDeclarations.1">
-                  <classifier xsi:type="ecore:EClass" href="http://www.mt.org/lic/eol/EventOrientedLanguage#//UnbindHandler"/>
-                </type>
-              </elements>
-              <elements xsi:type="xtext:Assignment" feature="eventName" operator="=">
-                <terminal xsi:type="xtext:CrossReference">
-                  <type metamodel="/0/@metamodelDeclarations.1">
-                    <classifier xsi:type="ecore:EClass" href="http://www.mt.org/lic/eol/EventOrientedLanguage#//EventDecl"/>
-                  </type>
-                  <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-                </terminal>
-              </elements>
-              <elements xsi:type="xtext:Keyword" value="-="/>
-              <elements xsi:type="xtext:Assignment" feature="handlerName" operator="=">
-                <terminal xsi:type="xtext:CrossReference">
-                  <type metamodel="/0/@metamodelDeclarations.1">
-                    <classifier xsi:type="ecore:EClass" href="http://www.mt.org/lic/eol/EventOrientedLanguage#//HandlerDecl"/>
-                  </type>
-                  <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-                </terminal>
-              </elements>
             </elements>
             <elements xsi:type="xtext:Group">
               <elements xsi:type="xtext:Action">
@@ -277,17 +262,6 @@
               <elements xsi:type="xtext:Keyword" value="out"/>
               <elements xsi:type="xtext:Assignment" feature="output" operator="=">
                 <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
-              </elements>
-            </elements>
-            <elements xsi:type="xtext:Group">
-              <elements xsi:type="xtext:Action">
-                <type metamodel="/0/@metamodelDeclarations.1">
-                  <classifier xsi:type="ecore:EClass" href="http://www.mt.org/lic/eol/EventOrientedLanguage#//PrintString"/>
-                </type>
-              </elements>
-              <elements xsi:type="xtext:Keyword" value="out"/>
-              <elements xsi:type="xtext:Assignment" feature="output" operator="=">
-                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
               </elements>
             </elements>
             <elements xsi:type="xtext:Group">
@@ -542,7 +516,7 @@
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.mt.org/lic/eol/EventOrientedLanguage#//NumberLiteral"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.mt.org/lic/eol/EventOrientedLanguage#//Literal"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="value" operator="=">

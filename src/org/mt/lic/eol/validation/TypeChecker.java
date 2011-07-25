@@ -8,10 +8,10 @@ import org.mt.lic.eol.eventOrientedLanguage.Geq;
 import org.mt.lic.eol.eventOrientedLanguage.Gtr;
 import org.mt.lic.eol.eventOrientedLanguage.Leq;
 import org.mt.lic.eol.eventOrientedLanguage.Less;
+import org.mt.lic.eol.eventOrientedLanguage.Literal;
 import org.mt.lic.eol.eventOrientedLanguage.Minus;
 import org.mt.lic.eol.eventOrientedLanguage.Multi;
 import org.mt.lic.eol.eventOrientedLanguage.Not;
-import org.mt.lic.eol.eventOrientedLanguage.NumberLiteral;
 import org.mt.lic.eol.eventOrientedLanguage.Or;
 import org.mt.lic.eol.eventOrientedLanguage.Plus;
 import org.mt.lic.eol.eventOrientedLanguage.Type;
@@ -57,7 +57,7 @@ public class TypeChecker extends EventOrientedLanguageSwitch<Type> {
 	}
 
 	@Override
-	public Type caseNumberLiteral(NumberLiteral object) {
+	public Type caseLiteral(Literal object) {
 		return Type.getByName(object.getValue());
 	}
 

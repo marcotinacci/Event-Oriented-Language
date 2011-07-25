@@ -7,7 +7,7 @@
 #ifndef _EVENT_H
 #define	_EVENT_H
 
-#include <list>
+#include <queue>
 #include "Handler.h"
 
 using namespace std;
@@ -21,10 +21,9 @@ public:
     void* getState() const;
     void setState(void* args);
     void attach(Handler* handler);
-    void detach(Handler* handler);
     void notify();
 private:
-    list<Handler*>* _handlers;
+    queue<Handler*>* _handlers;
     void* _state;
 };
 

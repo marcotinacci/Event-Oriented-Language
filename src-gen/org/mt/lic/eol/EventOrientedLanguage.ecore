@@ -64,12 +64,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="BindHandler" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventName" eType="#//EventDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="handlerName" eType="#//HandlerDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="consumable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consumability" eType="#//Expression"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bindParams" upperBound="-1"
         eType="#//Expression" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnbindHandler" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventName" eType="#//EventDecl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="handlerName" eType="#//HandlerDecl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RaiseEvent" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//EventDecl"/>
@@ -79,9 +78,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="PrintOutput" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="#//Expression"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrintString" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReadInput" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//VariableDeclaration"/>
@@ -171,7 +167,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cond" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//Expression">

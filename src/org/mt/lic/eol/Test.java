@@ -2,10 +2,13 @@ package org.mt.lic.eol;
 
 import org.mt.lic.eol.generating.MainCodeGenerator;
 
-// TODO eliminare la detach degli handler? si potrebbe direttamente deallocare l'evento e i rispettivi handler dal distruttore alla chiusura del blocco dove è stato dichiarato
+// TODO gestire la consumabilità degli eventi
 // TODO generare il codice dei parametri di bind (stato degli handlers)
-// TODO aggiungere interazione tra moduli
 // TODO lanciare compilatore eol e compilatore c++ da bottone di eclipse
+// TODO type check
+
+// TODO terminare controlli
+// TODO relazione
 
 /**
  * classe dedicata alle prove

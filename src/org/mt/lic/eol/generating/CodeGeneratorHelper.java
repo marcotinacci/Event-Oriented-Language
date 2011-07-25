@@ -217,7 +217,7 @@ public class CodeGeneratorHelper {
 		String toReturn = decl.getName();
 		// caso variabile di modulo
 		if(decl.eContainer() instanceof GlobalSection){
-			return NameConventions.moduleReference() + toReturn;
+			return NameConventions.moduleReference() + "->" + toReturn;
 		}
 		return toReturn;
 	}

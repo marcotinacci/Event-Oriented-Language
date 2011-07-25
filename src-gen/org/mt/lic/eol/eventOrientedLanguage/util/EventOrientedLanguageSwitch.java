@@ -194,15 +194,6 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.UNBIND_HANDLER:
-      {
-        UnbindHandler unbindHandler = (UnbindHandler)theEObject;
-        T result = caseUnbindHandler(unbindHandler);
-        if (result == null) result = caseCommand(unbindHandler);
-        if (result == null) result = caseAbstractBlock(unbindHandler);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EventOrientedLanguagePackage.RAISE_EVENT:
       {
         RaiseEvent raiseEvent = (RaiseEvent)theEObject;
@@ -218,15 +209,6 @@ public class EventOrientedLanguageSwitch<T>
         T result = casePrintOutput(printOutput);
         if (result == null) result = caseCommand(printOutput);
         if (result == null) result = caseAbstractBlock(printOutput);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EventOrientedLanguagePackage.PRINT_STRING:
-      {
-        PrintString printString = (PrintString)theEObject;
-        T result = casePrintString(printString);
-        if (result == null) result = caseCommand(printString);
-        if (result == null) result = caseAbstractBlock(printString);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -353,11 +335,11 @@ public class EventOrientedLanguageSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EventOrientedLanguagePackage.NUMBER_LITERAL:
+      case EventOrientedLanguagePackage.LITERAL:
       {
-        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
-        T result = caseNumberLiteral(numberLiteral);
-        if (result == null) result = caseExpression(numberLiteral);
+        Literal literal = (Literal)theEObject;
+        T result = caseLiteral(literal);
+        if (result == null) result = caseExpression(literal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -582,22 +564,6 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Unbind Handler</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unbind Handler</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnbindHandler(UnbindHandler object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Raise Event</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -625,22 +591,6 @@ public class EventOrientedLanguageSwitch<T>
    * @generated
    */
   public T casePrintOutput(PrintOutput object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Print String</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Print String</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePrintString(PrintString object)
   {
     return null;
   }
@@ -886,17 +836,17 @@ public class EventOrientedLanguageSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberLiteral(NumberLiteral object)
+  public T caseLiteral(Literal object)
   {
     return null;
   }

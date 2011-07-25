@@ -49,7 +49,7 @@ public class NameConventions {
 	}
 
 	public static String moduleReference() {
-		return "module->";
+		return "module";
 	}
 
 	public static String getDatatypeFilename() {

@@ -13,6 +13,11 @@ import org.mt.lic.eol.eventOrientedLanguage.Program;
 import org.mt.lic.eol.util.FileHelper;
 import org.mt.lic.eol.util.NameConventions;
 
+/**
+ * Generatore del codice di un modulo
+ * @author Marco Tinacci
+ *
+ */
 class ModuleCodeGenerator extends CodeGenerator {
 	
 	static private ModuleCodeGenerator instance = null;

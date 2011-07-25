@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.xtext.validation.Check;
 import org.mt.lic.eol.eventOrientedLanguage.BindHandler;
 import org.mt.lic.eol.eventOrientedLanguage.EventDecl;
+import org.mt.lic.eol.eventOrientedLanguage.Expression;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerDecl;
 import org.mt.lic.eol.eventOrientedLanguage.HandlerSection;
 import org.mt.lic.eol.eventOrientedLanguage.RaiseEvent;
@@ -17,9 +18,7 @@ public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLan
 
 	// TODO controllo uso e inizializzazione variabili globali su init
 	// TODO controllo raise con tipi dei parametri corretti
-	// TODO controllo codice morto
-	// TODO controllo codice non raggiungibile
-	// TODO controllo return
+	// TODO controllo codice non raggiungibile (coincide a morto senza return)
 	// TODO controllo bind con handler dallo stesso nome
 	
 	/**
@@ -75,18 +74,6 @@ public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLan
 	}
 	
 	/**
-	 * Controllo che i riferimenti a variabili nelle condizioni siano unicamente booleani
-	 * @param ref
-	 */
-//	@Check
-//	public void checkBooleanReference(BooleanReference ref){
-		// TODO  
-//		if(!ref.getVar().getType().equals(Type.TBOOL)){
-//			error("The variable "+ ref.getVar().getName() +" must be boolean", null);
-//		}
-//	}
-	
-	/**
 	 * Controllo che i nomi degli handler siano unici
 	 * @param handler
 	 */
@@ -124,4 +111,8 @@ public class EventOrientedLanguageJavaValidator extends AbstractEventOrientedLan
 		}
 	}
 
+	@Check
+	public void checkValidType(Expression expr){
+		
+	}
 }

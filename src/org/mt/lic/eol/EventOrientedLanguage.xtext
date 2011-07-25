@@ -42,12 +42,11 @@ AbstractBlock:
 Command:
 	(VariableDeclaration
 	| { VariableAssign } name=[VariableDeclaration] '=' value=Expression
-	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl] 
+	| { BindHandler } eventName=[EventDecl] '+=' handlerName=[HandlerDecl]
+		( consumable?='<' consumability=Expression '>')? 
 		'[' (bindParams+=Expression (',' bindParams+=Expression))? ']'
-	| { UnbindHandler } eventName=[EventDecl] '-=' handlerName=[HandlerDecl]
 	| { RaiseEvent } 'raise' event=[EventDecl] '(' (params+=Expression (',' params+=Expression)*)? ')'
 	| { PrintOutput } 'out' output=Expression
-	| { PrintString } 'out' output=STRING 
 	| { ReadInput } 'in' input=[VariableDeclaration]) ';'
 	| { IfThenElse } 'if' '(' condition=Expression ')' thenBlock=AbstractBlock ( balanced?='else' elseBlock=AbstractBlock )?
 	| { While } 'while' '(' condition=Expression ')' block=AbstractBlock;
@@ -81,7 +80,7 @@ Multiplication returns Expression:
 PrimaryExpression returns Expression:
 	'(' Expression ')'
 	| { Not } 'NOT' cond=Expression
-	| { NumberLiteral } value=Value
+	| { Literal } value=Value
 	| { VariableReference } var=[VariableDeclaration];
 
 // TYPES
